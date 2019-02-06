@@ -45,11 +45,11 @@
 | <a href="#assignment">Lab Assignment</a>
 ]
 
-<p>In this lab, we cover the basics of the Xcode IDE, the iOS Simulator, Xcode's Documentation Viewer, and the Objective-C (or the Swift) programming language. By the end of lab, we'll have built a simple iPhone application that displays weather from the <a href="https://wunderground.com">wunderground.com</a> API.</p>
+<p>In this lab, we cover the basics of the Xcode IDE, the iOS Simulator, Xcode's Documentation Viewer, and the Swift programming language. By the end of lab, we'll have built a simple iPhone application that displays weather from the <a href="https://wunderground.com">wunderground.com</a> API.</p>
 
 <p>To complete this lab, you'll need to download <a href="macappstores://itunes.apple.com/us/app/xcode/id497799835">Xcode</a>. If you don't have a Mac of your own, you can use one of the Macs in the EECS lab, 38-530.</p>
 
-<p>You can do this lab in either Swift or Objective-C. We provide instructions for both languages. Swift is a more modern language; for example, it eliminates the need for separate header files, supports type inference, and uses syntax for function calls and string operations that is closer to that of other newer languages. If you do not have experience in either language, we recommend using Swift.</p>
+<!-- <p>You can do this lab in either Swift or Objective-C. We provide instructions for both languages. Swift is a more modern language; for example, it eliminates the need for separate header files, supports type inference, and uses syntax for function calls and string operations that is closer to that of other newer languages. If you do not have experience in either language, we recommend using Swift.</p> -->
 
 <hr>
 
@@ -126,7 +126,7 @@
 
 <h2>Some info about Swift</h2>
 
-<p>As Swift is relatively easier than Objective-C, we don't have a long tutorial for it. </p>
+<!-- <p>As Swift is relatively easier than Objective-C, we don't have a long tutorial for it. </p> -->
 
 <p>You may check <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309" target="_blank">Apple's programming guide of Swift</a> for details. </p>
 
@@ -139,7 +139,7 @@
 
 <p>We're using the Wunderground API. Here's a key for you: b901013c3100de66. This key will work for the lab, but has some usage limitations. You may probably want to get your own key for free from Wunderground. The JSON looks like <a href="https://api.wunderground.com/api/0b719bec26ab96ac/conditions/q/02139.json">http://api.wunderground.com/api/0b719bec26ab96ac/conditions/q/02139.json</a>.</p>
 
-<p>We've recorded <a href="https://www.youtube.com/playlist?list=PLvcqxggo1z8GxADVB48Ts-CxsWFAtjg1u">videos</a> with exact instructions on how to complete the lab in Object-C and Swift. The goal is to get you comfortable with Xcode, the docs, the simulator, and Objective-C (or Swift). Maybe you'll even learn some shortcuts from watching them.</p>
+<p>We've recorded videos with instructions on how to complete the lab in Swift. The goal is to get you comfortable with Xcode, the docs, the simulator, and Swift. <!-- Maybe you'll even learn some shortcuts from watching them. --></p>
 
 <p>The videos build off of one another. You can do the assignment in your own way, or in the exact way it's done in the videos. It's entirely up to you.</p>
 
@@ -154,7 +154,7 @@ src="https://www.youtube.com/embed/JtbR3gY6YXY" frameborder="0" allowfullscreen>
 <hr>
 <hr>
 <h4>Video 2 - Making a <code>Weather</code> Class </h4>
-<p>Here, we define a weather class with some properties and methods</p>
+<p>Here, we define a weather class with some properties and methods.</p>
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/Jvjs8ePFl2Y" frameborder="0" allowfullscreen>
@@ -163,7 +163,7 @@ src="https://www.youtube.com/embed/Jvjs8ePFl2Y" frameborder="0" allowfullscreen>
 <hr>
 <hr>
 <h4>Video 3 - Flushing out the <code>Weather</code> Methods</h4>
-<p>We add some details to the weather methods from the previous video. In the next video, we instantiate the weather class, and debug it. This video contains an intentional error. We'll debug it in the next one. Note that the API shown in the Objective-C video is actually out of data. </p>
+<p>We add some details to the weather methods from the previous video. In the next video, we instantiate the weather class, and debug it. This video contains an intentional error. We'll debug it in the next one. As a reminder, an API key you can use is b901013c3100de66.</p>
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/YYCasqQWSnU" frameborder="0" allowfullscreen>
@@ -182,8 +182,8 @@ src="https://www.youtube.com/embed/yIXXW55gwHw" frameborder="0" allowfullscreen>
 <hr>
 <hr>
 <h4>Video 5 - Adding a button to the UX, defining constraints</h4>
-<p>We add a new button to the interface and define its constraints.</p>
-<p><strong>We're pressing the control key while dragging from the button to the <code>.h</code> file</strong></p>
+<p>We add a new button to the interface and define its constraints. In newer versions of Xcode, the Library button (where you can find UI elements) may be on the top right corner instead.</p>
+<p><strong>We're pressing the control key while dragging from the button to the <code>ViewController.swift</code> file.</strong></p>
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/aT5O_qyeQGk" frameborder="0" allowfullscreen>
@@ -212,8 +212,8 @@ src="https://www.youtube.com/embed/KWdTqycEP-E" frameborder="0" allowfullscreen>
 <hr>
 <hr>
 <h4>Video 8 - Making the UI Labels Update</h4>
-<p>We now update the UI Labels when results are fetched from the API</p>
-<p>You may notice us fixing a misplaced view warning. The view was well defined, but the placement wasn't done correctly, so we ask Xcode to update the placement and the error goes away</p>
+<p>We now update the UI Labels when results are fetched from the API.</p>
+<!-- <p>You may notice us fixing a misplaced view warning. The view was well defined, but the placement wasn't done correctly, so we ask Xcode to update the placement and the error goes away</p> -->
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/r55JUaOVh7k" frameborder="0" allowfullscreen>
@@ -255,12 +255,12 @@ src="https://www.youtube.com/embed/kFcwheYqVKQ" frameborder="0" allowfullscreen>
 }
 </code></pre>
 
-<p>"ViewController.swift" <code>weatherButton</code> function (Button Handler)</p>
-<pre><code class="swift hljs">@IBAction func weatherButton(_ sender: UIButton) {
+<p>"ViewController.swift" <code>getWeather</code> function (Button Handler)</p>
+<pre><code class="swift hljs">@IBAction func getWeather(_ sender: UIButton) {
         
         NSLog("Get Weather")
         sender.isEnabled = false
-        weather.fetchWeatherForZip(zip: zipCode.text!, completionHandler: {(ret: Bool)->Void in
+        weather.fetchWeatherForZip(zip: zipcode.text!, completionHandler: {(ret: Bool)->Void in
         if(ret)
         {
             NSLog("Succeeded")
@@ -286,6 +286,9 @@ src="https://www.youtube.com/embed/kFcwheYqVKQ" frameborder="0" allowfullscreen>
 <hr>
 <p>That's it for now. Have a good one!</p>
 <img src="images/lab0/hack_the_planet.gif" alt="HACK THE PLANET!" title="There are no speed limits on the information highway.">
+
+<h2 id="checkoff">Check-offs</h2>
+Time and Location: TBA
 
   </body>
 </html>
