@@ -1,4 +1,4 @@
-DOCS=index calendar notes 
+DOCS=index calendar notes answers
 
 HDOCS=$(addsuffix .html, $(DOCS))
 PHDOCS=$(addprefix , $(HDOCS))
