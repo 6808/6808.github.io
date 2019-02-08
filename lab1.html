@@ -80,10 +80,10 @@
             <h3 id="ios_loc_primer">iOS Location Primer</h3>
             <p>The primary way that location is accessed on iOS use though the <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/">CoreLocation class CLLocationManager</a>. Using this class you can request location updates at a certain accuracy, and also configure the accuracy with which data is created.</p>
             <p>
-                In the PostionLogger app, the main screen is an instance of a ViewController object (as specified in ViewController.m.) iOS creates one instance of the ViewController class for us when the application is initialized, because the Main.storyboard file, which we chose as the main storyboard for the app in the Info.plist file, specifies that the initial view for the app should be an instance of ViewController.
+                In the PostionLogger app, the main screen is an instance of a ViewController object (as specified in ViewController.swift.) iOS creates one instance of the ViewController class for us when the application is initialized, because the Main.storyboard file, which we chose as the main storyboard for the app in the Info.plist file, specifies that the initial view for the app should be an instance of ViewController.
             </p>
             <p>
-                In the viewDidLoad method of ViewController.m, we've already created an instance of a CLLocationManager object for you to use and initialized some of the relevant properties of it. These are the lines at the beginning of the viewDidLoad method:
+                In the viewDidLoad method of ViewController.swift, we've already created an instance of a CLLocationManager object for you to use and initialized some of the relevant properties of it. These are the lines at the beginning of the viewDidLoad method:
             </p>
             <pre><code class="swift hljs">1 self.locationManager = CLLocationManager()
 2 self.locationManager?.requestAlwaysAuthorization()
@@ -110,7 +110,7 @@
             <p>Note that the settings in line 5 & 6 may have negative implications on the battery life of the device, but they will allow us to get the highest fidelity data for this lab.</p>
             <h3 id="task1">Task 1 – Capture Location Data</h3>
             <p>The goal of this first task is to log location data to a file and perform some simple analysis of the data.</p>
-            <p>To acquire the log, you will need to modify the PositionLogger app to start capturing location samples when the "Start" button is tapped. Open the ViewController.m file. We have implemented most of this class for you -- scroll down and find the hitRecordStopButton method:
+            <p>To acquire the log, you will need to modify the PositionLogger app to start capturing location samples when the "Start" button is tapped. Open the ViewController.swift file. We have implemented most of this class for you -- scroll down and find the hitRecordStopButton method:
 </p>
 
             <pre><code class="swift hljs">if(!self.isRecording) {
@@ -144,14 +144,15 @@ extern const CLLocationAccuracy kCLLocationAccuracyNearestTenMeters;
 extern const CLLocationAccuracy kCLLocationAccuracyHundredMeters;
 extern const CLLocationAccuracy kCLLocationAccuracyKilometer;
 extern const CLLocationAccuracy kCLLocationAccuracyThreeKilometers;</code></pre>
+            <p>You also need to call startUpdatingLocation on the CLLocationManager.</p>
             <h3 id="1.2">1.2 Implement stopRecordingLocationWithAccuracy</h3>
             <p>stopRecordingLocationWithAccuracy just needs to call stopUpdatingLocation on the CLLocationManager object. (It's OK to call this function on the CLLocationManager even if it is already stopped.)</p>
             <h3 id="1.3">1.3 Implementing didUpdateLocations</h3>
             <p>
-                The next step is to implement code to log position updates as they arrive. We've already set up the instance of ViewController.m as the delegate of the CLLocationManager object. This means that it will call the didUpdateLocations method on ViewController.m when a location update is available. You need to implement this method. Its signature is as follows:</p>
-            <code class="objectivec hljs"><pre> - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations;</pre></code>
-            <p style="background-color: #CCCCFF">Tip for Objective-C: You can find this definition in the CLLocationManager.h iOS header file, which you can open by typing ⌘-shift-O and then entering the first few characters of the file's name.</p>
-            <p>Your implementation of didUpdateLocations should iterate through the locations and log them to the file. We've provided a method logLineToDataFile that logs a string (NSString object for Objective-C, String for Swift) to the log file (which you can then email to yourself using the email button.)</p>
+                The next step is to implement code to log position updates as they arrive. We've already set up the instance of ViewController.swift as the delegate of the CLLocationManager object. This means that it will call the didUpdateLocations method on ViewController.swift when a location update is available. You need to implement this method. Its signature is as follows:</p>
+            <pre><code class="swift hljs">optional func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])</code></pre>
+            <!-- <p style="background-color: #CCCCFF">Tip for Objective-C: You can find this definition in the CLLocationManager.h iOS header file, which you can open by typing ⌘-shift-O and then entering the first few characters of the file's name.</p> -->
+            <p>Your implementation of didUpdateLocations should iterate through the locations and log them to the file. We've provided a method logLineToDataFile that logs a String to the log file (which you can then email to yourself using the email button.)</p>
             <p>In the later part of this lab, you're going to visualize and analyze this data, so you'll need to at minimum log the reading's timestamp, latitude, longitude, and horizontal accuracy, along with the battery level of the device. To get the current battery level you can call:</p>
             <pre><code class="swift hljs">UIDevice.current.batteryLevel</code></pre>
             <p>We'd also suggest logging the course (bearing) and speed attributes from the supplied CLLocation objects. For time, we suggest just converting the timestamp (NSDate) object in each CLLocation to a Unix time stamp:</p>
@@ -256,7 +257,7 @@ Task 2  – Compare the Accuracy of the Location Methods
             <h3 id="task4">Task 4 - Rotate the Compass Needle Image</h3>
             <p>There are three subtasks: first, get the user's location and compute θ1 (based on the currently selected anthill); second, compute the orientation of the phone and compute θ2; third, set the orientation of the needle image.
             </p>
-            <p>We've created CompassViewController.m for you, but you will need to write most of the code. We've configured the UI to have a reference to the needle image.
+            <p>We've created CompassViewController.swift for you, but you will need to write most of the code. We've configured the UI to have a reference to the needle image.
             </p>
             <h4 id="4.1">4.1  Compute θ1</h4>
             <p>You can compute θ1 using the above formula once you have both the user's location and the location of a target anthill. In the code we've given you, there is an _anthills array that is loaded when the view appears. We've provided a method called curSelectedLocation that will return the location of the currently selected anthill (when anthills is non-null/has been loaded.)</p>
@@ -273,10 +274,10 @@ Task 2  – Compare the Accuracy of the Location Methods
 let lat = anthill?["lat"] as? NSNumber
 let lon = anthill?["lon"] as? NSNumber</code></pre>
             <h4 id="4.2">4.2  Compute θ2</h4>
-            <p>Modern iPhones have a magnetometer that can measure the orientation of the phone with respect to the Earth's magnetic field (its heading). An app can be requested to be notified of the phone's heading as it changes by calling the startUpdatingHeading method on the CLLocationManager object. We have already done this for you in CompassViewController.m's viewDidLoad method. You should fill in the body of the locationManager:didUpdateHeading method with code to compute θ1 - θ2. You can access the current heading of the device (in degrees) by accessing the trueHeading property of the provided newHeading object.
+            <p>Modern iPhones have a magnetometer that can measure the orientation of the phone with respect to the Earth's magnetic field (its heading). An app can be requested to be notified of the phone's heading as it changes by calling the startUpdatingHeading method on the CLLocationManager object. We have already done this for you in CompassViewController.swift's viewDidLoad method. You should fill in the body of the locationManager:didUpdateHeading method with code to compute θ1 - θ2. You can access the current heading of the device (in degrees) by accessing the trueHeading property of the provided newHeading object.
             </p>
             <h4 id="4.3">4.3  Rotate the Needle by θ1 - θ2</h4>
-            <p>Whenever you get an update to the device's location or orientation, or a new anthill is selected, you should update the rotation of the needle. The needle is a UIView that is available as a property of CompassViewController. In iOS you can rotate (and scale/transform) any view simply by setting the value of the transform field of the view. This field is an instance of a CGAffineTransform struct. You can create a transform that specifies a particular rotation by calling the CGAffineTransformMakeRotation function in Objective-C or <a href="https://developer.apple.com/reference/coregraphics/cgaffinetransform-rb5">CGAffineTransform.init with rotationAngle</a> in Swift. Create a transform and assign it to the needle property of your CompassViewController. The UI will automatically rotate the view to the correct orientation.
+            <p>Whenever you get an update to the device's location or orientation, or a new anthill is selected, you should update the rotation of the needle. The needle is a UIView that is available as a property of CompassViewController. In iOS you can rotate (and scale/transform) any view simply by setting the value of the transform field of the view. This field is an instance of a CGAffineTransform struct. You can create a transform that specifies a particular rotation by calling <a href="https://developer.apple.com/reference/coregraphics/cgaffinetransform-rb5">CGAffineTransform.init with rotationAngle</a> in Swift. Create a transform and assign it to the needle property of your CompassViewController. The UI will automatically rotate the view to the correct orientation.
             </p>
             <p>In addition, set the text of the distanceLabel label to the distance to the current anthill and the text of the headingLabel label to θ1 - θ2.</p>
             <p>The deliverable for this task is a working implementation of the Anteater compass.
@@ -289,7 +290,7 @@ let lon = anthill?["lon"] as? NSNumber</code></pre>
                 <li>Plots of the battery drain for Task 3</li>
                 <li>A working compass demonstration for Task 4</li>
             </ul>
-        <p>A TA will checkoff your lab when you are finished. We will hold checkoffs on Monday February 26 4pm-5pm and Tuesday February 27 4pm-5pm in the 32-G9 lounge. </p>
+        <p>A TA will checkoff your lab when you are finished. We will hold checkoffs during Office Hours. </p>
 </body>
 
 </html>
