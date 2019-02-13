@@ -8,12 +8,11 @@
 
 == Lec \#2: Intro to Positioning and Indoor Location Systems
 *Mon, Feb 11, 2019*
-#- Intro to Positioning [./materials/positioning.pdf \[pdf\]]
-#- Cricket #[./materials/cricket.pdf \[pdf\]]
+- Slides [./materials/lec2-slides-localization-2019.pdf \[pdf\]]
 
 == Lec \#3: Localization cont'd: GPS, Radio Localization, & Seeing through Walls 
 *Wed, Feb 13, 2019*
-#- GPS [./materials/gps.pdf \[pdf\]]
+- Slides [./materials/Lec3-slides-localization-sensing-2019.pdf \[pdf\]]
 
 == Lec \#4: Connectivity Overview and BLE
 *Tue, Feb 19, 2019*
