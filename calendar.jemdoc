@@ -122,7 +122,7 @@ table.calendar thead tr {
   <td id="2019-2-20" class="lecture"><span class="date">Feb 20</span><br />
     <b>LEC 5:</b> Mesh and Multi-Hop Wireless Networks <br />
     <span class="reading"><b>Preparation:</b> Read <a href="https://pdos.csail.mit.edu/papers/grid:mobicom03/paper.pdf">ETX</a>
-    <!-- (<a>Questions</a>) --></span></td>
+    (<a href="questions.html?q=q-lec5">Questions</a>)</span></td>
 
   <td id="2019-2-21" class="date"><span class="date">Feb 21</span><br />
   <td id="2019-2-22"><span class="date">Feb 23</span></td>
