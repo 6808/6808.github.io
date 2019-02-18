@@ -137,7 +137,7 @@
 
             <p>This method calls startRecordingLocationWithAccuracy or stopRecordingLocationWithAccuracy as appropriate. You need to implement the body of these methods.</p>
             <h3 id="1.1">1.1 Implement startRecordingLocationWithAccuracy</h3>
-            <p>startRecordingLocationWithAccuracy should set the desiredAccuracy property of the _locMgr object to the appropriate accuracy based on the supplied value of the acc argument. Note that iOS does not explicitly allow an application to request GPS, WiFi, or Cellular positioning -- instead it provides the following constants to choose from:</p>
+            <p>startRecordingLocationWithAccuracy should set the desiredAccuracy property of the CLLocationManager object to the appropriate accuracy based on the supplied value of the acc argument. Note that iOS does not explicitly allow an application to request GPS, WiFi, or Cellular positioning -- instead it provides the following constants to choose from:</p>
             <pre><code class="objectivec hljs">extern const CLLocationAccuracy kCLLocationAccuracyBestForNavigation;
 extern const CLLocationAccuracy kCLLocationAccuracyBest;
 extern const CLLocationAccuracy kCLLocationAccuracyNearestTenMeters;
