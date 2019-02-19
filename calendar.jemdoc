@@ -115,7 +115,7 @@ table.calendar thead tr {
 
   <td id="2019-2-19" class="lecture"><span class="date">Feb 19</span><br />
   	<i>Monday schedule</i><br />
-    <b>LEC 4:</b> Connectivity Overview and BLE <br />
+    <b>LEC 4:</b> Connectivity Overview and BLE (<a href="./materials/Lec4-(part-1)-slides-localization-continued-2019.pdf">Slides 1</a>, <a href="./materials/lec4-(part-2)-IOTx-WirelessNetworkConnectivity.pdf">Slides 2</a>)<br />
     <span class="reading"><b>Preparation:</b> Read <a href="http://iot.stanford.edu/pubs/zachariah-gateway-hotmobile15.pdf">IoT Gateway problem</a>
     (<a href="questions.html?q=q-lec4">Questions</a>)</span></td>
 

@@ -8,16 +8,16 @@
 
 == Lec \#2: Intro to Positioning and Indoor Location Systems
 *Mon, Feb 11, 2019*
-- Slides [./materials/lec2-slides-localization-2019.pdf \[pdf\]]
+- Intro to Positioning [./materials/lec2-slides-localization-2019.pdf \[pdf\]]
 
 == Lec \#3: Localization cont'd: GPS, Radio Localization, & Seeing through Walls 
 *Wed, Feb 13, 2019*
-- Slides [./materials/Lec3-slides-localization-sensing-2019.pdf \[pdf\]]
+- Device-based Localization & Seeing Through Walls [./materials/Lec3-slides-localization-sensing-2019.pdf \[pdf\]]
 
 == Lec \#4: Connectivity Overview and BLE
 *Tue, Feb 19, 2019*
-#- RADAR [./materials/radar.pdf \[pdf\]]
-#- WiTrack [./materials/witrack.pdf \[pdf\]]
+- Seeing Through Walls & Device-Free Localization [./materials/Lec4-(part-1)-slides-localization-continued-2019.pdf \[pdf\]]
+- Network Connectivity for IoT Systems [./materials/lec4-(part-2)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
 
 == Lec \#5: Mesh and Multi-Hop Wireless Networks 
 *Wed, Feb 20, 2019*
