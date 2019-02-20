@@ -120,7 +120,7 @@ table.calendar thead tr {
     (<a href="questions.html?q=q-lec4">Questions</a>)</span></td>
 
   <td id="2019-2-20" class="lecture"><span class="date">Feb 20</span><br />
-    <b>LEC 5:</b> Mesh and Multi-Hop Wireless Networks <br />
+    <b>LEC 5:</b> Mesh and Multi-Hop Wireless Networks (<a href="./materials/lec5-(part-1)-IOTx-WirelessNetworkConnectivity.pdf">Slides 1</a>, <a href="./materials/lec5-(part-2)-ETXMesh.pdf">Slides 2</a>)<br />
     <span class="reading"><b>Preparation:</b> Read <a href="https://pdos.csail.mit.edu/papers/grid:mobicom03/paper.pdf">ETX</a>
     (<a href="questions.html?q=q-lec5">Questions</a>)</span></td>
 
