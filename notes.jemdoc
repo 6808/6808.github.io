@@ -24,45 +24,45 @@
 - Network Connectivity for IoT Systems [./materials/lec5-(part-1)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
 - Multi-Hop Routing [./materials/lec5-(part-2)-ETXMesh.pdf \[pdf\]]
 
-== Lec \#6: In-network aggregation 
-*Mon, Feb 25, 2019*
-
-== Lec \#7: Intro to Inertial Sensing; Activity Recognition
-*Wed, Feb 27, 2019*
-#- Intro to Inertial Sensing [./materials/inertial_sensing.pdf \[pdf\]]
-
-== Lec \#8: Pothole Detection
-*Mon, Mar 4, 2019*
-#- Pothole Patrol [./materials/pothole.pdf \[pdf\]]
-
-== Lec \#9: Health & Vitals sensing
-*Wed, Mar 6, 2019*
-#- Vital-Radio [./materials/vital_radio.pdf \[pdf\]]
-
-== Lec \#10: Battery-Free Sensors & Robotics
-*Mon, Mar 11, 2019*
-
-== Lec \#11: Agriculture IoT
-*Wed, Mar 13, 2019*
-#- Farmbeats [./materials/farmbeats.pdf \[pdf\]]
-
-== Lec \#12: Map-matching with Cellular Data
-*Wed, Mar 20, 2019*
-#- CTrack [./materials/ctrack.pdf \[pdf\]]
-
-== Lec \#13: Sensor Fusion: Maps and RF Data 
-*Mon, Apr 1, 2019*
-#- Map Inference [./materials/mapinference.pdf \[pdf\]]
-
-== Lec \#14: Attacks on Acousing Sensing
-*Wed, Apr 3, 2019*
-#- Backdoor [./materials/backdoor.pdf \[pdf\]]
-
-== Lec \#15: Underwater IoT
-*Mon, Apr 8, 2019*
-
-== Lec \#16: In-body IoT
-*Wed, Apr 10, 2019*
-
-== Lec \#17: Continuous object recognition
-*Mon, Apr 17, 2019*
+#== Lec \#6: Networks as Physical Sensors
+#*Mon, Feb 25, 2019*
+#
+#== Lec \#7: Intro to Inertial Sensing; Activity Recognition
+#*Wed, Feb 27, 2019*
+##- Intro to Inertial Sensing [./materials/inertial_sensing.pdf \[pdf\]]
+#
+#== Lec \#8: Pothole Detection
+#*Mon, Mar 4, 2019*
+##- Pothole Patrol [./materials/pothole.pdf \[pdf\]]
+#
+#== Lec \#9: Health & Vitals sensing
+#*Wed, Mar 6, 2019*
+##- Vital-Radio [./materials/vital_radio.pdf \[pdf\]]
+#
+#== Lec \#10: Battery-Free Sensors & Robotics
+#*Mon, Mar 11, 2019*
+#
+#== Lec \#11: Agriculture IoT
+#*Wed, Mar 13, 2019*
+##- Farmbeats [./materials/farmbeats.pdf \[pdf\]]
+#
+#== Lec \#12: Map-matching with Cellular Data
+#*Wed, Mar 20, 2019*
+##- CTrack [./materials/ctrack.pdf \[pdf\]]
+#
+#== Lec \#13: Sensor Fusion: Maps and RF Data 
+#*Mon, Apr 1, 2019*
+##- Map Inference [./materials/mapinference.pdf \[pdf\]]
+#
+#== Lec \#14: Attacks on Acousing Sensing
+#*Wed, Apr 3, 2019*
+##- Backdoor [./materials/backdoor.pdf \[pdf\]]
+#
+#== Lec \#15: Underwater IoT
+#*Mon, Apr 8, 2019*
+#
+#== Lec \#16: In-body IoT
+#*Wed, Apr 10, 2019*
+#
+#== Lec \#17: Continuous object recognition
+#*Mon, Apr 17, 2019*
