@@ -24,9 +24,10 @@
 - Network Connectivity for IoT Systems [./materials/lec5-(part-1)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
 - Multi-Hop Routing [./materials/lec5-(part-2)-ETXMesh.pdf \[pdf\]]
 
-#== Lec \#6: Networks as Physical Sensors
-#*Mon, Feb 25, 2019*
-#
+== Lec \#6: Networks as Physical Sensors
+*Mon, Feb 25, 2019*
+- VR Tracking [./materials/lec6-VR_tracking.pdf \[pdf\]]
+
 #== Lec \#7: Intro to Inertial Sensing; Activity Recognition
 #*Wed, Feb 27, 2019*
 ##- Intro to Inertial Sensing [./materials/inertial_sensing.pdf \[pdf\]]
