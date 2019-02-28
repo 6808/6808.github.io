@@ -138,7 +138,7 @@ table.calendar thead tr {
   <td id="2019-2-26" ><span class="date">Feb 26</span></td>
 
   <td id="2019-2-27" class="lecture"><span class="date">Feb 27</span><br />
-  <b>LEC 7:</b> Intro to Inertial Sensing; Activity Recognition<br />
+  <b>LEC 7:</b> Intro to Inertial Sensing; Activity Recognition (<a href="./materials/Lec7-slides-inertial-2019.pdf">Slides</a>)<br />
   <span class="reading"><b>Preparation:</b> Read <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch2">Developments of Inertial Sensing</a>, 
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch3">Principles of Inertial Sensing (Section 3.1 and 3.2 only)</a>, and
   <a href="http://link.springer.com.libproxy.mit.edu/chapter/10.1007/978-3-540-24646-6_1">Activity Recognition from User-Annotated Acceleration Data</a> (<a href="questions.html?q=q-lec7">Questions</a>)<br />
@@ -151,7 +151,7 @@ table.calendar thead tr {
   <td id="2019-3-4" class="lecture"><span class="date">Mar 4</span><br />
   <b>LEC 8:</b> Pothole detection<br />
   <span class="reading"><b>Preparation:</b> Read <a href="http://nms.csail.mit.edu/papers/p2-mobisys-2008.pdf">Pothole Patrol</a>
-    <!-- (<a>Questions</a>) --></span><br /></td>
+    (<a href="questions.html?q=q-lec8">Questions</a>)</span><br /></td>
 
   <td id="2019-3-5"><span class="date">Mar 5</span></td>
 
