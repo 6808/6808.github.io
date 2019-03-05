@@ -166,16 +166,15 @@ table.calendar thead tr {
 </tr>
 <tr> <!-- week of mar 11 -->
   <td id="2019-3-11" class="lecture"><span class="date">Mar 11</span><br />
-  <b>LEC 10:</b> Battery-Free Sensors & Robotics<br />
-  <span class="reading"><b>Preparation:</b> TBA</span><br />
-  <span class="deadline"><b>DUE:</b> <a>Project Proposals</a></span></td>
+  <b>LEC 10:</b> Agriculture IoT<br />
+  <span class="reading"><b>Preparation:</b> Read <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf">FarmBeats</a> <!-- (<a>Questions</a>) --></span><br />
 
   <td id="2019-3-12"><span class="date">Mar 12</span></td>
 
   <td id="2019-3-13" class="lecture"><span class="date">Mar 13</span><br />
-  <b>LEC 11:</b> Agriculture IoT<br />
-  <span class="reading"><b>Preparation:</b> Read <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf">FarmBeats</a> <!-- (<a>Questions</a>) --></span><br />
-  <span class="deadline"><b>DUE:</b> <a href="lab2.html">Lab 2</a></span></td>
+  <b>LEC 11:</b> Battery-Free Sensors & Robotics<br />
+  <span class="reading"><b>Preparation:</b> TBA <!-- (<a>Questions</a>) --></span><br />
+  <span class="deadline"><b>DUE:</b> <a>Project Proposals</a> and <a href="lab2.html">Lab 2</a></span></td>
 
   <td id="2019-3-14"><span class="date">Mar 14</span></td>
   <td id="2019-3-15"><span class="date">Mar 15</span></td>
@@ -183,7 +182,7 @@ table.calendar thead tr {
 
 <tr> <!-- week of mar 18 -->
   <td id="2019-3-18" class="lecture"><span class="date">Mar 18</span><br />
-	No lecture; meet with staff during class time<br />
+	Project meetings<br />(No lecture; meet with staff during class time)<br />
   	<span class="reading"><b>Assigned:</b> <a href="lab3.html">Lab 3</a></span><br /></td>
 
   <td id="2019-3-19"><span class="date">Mar 19</span></td>

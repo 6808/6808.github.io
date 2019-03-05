@@ -32,20 +32,20 @@
 *Wed, Feb 27, 2019*
 - Intro to Inertial Sensing [./materials/Lec7-slides-inertial-2019.pdf \[pdf\]]
 
-#== Lec \#8: Pothole Detection
-#*Mon, Mar 4, 2019*
-##- Pothole Patrol [./materials/pothole.pdf \[pdf\]]
-#
+== Lec \#8: Pothole Detection
+*Mon, Mar 4, 2019*
+- Pothole Patrol [./materials/Lec8-slides-Pothole-2019.pdf \[pdf\]]
+
 #== Lec \#9: Health & Vitals sensing
 #*Wed, Mar 6, 2019*
 ##- Vital-Radio [./materials/vital_radio.pdf \[pdf\]]
 #
-#== Lec \#10: Battery-Free Sensors & Robotics
+#== Lec \#10: Agriculture IoT
 #*Mon, Mar 11, 2019*
-#
-#== Lec \#11: Agriculture IoT
-#*Wed, Mar 13, 2019*
 ##- Farmbeats [./materials/farmbeats.pdf \[pdf\]]
+#
+#== Lec \#11: Battery-Free Sensors & Robotics
+#*Wed, Mar 13, 2019*
 #
 #== Lec \#12: Map-matching with Cellular Data
 #*Wed, Mar 20, 2019*
