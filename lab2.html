@@ -106,7 +106,7 @@ func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?)</code></pre>
 
             <h3 id="task02"> Task 2: Implement <code>didDiscoverPeripheral</code> </h3>
 
-		        <p><code>didDiscoverPeripheral</code> will be called when a BLE Peripheral advertising the above characteristic comes into proximity of your phone. As per the flowchart, when this happens, you need to connect to device, and then scan for services and characteristics.</p>
+		        <p><code>didDiscoverPeripheral</code> will be called when a BLE Peripheral advertising the above characteristic comes into proximity of your phone. When this happens, you need to connect to device, and then scan for services and characteristics.</p>
 		        <p>When <code>didDiscoverPeripheral</code> is called, you are given a handle to a <code>CBPeripheral</code> object. This is the peripheral you want to try to connect to (in this lab, you are going to connect to the first peripheral you discover, and stay connected to it until it moves out of range, rather than trying to prioritize connecting to certain anthills).</p>
 		        <p>To connect to a peripheral, simply call <code>connectToPeripheral</code>. If the connection is successful, <code>didConnectToPeripheral</code> will be called. You will need to define <code>didConnectToPeripheral</code>, as per the signature in <code>BLE.swift</code>. Use the debugger to verify that this method is called correctly.</p>
 
