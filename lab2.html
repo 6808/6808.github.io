@@ -35,12 +35,10 @@
                 <li><a href="#task01">Task 1</a></li>
                 <li><a href="#task02">Task 2</a></li>
                 <li><a href="#task03">Task 3</a></li>
-                <li><a href="#task04">Task 4</a></li>
-                <li><a href="#task05">Task 5</a></li>
             </ul>
             <li><a href="#sec2">Section 2</a></li>
             <ul>
-                <li><a href="#task05">Task 6</a></li>
+                <li><a href="#task04">Task 4</a></li>
             </ul>
             <li><a href="#completing">Completing the Lab</a></li>
         </ul>
@@ -135,7 +133,7 @@ func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?)</code></pre>
                 This stream of messages is fragmented into BLE packets that are up to 20 bytes in length. Note that this means that a given message may be spread across two BLE packets. You will receive one call to
                 <code>didReceiveData</code> for each packet, but will not necessarily be able to parse the entirety of each packet and will need to save the unparsed bytes in a buffer until additional bytes arrive. You might also start receiving data from the middle of a packet.
             </p>
-            <h3 id="task06"> Task 6: Implement <code>didReceiveData</code> </h3>
+            <h3 id="task04"> Task 4: Implement <code>didReceiveData</code> </h3>
             <p>
                 To complete this task, implement code to extract messages from the stream of packets delivered to
                 <code>didReceiveData</code>.
