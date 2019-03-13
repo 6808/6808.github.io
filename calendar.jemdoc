@@ -192,7 +192,7 @@ table.calendar thead tr {
   <td id="2019-3-20" class="lecture"><span class="date">Mar 20</span><br />
     <b>LEC 12:</b> Map-matching with cellular data <br />
   	<span class="reading"><b>Preparation:</b> Read <a href="http://nms.csail.mit.edu/papers/index.php?detail=203" target="_blank">CTrack</a>
-     <!-- (<a>Questions</a>) --></span></td>
+     (<a href="questions.html?q=q-lec12">Questions</a>)</span></td>
 
   <td id="2019-3-21"><span class="date">Mar 21</span></td>
   <td id="2019-3-22"><span class="date">Mar 22</span></td>
