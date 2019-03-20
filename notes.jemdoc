@@ -49,10 +49,11 @@
 - Backscatter [./materials/Lec11-slides-backscatter-2019.pdf \[pdf\]]
 - Caraoke [./materials/Lec11-slides-smartcities-part2-2019.pdf \[pdf\]]
 
-#== Lec \#12: Map-matching with Cellular Data
-#*Wed, Mar 20, 2019*
-##- CTrack [./materials/ctrack.pdf \[pdf\]]
-#
+== Lec \#12: Map-matching with Cellular Data
+*Wed, Mar 20, 2019*
+- CTrack [./materials/lec12-slides-ctrack-2019.pdf \[pdf\]]
+- Example application [./materials/lec12-(part-2)-slides-2019.pdf \[pdf\]]
+
 #== Lec \#13: Sensor Fusion: Maps and RF Data 
 #*Mon, Apr 1, 2019*
 ##- Map Inference [./materials/mapinference.pdf \[pdf\]]

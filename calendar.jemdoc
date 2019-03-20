@@ -190,7 +190,7 @@ table.calendar thead tr {
   <td id="2019-3-19"><span class="date">Mar 19</span></td>
 
   <td id="2019-3-20" class="lecture"><span class="date">Mar 20</span><br />
-    <b>LEC 12:</b> Map-matching with cellular data <br />
+    <b>LEC 12:</b> Map-matching with cellular data (<a href="./materials/lec12-slides-ctrack-2019.pdf">Slides 1</a>, <a href="./materials/lec12-(part-2)-slides-2019.pdf">Slides 2</a>)<br />
   	<span class="reading"><b>Preparation:</b> Read <a href="http://nms.csail.mit.edu/papers/index.php?detail=203" target="_blank">CTrack</a>
      (<a href="questions.html?q=q-lec12">Questions</a>)</span></td>
 
@@ -216,7 +216,7 @@ table.calendar thead tr {
     <b>LEC 13:</b> Sensor Fusion: Maps and RF Data <br />
   	<span class="reading"><b>Preparation:</b> Read <a href="https://nsl.usc.edu/wp-content/uploads/2018/06/mobisys18-gnome.pdf" target="_blank">Gnome</a> and 
     <a href="http://dl.acm.org.libproxy.mit.edu/citation.cfm?id=2424333" target="_blank">Map Inference</a>
-    <!-- (<a >Questions</a>) -->
+    (<a href="questions.html?q=q-lec13">Questions</a>)
     </span><br /></td>
 
   <td id="2019-4-2"><span class="date">Apr 2</span></td>
