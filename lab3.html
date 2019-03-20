@@ -1135,11 +1135,11 @@ q<sub>z</sub> = n<sub>z</sub> sin(φ/2),</pre>
             <li>Average together the resulting matrices, each matrix component
             separately.  (note: the average of rotation matrices is not, in general, a
             rotation matrix.)
-            <li>Find the rotation matrix closest to the average matrix.
+            <li>Find the rotation matrix closest to the average matrix using <code>NearestRotation</code>.
         </ol>
 
         <p>The final result can be converted back into a quaternion, or used directly in
-        matrix form.  Step 3 is what <code>NearestRotation</code> does.</p>
+        matrix form.</p>
 
         <h3 id="task3b">Task 3B &mdash; Project Coordinates</h3>
         <p>The final task for this lab is to project the coordinates of the 3-D sample
