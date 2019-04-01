@@ -54,10 +54,11 @@
 - CTrack [./materials/lec12-slides-ctrack-2019.pdf \[pdf\]]
 - Example application [./materials/lec12-(part-2)-slides-2019.pdf \[pdf\]]
 
-#== Lec \#13: Sensor Fusion: Maps and RF Data 
-#*Mon, Apr 1, 2019*
-##- Map Inference [./materials/mapinference.pdf \[pdf\]]
-#
+== Lec \#13: Sensor Fusion: Maps and RF Data 
+*Mon, Apr 1, 2019*
+- Gnome [./materials/lec13-(part-1)-Gnome-mobisys.pdf \[pdf\]]
+- Map Inference [./materials/lec13-(part-2)-mapinference.pdf \[pdf\]]
+
 #== Lec \#14: Attacks on Acousing Sensing
 #*Wed, Apr 3, 2019*
 ##- Backdoor [./materials/backdoor.pdf \[pdf\]]

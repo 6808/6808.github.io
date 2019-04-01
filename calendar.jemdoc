@@ -213,7 +213,7 @@ table.calendar thead tr {
 
 <tr> <!-- week of apr 1 -->
   <td id="2019-4-1" class="lecture"><span class="date">Apr 1</span><br />
-    <b>LEC 13:</b> Sensor Fusion: Maps and RF Data <br />
+    <b>LEC 13:</b> Sensor Fusion: Maps and RF Data (<a href="./materials/lec13-(part-1)-Gnome-mobisys.pdf">Slides 1</a>, <a href="./materials/lec13-(part-2)-mapinference.pdf">Slides 2</a>) <br />
   	<span class="reading"><b>Preparation:</b> Read <a href="https://nsl.usc.edu/wp-content/uploads/2018/06/mobisys18-gnome.pdf" target="_blank">Gnome</a> and 
     <a href="http://dl.acm.org.libproxy.mit.edu/citation.cfm?id=2424333" target="_blank">Map Inference</a>
     (<a href="questions.html?q=q-lec13">Questions</a>)
@@ -224,7 +224,7 @@ table.calendar thead tr {
   <td id="2019-4-3" class="lecture"><span class="date">Apr 3</span><br />
     <b>LEC 14:</b> Attacks on acoustic sensing <br />
     <span class="reading"><b>Preparation:</b> Read <a
-href="http://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blank">BackDoor</a> <!-- (<a>Questions</a>) --></span><br />
+href="http://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blank">BackDoor</a> (<a href="questions.html?q=q-lec14">Questions</a>)</span><br />
     <span class="reading"><b>Assigned:</b> <a href="lab4.html">Lab 4</a></span><br />
     <span class="deadline"><b>DUE:</b> <a href="lab3.html">Lab 3</a></span></td>
 
