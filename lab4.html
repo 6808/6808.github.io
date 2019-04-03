@@ -150,7 +150,27 @@ span.inequality span.i5 {
 			<li><strong>trips_uchicago_meters</strong>: data from shuttles on the UIC campus, for Section 2.</li>
 		</ul>
 
-        <p>If you're using OSX, it may be difficult to install OpenCV2, which is the old version that the code uses. A quick solution for this would be to get on a Linux machine and run "sudo apt-get install python-opencv". You should be able to do "import cv". If you can't get access to a Linux machine, please send me an email at rsong@mit.edu.</p>
+        <h3 id="installing_opencv">Installing OpenCV</h3>
+
+        <p>Right now, our code is using an old version of OpenCV (OpenCV2.4, in which the python import statement is <code>import cv</code>). We're trying to update our code to use the new version (<code>import cv2</code>), but here's a workaround for installing OpenCV2 on macOS for now. (You won't need OpenCV until Section 2.)</p>
+        <ol>
+	        <li>Install <a href="https://virtualenv.pypa.io/en/latest/installation/">virtualenv</a> and <a href="https://virtualenvwrapper.readthedocs.io/en/latest/install.html">virtualenvwrapper</a>. (See also: <a href="https://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html">another guide</a>)</li>
+	        <li>Make virtualenv called <code>cv</code>.
+                <pre>mkvirtualenv cv</pre>
+            </li>
+            <li>Run the following commands to install opencv and make a symbolic link to the virtualenv's python. (If you don't have brew, follow <a href="https://brew.sh/">this documentation for installing brew</a>.)
+                <pre>brew install opencv@2
+cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+ln -s /usr/local/Cellar/opencv\@2/2.4.13.7_2/lib/python2.7/site-packages/cv.py cv.py
+ln -s /usr/local/Cellar/opencv\@2/2.4.13.7_2/lib/python2.7/site-packages/cv2.so cv2.so
+</pre></li>
+            <li>Install numpy package.
+                <pre>pip install numpy</pre>
+            </li>
+            <li>Test your installation.
+                <pre>python -c "import cv"</pre>
+            </li>
+        </ol>
 
 		<h2 id="sec1">Section 1 &mdash; Implement K-Means-Clustering Map Inference Algorithm</h2>
 		
@@ -191,7 +211,7 @@ span.inequality span.i5 {
 		<p>To run trace_generator, do something like this:</p>
 		<pre>python trace_generator.py -m trace_generator_map.xml -o output/ -n 100 -g 4 -i 30</pre>
 		<p>This will generate 100 traces where GPS samples are taken 30 meters apart and have 4 meter standard deviation of Gaussian noise. The traces will be saved in the folder "output".</p>
-		<p>You can then run the infer_kmeans and infer_kde algorithms (you will need to install OpenCV and python-opencv):</p>
+		<p>You can then run the infer_kmeans and infer_kde algorithms (you will need to <a href="#installing_opencv">install OpenCV</a>):</p>
 		<pre>python infer_kmeans.py output
 python infer_kde.py output</pre>
 		<p>This will generate kmeans-inferred.graph and kde-inferred.graph. The .graph files can be loaded with read_graph in <code>util.py</code>. To visualize the graphs, use a Python script like this:</p>
@@ -233,7 +253,7 @@ visualize('graph.svg', [actual, a, b], [], [], 3)</pre>
 		<p>We have included two pairs of actual/inferred graphs in the section3_graphs/ folder for which <code>eval_geo.py</code> gives F1-score of 1.0. Your metric should give a non-perfect score for these two pairs. You can use the visualize function in <code>util.py</code> to visualize these graphs.</p>
 		
 		<h2>Check-offs</h2>
-		<p>We will be in the 32-G9 lounge for check-offs on Wednesday, April 18 4pm-5pm and Thursday, April 19 4pm-5pm.</p>
+		<p>A TA will checkoff your lab when you are finished. We will hold checkoffs during Office Hours. </p>
 
 		</section>
 	</div>
