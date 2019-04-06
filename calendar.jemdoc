@@ -87,7 +87,7 @@ table.calendar thead tr {
   <td id="2019-2-7" class="date"><span class="date">Feb 7</span><br /></td>
 
   <td id="2019-2-8" class="special"><span class="date">Feb 8</span><br />
-	 <i>iOS Tutorial</i></td>
+   <i>iOS Tutorial</i></td>
 </tr>
 <tr> <!-- week of feb 11 -->
   <td id="2019-2-11" class="lecture"><span class="date">Feb 11</span><br />
@@ -114,7 +114,7 @@ table.calendar thead tr {
     President's day</td>
 
   <td id="2019-2-19" class="lecture"><span class="date">Feb 19</span><br />
-  	<i>Monday schedule</i><br />
+    <i>Monday schedule</i><br />
     <b>LEC 4:</b> Connectivity Overview and BLE (<a href="./materials/Lec4-(part-1)-slides-localization-continued-2019.pdf">Slides 1</a>, <a href="./materials/lec4-(part-2)-IOTx-WirelessNetworkConnectivity.pdf">Slides 2</a>)<br />
     <span class="reading"><b>Preparation:</b> Read <a href="http://iot.stanford.edu/pubs/zachariah-gateway-hotmobile15.pdf">IoT Gateway problem</a>
     (<a href="questions.html?q=q-lec4">Questions</a>)</span></td>
@@ -182,8 +182,8 @@ table.calendar thead tr {
 
 <tr> <!-- week of mar 18 -->
   <td id="2019-3-18" class="lecture"><span class="date">Mar 18</span><br />
-	Project meetings<br />(No lecture; meet with staff during class time)<br />
-  	<span class="reading"><b>Assigned:</b> <a href="lab3.html">Lab 3</a></span><br />
+  Project meetings<br />(No lecture; meet with staff during class time)<br />
+    <span class="reading"><b>Assigned:</b> <a href="lab3.html">Lab 3</a></span><br />
     <span class="deadline"><b>DUE:</b> <a href="lab2.html">Lab 2</a></span></td></td>
 
 
@@ -191,7 +191,7 @@ table.calendar thead tr {
 
   <td id="2019-3-20" class="lecture"><span class="date">Mar 20</span><br />
     <b>LEC 12:</b> Map-matching with cellular data (<a href="./materials/lec12-slides-ctrack-2019.pdf">Slides 1</a>, <a href="./materials/lec12-(part-2)-slides-2019.pdf">Slides 2</a>)<br />
-  	<span class="reading"><b>Preparation:</b> Read <a href="http://nms.csail.mit.edu/papers/index.php?detail=203" target="_blank">CTrack</a>
+    <span class="reading"><b>Preparation:</b> Read <a href="http://nms.csail.mit.edu/papers/index.php?detail=203" target="_blank">CTrack</a>
      (<a href="questions.html?q=q-lec12">Questions</a>)</span></td>
 
   <td id="2019-3-21"><span class="date">Mar 21</span></td>
@@ -214,7 +214,7 @@ table.calendar thead tr {
 <tr> <!-- week of apr 1 -->
   <td id="2019-4-1" class="lecture"><span class="date">Apr 1</span><br />
     <b>LEC 13:</b> Sensor Fusion: Maps and RF Data (<a href="./materials/lec13-(part-1)-Gnome-mobisys.pdf">Slides 1</a>, <a href="./materials/lec13-(part-2)-mapinference.pdf">Slides 2</a>) <br />
-  	<span class="reading"><b>Preparation:</b> Read <a href="https://nsl.usc.edu/wp-content/uploads/2018/06/mobisys18-gnome.pdf" target="_blank">Gnome</a> and 
+    <span class="reading"><b>Preparation:</b> Read <a href="https://nsl.usc.edu/wp-content/uploads/2018/06/mobisys18-gnome.pdf" target="_blank">Gnome</a> and 
     <a href="http://dl.acm.org.libproxy.mit.edu/citation.cfm?id=2424333" target="_blank">Map Inference</a>
     (<a href="questions.html?q=q-lec13">Questions</a>)
     </span><br /></td>
@@ -233,14 +233,18 @@ href="http://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blan
 </tr>
 <tr> <!-- week of apr 8 -->
   <td id="2019-4-8" class="lecture"><span class="date">Apr 8</span><br />
-    <b>LEC 15:</b> Underwater IoT<br />
-  	<span class="reading"><b>Preparation:</b> TBA</td>
+    <b>LEC 15:</b> Continuous object recognition<br />
+    <span class="reading"><b>Preparation:</b> Read <a href="http://nms.csail.mit.edu/papers/index.php?detail=236" target="_blank">Glimpse</a>
+      (<a href="questions.html?q=q-lec15">Questions</a>)
+    </span></td>
 
   <td id="2019-4-9"><span class="date">Apr 9</span></td>
 
   <td id="2019-4-10" class="lecture"><span class="date">Apr 10</span><br />
-    <b>LEC 16:</b> In-body IoT<br />
-    <span class="reading"><b>Preparation:</b> TBA</td>
+    <b>LEC 16:</b> Deep Learning & Radio Imaging<br />
+    <span class="reading"><b>Preparation:</b> TBA
+    <!-- (<a href="questions.html?q=q-lec16">Questions</a>) -->
+  </span></td>
 
   <td id="2019-4-11"><span class="date">Apr 11</span></td>
   <td id="2019-4-12"><span class="date">Apr 12</span></td>
@@ -252,11 +256,11 @@ href="http://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blan
   <td id="2019-4-16" class="holiday"><span class="date">Apr 16</span><br />
     Patriots' day</td>
   <td id="2019-4-17" class="lecture"><span class="date">Apr 17</span><br />
-    <b>LEC 17:</b> Continuous object recognition<br />
-  	<span class="reading"><b>Preparation:</b> Read <a
-href="http://nms.csail.mit.edu/papers/index.php?detail=236" target="_blank">Glimpse</a> 
-  <!--(<a >Questions</a>) --></span><br />
-  	<span class="deadline"><b>DUE:</b> <a href="lab4.html">Lab 4</a></span></td>
+    <b>LEC 17:</b> Underwater & In-body IoT<br />
+    <span class="reading"><b>Preparation:</b> TBA
+    <!-- (<a href="questions.html?q=q-lec17">Questions</a>) -->
+    </span><br />
+    <span class="deadline"><b>DUE:</b> <a href="lab4.html">Lab 4</a></span></td>
 
   <td id="2019-4-18"><span class="date">Apr 18</span></td>
   <td id="2019-4-19"><span class="date">Apr 19</span></td>
@@ -264,12 +268,12 @@ href="http://nms.csail.mit.edu/papers/index.php?detail=236" target="_blank">Glim
 
 <tr> <!-- week of apr 22 -->
   <td id="2019-4-22" class="quiz"><span class="date">Apr 22</span><br />
-  	<b>Midterm during lecture time</b></td>
+    <b>Midterm during lecture time</b></td>
 
   <td id="2019-4-23"><span class="date">Apr 23</span></td>
 
   <td id="2019-4-24" class="special"><span class="date">Apr 24</span><br />
-	<i> <a>Project meetings</a></i><br /></td>
+  <i> <a>Project meetings</a></i><br /></td>
 
   <td id="2019-4-25"><span class="date">Apr 25</span><br />
   <i>DROP DATE</i></td>
@@ -278,10 +282,10 @@ href="http://nms.csail.mit.edu/papers/index.php?detail=236" target="_blank">Glim
 </tr>
 <tr> <!-- week of apr 29 -->
   <td id="2019-4-29" class="special"><span class="date">Apr 29</span><br />
-	<i> <a>Project meetings</a></i>
+  <i> <a>Project meetings</a></i>
   <td id="2019-4-30"><span class="date">Apr 30</span></td>
   <td id="2019-5-1" class="special"><span class="date">May 1</span><br />
-	<i> <a>Project meetings</a></i>
+  <i> <a>Project meetings</a></i>
   <td id="2019-5-2"><span class="date">May 2</span></td>
   <td id="2019-5-2"><span class="date">May 3</span></td>
 </tr>
@@ -300,16 +304,16 @@ href="http://nms.csail.mit.edu/papers/index.php?detail=236" target="_blank">Glim
 </tr>
 <tr> <!-- week of may 13 -->
   <td id="2019-5-13" class="special"><span class="date">May 13</span><br />
-	<i> <a >Project meetings</a></i></td>
+  <i> <a >Project meetings</a></i></td>
 
   <td id="2019-5-14"><span class="date">May 14</span></td>
 
   <td id="2019-5-15" class="special"><span class="date">May 15</span><br />
-  	<b>Poster session 11-12:30pm</b><br />
-  	<span class="deadline"><b>DUE:</b> <a>Posters, Presentations, and Demos</a></span><br /></td>
+    <b>Poster session 11-12:30pm</b><br />
+    <span class="deadline"><b>DUE:</b> <a>Posters, Presentations, and Demos</a></span><br /></td>
 
   <td id="2019-5-16"><span class="date">May 16</span><br />
-  	<i>Last day of classes</i></td></td>
+    <i>Last day of classes</i></td></td>
   <td id="2019-5-17"><span class="date">May 17</span></td>
 
 </tr>
