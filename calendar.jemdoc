@@ -241,7 +241,7 @@ href="http://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blan
   <td id="2019-4-9"><span class="date">Apr 9</span></td>
 
   <td id="2019-4-10" class="lecture"><span class="date">Apr 10</span><br />
-    <b>LEC 16:</b> Deep Learning & Radio Imaging<br />
+    <b>LEC 16:</b> Deep Learning & Radio Imaging (<a href="./materials/lec16-rfpose-lecture-0410.pdf">Slides</a>)<br />
     <span class="reading"><b>Preparation:</b> Read <a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Zhao_Through-Wall_Human_Pose_CVPR_2018_paper.pdf" target="_blank">Through Wall</a>
       (<a href="questions.html?q=q-lec16">Questions</a>)
     </span></td>
