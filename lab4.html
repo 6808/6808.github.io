@@ -157,13 +157,24 @@ span.inequality span.i5 {
 	        <li>Install <a href="https://virtualenv.pypa.io/en/latest/installation/">virtualenv</a> and <a href="https://virtualenvwrapper.readthedocs.io/en/latest/install.html">virtualenvwrapper</a>. (See also: <a href="https://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html">another guide</a>)</li>
 	        <li>Make virtualenv called <code>cv</code>.
                 <pre>mkvirtualenv cv</pre>
+                You should automatically be in the newly created virtualenv. To verify, the output of <code>which python</code> should be similar to this
+                <pre>$ which python
+/Users/username/.virtualenvs/cv/bin/python</pre>
+                If you start a new terminal, you can work on this virtualenv by running <code>workon cv</code>.
+                To switch to the default python, run <code>deactivate</code>.
             </li>
-            <li>Run the following commands to install opencv and make a symbolic link to the virtualenv's python. (If you don't have brew, follow <a href="https://brew.sh/">this documentation for installing brew</a>.)
+            <li>Run the following commands to install opencv. (If you don't have brew, follow <a href="https://brew.sh/">this documentation for installing brew</a>.)
                 <pre>brew install opencv@2
-cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+</pre>
+                Note that if you already have brew and have recently upgraded your macOS, you should run the following before the command above:
+                <pre>xcode-select --install
+brew upgrade</pre>
+			</li>
+			<li>Create symlinks from the brew installation to the virtualenv's site packages.
+				<pre>cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
 ln -s /usr/local/Cellar/opencv\@2/2.4.13.7_2/lib/python2.7/site-packages/cv.py cv.py
-ln -s /usr/local/Cellar/opencv\@2/2.4.13.7_2/lib/python2.7/site-packages/cv2.so cv2.so
-</pre></li>
+ln -s /usr/local/Cellar/opencv\@2/2.4.13.7_2/lib/python2.7/site-packages/cv2.so cv2.so</pre>
+			</li>
             <li>Install numpy package.
                 <pre>pip install numpy</pre>
             </li>
