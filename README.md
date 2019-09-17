@@ -10,3 +10,8 @@ See this [cheat sheet](https://jemdoc.jaboc.net/cheatsheet.html) for jemdoc's sy
 
 Lab pages only have an HTML version.
 Edit HTML files directly to update those pages.
+
+## To-dos
+Some codes will need updating.
+- **Swift**: Xcode has an internal migration tool to automatically update from one version of Swift to another. However, a specific version of Xcode may have to be downloaded, and some further manual debugging may be required. For example, Swift 3.0 can be migrated to Swift 4.2 using Xcode 10.1. Older versions of Xcode can be downloaded from [this page](https://developer.apple.com/download/more/?=xcode).
+- **Lab 4 (python)**: The OpenCV library used in the current code in 2.4 (`import cv`), but should be changed to 3.x or 4.x (`import cv2`), which is much easier to install. However, there are certain functions that cannot be changed directly and require manual edits.
