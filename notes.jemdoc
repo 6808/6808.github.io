@@ -1,76 +1,77 @@
 # jemdoc: menu{MENU}{notes.html}
 =  Notes
 
+Lecture notes will be uploaded after each class.
 
-== Lec \#1: Introduction and Key Ideas
-*Wed, Feb 6, 2019*
-- Course Overview [./materials/lec1-slides-2019.pdf \[pdf\]]
+# == Lec \#1: Introduction and Key Ideas
+# *Wed, Feb 6, 2019*
+# - Course Overview [./materials/lec1-slides-2019.pdf \[pdf\]]
 
-== Lec \#2: Intro to Positioning and Indoor Location Systems
-*Mon, Feb 11, 2019*
-- Intro to Positioning [./materials/lec2-slides-localization-2019.pdf \[pdf\]]
+# == Lec \#2: Intro to Positioning and Indoor Location Systems
+# *Mon, Feb 11, 2019*
+# - Intro to Positioning [./materials/lec2-slides-localization-2019.pdf \[pdf\]]
 
-== Lec \#3: Localization cont'd: GPS, Radio Localization, & Seeing through Walls 
-*Wed, Feb 13, 2019*
-- Device-based Localization & Seeing Through Walls [./materials/Lec3-slides-localization-sensing-2019.pdf \[pdf\]]
+# == Lec \#3: Localization cont'd: GPS, Radio Localization, & Seeing through Walls 
+# *Wed, Feb 13, 2019*
+# - Device-based Localization & Seeing Through Walls [./materials/Lec3-slides-localization-sensing-2019.pdf \[pdf\]]
 
-== Lec \#4: Connectivity Overview and BLE
-*Tue, Feb 19, 2019*
-- Seeing Through Walls & Device-Free Localization [./materials/Lec4-(part-1)-slides-localization-continued-2019.pdf \[pdf\]]
-- Network Connectivity for IoT Systems [./materials/lec4-(part-2)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
+# == Lec \#4: Connectivity Overview and BLE
+# *Tue, Feb 19, 2019*
+# - Seeing Through Walls & Device-Free Localization [./materials/Lec4-(part-1)-slides-localization-continued-2019.pdf \[pdf\]]
+# - Network Connectivity for IoT Systems [./materials/lec4-(part-2)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
 
-== Lec \#5: Mesh and Multi-Hop Wireless Networks 
-*Wed, Feb 20, 2019*
-- Network Connectivity for IoT Systems [./materials/lec5-(part-1)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
-- Multi-Hop Routing [./materials/lec5-(part-2)-ETXMesh.pdf \[pdf\]]
+# == Lec \#5: Mesh and Multi-Hop Wireless Networks 
+# *Wed, Feb 20, 2019*
+# - Network Connectivity for IoT Systems [./materials/lec5-(part-1)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
+# - Multi-Hop Routing [./materials/lec5-(part-2)-ETXMesh.pdf \[pdf\]]
 
-== Lec \#6: Networks as Physical Sensors
-*Mon, Feb 25, 2019*
-- VR Tracking [./materials/lec6-VR_tracking.pdf \[pdf\]]
+# == Lec \#6: Networks as Physical Sensors
+# *Mon, Feb 25, 2019*
+# - VR Tracking [./materials/lec6-VR_tracking.pdf \[pdf\]]
 
-== Lec \#7: Intro to Inertial Sensing; Activity Recognition
-*Wed, Feb 27, 2019*
-- Intro to Inertial Sensing [./materials/Lec7-slides-inertial-2019.pdf \[pdf\]]
+# == Lec \#7: Intro to Inertial Sensing; Activity Recognition
+# *Wed, Feb 27, 2019*
+# - Intro to Inertial Sensing [./materials/Lec7-slides-inertial-2019.pdf \[pdf\]]
 
-== Lec \#8: Pothole Detection
-*Mon, Mar 4, 2019*
-- Pothole Patrol [./materials/Lec8-slides-Pothole-2019.pdf \[pdf\]]
+# == Lec \#8: Pothole Detection
+# *Mon, Mar 4, 2019*
+# - Pothole Patrol [./materials/Lec8-slides-Pothole-2019.pdf \[pdf\]]
 
-== Lec \#9: Health & Vitals sensing
-*Wed, Mar 6, 2019*
-- Vital-Radio [./materials/Lec9-slides-vitals-2019.pdf \[pdf\]]
+# == Lec \#9: Health & Vitals sensing
+# *Wed, Mar 6, 2019*
+# - Vital-Radio [./materials/Lec9-slides-vitals-2019.pdf \[pdf\]]
 
-== Lec \#10: Agriculture IoT
-*Mon, Mar 11, 2019*
-- Farmbeats [./materials/lec10-slides-Farmbeats-2019.pdf \[pdf\]]
+# == Lec \#10: Agriculture IoT
+# *Mon, Mar 11, 2019*
+# - Farmbeats [./materials/lec10-slides-Farmbeats-2019.pdf \[pdf\]]
 
-== Lec \#11: Smart Cities and Batteryless Sensors
-*Wed, Mar 13, 2019*
-- Backscatter [./materials/Lec11-slides-backscatter-2019.pdf \[pdf\]]
-- Caraoke [./materials/Lec11-slides-smartcities-part2-2019.pdf \[pdf\]]
+# == Lec \#11: Smart Cities and Batteryless Sensors
+# *Wed, Mar 13, 2019*
+# - Backscatter [./materials/Lec11-slides-backscatter-2019.pdf \[pdf\]]
+# - Caraoke [./materials/Lec11-slides-smartcities-part2-2019.pdf \[pdf\]]
 
-== Lec \#12: Map-matching with Cellular Data
-*Wed, Mar 20, 2019*
-- CTrack [./materials/lec12-slides-ctrack-2019.pdf \[pdf\]]
-- Example application [./materials/lec12-(part-2)-slides-2019.pdf \[pdf\]]
+# == Lec \#12: Map-matching with Cellular Data
+# *Wed, Mar 20, 2019*
+# - CTrack [./materials/lec12-slides-ctrack-2019.pdf \[pdf\]]
+# - Example application [./materials/lec12-(part-2)-slides-2019.pdf \[pdf\]]
 
-== Lec \#13: Sensor Fusion: Maps and RF Data 
-*Mon, Apr 1, 2019*
-- Gnome [./materials/lec13-(part-1)-Gnome-mobisys.pdf \[pdf\]]
-- Map Inference [./materials/lec13-(part-2)-mapinference.pdf \[pdf\]]
+# == Lec \#13: Sensor Fusion: Maps and RF Data 
+# *Mon, Apr 1, 2019*
+# - Gnome [./materials/lec13-(part-1)-Gnome-mobisys.pdf \[pdf\]]
+# - Map Inference [./materials/lec13-(part-2)-mapinference.pdf \[pdf\]]
 
-== Lec \#14: Attacks on Acousing Sensing
-*Wed, Apr 3, 2019*
-- Backdoor [./materials/Lec14-slides-backdoor-2019.pdf \[pdf\]]
+# == Lec \#14: Attacks on Acousing Sensing
+# *Wed, Apr 3, 2019*
+# - Backdoor [./materials/Lec14-slides-backdoor-2019.pdf \[pdf\]]
 
-== Lec \#15: Continuous object recognition
-*Mon, Apr 8, 2019*
-- Glimpse [./materials/lec15-slides-vision-edge-2019.pdf \[pdf\]]
+# == Lec \#15: Continuous object recognition
+# *Mon, Apr 8, 2019*
+# - Glimpse [./materials/lec15-slides-vision-edge-2019.pdf \[pdf\]]
 
-== Lec \#16: Deep Learning & Radio Imaging
-*Wed, Apr 10, 2019*
-- Through Wall [./materials/lec16-rfpose-lecture-0410.pdf \[pdf\]]
+# == Lec \#16: Deep Learning & Radio Imaging
+# *Wed, Apr 10, 2019*
+# - Through Wall [./materials/lec16-rfpose-lecture-0410.pdf \[pdf\]]
 
-== Lec \#17: Underwater & In-body IoT
-*Mon, Apr 17, 2019*
-- Slides [./materials/lec17-slides-2019.pdf \[pdf\]]
+# == Lec \#17: Underwater & In-body IoT
+# *Mon, Apr 17, 2019*
+# - Slides [./materials/lec17-slides-2019.pdf \[pdf\]]
