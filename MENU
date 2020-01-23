@@ -3,12 +3,12 @@
 	Answer Submission [answers.html]
 Lectures
 	Notes [notes.html]
-# Labs
-# 	Lab 0 [lab0.html]
-# 	Lab 1 [lab1.html]
-# 	Lab 2 [lab2.html]
-# 	Lab 3 [lab3.html]
-# 	Lab 4 [lab4.html]
+Labs
+	Lab 0 [labs/lab0.html]
+# 	Lab 1 [labs/lab1.html]
+# 	Lab 2 [labs/lab2.html]
+# 	Lab 3 [labs/lab3.html]
+# 	Lab 4 [labs/lab4.html]
 # Project
 # 	Project Info [projects.html]
 #	Presentation [presentation.html]
@@ -18,5 +18,5 @@ Lectures
 # 	2018 Midterm [materials/6_MOB_2018_QUIZ.pdf]
 # 	2018 Midterm Solutions [materials/6_MOB_2018_QUIZ_solutions.pdf]
 #	Practice Midterm Solutions [materials/practice_quiz_solutions.pdf]
-# Misc
-# 	Piazza forum [https://piazza.com/mit/spring2019/6808]
+Misc
+	Piazza forum [https://piazza.com/mit/spring2020/6808]
