@@ -45,9 +45,9 @@
 | <a href="#assignment">Lab Assignment</a>
 ]
 
-<p>In this lab, we cover the basics of the Xcode IDE, the iOS Simulator, Xcode's Documentation Viewer, and the Swift programming language. By the end of lab, we'll have built a simple iPhone application that displays weather from the <a href="https://wunderground.com">wunderground.com</a> API.</p>
+<p>In this lab, we cover the basics of the Xcode IDE, the iOS Simulator, Xcode's Documentation Viewer, and the Swift programming language. By the end of lab, we'll have built a simple iPhone application that displays weather from the <a href="https://darksky.net/dev" target="_blank">Dark Sky</a> API.</p>
 
-<p>To complete this lab, you'll need to download <a href="macappstores://itunes.apple.com/us/app/xcode/id497799835">Xcode</a>. If you don't have a Mac of your own, you can use one of the Macs in <!-- the EECS lab, 38-530. --> the 56-129 athena cluster. Please make sure to save your work in a proper directory, so that it won't be removed after you log out.</p>
+<p>To complete this lab, you'll need to download <a href="macappstores://itunes.apple.com/us/app/xcode/id497799835" target="_blank">Xcode</a>. If you don't have a Mac of your own, you can use one of the Macs in <!-- the EECS lab, 38-530. --> the 56-129 athena cluster or pair up with a friend who has. Please make sure to save your work in a proper directory, so that it won't be removed after you log out.</p>
 
 <!-- <p>You can do this lab in either Swift or Objective-C. We provide instructions for both languages. Swift is a more modern language; for example, it eliminates the need for separate header files, supports type inference, and uses syntax for function calls and string operations that is closer to that of other newer languages. If you do not have experience in either language, we recommend using Swift.</p> -->
 
@@ -132,19 +132,29 @@
 
 <h2 id="assignment">On to your lab assignment!</h2>
 
-<img src="images/lab0/lab_result.gif" alt="picture of iOS Simulator loading weather in a barebones app.">
+<img src="images/lab0/lab_result_latlon.gif" alt="picture of iOS Simulator loading weather in a barebones app.">
 <p>You're building an app that basically loads the weather.</p>
 
 <p>The fetchWeather is asynchronous. If there's no network, the app shouldn't hang or crash.</p>
 
-<p>We're using the Wunderground API. Here's a key for you: b901013c3100de66. This key will work for the lab, but has some usage limitations. You may probably want to get your own key for free from Wunderground. The JSON looks like <a href="https://api.wunderground.com/api/0b719bec26ab96ac/conditions/q/02139.json">http://api.wunderground.com/api/0b719bec26ab96ac/conditions/q/02139.json</a>.</p>
-
-<p><strong>Note: the Wunderground API is no longer available. We're working on updating the lab as soon as possible. You can still work on the Lab up to about Video 7.</strong></p>
+<!-- <p>We're using the Wunderground API. Here's a key for you: b901013c3100de66. This key will work for the lab, but has some usage limitations. You may probably want to get your own key for free from Wunderground. The JSON looks like <a href="https://api.wunderground.com/api/0b719bec26ab96ac/conditions/q/02139.json">http://api.wunderground.com/api/0b719bec26ab96ac/conditions/q/02139.json</a>.</p> -->
 
 <p>We've recorded videos with instructions on how to complete the lab in Swift. (The videos have no sound.) The goal is to get you comfortable with Xcode, the docs, the simulator, and Swift. <!-- Maybe you'll even learn some shortcuts from watching them. --></p>
 
 <p>The videos build off of one another. You can do the assignment in your own way, or in the exact way it's done in the videos. It's entirely up to you.</p>
 
+<p>The videos were recorded a few years ago, so some details about
+XCode's user inferface and Swift have changed. Also, the recordings
+were based on Wunderground API, which is no longer available. We
+suggest using the <a href="https://darksky.net/dev"
+target="_blank">Dark Sky</a> API to get current weather conditions
+instead.  However, the input is the latitude and longitude of a
+location instead of a zip code. You can see an example JSON response
+in <a href="https://darksky.net/dev/docs#forecast-request"
+target="_blank">Dark Sky API documentation</a>.  We have noted changes
+for each video, if applicable, at the description before the
+corresponding video.
+</p>
 
 <h4>Video 1 - Hello World</h4>
 <p>We create the project and print "Hello World". You'll also notice that we resize the simulator, and click on some of the menu bars. This just so that you see what those buttons do.</p>
@@ -159,6 +169,12 @@ src="https://www.youtube.com/embed/JtbR3gY6YXY?rel=0" frameborder="0" allowfulls
 <h4>Video 2 - Making a <code>Weather</code> Class </h4>
 <p>Here, we define a weather class with some properties and methods.</p>
 
+<p> <strong>Changes:</strong> The
+function <code>fetchWeatherForZip</code> should take two arguments
+(<code>lat: String, lon: String</code>) instead of just one
+(<code>zip: String</code>). You may change the function name if you'd
+like.</p>
+
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/Jvjs8ePFl2Y?rel=0" frameborder="0" allowfullscreen>
 </iframe>
@@ -166,10 +182,24 @@ src="https://www.youtube.com/embed/Jvjs8ePFl2Y?rel=0" frameborder="0" allowfulls
 <hr>
 <hr>
 <h4>Video 3 - Flushing out the <code>Weather</code> Methods</h4>
-<p>We add some details to the weather methods from the previous video. In the next video, we instantiate the weather class, and debug it. This video contains an intentional error. We'll debug it in the next one. As a reminder, an API key you can use is b901013c3100de66.</p>
+<p>We add some details to the weather methods from the previous video. In the next video, we instantiate the weather class, and debug it. This video contains an intentional error. We'll debug it in the next one.</p>
+
+<p><strong>Changes:</strong>
+  <ul>
+    <li>The url string
+is <code>"https://api.darksky.net/forecast/\(APP_ID)/\(lat),\(lon)"</code>.</li>
+    <li>An API key you can use
+is <code>c2e2b8d1e67810853bd729dc90f5c6ed</code>. If this key is not
+available, please sign up for free for a new key on
+the <a href="https://darksky.net/dev/register" target="_blank">Dark
+Sky API website</a>. (It should take less than 2 minutes.)
+</li>
+  </ul>
+</p>
 
 <iframe width="640" height="385"
-src="https://www.youtube.com/embed/YYCasqQWSnU?rel=0" frameborder="0" allowfullscreen>
+src="https://www.youtube.com/embed/YYCasqQWSnU?rel=0" frameborder="0"
+allowfullscreen>
 </iframe>
 
 <hr>
@@ -177,6 +207,22 @@ src="https://www.youtube.com/embed/YYCasqQWSnU?rel=0" frameborder="0" allowfulls
 <h4>Video 4 - Instantiating and Debugging <code>Weather</code></h4>
 <p>There was an error with weather. We illustrate some of the tools the debugger has.</p>
 <p>Using the debugger will make your life much, much easier, and we think it's worth learning.</p>
+
+<p><strong>Changes:</strong> Take a look at an example JSON response
+in <a href="https://darksky.net/dev/docs#forecast-request"
+target="_blank">Dark Sky API documentation</a>.
+  <ul>
+    <li>The correct key for JSON is <code>"currently"</code>, instead of <code>"current_observation"</code>.</li>
+    <li>What should be the key for current weather description?</li>
+    <li>For other values, the JSON response returns a number, not a
+    string. We need to cast it into <code>Double</code> before using
+    it in a meaningful string, e.g.
+
+      <pre><code class="swift hljs">self.windString = "Wind speed: \(currentObservations["windSpeed"] as! Double) mph"</code></pre>
+
+      Can you find the correct key for each field (e.g. <code>"windSpeed"</code> for wind)?</li>
+  </ul>
+</p>
 
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/yIXXW55gwHw?rel=0" frameborder="0" allowfullscreen>
@@ -197,7 +243,7 @@ src="https://www.youtube.com/embed/aT5O_qyeQGk?rel=0" frameborder="0" allowfulls
 <hr>
 <h4>Video 6 - Enabling the button</h4>
 <p>This is pretty straightforward. We're making the button actually do stuff now.</p>
-<p>Again remember to press the control key while dragging!</p>
+<p>Again remember to press the control key (&#x2303;) while dragging!</p>
 
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/evw_KboMG2Q?rel=0" frameborder="0" allowfullscreen>
@@ -209,6 +255,8 @@ src="https://www.youtube.com/embed/evw_KboMG2Q?rel=0" frameborder="0" allowfulls
 <p>We add some labels to display the weather. Note how we're using stack view here.</p>
 <p>There are at least 5 ways to lay out elements in Xcode. This is probably the fastest.</p>
 <p>Do not worry about the exact alignment of the elements too much, as long as they show up on the simulators. If they don't, some constraints may need to be changed or deleted (check the View Controller > View > Constraints on the left).</p>
+
+<p><strong>Changes:</strong> Make two text fields for latitude and longtitude instead of a single text field for zip code.</p>
 
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/KWdTqycEP-E?rel=0" frameborder="0" allowfullscreen>
@@ -229,6 +277,13 @@ src="https://www.youtube.com/embed/r55JUaOVh7k?rel=0" frameborder="0" allowfulls
 <h4>Video 9 - UI Polish</h4>
 <p>This is about showing and hiding the keyboard.</p>
 
+<p><strong>Changes:</strong>
+  <ul>
+    <li>The keyboard type should be "Numbers and Punctuation" instead of "Number Pad" to allow for inputting a potentially negative number with a decimal point.</li>
+    <li>Call <code>resignFirstResponder</code> for both latitude and longitude text fields.</li>
+  </ul>
+</p>
+
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/kFcwheYqVKQ?rel=0" frameborder="0" allowfullscreen>
 </iframe>
@@ -240,10 +295,10 @@ src="https://www.youtube.com/embed/kFcwheYqVKQ?rel=0" frameborder="0" allowfulls
 
 <p>We don't have a video here. Instead, we put the code of two important functions here. You may try them, or write your own.
 <p>"Weather.swift": <code>fetchWeatherForZip</code> function</p>
-<pre><code class="swift hljs">func fetchWeatherForZip(zip:String, completionHandler: @escaping (Bool) -> Void) -> Void
+<pre><code class="swift hljs">func fetchWeatherForZip(lat: String, lon: String, completionHandler: @escaping (Bool) -> Void) -> Void
 {
-    NSLog("Getting conditions in %@", zip)
-    let urlString : String = "https://api.wunderground.com/api/\(APP_ID)/conditions/q/\(zip).json"
+    NSLog("Getting conditions in %@ %@", lat, lon)
+    let urlString: String = "https://api.darksky.net/forecast/\(APP_ID)/\(lat),\(lon)"
     
     let weatherURL = URL(string: urlString)
     
@@ -262,11 +317,11 @@ src="https://www.youtube.com/embed/kFcwheYqVKQ?rel=0" frameborder="0" allowfulls
 
 <p>"ViewController.swift" <code>getWeather</code> function (Button Handler)</p>
 <pre><code class="swift hljs">@IBAction func getWeather(_ sender: UIButton) {
-        
-        NSLog("Get Weather")
-        sender.isEnabled = false
-        weather.fetchWeatherForZip(zip: zipcode.text!, completionHandler: {(ret: Bool)->Void in
-        if(ret)
+
+    NSLog("Get Weather")
+    sender.isEnabled = false
+    weather.fetchWeatherForZip(lat: lat.text!, lon: lon.text!, completionHandler: {(ret: Bool)->Void in
+        if (ret)
         {
             NSLog("Succeeded")
             self.temperature.text = self.weather.currentTemp
@@ -274,14 +329,14 @@ src="https://www.youtube.com/embed/kFcwheYqVKQ?rel=0" frameborder="0" allowfulls
             self.humidity.text = self.weather.relativeHumidity
             self.wind.text = self.weather.windString
             self.visibility.text = self.weather.visibilityKm
-            
-            }
-        else{
-            
+        } else {
             NSLog("Failed")
-            }
-            sender.isEnabled = true
-        })
+        }
+        sender.isEnabled = true
+    })
+
+    lon.resignFirstResponder()
+    lat.resignFirstResponder()
 }
 </code></pre>
 
