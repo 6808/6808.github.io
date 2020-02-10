@@ -20,7 +20,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-            <h1 id="project_title"><a href="index.html" style="color: #ffffff;">6.808</a></h1>
+            <h1 id="project_title"><a href="../index.html" style="color: #ffffff;">6.808</a></h1>
             <h2 id="project_tagline">Lab 1: Location </h2>
             <font color="white">Assigned: 2020-02-10<br>
             <b>Due</b>: 2020-02-18</font>
@@ -75,10 +75,10 @@
             <ol>
                 <li>Download the <a href="codes/lab1/PositionLogger-swift-blank-4.2.zip">PositionLogger source code</a>.</li>
                 <li>Unzip it.  This will create a directory called "PositionLogger-swift-blank", containing an XCode project.</li>
-                <li>Open PositionLogger.xcodeproj in XCode on a Mac (recall that the 56-129 athena cluster has Macs available for your use).  Compile and run the app, either on your device or in the simulator (use any of the iPhone simulators.) It should show a screen like what you see above. Clicking on the Start button should cause it to enter a recording state, but it won't actually be writing location data until you add the code to record location.</li>
+                <li>Open PositionLogger.xcodeproj in XCode on a Mac (recall that the 56-129 athena cluster has Macs available for your use).  Compile and run the app, either on your device or in the simulator (use any of the iPhone simulators.) It should show a screen like what you see above. Clicking on the Start button should cause it to enter a recording state, but it won't actually be writing location data until you add the code to record location. Note that you may have to update "Team" to your own account (General Tab -> Signing in Xcode 10 or "Signing and Capabilities" Tab -> Signing in Xcode 11). Update the Bundle Identifier if needed.</li>
             </ol>
             <h3 id="ios_loc_primer">iOS Location Primer</h3>
-            <p>The primary way that location is accessed on iOS use though the <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/">CoreLocation class CLLocationManager</a>. Using this class you can request location updates at a certain accuracy, and also configure the accuracy with which data is created.</p>
+            <p>The primary way that location is accessed on iOS use though the <a href="https://developer.apple.com/documentation/corelocation/cllocationmanager" target="_blank">CoreLocation class CLLocationManager</a>. Using this class you can request location updates at a certain accuracy, and also configure the accuracy with which data is created.</p>
             <p>
                 In the PostionLogger app, the main screen is an instance of a ViewController object (as specified in ViewController.swift.) iOS creates one instance of the ViewController class for us when the application is initialized, because the Main.storyboard file, which we chose as the main storyboard for the app in the Info.plist file, specifies that the initial view for the app should be an instance of ViewController.
             </p>
