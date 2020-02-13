@@ -61,16 +61,16 @@
                 In this lab, you will start by developing a small standalone application to measure location data, and then you will integrate location API support into Anteater.
             </p>
             <p>
-                Labs in 6.808 consist of a number of tasks, each of which has one or more deliverables. This lab has 2 sections, the first dealing with the standalone app and the second with Anteater. 
+                Labs in 6.808 consist of a number of tasks, each of which has one or more deliverables. This lab has 2 sections, the first dealing with the standalone app and the second with Anteater.
             </p>
-	    <p>
-	      Start working on the lab early. Section 1 requires you
-	      to collect data by walking outdoor
-	      (<a href="#task2">Task 2 – Compare the Accuracy of the
-	      Location Methods</a>) and leaving your phone without
-	      touching for 4 hours twice.  (<a href="#task3">Task 3
-	      – Compare the Battery Drain of the Location Methods</a>).
-	    </p>
+      <p>
+        Start working on the lab early. Section 1 requires you
+        to collect data by walking outdoor
+        (<a href="#task2">Task 2 – Compare the Accuracy of the
+        Location Methods</a>) and leaving your phone without
+        touching for 4 hours twice.  (<a href="#task3">Task 3
+        – Compare the Battery Drain of the Location Methods</a>).
+      </p>
 <p> You may work on this lab in pairs. </p>
 
             <h2 id="sec1">Section 1 :  Location APIs and Exploring the Power Drain vs Accuracy Tradeoff</h2>
@@ -175,7 +175,7 @@ extern const CLLocationAccuracy kCLLocationAccuracyThreeKilometers;</code></pre>
                 We've implemented the rest of the application to allow you to capture data from it and email data to yourself. Verify that it works by attempting to log some data with GPS accuracy on your phone and email it to yourself (note that location updates can be simulated in the simulator, but that the simulator does not support the email interface properly).
             </p>
             <p>
-	        To make sure that the app always has access to location information (especially in iOS 13), go to Settings -> Privacy -> Location Services -> PositionLogger -> select "Always".
+          To make sure that the app always has access to location information (especially in iOS 13), go to Settings -> Privacy -> Location Services -> PositionLogger -> select "Always".
             </p>
             <p>
                 In the rest of this part of the lab you'll collect some data outdoors and compare the different location methods, looking at accuracy and power of the different techniques.
@@ -245,6 +245,7 @@ Task 2  – Compare the Accuracy of the Location Methods
             </p>
             <p>Start by downloading the <a href="codes/lab1/anteater-swift-4.2-xcode11.zip">Anteater App Skeleton for Xcode 11/iOS 13</a>. (For Xcode 10/iOS 12, use <a href="codes/lab1/anteater-swift-4.2.zip">this app skeleton</a> instead.)</p>
             <p>Uncompress this file to create a directory called "anteater-swift-blank". Open the anteater.xcodeproj file in this directory in XCode.  You should be able to build and run the project in the simulator or your phone.  This app is not able to connect to Bluetooth-based Anthills (you'll do that in the next lab), and the compass won't rotate (that's the goal of this lab).</p>
+            <p>Known issue for Xcode 11/iOS 13: when you build and run the app in your iPhone for the first time and try to log in with any username, the app may crash. Simply build and run again. The app should skip the log-in screen without any error.</p>
             <p>In later labs you'll work on the code to connect to the anthills, but for the second part of this lab, your job is to implement the compass UI in Anteater, as shown in the screenshot below.
             </p>
             <img src="images/lab1/interface.png" />
