@@ -78,7 +78,7 @@ table.calendar thead tr {
     <b>LEC 1:</b> Introduction and Key Ideas (<a href="./materials/lec1-slides-2020-PDF.pdf" target="_blank">Slides</a>)<br />
     <i>First day of classes</i><br />
     <span class="reading"><b>Assigned:</b> <a href="labs/lab0.html">Lab 0</a></span></td>
-  
+
   <td id="2020-2-4"><span class="date">Feb 4</span><br /></td>
 
   <td id="2020-2-5" class="lecture"><span class="date">Feb 5</span><br />
@@ -103,15 +103,15 @@ table.calendar thead tr {
   <span class="reading"><b>Assigned:</b> <a href="labs/lab1.html">Lab 1</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="labs/lab0.html">Lab 0</a></span></td>
 
-  
+
   <td id="2020-2-11"><span class="date">Feb 11</span><br /></td>
 
   <td id="2020-2-12" class="lecture"><span class="date">Feb 12</span><br />
     <b>LEC 4:</b> Seeing through Walls & Device-Free Localization (<a href="./materials/lec4-slides-DfP-2020.pdf" target="_blank">Slides</a>)<br />
-    <span class="reading"><b>Preparation:</b> Read 
+    <span class="reading"><b>Preparation:</b> Read
       <a href="http://witrack.csail.mit.edu/witrack-paper.pdf" target="_blank">WiTrack</a>
     (<a href="questions.html?q=q-lec4">Questions</a>)</span></td>
-  
+
   <td id="2020-2-13"><span class="date">Feb 13</span><br /></td>
   <td id="2020-2-14"><span class="date">Feb 14</span><br /></td>
 </tr>
@@ -132,7 +132,7 @@ table.calendar thead tr {
     <b>LEC 6:</b> Mesh and Multi-Hop Wireless Networks <br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="https://pdos.csail.mit.edu/papers/grid:mobicom03/paper.pdf" target="_blank">ETX</a>
-    <!-- (<a href="questions.html?q=q-lec6">Questions</a>) --></span></td>
+    (<a href="questions.html?q=q-lec6">Questions</a>)</span></td>
 
   <td id="2020-2-20"><span class="date">Feb 20</span><br />
   <td id="2020-2-21"><span class="date">Feb 21</span></td>
@@ -184,7 +184,7 @@ table.calendar thead tr {
   <b>LEC 11:</b> Health & Vitals sensing <br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="http://witrack.csail.mit.edu/vitalradio/content/vitalradio-paper.pdf">Smart Homes</a> and
-    <a href="http://ubicomplab.cs.washington.edu/pdfs/hemaapp_v2.pdf">Smartphone-based Hemoglobin sensing</a> 
+    <a href="http://ubicomplab.cs.washington.edu/pdfs/hemaapp_v2.pdf">Smartphone-based Hemoglobin sensing</a>
     <!-- (<a href="questions.html?q=q-lec11">Questions</a>) --></span><br />
     <span class="deadline"><b>DUE:</b> <a href="projects.html">Project Proposals</a></span></td>
 
@@ -209,7 +209,7 @@ table.calendar thead tr {
   <td id="2020-3-18" class="lecture"><span class="date">Mar 18</span><br />
     <b>LEC 13:</b> Sensor Fusion: Maps and RF Data <br />
     <span class="reading"><b>Preparation:</b> Read
-      <a href="https://nsl.usc.edu/wp-content/uploads/2018/06/mobisys18-gnome.pdf" target="_blank">Gnome</a> and 
+      <a href="https://nsl.usc.edu/wp-content/uploads/2018/06/mobisys18-gnome.pdf" target="_blank">Gnome</a> and
       <a href="http://dl.acm.org.libproxy.mit.edu/citation.cfm?id=2424333" target="_blank">Map Inference</a>
       <!-- (<a href="questions.html?q=q-lec13">Questions</a>) --></span><br />
       <span class="reading"><b>Assigned:</b> <a href="labs/lab4.html">Lab 4</a></span><br />
@@ -236,7 +236,7 @@ table.calendar thead tr {
   <td id="2020-3-30" class="lecture"><span class="date">Mar 30</span><br />
     <b>LEC 14:</b> Agriculture IoT <br />
     <span class="reading"><b>Preparation:</b> Read
-      <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf" target="_blank">FarmBeats</a>      
+      <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf" target="_blank">FarmBeats</a>
       <!-- (<a href="questions.html?q=q-lec14">Questions</a>) --></span><br />
     <span class="reading"><b>Assigned:</b> <a href="labs/lab5.html">Lab 5</a></span><br />
     <span class="deadline"><b>DUE:</b> <a href="labs/lab4.html">Lab 4</a></span></td>
