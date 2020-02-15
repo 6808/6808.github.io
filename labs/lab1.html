@@ -254,7 +254,7 @@ Task 2  – Compare the Accuracy of the Location Methods
             <p>To compute the direction this arrow should point, you need to measure the angle between the user's current position (represented by a lat/lon point), and the destination anthill. The conventional way to do this is to model the earth as a sphere, and measure the angle of vector from the origin to the destination along the shortest path (the "great circle path"). The trigonometry to do this is fairly hairy, but thanks to the Internet the formula is easy to look up. Here's the code to do this:
             </p>
             <code>atan2(sin(lon2-lon1)*cos(lat2), cos(lat1)*sin(lat2)-sin(lat1)*cos(lat2)*cos(lon2-lon1))</code>
-            <p>Here (lat1,lon1) is the starting point, and (lat2,lon2) is the ending point. In this formula, lat and lon need to be converted to radians, and the result is in radians.</p>
+            <p>Here (lat1, lon1) is the starting point, and (lat2, lon2) is the ending point. In this formula, lat and lon need to be converted to radians, and the result is in radians.</p>
             <p>If you are curious about the derivation of this, there's a good explanation half way down this post: <a href="http://mathforum.org/library/drmath/view/55417.html">http://mathforum.org/library/drmath/view/55417.html</a></p>
             <p>
                 From the article: <em>"Let's define three unit vectors, each in the direction of the line from the center of the earth to a point on the surface: N in the direction of the north pole, A in the direction of the initial point, and B in the direction of the final point on the course. Then the bearing we seek is the angle between the plane containing N and A, and the plane containing A and B. Thus it equals the angle between vectors perpendicular to these planes, namely, NxA and BxA."</em>
@@ -301,7 +301,7 @@ let lon = anthill?["lon"] as? Double</code></pre>
                 <li>Plots of the battery drain for Task 3</li>
                 <li>A working compass demonstration for Task 4</li>
             </ul>
-        <p>Submit answers to this submission form (TBA). We will hold checkoffs during Office Hours. </p>
+            <p>Submit answers to this submission form (TBA). We will hold checkoffs during Office Hours.</p>
 </body>
 
 </html>
