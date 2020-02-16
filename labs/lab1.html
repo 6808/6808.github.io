@@ -212,10 +212,10 @@ Task 2  – Compare the Accuracy of the Location Methods
             <p>The "connect the dots" distance of a path is just the sum of the distances between every consecutive point. Each point is a latitude/longitude pair, which represents a point on the surface of the earth. For points that are close together, Euclidian distance is a close approximation of the actual distance, but for points that are far apart, a straight line can be quite far from the true distance between these points, which follows an arc on the surface of the Earth. The typical way to estimate this distance is to assume the Earth is a sphere (it isn't exactly spherical but pretty close), and to use the haversine formula discussed in class to compute the distance between the two points:
             </p>
             <img src="images/lab1/CodeCogsEqn.png" alt="">
-            <p>where the two points are (lat1,lon1) and (lat2,lon2) and r is the Earth's radius (6371 km). Be sure to convert lat/lon to radians (multiply by Pi and divide by 180.0 ) before using built-in trigonometric functions (see <a href="https://en.wikipedia.org/wiki/Haversine_formula">https://en.wikipedia.org/wiki/Haversine_formula</a>).
+            <p>where the two points are (lat1, lon1) and (lat2, lon2) and r is the Earth's radius (6371 km). Be sure to convert lat/lon to radians (multiply by Pi and divide by 180.0) before using built-in trigonometric functions (see <a href="https://en.wikipedia.org/wiki/Haversine_formula">https://en.wikipedia.org/wiki/Haversine_formula</a>).
             </p>
             <p>
-                For each of the three logs, compute the "connect the dots" distance between all points in the trace using the haversine formula. How does it compare to the measure .306 miles?
+                For each of the three logs, compute the "connect the dots" distance between all points in the trace using the haversine formula. How does it compare to the measure .306 miles (492.5 meters)?
             </p>
             <p>In addition, plot each of the three files on a map. We've provided a script, <a href="codes/lab1/csv2kml.py">csv2kml.py</a>, that will convert a csv file with a header line that includes "Lat" and "Lon" fields into a KML file that you can view on Google Earth or import into Google My Maps (<a href="https://mapsengine.google.com/map/">https://mapsengine.google.com/map/</a>). If you'd prefer, you may visualize these files using some other method than Google Maps / Google Earth.
             </p>
@@ -288,20 +288,33 @@ let lon = anthill?["lon"] as? Double</code></pre>
             <p>Modern iPhones have a magnetometer that can measure the orientation of the phone with respect to the Earth's magnetic field (its heading). An app can be requested to be notified of the phone's heading as it changes by calling the startUpdatingHeading method on the CLLocationManager object. We have already done this for you in CompassViewController.swift's viewDidLoad method. You should fill in the body of the locationManager:didUpdateHeading method with code to compute θ1 - θ2. You can access the current heading of the device (in degrees) by accessing the trueHeading property of the provided newHeading object.
             </p>
             <h4 id="4.3">4.3  Rotate the Needle by θ1 - θ2</h4>
-            <p>Whenever you get an update to the device's location or orientation, or a new anthill is selected, you should update the rotation of the needle. The needle is a UIView that is available as a property of CompassViewController. In iOS you can rotate (and scale/transform) any view simply by setting the value of the transform field of the view. This field is an instance of a CGAffineTransform struct. You can create a transform that specifies a particular rotation by calling <a href="https://developer.apple.com/documentation/coregraphics/cgaffinetransform/1455666-init">CGAffineTransform.init with rotationAngle</a> in Swift. Create a transform and assign it to the needle property of your CompassViewController. The UI will automatically rotate the view to the correct orientation.
+            <p>Whenever you get an update to the device's location or orientation, or a new anthill is selected, you should update the rotation of the needle. The needle is a UIView that is available as a property of CompassViewController. In iOS you can rotate (and scale/transform) any view simply by setting the value of the <code>transform</code> field of the view. This field is an instance of a CGAffineTransform struct. You can create a transform that specifies a particular rotation by calling <a href="https://developer.apple.com/documentation/coregraphics/cgaffinetransform/1455666-init">CGAffineTransform.init with rotationAngle</a> in Swift. Create a transform and assign it to the needle property of your CompassViewController. The UI will automatically rotate the view to the correct orientation.
             </p>
             <p>In addition, set the text of the distanceLabel label to the distance to the current anthill and the text of the headingLabel label to θ1 - θ2.</p>
             <p>The deliverable for this task is a working implementation of the Anteater compass.
             </p>
             <h2 id="submission">Submission Instructions</h2>
-            <p>A complete lab will consist of:
-            </p>
-            <ul>
-                <li>Estimated distances for the three methods from Task 2, as well as maps of the points.</li>
-                <li>Plots of the battery drain for Task 3</li>
-                <li>A working compass demonstration for Task 4</li>
-            </ul>
-            <p>Submit answers to this submission form (TBA). We will hold checkoffs during Office Hours.</p>
+            <!-- <p>A complete lab will consist of:
+                 </p>
+                 <ul>
+                 <li>Estimated distances for the three methods from Task 2, as well as maps of the points.</li>
+                 <li>Plots of the battery drain for Task 3</li>
+                 <li>A working compass demonstration for Task 4</li>
+                 </ul> -->
+            <p>Write up your answers to the following items in a single PDF file and name it <strong>lab1_${mit_username}.pdf</strong> or <strong>lab1_${mit_username1}+${mit_username2}.pdf</strong> (e.g. lab1_korrawat.pdf or lab1_korrawat+fadel.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Feb 18, 11:59 PM</strong> with subject <strong>"6.808 Lab 1 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Feb 25, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
+            <ol>
+                <li>Names and MIT emails (including your lab partner, if available)</li>
+                <li>Accuracy levels for GPS, WiFi, and Cellular (e.g. <code>kCLLocationAccuracyBest</code>) (Three answers)</li>
+                <li>Estimated distances in meters for the three methods from Task 2 (Three answers)</li>
+                <li>Maps of the points/trajectories for three methods (screenshot(s))</li>
+                <li>Plots of the battery drain for Task 3 (cellular and GPS)</li>
+                <li>A screenshot for the compass at a non-zero angle for Task 4</li>
+                <li>Estimated number of hours you spent coding for Section 1</li>
+                <li>Estimated number of hours you spent collecting/analyzing data for Section 1</li>
+                <li>Estimated number of hours you spent on Section 2</li>
+                <li>Any comments/suggestions for the lab? Any questions you may have for the checkoff? (Optional)</li>
+            </ol>
+            <p>During the checkoff, we may ask you to show a demonstration of an Application, show the experiments' results, or explain if and why the results are as expected (or unexpected).</p>
 </body>
 
 </html>
