@@ -23,10 +23,9 @@ Lecture notes will be uploaded after each class.
 *Wed, Feb 12, 2020*
 - Slides [./materials/lec4-slides-DfP-2020.pdf \[pdf\]]
 
-# == Lec \#5: Mesh and Multi-Hop Wireless Networks 
-# *Wed, Feb 20, 2020*
-# - Network Connectivity for IoT Systems [./materials/lec5-(part-1)-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
-# - Multi-Hop Routing [./materials/lec5-(part-2)-ETXMesh.pdf \[pdf\]]
+== Lec \#5: Connectivity Overview and BLE
+*Tue, Feb 18, 2020*
+- Slides [./materials/lec5-IOTx-WirelessNetworkConnectivity.pdf \[pdf\]]
 
 # == Lec \#6: Networks as Physical Sensors
 # *Mon, Feb 25, 2020*
@@ -58,7 +57,7 @@ Lecture notes will be uploaded after each class.
 # - CTrack [./materials/lec12-slides-ctrack-2020.pdf \[pdf\]]
 # - Example application [./materials/lec12-(part-2)-slides-2020.pdf \[pdf\]]
 
-# == Lec \#13: Sensor Fusion: Maps and RF Data 
+# == Lec \#13: Sensor Fusion: Maps and RF Data
 # *Mon, Apr 1, 2020*
 # - Gnome [./materials/lec13-(part-1)-Gnome-mobisys.pdf \[pdf\]]
 # - Map Inference [./materials/lec13-(part-2)-mapinference.pdf \[pdf\]]
