@@ -320,7 +320,7 @@ Full-Width Styles
   padding: 50px 10px 30px 10px;
 }
 
-#project_title a:link {
+#project_title a:link, #project_title a:visited {
   margin: 0;
   color: #fff;
   font-size: 42px;
