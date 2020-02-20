@@ -1,0 +1,4 @@
+pandoc lab2.md -f markdown -t html \
+-c stylesheets/stylesheet.css \
+-c https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css \
+-s -o lab2.html
