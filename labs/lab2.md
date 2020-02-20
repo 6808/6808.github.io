@@ -7,7 +7,7 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 <div id="header_wrap" class="outer">
 <header class="inner">
 
-[6.808](index.html) {#project_title}
+[6.808](../index.html) {#project_title}
 ===================
 
 Lab 2: Getting Data From Anthills {#project_tagline}
