@@ -119,7 +119,7 @@ func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?)</code></pre>
 <h3 id="task03">Task 3: Implement <code>didConnectToPeripheral</code></h3>
 <p>Once you have connected to a peripheral, you will need to call the delegate method <code>didChangeActiveHill</code>. The method takes an instance of Hill, which is defined towards the top of <code>SensorModel.swift</code> (the name of the Hill should be set to <code>peripheral.name</code>). You should initialize a Hill and store it in the activeHill instance variable, as the delegate will expect the same Hill later for the <code>didReceiveReadings</code> delegate method. You will also need to store the CBPeripheral in an instance variable, as you will want to distinguish the peripheral corresponding to activeHill from other peripherals.</p>
 <p>After connecting to a peripheral, the <code>BLE</code> instance will call the <code>discoverServices</code> function in the iOS BLE API; then, after services are discovered, the <code>BLE</code> instance will call <code>didDiscoverCharacteristicsForService</code> and handle updates to the sensor data characteristic. Finally, the <code>BLE</code> instance will request notifications for the sensor characteristic, and the iOS API will call <code>didUpdateValueForCharacteristic</code> on the <code>BLE</code> instance whenever a new packet of sensor data is available. The <code>BLE</code> instance will then call <code>didReceiveData</code> on the <code>SensorModel</code>.</p>
-<p>To complete this task, verify that <code>didReceiveData</code> is being called by setting breakpoints in this method in the debugger.</p>
+<p>To complete this task, verify that <code>didReceiveData</code> is being called, e.g., by setting breakpoints in this method in the debugger. If it is not called after about 30 seconds, see <a href="#troubleshooting">Troubleshooting</a>.</p>
 <p>Note that you will also need to implement <code>didDisconnectFromPeripheral</code>. If the provided peripheral matches the one corresponding to the activeHill, then you should call didChangeActiveHill with nil, so that the delegate is notified that there is no longer any connected hill.</p>
 <h2 id="sec2">Section 2: Extracting readings from an Anthill</h2>
 <p>When a connection is established, the Anthill begins streaming packets containing sensor data on the sensor data characteristic. You will need to extract sensor readings from this characteristic and post them to the application. (For the purposes of this lab, you do not explicitly request any data or send any commands to the anthill.)</p>
@@ -153,6 +153,16 @@ let val = NSString(string: str).doubleValue</code></pre>
 <center>
 <img src="images/lab2/readings.png" width="300" />
 </center>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<p>While it is unlikely to happen, if you suspect that no packets are being sent despite correct sensor connections, you can debug it by following the instructions below.</p>
+<ul>
+<li>Connect the Arduino board to your computer</li>
+<li>Install the <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a></li>
+<li>Go to Tools &gt; Board &gt; select “Arduino NANO 33 IoT”</li>
+<li>Go to Tools &gt; Port &gt; select an option that ends with “(Arduino NANO 33 IoT)”</li>
+<li>Go to Tools &gt; Serial Monitor</li>
+</ul>
+<p>You should see a window that prints “HELLO WORLD” every two seconds and the temperature and humidity value pairs every time the packets are sent (<a href="images/lab2/serial_monitor.png">reference</a>). If your iPhone app fails to detect any packet after implementing it in Xcode and the Serial Monitor does not show the messages as described, please contact us to get a new board and sensor.</p>
 <h2 id="completing">Completing the Lab</h2>
 <p>A TA will checkoff your lab assignment. A checkoff will require successfully displaying sensor readings on the Readings screen, as well as disconnected and reconnected from a an anthill (by powering it down and powering it back up.)</p>
 <p>We will hold checkoffs during office hours. Submission instructions are TBA.</p>

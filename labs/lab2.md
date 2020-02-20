@@ -232,8 +232,10 @@ notifications for the sensor characteristic, and the iOS API will call
 packet of sensor data is available. The `BLE` instance will then call
 `didReceiveData` on the `SensorModel`.
 
-To complete this task, verify that `didReceiveData` is being called by
-setting breakpoints in this method in the debugger.
+To complete this task, verify that `didReceiveData` is being called,
+e.g., by setting breakpoints in this method in the debugger. If it is
+not called after about 30 seconds, see
+[Troubleshooting](#troubleshooting).
 
 Note that you will also need to implement `didDisconnectFromPeripheral`.
 If the provided peripheral matches the one corresponding to the
@@ -313,6 +315,26 @@ sensor reading display on the Anteater Readings screen, as shown below:
 <center>
 ![](images/lab2/readings.png){width="300px"}
 </center>
+
+#### Troubleshooting {#troubleshooting}
+
+While it is unlikely to happen, if you suspect that no packets are being
+sent despite correct sensor connections, you can debug it by following
+the instructions below.
+
+- Connect the Arduino board to your computer
+- Install the [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+- Go to Tools > Board > select "Arduino NANO 33 IoT"
+- Go to Tools > Port > select an option that ends with "(Arduino NANO 33
+  IoT)"
+- Go to Tools > Serial Monitor
+
+You should see a window that prints "HELLO WORLD" every two seconds and
+the temperature and humidity value pairs every time the packets are sent
+([reference](images/lab2/serial_monitor.png)). If your iPhone app fails
+to detect any packet after implementing it in Xcode and the Serial
+Monitor does not show the messages as described, please contact us to
+get a new board and sensor.
 
 Completing the Lab {#completing}
 ------------------
