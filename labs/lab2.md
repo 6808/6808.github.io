@@ -175,10 +175,9 @@ its delegate to the current SensorModel object:
 Once you have created this object, the BLE will call
 `ble(didUpdateState ...)` to indicate the status of Bluetooth. You
 should check that the status is `BLEState.poweredOn` and if it is,
-initiate scanning for anthills if the app has previously called
-`startScanning`.
+initiate scanning for anthills.
 
-To initiate scanning, call the startScanning method on the `BLE`
+To initiate scanning, call the `startScanning` method on the `BLE`
 instance.
 
 Once scanning has started, you will receive a callback to the
@@ -188,7 +187,7 @@ BLEDelegate protocol defined in `BLE.swift`.
 
 To verify that this task is completed, use the debugger to confirm
 `didUpdateState` is called and that the status is `BLEState.poweredOn`.
-Also verify that when startScanning is called in the presence of an
+Also verify that when `startScanning` is called in the presence of an
 anthill, you receive a callback to `didDiscoverPeripheral`.
 
 ### Task 2: Implement `didDiscoverPeripheral` {#task02}
@@ -344,7 +343,8 @@ successfully displaying sensor readings on the Readings screen, as well
 as disconnected and reconnected from a an anthill (by powering it down
 and powering it back up.)
 
-We will hold checkoffs during office hours. Submission instructions are TBA.
+We will hold checkoffs during office hours. Submission instructions are
+TBA. You will return the device at the checkoff.
 
 </div>
 </div>

@@ -56,7 +56,7 @@ Topics include the principles, practices, and emerging applications in:
 
 == Prerequisites
 
-6.033 or equivalent (or permission of instructor). 
+6.033 or equivalent (or permission of instructor).
 
 == Grading policy
 
@@ -90,6 +90,20 @@ requires a Mac for development. The 56-129 athena cluster has Macs
 with XCode installed (select XCode from Launchpad, and then enter your
 Athena username and password to accept the license agreement). We will
 loan out iPhones for you use if you do not have a personal iPhone.
+
+== Late Policy
+
+You have a total of 72 late hours for the semester. You can choose to use these
+however you want: e.g., 5 hours for Lab1, 4 for Lab2, etc.
+
+Each hour late in excess of 72 hours will penalize the corresponding lab's grade by
+1\%, up to a maximum of 50\%. Late hours are allocated greedily, so they are allocated
+to earlier labs before later labs.
+
+*How to best use late hours?* Late hours are intended for cases where you fall behind
+due to deadlines in other classes, job interviews, MIT athletic events, illness, etc.
+For extensions under extenuating circumstances (e.g., you are sick for a week), we
+require a letter from one of the student deans.
 
 == Midterm
 

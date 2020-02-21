@@ -108,10 +108,10 @@ func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?)</code></pre>
 <p>Before you can scan for an anthill, you need to initialize a <code>BLE</code> object. A good place to do this is in the <code>init</code> method of <code>SensorModel</code>. Since you will need access this object repeatedly, you probably want to store it in an instance variable of the class.</p>
 <p>Keep in mind that after initializing the object, you will need to set its delegate to the current SensorModel object:</p>
 <pre><code>ble.delegate = self</code></pre>
-<p>Once you have created this object, the BLE will call <code>ble(didUpdateState ...)</code> to indicate the status of Bluetooth. You should check that the status is <code>BLEState.poweredOn</code> and if it is, initiate scanning for anthills if the app has previously called <code>startScanning</code>.</p>
-<p>To initiate scanning, call the startScanning method on the <code>BLE</code> instance.</p>
+<p>Once you have created this object, the BLE will call <code>ble(didUpdateState ...)</code> to indicate the status of Bluetooth. You should check that the status is <code>BLEState.poweredOn</code> and if it is, initiate scanning for anthills.</p>
+<p>To initiate scanning, call the <code>startScanning</code> method on the <code>BLE</code> instance.</p>
 <p>Once scanning has started, you will receive a callback to the <code>BLEDelegate</code> method <code>ble(didDiscoverPeripheral ...)</code>. You will need to define this method in <code>SensorModel</code>, as per the signature in the BLEDelegate protocol defined in <code>BLE.swift</code>.</p>
-<p>To verify that this task is completed, use the debugger to confirm <code>didUpdateState</code> is called and that the status is <code>BLEState.poweredOn</code>. Also verify that when startScanning is called in the presence of an anthill, you receive a callback to <code>didDiscoverPeripheral</code>.</p>
+<p>To verify that this task is completed, use the debugger to confirm <code>didUpdateState</code> is called and that the status is <code>BLEState.poweredOn</code>. Also verify that when <code>startScanning</code> is called in the presence of an anthill, you receive a callback to <code>didDiscoverPeripheral</code>.</p>
 <h3 id="task02">Task 2: Implement <code>didDiscoverPeripheral</code></h3>
 <p><code>didDiscoverPeripheral</code> will be called when a BLE Peripheral advertising the above characteristic comes into proximity of your phone. When this happens, you need to connect to device, and then scan for services and characteristics.</p>
 <p>When <code>didDiscoverPeripheral</code> is called, you are given a handle to a <code>CBPeripheral</code> object. This is the peripheral you want to try to connect to (in this lab, you are going to connect to the first peripheral you discover, and stay connected to it until it moves out of range, rather than trying to prioritize connecting to certain anthills).</p>
@@ -165,7 +165,7 @@ let val = NSString(string: str).doubleValue</code></pre>
 <p>You should see a window that prints “HELLO WORLD” every two seconds and the temperature and humidity value pairs every time the packets are sent (<a href="images/lab2/serial_monitor.png">reference</a>). If your iPhone app fails to detect any packet after implementing it in Xcode and the Serial Monitor does not show the messages as described, please contact us to get a new board and sensor.</p>
 <h2 id="completing">Completing the Lab</h2>
 <p>A TA will checkoff your lab assignment. A checkoff will require successfully displaying sensor readings on the Readings screen, as well as disconnected and reconnected from a an anthill (by powering it down and powering it back up.)</p>
-<p>We will hold checkoffs during office hours. Submission instructions are TBA.</p>
+<p>We will hold checkoffs during office hours. Submission instructions are TBA. You will return the device at the checkoff.</p>
 </section>
 </div>
 </body>
