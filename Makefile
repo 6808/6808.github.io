@@ -1,4 +1,4 @@
-DOCS=index calendar notes answers
+DOCS=index calendar notes answers queue
 
 HDOCS=$(addsuffix .html, $(DOCS))
 PHDOCS=$(addprefix , $(HDOCS))
@@ -7,15 +7,14 @@ PHDOCS=$(addprefix , $(HDOCS))
 docs : $(PHDOCS)
 
 %.html : %.jemdoc MENU
-	    ./jemdoc -o $@ $<
+			./jemdoc -o $@ $<
 
 # .PHONY : clean
 # clean :
-# 	rm -f *.html
-# 	rm -f *~
+#		rm -f *.html
+#		rm -f *~
 
 # .PHONY : update
-# update : 
-# 	rm -f *~
-# 	rsync -avze ssh --delete --exclude '*.jemdoc' --exclude 'MENU' --exclude 'Makefile' ./private alizadeh@courses.csail.mit.edu:/afs/csail/proj/courses/6.888-s16/www
-
+# update :
+#		rm -f *~
+#		rsync -avze ssh --delete --exclude '*.jemdoc' --exclude 'MENU' --exclude 'Makefile' ./private alizadeh@courses.csail.mit.edu:/afs/csail/proj/courses/6.888-s16/www

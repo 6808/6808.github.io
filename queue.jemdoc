@@ -1,0 +1,19 @@
+# jemdoc: menu{MENU}{queue.html}
+=  Help Queue
+
+The queue is automatically updated every 60 seconds. Refresh the page to update the
+queue manually.
+
+{{<iframe id="sheet" src="https://docs.google.com/spreadsheets/d/1PB53Qwcgzi1zqRrgbnQNbgVLEGrDCVE4qzU3PjMYBAE/htmlembed/sheet?gid=1303964728" width="480" height="300"></iframe>}}
+
+{{<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyd-OUmDxmtrSUbX9lD-opqBjd8DRd78F1pGcNZVgnyLaJAA/viewform?embedded=true" width="640" height="998" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>}}
+
+# Update script: https://yagisanatode.com/2018/12/20/embedding-a-live-google-sheet-graph-that-updates-every-30-seconds-into-a-wordpress-post-part-2-of-google-forms-in-wordpress-with-live-chart-project/
+{{
+<script>
+window.setInterval("reloadIFrame();", 60000);
+function reloadIFrame() {
+ document.getElementById("sheet").src="https://docs.google.com/spreadsheets/d/1PB53Qwcgzi1zqRrgbnQNbgVLEGrDCVE4qzU3PjMYBAE/htmlembed/sheet?gid=1303964728";
+}
+</script>
+}}
