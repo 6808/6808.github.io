@@ -29,7 +29,8 @@ Due: 2020-02-26\
     - [Task 3](#task03)
 - [Section 2](#sec2)
     - [Task 4](#task04)
-- [Completing the Lab](#completing)
+    - [Task 5](#task05)
+- [Submission and Checkoff](#submission)
 
 The goal of this lab is to implement code in the Anteater app to scan
 for a nearby Anthill, connect to it, and stream temperature and humidity
@@ -95,7 +96,7 @@ or to any other USB charger, as shown below:
 
 The pins between the BLE node and sensor should be connected as follows:
 
--   **(+)** on sensor to **+3V3** on BLE node
+-   **(+)** on sensor to **+3V3** on BLE node (Be careful, not D13!)
 -   **(-)** on sensor to **GND** on BLE node
 -   **S** or **out** on sensor to **D8** on BLE node
 
@@ -116,7 +117,7 @@ by the anthill.
 Before working on this section, you should familiarize yourself with the
 basics of Bluetooth Low Energy (BLE) and the iOS APIs for accessing it.
 This [Apple
-Document](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html#//apple_ref/doc/uid/TP40013257-CH2-SW1)
+Document](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html)
 does a good job of summarizing these.
 
 Each anthill acts as a BLE Peripheral. The connection protocol is not
@@ -140,8 +141,8 @@ The basic sequence is as follows:
 <!-- Since each state update is at most 20 bytes, the anthill may fragment -->
 <!-- one sensor reading across several packets. -->
 
-You will need to add several functions to SensorModel in order to
-implement BLEDelegate:
+You will need to add several functions to `SensorModel` in order to
+implement `BLEDelegate`:
 
     func ble(didUpdateState state: BLEState)
     func ble(didDiscoverPeripheral peripheral: CBPeripheral)
@@ -149,7 +150,7 @@ implement BLEDelegate:
     func ble(didDisconnectFromPeripheral peripheral: CBPeripheral)
     func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?)
 
-The SensorModel should inherit from BLEDelegate:
+The SensorModel should inherit from `BLEDelegate`:
 
     class SensorModel: BLEDelegate {
         // ...
@@ -165,7 +166,7 @@ too.
 Before you can scan for an anthill, you need to initialize a `BLE`
 object. A good place to do this is in the `init` method of
 `SensorModel`. Since you will need access this object repeatedly, you
-probably want to store it in an instance variable of the class.
+probably want to declare it as an instance variable of the class.
 
 Keep in mind that after initializing the object, you will need to set
 its delegate to the current SensorModel object:
@@ -215,7 +216,7 @@ Once you have connected to a peripheral, you will need to call the
 delegate method `didChangeActiveHill`. The method takes an instance of
 Hill, which is defined towards the top of `SensorModel.swift` (the name
 of the Hill should be set to `peripheral.name`). You should initialize a
-Hill and store it in the activeHill instance variable, as the delegate
+Hill and store it in the `activeHill` instance variable, as the delegate
 will expect the same Hill later for the `didReceiveReadings` delegate
 method. You will also need to store the CBPeripheral in an instance
 variable, as you will want to distinguish the peripheral corresponding
@@ -235,11 +236,6 @@ To complete this task, verify that `didReceiveData` is being called,
 e.g., by setting breakpoints in this method in the debugger. If it is
 not called after about 30 seconds, see
 [Troubleshooting](#troubleshooting).
-
-Note that you will also need to implement `didDisconnectFromPeripheral`.
-If the provided peripheral matches the one corresponding to the
-activeHill, then you should call didChangeActiveHill with nil, so that
-the delegate is notified that there is no longer any connected hill.
 
 Section 2: Extracting readings from an Anthill {#sec2}
 ----------------------------------------------
@@ -294,19 +290,26 @@ To complete this task, implement code to extract messages from the
 stream of packets delivered to `didReceiveData`.
 
 Once you have extracted a sensor reading from the stream, create a
-`Reading` object from it (set type to either ReadingType.Temperature or
-ReadingType.Humidity, and sensorId to `peripheral.name`) and call the
-delegate method `didReceiveReadings`. You should also add it to the
-activeHill's `readings` array, which the UI will access to update its
-list of sensor readings.
+`Reading` object from it (set type to either `ReadingType.Temperature`
+or `ReadingType.Humidity`, and `sensorId` to `peripheral.name`). You
+should add it to the `activeHill`'s `readings` array, which the UI will
+access to update its list of sensor readings. Call the delegate method
+`didReceiveReadings`, so that the delegate is notified of the new
+readings.
+
 
 You might find these code snippets useful:
 
-    // convert a non-nil Data optional into a String
-    let str = String(data: data!, encoding: String.Encoding.ascii)!
+```swift
+// convert a non-nil Data optional into a String
+let str = String(data: data!, encoding: String.Encoding.ascii)!
 
-    // convert a String to a Double
-    let val = NSString(string: str).doubleValue
+// get a substring that excludes the first and last characters
+let substring = str[str.index(after: str.startIndex)..<str.index(before: str.endIndex)]
+
+// convert a Substring to a Double
+let value = Double(substring)!
+```
 
 This task is complete when you can see sensor readings streaming into
 sensor reading display on the Anteater Readings screen, as shown below:
@@ -315,7 +318,21 @@ sensor reading display on the Anteater Readings screen, as shown below:
 ![](images/lab2/readings.png){width="300px"}
 </center>
 
-#### Troubleshooting {#troubleshooting}
+### Task 5: Implement `didDisconnectFromPeripheral` {#task05}
+
+When the connected hill is powered off, `didDisconnectFromPeripheral`
+will be called. If the provided peripheral matches the one corresponding
+to the `activeHill`, you should reset `activeHill` to `nil` then call
+`didChangeActiveHill` with `nil`, so that the delegate is notified that
+there is no longer any connected hill. Lastly, initiate scanning to
+start scanning for new connections.
+
+To verify, disconnect the anthill from power and check that the readings
+are no longer displayed. Then, connect the anthill to power and check
+that your phone automatically reconnects with the anthill and displays
+the new readings once the connection is established.
+
+### Troubleshooting {#troubleshooting}
 
 While it is unlikely to happen, if you suspect that no packets are being
 sent despite correct sensor connections, you can debug it by following
@@ -335,16 +352,41 @@ to detect any packet after implementing it in Xcode and the Serial
 Monitor does not show the messages as described, please contact us to
 get a new board and sensor.
 
-Completing the Lab {#completing}
-------------------
+Submission and Checkoff Instructions {#submission}
+-----------------------
 
-A TA will checkoff your lab assignment. A checkoff will require
-successfully displaying sensor readings on the Readings screen, as well
-as disconnected and reconnected from a an anthill (by powering it down
-and powering it back up.)
+Write up your answers to the following items in a single PDF file and
+name it **lab2\_\${mit\_username}.pdf** or
+**lab2\_\${mit\_username1}+\${mit\_username2}.pdf** (e.g.
+lab2\_korrawat.pdf or lab2\_korrawat+fadel.pdf). Email the PDF file to
+**6808\@mit.edu** by **Feb 26, 11:59 PM** with subject **\"6.808 Lab 2
+submission\"**. If you work with a partner, you only have to submit
+once. You can get a checkoff during Office Hours within a week after the
+submission deadline, i.e. Mar 4, 11:59 PM. You do not need to submit
+your code, but we may ask to look at your code during the checkoff.
 
-We will hold checkoffs during office hours. Submission instructions are
-TBA. You will return the device at the checkoff.
+1. Names and MIT emails (including your lab partner, if available)
+1. How does a central (your phone) discover a peripheral (an anthill)?
+1. What is the relationship between a peripheral, a service, and a
+   characteristic? (Hint: review this [Apple
+   Document](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothOverview/CoreBluetoothOverview.html))
+1. Provide a screenshot for the Anteater app with sensor readings,
+   similar to the example screenshot
+1. Estimated number of hours you spent on this lab per person
+1. Any comments/suggestions for the lab? Any questions you may have for
+   the checkoff? (Optional)
+
+<!-- During the checkoff, we may ask you to show a demonstration of an -->
+<!-- Application, show the experiments\' results, or explain if and why the -->
+<!-- results are as expected (or unexpected). -->
+
+**A checkoff will require successfully displaying sensor readings on the
+Readings screen, as well as disconnecting from and reconnecting to an
+anthill (by powering it down and powering it back up.) The app should no
+longer display the readings if the anthill is powered off, and should
+automatically reconnect to the anthill once it is powered on again.**
+
+You will return the device at the checkoff.
 
 </div>
 </div>
