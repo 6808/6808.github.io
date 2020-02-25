@@ -139,7 +139,7 @@ table.calendar thead tr {
 </tr>
 <tr> <!-- week of feb 24 -->
   <td id="2020-2-24" class="lecture"><span class="date">Feb 24</span><br />
-  <b>LEC 7:</b> Batteryless Connectivity & Smart Cities <br />
+  <b>LEC 7:</b> Batteryless Connectivity & Smart Cities (<a href="./materials/lec7-backscatter-2020.pdf" target="_blank">Slides</a>)<br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="http://cseweb.ucsd.edu/~schulman/class/cse291_w17/docs/want_rfid.pdf" target="_blank">RFID-based sensing</a> and
     <a href="https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p297.pdf" target="_blank">Caraoke (without section 8)</a>
@@ -152,7 +152,7 @@ table.calendar thead tr {
   <span class="reading"><b>Preparation:</b> Read
     <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch2">Developments of Inertial Sensing</a> and
     <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch3">Principles of Inertial Sensing (Section 3.1 and 3.2 only)</a>
-    (<a href="questions.html?q=q-lec8">Questions</a>)</span>
+    (<a href="questions.html?q=q-lec8">Questions</a>)</span><br />
   <span class="reading"><b>Assigned:</b> <a href="labs/lab3.html">Lab 3</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="labs/lab2.html">Lab 2</a></span></td>
 
