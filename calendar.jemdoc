@@ -148,7 +148,7 @@ table.calendar thead tr {
   <td id="2020-2-25"><span class="date">Feb 25</span></td>
 
   <td id="2020-2-26" class="lecture"><span class="date">Feb 26</span><br />
-  <b>LEC 8:</b> Intro to Inertial Sensing; Activity Recognition <br />
+  <b>LEC 8:</b> Intro to Inertial Sensing; Activity Recognition (<a href="./materials/lec8-slides-inertial-2020.pdf" target="_blank">Slides</a>)<br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch2">Developments of Inertial Sensing</a> and
     <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch3">Principles of Inertial Sensing (Section 3.1 and 3.2 only)</a>
