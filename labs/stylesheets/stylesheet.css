@@ -13,7 +13,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,code1,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, strong, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -204,6 +204,10 @@ pre code {
   box-shadow: none;
 }
 
+a code {
+  color: inherit;
+}
+
 blockquote {
   color: #666;
   margin-bottom: 20px;
@@ -270,6 +274,28 @@ td {
 form {
   background: #f2f2f2;
   padding: 20px;
+}
+
+section.aside, div.aside {
+    margin-top:1em;
+    padding-left:16pt;
+    padding-right:16pt;
+    padding-top:.4em;
+    padding-bottom:.4em;
+    margin-bottom:1em;
+    font-size:11pt;
+    background-color:#F0F0F0;
+}
+section.aside h6, div.aside h6 {
+    margin-bottom:-.5em;
+}
+section.aside code, div.aside code {
+    background-color:#FCFCFC;
+    box-shadow:none;
+}
+
+.nowrap {
+    white-space:nowrap;
 }
 
 /*******************************************************************************

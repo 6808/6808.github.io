@@ -1,4 +1,6 @@
-pandoc lab2.md -f markdown -t html \
+for i in 2 3; do
+pandoc lab$i.md -f markdown -t html --mathjax \
 -c stylesheets/stylesheet.css \
 -c https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css \
--s -o lab2.html
+-s -o lab$i.html
+done
