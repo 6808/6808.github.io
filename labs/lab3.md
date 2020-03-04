@@ -30,7 +30,7 @@ Due: 2020-03-18\
 -   [Section 2 --- Inertial Measurement](#sec2)
     -   [Background](#motionBackground)
     -   [Rotations and Orientations](#rotations)
-    -   [Responsibilities of `accumulateMotion:`](#backtoyou)
+    -   [Responsibilities of `accumulateMotion(_:)`](#backtoyou)
     -   [Task 2A --- Coordinate Transformation](#task2a)
     -   [Task 2B --- Integration](#task2b)
     -   [Task 2C --- Stabilization](#task2c)
@@ -241,7 +241,7 @@ either set of units, and so we need to provide an additional piece of
 information --- roughly speaking, how small of a movement the user can
 comfortably make in these units. The only part of the code where this
 information is available is at the source of the samples, in
-`processGesture2D(...)`\'s caller.
+`processGesture2D`\'s caller.
 
 The caller, for now, is `Gesture2DViewController`, which is taking touch
 input from the user. Because a human finger is much larger than a pixel,
@@ -318,7 +318,7 @@ Having decided which zone the segment belongs to, you should then
 compute the time difference between `samples[i]` and `samples[i-1]`, the
 x difference, and the y difference, and add these three values to the
 appropriate locations in the array `features` (still in
-`processGesture2D(...)`. When you are finished summing, these statements
+`processGesture2D`. When you are finished summing, these statements
 should be true (don\'t forget to initialize the features array to zero):
 
     features[0] = sum (over segments in the top left zone) of fraction of total time spent in this zone
@@ -549,7 +549,7 @@ behaviors, like the phone getting confused if a gesture takes too long.
 ### Background {#motionBackground}
 
 iOS provides device motion through the
-[`CMMotionManager`](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/),
+[`CMMotionManager`](https://developer.apple.com/documentation/coremotion/cmmotionmanager),
 which is instantiated for you by the `Gesture3DViewController` like
 this:
 
@@ -564,16 +564,16 @@ this:
             }
 
 This will result in periodic calls to Gesture3DViewController\'s
-`accumulateMotion:` method, which will be the subject of Tasks 2A-2C.
+`accumulateMotion(_:)` method, which will be the subject of Tasks 2A-2C.
 
 The contents of a [device motion
-update](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/cl/CMDeviceMotion)
+update](https://developer.apple.com/documentation/coremotion/cmdevicemotion)
 are attitude (the orientation of the device relative to the \"reference
 frame\"), rotation rate (rate of change of attitude), gravity
 (CoreMotion\'s best guess of the portion of accelerometer output which
 is due to the Earth), userAcceleration (the remainder of the
-accelerometer output), and magneticField (the external B field acting on
-the device).
+accelerometer output), and magneticField (the external $\mathbf B$ field
+acting on the device).
 
 We will only be using attitude and userAcceleration; these are the
 fields we need to determine the device\'s movement in three-dimensional
@@ -603,7 +603,7 @@ start point to an end point. When we refer to rotations, however, we
 will think of them as operations, or functions, which map un-rotated
 inputs to rotated outputs, *skipping over any intermediate states*. We
 refer to the \"family\" of rotations as the set of all such operations.
-For instance, the \"identity\" rotation, I, has its output always
+For instance, the \"identity\" rotation, $I$, has its output always
 exactly equal to its input. You can think of this as a rotation by zero
 degrees. The family of rotations includes a 90-degree rotation to the
 left, and an 89-degree rotation, and an 89.999999-degree rotation. Thus,
@@ -800,7 +800,7 @@ Because there is no notion of absolute orientation in the laws of
 physics, we always measure an object\'s orientation *relative* to some
 \"standard\" orientation. In our case, we specified the standard
 orientation when we passed the constant
-[`.xArbitraryCorrectedZVertical`](https://developer.apple.com/reference/coremotion/cmattitudereferenceframe)
+[`.xArbitraryCorrectedZVertical`](https://developer.apple.com/documentation/coremotion/cmattitudereferenceframe)
 to `CoreMotion`. The orientation of an object, then, can be represented
 by the rotation which translates vectors from the object\'s
 (instantaneous) local coordinate system to the corresponding vectors in
@@ -808,14 +808,15 @@ the (persistent) coordinate system of a hypothetical copy of the object
 in standard orientation. This rotation is precisely the value returned
 by the `CMDeviceMotion`\'s `attitude` property.
 
-### Responsibilities of `accumulateMotion:` {#backtoyou}
+### Responsibilities of `accumulateMotion(_:)` {#backtoyou}
 
-`accumulateMotion:` will need to convert the data from iOS into a
+`accumulateMotion(_:)` will need to convert the data from iOS into a
 consistent set of coordinates, track the user\'s motion over time, and
 hand off the data to be stored and eventually transmitted to the
-`GestureProcessor`. Here\'s the outline of `accumulateMotion` that you
-will start with, which you can find in Gesture3DViewController.swift
-under InertialMotion/User Interface in Xcode\'s project navigator.
+`GestureProcessor`. Here\'s the outline of `accumulateMotion(_:)` that
+you will start with, which you can find in
+`Gesture3DViewController.swift` under `InertialMotion/User Interface` in
+Xcode\'s project navigator.
 
 ``` {#accumulateMotion}
 func accumulateMotion(_ motion: CMDeviceMotion?) {
@@ -845,8 +846,8 @@ func accumulateMotion(_ motion: CMDeviceMotion?) {
 
 `appendPoint` will store the data while the user is touching the screen,
 and when the user stops touching the screen, it will call the
-`GestureProcessor`\'s `processGesture3DWithSamples` method, which will
-be the subject of Section 3.
+`GestureProcessor`\'s `processGesture3D` method, which will be the
+subject of Section 3.
 
 ::: {.aside}
 ###### Aside:
@@ -857,16 +858,17 @@ it here and elsewhere because it provides a fairly complete set of
 vector/matrix manipulation functions. We\'ve [catalogued](#appendix) a
 few of these functions for you, but you can find the full set through
 [Apple\'s
-documentation](https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKit_Collection/#other).
+documentation](https://developer.apple.com/documentation/glkit).
+
 :::
 
 ### Task 2A --- Coordinate Transformation {#task2a}
 
-Your first task in [`accumulateMotion`](#task2a_code) will be to use the
-quaternion stored in `attitude` to convert the vector `acceleration`
-into a persistent set of coordinates that do not vary with the
-orientation of the phone. Fortunately, there\'s a function in the
-[appendix](#appendix) which will do this for you in one step. Yes,
+Your first task in [`accumulateMotion(_:)`](#accumulateMotion) will be
+to use the quaternion stored in `attitude` to convert the vector
+`acceleration` into a persistent set of coordinates that do not vary
+with the orientation of the phone. Fortunately, there\'s a function in
+the [appendix](#appendix) which will do this for you in one step. Yes,
 we\'re going to make you hunt for it. You\'ll know it when you see it.
 Note well that none of these functions modifies the variable you pass
 in; they return new objects, which you will have to assign back to the
@@ -912,11 +914,11 @@ velocity in terms of the acceleration as follows:
 <div>
 
 ::: {style="width:200px; display:inline-block;"}
-$$\frac{d\mathbf v}{dt}=\mathbf a,$$
+$$\frac{\mathrm d\mathbf v}{\mathrm dt}=\mathbf a,$$
 :::
 
 ::: {style="width:200px; display:inline-block;"}
-$$\frac{d\mathbf x}{dt}=\mathbf v$$
+$$\frac{\mathrm d\mathbf x}{\mathrm dt}=\mathbf v$$
 :::
 
 </div>
@@ -977,16 +979,16 @@ and multiplications. This is just a glimpse of a
 [field](https://en.wikipedia.org/wiki/Numerical_partial_differential_equations).
 
 Your job for this task is to translate this math into code in
-[`accumulateMotion`](#task2b_code). The `Gesture3DViewController`
-already has instance variables called `velocity` and `position` that you
-should use for this purpose, and we\'ve initialized a variable `dt` with
-the expected time between updates. You can change the code to set `dt`
-to the actual time between updates if you wish, using e.g.
-motion.timestamp. If you choose to do this, you\'ll have to introduce a
-new instance variable to hold the last timestamp, and you\'ll have to
-include logic for doing the right thing when the first sample comes in.
-The vector manipulation functions in the [appendix](#appendix) are
-likely to be useful for this task.
+[`accumulateMotion(_:)`](#accumulateMotion). The
+`Gesture3DViewController` already has instance variables called
+`velocity` and `position` that you should use for this purpose, and
+we\'ve initialized a variable `dt` with the expected time between
+updates. You can change the code to set `dt` to the actual time between
+updates if you wish, using e.g. `motion.timestamp`. If you choose to do
+this, you\'ll have to introduce a new instance variable to hold the last
+timestamp, and you\'ll have to include logic for doing the right thing
+when the first sample comes in. The vector manipulation functions in the
+[appendix](#appendix) are likely to be useful for this task.
 
 ### Task 2C --- Stabilization {#task2c}
 
@@ -1000,7 +1002,7 @@ the estimated position. You need to tweak your code from task 2B to
 stabilize the system. Feel free to adopt any of the following
 approaches, or to develop your own.
 
--   Exponential damping. By artificially reducing the velocity and
+-   **Exponential damping.** By artificially reducing the velocity and
     position estimates towards zero at each step, with a rate
     proportional to their current estimates, we effectively kill the
     quadratic growth of errors by imposing an exponential decay. This
@@ -1008,11 +1010,11 @@ approaches, or to develop your own.
     <div>
 
     ::: {style="width:200px; display:inline-block;"}
-    $$\frac{d\mathbf v}{dt}=\mathbf a - \alpha \mathbf v$$
+    $$\frac{\mathrm d\mathbf v}{\mathrm dt}=\mathbf a - \alpha \mathbf v$$
     :::
 
     ::: {style="width:200px; display:inline-block;"}
-    $$\frac{d\mathbf x}{dt}=\mathbf v - \alpha \mathbf x$$
+    $$\frac{\mathrm d\mathbf x}{\mathrm dt}=\mathbf v - \alpha \mathbf x$$
     :::
 
     </div>
@@ -1031,14 +1033,15 @@ approaches, or to develop your own.
     ::: {style="width:400px;"}
     $$\mathbf v(t_i) = e^{-\alpha \Delta t/2} \mathbf v'(t_i) + \frac12\mathbf a(t_i) \Delta t$$
     :::
--   Nonlinear damping. Rather than tweaking the linear system, you could
-    directly alter its state in a non-linear way; for instance, you
-    could set the velocity and position to zero whenever the user lets
-    go of the screen, or you could reduce the magnitude of these vectors
-    by a constant amount per unit time, e.g. $\mathbf x \rightarrow
-                \mathbf x \cdot\mathrm{max}(\frac{|\mathbf x| -\text{step}}{|\mathbf x|},
-                0)$, or you could choose some other rule.
--   Rest recognition. If the acceleration doesn\'t fluctuate by more
+-   **Nonlinear damping.** Rather than tweaking the linear system, you
+    could directly alter its state in a non-linear way; for instance,
+    you could set the velocity and position to zero whenever the user
+    lets go of the screen, or you could reduce the magnitude of these
+    vectors by a constant amount per unit time, e.g. $\mathbf x
+    \rightarrow \mathbf x \cdot\max \left(\frac{|\mathbf x|
+    -\text{step}}{|\mathbf x|}, 0\right)$, or you could choose some
+    other rule.
+-   **Rest recognition.** If the acceleration doesn\'t fluctuate by more
     than a certain amount (pick some threshold value) for a certain
     period of time, you could conclude that the phone is stationary. For
     flair, you could even go back through your collected and
@@ -1076,8 +1079,8 @@ For this section, you will reduce the 3-D gesture recognition problem to
 the 2-D case. With any luck, you\'ll soon be recognizing letters formed
 by waving the phone in the air while touching the screen.
 
-You will be working on `processGesture3DWithSamples`, which you can find
-in GestureProcessor.swift. Here\'s the initial skeleton.
+You will be working on `processGesture3D`, which you can find in
+`GestureProcessor.swift`. Here\'s the initial skeleton.
 
 ``` {#process3d}
 func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
@@ -1130,10 +1133,10 @@ system:
 
 Your job for this part is to use the attitude (that is, orientation)
 quaternion recorded in each of the 3-D motion samples in
-`processGesture3DWithSamples` to estimate the instantaneous orientation
-of the phone\'s y-axis --- a proxy for the user\'s notion of up and down
---- and the phone\'s x-axis --- a proxy for the user\'s notion of left
-and right.
+`processGesture3D` to estimate the instantaneous orientation of the
+phone\'s y-axis --- a proxy for the user\'s notion of up and down ---
+and the phone\'s x-axis --- a proxy for the user\'s notion of left and
+right.
 
 What we are doing here is to determine the average of the phone\'s
 orientation over the period of the gesture. However, what it means
@@ -1150,12 +1153,12 @@ A [rigorous treatment of this
 issue](http://epubs.siam.org/doi/abs/10.1137/S0895479801383877) is
 available, invoking some heavy-duty linear algebra which we will not
 require you to study. Instead, we\'ve provided you with a function,
-`NearestRotation` in Geometry.swift, that will call into iOS\'s
+`NearestRotation` in `Geometry.swift`, that will call into iOS\'s
 implementation of the Netlib Linear Algebra PACKage (LAPACK), an
 exceedingly popular and well-maintained library. LAPACK is,
 unfortunately, written in Fortran with an interface consisting of
 six-character function names like
-[`dgesdd`](http://www.netlib.org/lapack/explore-html/d1/d7e/group__double_g_esing.html#gad8e0f1c83a78d3d4858eaaa88a1c5ab1).
+[`dgesdd`](http://www.netlib.org/lapack/explore-html/d1/d7e/group__double_g_esing.html).
 We wouldn\'t deny you the pleasure of reading the code behind that
 marvel, or of studying the [technique it
 implements](https://en.wikipedia.org/wiki/Singular_value_decomposition).
@@ -1163,13 +1166,13 @@ For our purposes, what you need to know is that the average of a set of
 rotations can be taken to mean the result of a three-step procedure:
 
 1.  Convert the quaternion representing the orientation of each sample
-    (that is, samples\[i\].attitude) to a 3×3 matrix representing the
+    (that is, `samples3D[i].attitude`) to a 3×3 matrix representing the
     rotation.
 2.  Average together the resulting matrices, each matrix component
     separately. (note: the average of rotation matrices is not, in
     general, a rotation matrix.)
 3.  Find the rotation matrix closest to the average matrix using
-    `NearestRotation`.
+    `nearestRotation` (declared in `Geometry.swift`).
 
 The final result can be converted back into a quaternion, or used
 directly in matrix form.
@@ -1177,12 +1180,11 @@ directly in matrix form.
 ### Task 3B --- Project Coordinates {#task3b}
 
 The final task for this lab is to project the coordinates of the 3-D
-sample points to 2-D coordinates suitable for use by
-`processGesture2DWithSamples`. In the code, you will need to form the
-matrix-vector product of the rotation matrix M from Task 3A with
-`samples3D[i].location` for each i, and then copy the transformed x and
-y coordinates, along with the timestamp `samples3D[i].t`, into
-`samples2D[i]`.
+sample points to 2-D coordinates suitable for use by `processGesture2D`.
+In the code, you will need to form the matrix-vector product of the
+rotation matrix M from Task 3A with `samples3D[i].location` for each
+`i`, and then copy the transformed x and y coordinates, along with the
+timestamp `samples3D[i].t`, into `samples2D[i]`.
 
 ### Task 3C --- Optional Improvements {#task3c}
 
@@ -1242,7 +1244,9 @@ and data types rather than defining your own because the result will
   `GLKVector3DotProduct(a, b)`                                      Returns the sum over components of the element-wise product of a and b.
   `GLKMatrix3`                                                      A 3×3 matrix data type. See its definition for details.
   `GLKMatrix3MakeWithRows`                                          Accepts three vectors and returns a 3×3 matrix.
+  `GLKMatrix3MakeWithQuaternion`                                    Accepts a quaternion and returns a 3×3 matrix.
   `GLKMatrix3MultiplyVector3(M, a)`                                 Returns the result of a matrix-vector product.
+  `GLKMatrix3Scale`                                                 Returns a 3×3 matrix scaled by three scaling factors.
   `GLKQuaternionFromCMQuaternion(motion.attitude.quaternion)`       Our helper function which converts between CoreMotion\'s rotation data type and GLKit\'s.
   `GLKVector3FromCMAcceleration(motion.userAcceleration)`           Our helper function which converts between CoreMotion\'s acceleration data type and GLKit\'s vector data type.
 
