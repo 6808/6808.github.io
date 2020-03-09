@@ -166,7 +166,7 @@ Due: 2020-03-18<br />
 <p>Observation 1: left and right, vs. center, are important distinctions in recognizing the bits of a handwritten letter.</p>
 <p>Observation 2: top and bottom, vs. middle, are important distinctions in recognizing the bits of a handwritten letter.</p>
 <p>Observation 3: gross horizontal and vertical movements are more important than the exact path followed.</p>
-<p>Observation 4: time spent drawing any given part of a letter might be interesting, let's throw that in, too.</p>
+<p>Observation 4: (normalized) time spent drawing any given part of a letter might be interesting, let's throw that in, too.</p>
 <p>So our representation is based on dividing the gesture into thirds horizontally and vertically, as follows:</p>
 <pre><code>For each vertical 1/3 (top, middle, bottom):
     For each horizontal 1/3 (left, center, right):
@@ -264,6 +264,8 @@ features[26] = sum (over segments in the bottom right zone) of net movement in t
 <img src="images/lab3/alphabet.png" height="400" />
 </center>
 </div>
+<p>Note that in our drawing, G starts from the middle right and ends at the top right.</p>
+<p>If your implementation is correct, around 18 to 24 out of 26 characters correct. Most scores (as printed in the debugger console) are between +4 to +8. If this is not the case, we recommend that you check your code for calculating the features, making sure that they match the descriptions in previous tasks, especially <a href="#task1b">Task 1B</a>.</p>
 <h3 id="task1f">Task 1F — Optional Improvements</h3>
 <p>In Section 1, you've worked with a very particular machine learning solution. It involved computing an <em>ad hoc</em> set of features, feeding them to a particular classifier algorithm, and combining the output of that algorithm with live data in just the right way so as to get an immediate result.</p>
 <p>Note that this is one of very many possibilities. If you'd like to explore alternatives in any part of this process, extra credit is available. For instance, you might try scaling x and y differently to bring each character into a more uniform aspect ratio — being careful that your new code does not make recognition stop working for tall, thin characters like "I". Or you could find out what happens when the stroke is sliced up into 4×4 squares or more, rather than 3×3. You could also make changes to the app to support gestures consisting of more than one stroke, for instance by keeping additional state in instance variables of the <code>GestureProcessor</code> object, and not calling <code>gestureProcessor(_:didRecognizeGesture:)</code> right away. You might consider learning how to work with delays and asynchronous processing on iOS in order to trigger recognition when no new strokes have been added for a few hundred milliseconds.</p>
@@ -406,6 +408,7 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 </div>
 <p>The procedure outlined here has allowed us to take a continuous-time system of (ordinary) differential equations and turn it into a discrete-time integration rule using a small, finite number of additions and multiplications. This is just a glimpse of a <a href="https://en.wikipedia.org/wiki/Numerical_methods_for_ordinary_differential_equations">rich</a> <a href="https://en.wikipedia.org/wiki/Numerical_partial_differential_equations">field</a>.</p>
 <p>Your job for this task is to translate this math into code in <a href="#accumulateMotion"><code>accumulateMotion(_:)</code></a>. The <code>Gesture3DViewController</code> already has instance variables called <code>velocity</code> and <code>position</code> that you should use for this purpose, and we've initialized a variable <code>dt</code> with the expected time between updates. You can change the code to set <code>dt</code> to the actual time between updates if you wish, using e.g. <code>motion.timestamp</code>. If you choose to do this, you'll have to introduce a new instance variable to hold the last timestamp, and you'll have to include logic for doing the right thing when the first sample comes in. The vector manipulation functions in the <a href="#appendix">appendix</a> are likely to be useful for this task.</p>
+<p>Try moving your phone while touching the screen in the 3D tab and check that the ribbon moves, roughly in the direction that you move your phone. It is expected to see the ribbon move increasingly faster. We are going to fix it in the next task.</p>
 <h3 id="task2c">Task 2C — Stabilization</h3>
 <p>As we've discussed, an integrator like the linear system you implemented in task 2B is unstable in the sense that a bounded input acceleration can lead to an unbounded output position estimate. In fact, for a constant nonzero input, we would expect to see quadratic growth in the output position. Among the undesirable properties of such a system is the way that small errors in the acceleration lead to large errors in the estimated position. You need to tweak your code from task 2B to stabilize the system. Feel free to adopt any of the following approaches, or to develop your own.</p>
 <ul>
@@ -481,15 +484,20 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <h3 id="task3c">Task 3C — Optional Improvements</h3>
 <p>The gesture recognition results that we have obtained using the procedure we have outlined for you have not been fantastic. One reason for that is the poor fit between the sensor data (acceleration) and the machine learning features (position, motion, and dwell time). We would like to encourage you to think about an alternative set of machine learning features which are a more direct fit to the 3-D motion problem and the accelerometer data. Let us know what you discover!</p>
 <h2 id="submission">Submission and Checkoff Instructions</h2>
-<p>TBA <!-- Write up your answers to the following items in a single PDF file and --> <!-- name it **lab3\_\${mit\_username}.pdf** or --> <!-- **lab3\_\${mit\_username1}+\${mit\_username2}.pdf** (e.g. --> <!-- lab3\_korrawat.pdf or lab3\_korrawat+fadel.pdf). Email the PDF file to --> <!-- **6808\@mit.edu** by **Mar 18, 11:59 PM** with subject **\"6.808 Lab 3 --> <!-- submission\"**. If you work with a partner, you only have to submit --> <!-- once. You can get a checkoff during Office Hours within a week after the --> <!-- submission deadline, i.e. Mar 25, 11:59 PM. You do not need to submit --> <!-- your code, but we may ask to look at your code during the checkoff. --></p>
-<!-- 1. Names and MIT emails (including your lab partner, if available) -->
-<!-- 1. Provide a screenshot of the 2D mode once you wrote at least 3 -->
-<!--    distinct characters -->
-<!-- 1. Provide a screenshot of the 3D mode once you wrote at least 3 -->
-<!--    distinct characters -->
-<!-- 1. Estimated number of hours you spent on this lab per person -->
-<!-- 1. Any comments/suggestions for the lab? Any questions you may have for -->
-<!--    the checkoff? (Optional) -->
+<p>Write up your answers to the following items in a single PDF file and name it <strong>lab3_kerberos.pdf</strong> or <strong>lab3_kerberos1+kerberos2.pdf</strong> (e.g. lab3_korrawat.pdf or lab3_korrawat+fadel.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Mar 18, 11:59 PM</strong> with subject <strong>"6.808 Lab 3 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Apr 1, 11:59 PM (with extra time for this lab due to Spring break). You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
+<p>Note for those who finished the lab early: Please check the end of <a href="#task1e">Task 1E</a> for added instructions about an expected accuracy for the 2D mode.</p>
+<ol type="1">
+<li>Names and MIT emails (including your lab partner, if available).</li>
+<li>Try writing the letters A to Z in the 2D mode at least 3 times. What is the average accuracy? What characters are consistently misclassified? Can you hypothesize why?</li>
+<li>Provide a screenshot of the 2D mode after testing in the previous item. There should be some labels at the bottom of the screen.</li>
+<li>What stabilization approach(es) did you implement for the 3D mode? Provide relevant parameters, such as <span class="math inline">\(\alpha\)</span> for exponential damping or time threshold for rest recognition.</li>
+<li>In which plane should you move your phone for the 3D mode (xy, xz, or yz plane)?</li>
+<li>Try writing the letters A to Z in the 3D mode at least 3 times. What is the average accuracy? What characters are consistently misclassified? (Do not worry if the accuracy is low.)</li>
+<li>Provide a screenshot of the 3D mode after testing in the previous item. There should be some labels at the bottom of the screen, as well as traces of ribbons.</li>
+<li>Estimated number of hours you spent on this lab per person.</li>
+<li>If you implemented any optional improvements, briefly explain them here. (Optional)</li>
+<li>Any comments/suggestions for the lab? Any questions for the checkoff? (Optional)</li>
+</ol>
 <h2 id="appendix">Appendix: Functions</h2>
 <p>You may find the following functions, macros, and data types useful for the exercises in this lab. It's better to use system-provided functions and data types rather than defining your own because the result will (usually) be more concise, readable, performant code.</p>
 <table>

@@ -283,8 +283,8 @@ recognizing the bits of a handwritten letter.
 Observation 3: gross horizontal and vertical movements are more
 important than the exact path followed.
 
-Observation 4: time spent drawing any given part of a letter might be
-interesting, let\'s throw that in, too.
+Observation 4: (normalized) time spent drawing any given part of a
+letter might be interesting, let\'s throw that in, too.
 
 So our representation is based on dividing the gesture into thirds
 horizontally and vertically, as follows:
@@ -473,6 +473,15 @@ fingertip until the letter is finished.
 ![](images/lab3/alphabet.png){height="400"}
 </center>
 :::
+
+Note that in our drawing, G starts from the middle right and
+ends at the top right.
+
+If your implementation is correct, around 18 to 24 out of 26 characters
+correct. Most scores (as printed in the debugger console) are between +4
+to +8. If this is not the case, we recommend that you check your code
+for calculating the features, making sure that they match the
+descriptions in previous tasks, especially [Task 1B](#task1b).
 
 ### Task 1F --- Optional Improvements {#task1f}
 
@@ -990,6 +999,11 @@ timestamp, and you\'ll have to include logic for doing the right thing
 when the first sample comes in. The vector manipulation functions in the
 [appendix](#appendix) are likely to be useful for this task.
 
+Try moving your phone while touching the screen in the 3D tab and check
+that the ribbon moves, roughly in the direction that you move your
+phone. It is expected to see the ribbon move increasingly faster. We are
+going to fix it in the next task.
+
 ### Task 2C --- Stabilization {#task2c}
 
 As we\'ve discussed, an integrator like the linear system you
@@ -1199,25 +1213,42 @@ and the accelerometer data. Let us know what you discover!
 Submission and Checkoff Instructions {#submission}
 -----------------------
 
-TBA
-<!-- Write up your answers to the following items in a single PDF file and -->
-<!-- name it **lab3\_\${mit\_username}.pdf** or -->
-<!-- **lab3\_\${mit\_username1}+\${mit\_username2}.pdf** (e.g. -->
-<!-- lab3\_korrawat.pdf or lab3\_korrawat+fadel.pdf). Email the PDF file to -->
-<!-- **6808\@mit.edu** by **Mar 18, 11:59 PM** with subject **\"6.808 Lab 3 -->
-<!-- submission\"**. If you work with a partner, you only have to submit -->
-<!-- once. You can get a checkoff during Office Hours within a week after the -->
-<!-- submission deadline, i.e. Mar 25, 11:59 PM. You do not need to submit -->
-<!-- your code, but we may ask to look at your code during the checkoff. -->
+Write up your answers to the following items in a single PDF file and
+name it **lab3\_kerberos.pdf** or **lab3\_kerberos1+kerberos2.pdf**
+(e.g. lab3\_korrawat.pdf or lab3\_korrawat+fadel.pdf). Email the PDF
+file to **6808\@mit.edu** by **Mar 18, 11:59 PM** with subject **\"6.808
+Lab 3 submission\"**. If you work with a partner, you only have to
+submit once. You can get a checkoff during Office Hours within a week
+after the submission deadline, i.e. Apr 1, 11:59 PM (with extra time for
+this lab due to Spring break). You do not need to submit your code, but
+we may ask to look at your code during the checkoff.
 
-<!-- 1. Names and MIT emails (including your lab partner, if available) -->
-<!-- 1. Provide a screenshot of the 2D mode once you wrote at least 3 -->
-<!--    distinct characters -->
-<!-- 1. Provide a screenshot of the 3D mode once you wrote at least 3 -->
-<!--    distinct characters -->
-<!-- 1. Estimated number of hours you spent on this lab per person -->
-<!-- 1. Any comments/suggestions for the lab? Any questions you may have for -->
-<!--    the checkoff? (Optional) -->
+Note for those who finished the lab early: Please check the end of [Task
+1E](#task1e) for added instructions about an expected accuracy for the
+2D mode.
+
+1. Names and MIT emails (including your lab partner, if available).
+1. Try writing the letters A to Z in the 2D mode at least 3 times. What
+   is the average accuracy? What characters are consistently
+   misclassified? Can you hypothesize why?
+1. Provide a screenshot of the 2D mode after testing in the previous
+   item. There should be some labels at the bottom of the screen.
+1. What stabilization approach(es) did you implement for the 3D mode?
+   Provide relevant parameters, such as $\alpha$ for exponential
+   damping or time threshold for rest recognition.
+1. In which plane should you move your phone for the 3D mode (xy, xz, or
+   yz plane)?
+1. Try writing the letters A to Z in the 3D mode at least 3 times. What
+   is the average accuracy? What characters are consistently
+   misclassified? (Do not worry if the accuracy is low.)
+1. Provide a screenshot of the 3D mode after testing in the previous
+   item. There should be some labels at the bottom of the screen, as
+   well as traces of ribbons.
+1. Estimated number of hours you spent on this lab per person.
+1. If you implemented any optional improvements, briefly explain them
+   here. (Optional)
+1. Any comments/suggestions for the lab? Any questions for the checkoff?
+   (Optional)
 
 Appendix: Functions {#appendix}
 -------------------
