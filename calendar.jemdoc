@@ -169,7 +169,7 @@ table.calendar thead tr {
   <td id="2020-3-3"><span class="date">Mar 3</span></td>
 
   <td id="2020-3-4" class="lecture"><span class="date">Mar 4</span><br />
-    <b>LEC 10:</b> Pothole detection <br />
+    <b>LEC 10:</b> Pothole detection (<a href="./materials/lec10-slides-Pothole-2020.pdf" target="_blank">Slides</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://nms.csail.mit.edu/papers/p2-mobisys-2008.pdf" target="_blank">Pothole Patrol</a>
     (<a href="questions.html?q=q-lec10">Questions</a>)</span><br /></td>
