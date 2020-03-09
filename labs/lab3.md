@@ -474,8 +474,8 @@ fingertip until the letter is finished.
 </center>
 :::
 
-Note that in our drawing, G starts from the middle right and
-ends at the top right.
+Note that in our drawing, F starts from the top right and ends at the
+middle center. G starts from the middle right and ends at the top right.
 
 If your implementation is correct, around 18 to 24 out of 26 characters
 correct. Most scores (as printed in the debugger console) are between +4
@@ -1224,8 +1224,8 @@ this lab due to Spring break). You do not need to submit your code, but
 we may ask to look at your code during the checkoff.
 
 Note for those who finished the lab early: Please check the end of [Task
-1E](#task1e) for added instructions about an expected accuracy for the
-2D mode.
+1E](#task1e) for added instructions about character drawing and an
+expected accuracy for the 2D mode.
 
 1. Names and MIT emails (including your lab partner, if available).
 1. Try writing the letters A to Z in the 2D mode at least 3 times. What

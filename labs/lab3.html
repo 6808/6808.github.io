@@ -264,7 +264,7 @@ features[26] = sum (over segments in the bottom right zone) of net movement in t
 <img src="images/lab3/alphabet.png" height="400" />
 </center>
 </div>
-<p>Note that in our drawing, G starts from the middle right and ends at the top right.</p>
+<p>Note that in our drawing, F starts from the top right and ends at the middle center. G starts from the middle right and ends at the top right.</p>
 <p>If your implementation is correct, around 18 to 24 out of 26 characters correct. Most scores (as printed in the debugger console) are between +4 to +8. If this is not the case, we recommend that you check your code for calculating the features, making sure that they match the descriptions in previous tasks, especially <a href="#task1b">Task 1B</a>.</p>
 <h3 id="task1f">Task 1F — Optional Improvements</h3>
 <p>In Section 1, you've worked with a very particular machine learning solution. It involved computing an <em>ad hoc</em> set of features, feeding them to a particular classifier algorithm, and combining the output of that algorithm with live data in just the right way so as to get an immediate result.</p>
@@ -485,7 +485,7 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <p>The gesture recognition results that we have obtained using the procedure we have outlined for you have not been fantastic. One reason for that is the poor fit between the sensor data (acceleration) and the machine learning features (position, motion, and dwell time). We would like to encourage you to think about an alternative set of machine learning features which are a more direct fit to the 3-D motion problem and the accelerometer data. Let us know what you discover!</p>
 <h2 id="submission">Submission and Checkoff Instructions</h2>
 <p>Write up your answers to the following items in a single PDF file and name it <strong>lab3_kerberos.pdf</strong> or <strong>lab3_kerberos1+kerberos2.pdf</strong> (e.g. lab3_korrawat.pdf or lab3_korrawat+fadel.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Mar 18, 11:59 PM</strong> with subject <strong>"6.808 Lab 3 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Apr 1, 11:59 PM (with extra time for this lab due to Spring break). You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
-<p>Note for those who finished the lab early: Please check the end of <a href="#task1e">Task 1E</a> for added instructions about an expected accuracy for the 2D mode.</p>
+<p>Note for those who finished the lab early: Please check the end of <a href="#task1e">Task 1E</a> for added instructions about character drawing and an expected accuracy for the 2D mode.</p>
 <ol type="1">
 <li>Names and MIT emails (including your lab partner, if available).</li>
 <li>Try writing the letters A to Z in the 2D mode at least 3 times. What is the average accuracy? What characters are consistently misclassified? Can you hypothesize why?</li>
