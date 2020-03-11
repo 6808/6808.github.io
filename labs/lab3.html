@@ -28,7 +28,7 @@
 </header>
 <div id="header_wrap" class="outer">
 <section id="main_content" class="inner">
-<h1 id="project_title"><a href="index.html">6.808</a></h1>
+<h1 id="project_title"><a href="../index.html">6.808</a></h1>
 <h2 id="project_tagline">Lab 3: Gesture Recognition and Inertial Sensing</h2>
 <p>Assigned: 2020-02-26<br />
 Due: 2020-03-18<br />
@@ -475,12 +475,31 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <p>A <a href="http://epubs.siam.org/doi/abs/10.1137/S0895479801383877">rigorous treatment of this issue</a> is available, invoking some heavy-duty linear algebra which we will not require you to study. Instead, we've provided you with a function, <code>NearestRotation</code> in <code>Geometry.swift</code>, that will call into iOS's implementation of the Netlib Linear Algebra PACKage (LAPACK), an exceedingly popular and well-maintained library. LAPACK is, unfortunately, written in Fortran with an interface consisting of six-character function names like <a href="http://www.netlib.org/lapack/explore-html/d1/d7e/group__double_g_esing.html"><code>dgesdd</code></a>. We wouldn't deny you the pleasure of reading the code behind that marvel, or of studying the <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">technique it implements</a>. For our purposes, what you need to know is that the average of a set of rotations can be taken to mean the result of a three-step procedure:</p>
 <ol type="1">
 <li>Convert the quaternion representing the orientation of each sample (that is, <code>samples3D[i].attitude</code>) to a 3×3 matrix representing the rotation.</li>
-<li>Average together the resulting matrices, each matrix component separately. (note: the average of rotation matrices is not, in general, a rotation matrix.)</li>
-<li>Find the rotation matrix closest to the average matrix using <code>nearestRotation</code> (declared in <code>Geometry.swift</code>).</li>
+<li>Average together the resulting matrices, each matrix component separately. (Note: the average of rotation matrices is not, in general, a rotation matrix.)</li>
+<li>Find the rotation matrix closest to the average matrix using <code>nearestRotation</code> (declared in <code>Geometry.swift</code>). You can use the sum matrix without dividing by the count, because <code>nearestRotation</code> will take care of that.</li>
 </ol>
 <p>The final result can be converted back into a quaternion, or used directly in matrix form.</p>
 <h3 id="task3b">Task 3B — Project Coordinates</h3>
-<p>The final task for this lab is to project the coordinates of the 3-D sample points to 2-D coordinates suitable for use by <code>processGesture2D</code>. In the code, you will need to form the matrix-vector product of the rotation matrix M from Task 3A with <code>samples3D[i].location</code> for each <code>i</code>, and then copy the transformed x and y coordinates, along with the timestamp <code>samples3D[i].t</code>, into <code>samples2D[i]</code>.</p>
+<p>The final task for this lab is to project the coordinates of the 3-D sample points to 2-D coordinates suitable for use by <code>processGesture2D</code>. In the code, you will need to form the matrix-vector product of <strong>the transpose of</strong> the rotation matrix M from Task 3A with <code>samples3D[i].location</code> for each <code>i</code>, and then copy the transformed x and y coordinates, along with the timestamp <code>samples3D[i].t</code>, into <code>samples2D[i]</code>.</p>
+<p>When mapping from 3D to 2D locations, the y coordinates have to be flipped. The positive y-axis of the device corresponds to “up”, whereas that of the 2D view (from Section 1) corresponds to “down”. The 2D view’s origin is the top left corner of the screen.</p>
+<div style="color:red">
+<p><strong>Updates (Mar 11, 2020)</strong></p>
+<!-- Items 1. and 2. should be fixed in the current version of starter code. -->
+<!-- Please check that your starter code is fixed. -->
+<ol type="1">
+<li><p>Towards the end of <code>Gesture3DViewController.swift</code>, in the <code>appendPoint</code> function, the z axis should not be flipped. The <code>position</code> constant should be removed and the <code>location</code> parameter should be <code>point</code>.</p>
+<pre><code>if draw {
+    let s = Sample3D(location: point,
+                     attitude: attitude,
+                     t: Date.timeIntervalSinceReferenceDate)
+    samples.append(s)
+} // ...</code></pre></li>
+<li><p>In line 27 of <code>Geometry.swift</code>, change <code>A[j+3*i]</code> to <code>A[i+j*3]</code>.</p></li>
+<li><p>You need to transpose the matrix you get from <code>nearestRotation</code> before applying it to 3D locations to transform from the reference coordinates to the phone coordinates.</p></li>
+<li><p>When mapping from 3D to 2D locations, the y coordinates have to be flipped. The positive y-axis of the device corresponds to “up”, whereas that of the 2D view (from Section 1) corresponds to “down”. The 2D view’s origin is the top left corner of the screen.</p></li>
+</ol>
+<p>You should be able to draw letters in any orientation, given that the drawing corresponds to the device’s up-down and left-right movement, as described in the beginning of <span id="task3a">Task3A</span>. Sometimes, it is helpful to shake your phone and wait for a few seconds for the device to calibrate.</p>
+</div>
 <h3 id="task3c">Task 3C — Optional Improvements</h3>
 <p>The gesture recognition results that we have obtained using the procedure we have outlined for you have not been fantastic. One reason for that is the poor fit between the sensor data (acceleration) and the machine learning features (position, motion, and dwell time). We would like to encourage you to think about an alternative set of machine learning features which are a more direct fit to the 3-D motion problem and the accelerometer data. Let us know what you discover!</p>
 <h2 id="submission">Submission and Checkoff Instructions</h2>
@@ -518,7 +537,7 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>exp(x)</code></td>
-<td style="text-align: left;">Returns the double <span style="font-style: italic;">e<sup>x</sup></span>.</td>
+<td style="text-align: left;">Returns the double <span class="math inline">\(e^x\)</span>.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>NSDate.timeIntervalSinceReferenceDate()</code></td>
@@ -565,20 +584,20 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <td style="text-align: left;">A 3×3 matrix data type. See its definition for details.</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><code>GLKMatrix3Transpose</code></td>
+<td style="text-align: left;">Returns the transpose of the input matrix.</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><code>GLKMatrix3MakeWithRows</code></td>
 <td style="text-align: left;">Accepts three vectors and returns a 3×3 matrix.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>GLKMatrix3MakeWithQuaternion</code></td>
 <td style="text-align: left;">Accepts a quaternion and returns a 3×3 matrix.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>GLKMatrix3MultiplyVector3(M, a)</code></td>
 <td style="text-align: left;">Returns the result of a matrix-vector product.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>GLKMatrix3Scale</code></td>
-<td style="text-align: left;">Returns a 3×3 matrix scaled by three scaling factors.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>GLKQuaternionFromCMQuaternion(motion.attitude.quaternion)</code></td>

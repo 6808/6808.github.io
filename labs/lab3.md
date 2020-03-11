@@ -6,7 +6,7 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 
 ::: {#header_wrap .outer}
 ::: {#main_content .section .inner}
-[6.808](index.html) {#project_title}
+[6.808](../index.html) {#project_title}
 ===================
 
 Lab 3: Gesture Recognition and Inertial Sensing {#project_tagline}
@@ -1182,11 +1182,13 @@ rotations can be taken to mean the result of a three-step procedure:
 1.  Convert the quaternion representing the orientation of each sample
     (that is, `samples3D[i].attitude`) to a 3×3 matrix representing the
     rotation.
-2.  Average together the resulting matrices, each matrix component
-    separately. (note: the average of rotation matrices is not, in
+1.  Average together the resulting matrices, each matrix component
+    separately. (Note: the average of rotation matrices is not, in
     general, a rotation matrix.)
-3.  Find the rotation matrix closest to the average matrix using
-    `nearestRotation` (declared in `Geometry.swift`).
+1.  Find the rotation matrix closest to the average matrix using
+    `nearestRotation` (declared in `Geometry.swift`). You can use the
+    sum matrix without dividing by the count, because `nearestRotation`
+    will take care of that.
 
 The final result can be converted back into a quaternion, or used
 directly in matrix form.
@@ -1195,10 +1197,51 @@ directly in matrix form.
 
 The final task for this lab is to project the coordinates of the 3-D
 sample points to 2-D coordinates suitable for use by `processGesture2D`.
-In the code, you will need to form the matrix-vector product of the
-rotation matrix M from Task 3A with `samples3D[i].location` for each
-`i`, and then copy the transformed x and y coordinates, along with the
-timestamp `samples3D[i].t`, into `samples2D[i]`.
+In the code, you will need to form the matrix-vector product of **the
+transpose of** the rotation matrix M from Task 3A with
+`samples3D[i].location` for each `i`, and then copy the transformed x
+and y coordinates, along with the timestamp `samples3D[i].t`, into
+`samples2D[i]`.
+
+When mapping from 3D to 2D locations, the y coordinates have to be
+flipped. The positive y-axis of the device corresponds to "up", whereas
+that of the 2D view (from Section 1) corresponds to "down". The 2D
+view's origin is the top left corner of the screen.
+
+::: {style="color:red"}
+**Updates (Mar 11, 2020)**
+
+<!-- Items 1. and 2. should be fixed in the current version of starter code. -->
+<!-- Please check that your starter code is fixed. -->
+
+1.  Towards the end of `Gesture3DViewController.swift`, in the
+    `appendPoint` function, the z axis should not be flipped. The
+    `position` constant should be removed and the `location` parameter
+    should be `point`.
+
+        if draw {
+            let s = Sample3D(location: point,
+                             attitude: attitude,
+                             t: Date.timeIntervalSinceReferenceDate)
+            samples.append(s)
+        } // ...
+
+1.  In line 27 of `Geometry.swift`, change `A[j+3*i]` to `A[i+j*3]`.
+1.  You need to transpose the matrix you get from `nearestRotation`
+    before applying it to 3D locations to transform from the reference
+    coordinates to the phone coordinates.
+1.  When mapping from 3D to 2D locations, the y coordinates have to be
+    flipped. The positive y-axis of the device corresponds to "up",
+    whereas that of the 2D view (from Section 1) corresponds to "down".
+    The 2D view's origin is the top left corner of the screen.
+
+You should be able to draw letters in any orientation, given that the
+drawing corresponds to the device's up-down and left-right movement, as
+described in the beginning of [Task3A]{#task3a}. Sometimes, it is
+helpful to shake your phone and wait for a few seconds for the device to
+calibrate.
+
+:::
 
 ### Task 3C --- Optional Improvements {#task3c}
 
@@ -1262,7 +1305,7 @@ and data types rather than defining your own because the result will
   ----------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   `min(a, b)`                                                       This is actually a preprocessor macro that works on any data type. It\'s smart enough to only evaluate its arguments once, which is not true of the naïve way of writing such a macro, `(((a) < (b)) ? (a) : (b))`, which might evaluate each argument twice if the compiler can\'t convince itself that they are side-effect free.
   `max(a, b)`                                                       Same story. Contrast these macros with `fmin`/`fmax`/`fminf`/`fmaxf`, which require the programmer to use a different function for each data type.
-  `exp(x)`                                                          Returns the double [e^x^]{style="font-style: italic;"}.
+  `exp(x)`                                                          Returns the double $e^x$.
   `NSDate.timeIntervalSinceReferenceDate()`                         Returns number of seconds (including fractional part) since a particular fixed date in 2001. Note that the return value is a double, a 64-bit floating-point (e.g. scientific notation) data type. Of those 64 bits, a certain number are used for the exponent, so in effect, a double has 53 significant bits (analogous to significant figures in base 10), and when used to store the time interval since the reference date, gives a resolution of ±26 nanoseconds. However, if you cast the double returned by this function to a float (32 bits) or store it in a variable of type float, you will lose bits, leaving only 24 significant bits. This leaves you with a resolution of ±14.1 *seconds* --- so don\'t use float to represent time intervals; stick with double.
   `GLKVector3`                                                      A three-dimensional vector data type. Its members can be accessed with .x, .y, .z.
   `GLKVector3Make(x, y, z)`                                         A helper function which returns a GLKVector3 with the specified coordinates.
@@ -1274,10 +1317,10 @@ and data types rather than defining your own because the result will
   `GLKQuaternionRotateVector3(q, a)`{#GLKQuaternionRotateVector3}   Returns the result of applying the rotation represented by q to a.
   `GLKVector3DotProduct(a, b)`                                      Returns the sum over components of the element-wise product of a and b.
   `GLKMatrix3`                                                      A 3×3 matrix data type. See its definition for details.
+  `GLKMatrix3Transpose`                                             Returns the transpose of the input matrix.
   `GLKMatrix3MakeWithRows`                                          Accepts three vectors and returns a 3×3 matrix.
   `GLKMatrix3MakeWithQuaternion`                                    Accepts a quaternion and returns a 3×3 matrix.
   `GLKMatrix3MultiplyVector3(M, a)`                                 Returns the result of a matrix-vector product.
-  `GLKMatrix3Scale`                                                 Returns a 3×3 matrix scaled by three scaling factors.
   `GLKQuaternionFromCMQuaternion(motion.attitude.quaternion)`       Our helper function which converts between CoreMotion\'s rotation data type and GLKit\'s.
   `GLKVector3FromCMAcceleration(motion.userAcceleration)`           Our helper function which converts between CoreMotion\'s acceleration data type and GLKit\'s vector data type.
 
