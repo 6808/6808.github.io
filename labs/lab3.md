@@ -69,14 +69,14 @@ At each point, you will be welcome to expand the capabilities of the
 basic recognition framework we have put in your hands.
 
 Please go ahead and download the [Xcode
-project](codes/lab3/lab3-swift-blank.zip) for this lab. Update the team
-and bundle identifier and build the app on an iPhone (not a simulator).
-You should see two modes: 2D and 3D. In the 2D mode, you should be able
-to write a letter on the screen and the app will show "?" for each
-letter. In the 3D mode, try pressing and holding anywhere on the screen
-while moving your phone around. There should be a "ribbon" at the center
-of the screen and also a "?" sign for each gesture. If the starter code
-does not work as described, please let us know.
+project](codes/lab3/lab3-swift-blank-update.zip) for this lab. Update
+the team and bundle identifier and build the app on an iPhone (not a
+simulator). You should see two modes: 2D and 3D. In the 2D mode, you
+should be able to write a letter on the screen and the app will show "?"
+for each letter. In the 3D mode, try pressing and holding anywhere on
+the screen while moving your phone around. There should be a "ribbon" at
+the center of the screen and also a "?" sign for each gesture. If the
+starter code does not work as described, please let us know.
 
 <center>
 ![](images/lab3/screenshot_starter_2d.png){height="400"}
@@ -478,10 +478,11 @@ Note that in our drawing, F starts from the top right and ends at the
 middle center. G starts from the middle right and ends at the top right.
 
 If your implementation is correct, around 18 to 24 out of 26 characters
-correct. Most scores (as printed in the debugger console) are between +4
-to +8. If this is not the case, we recommend that you check your code
-for calculating the features, making sure that they match the
-descriptions in previous tasks, especially [Task 1B](#task1b).
+should be classified correctly. Most scores (as printed in the debugger
+console) should be between +4 to +8. If this is not the case, we
+recommend that you check your code for calculating the features, making
+sure that they match the descriptions in previous tasks, especially
+[Task 1B](#task1b).
 
 ### Task 1F --- Optional Improvements {#task1f}
 
@@ -1197,8 +1198,8 @@ directly in matrix form.
 
 The final task for this lab is to project the coordinates of the 3-D
 sample points to 2-D coordinates suitable for use by `processGesture2D`.
-In the code, you will need to form the matrix-vector product of **the
-transpose of** the rotation matrix M from Task 3A with
+In the code, you will need to form the matrix-vector product of the
+transpose of the rotation matrix `M` from Task 3A with
 `samples3D[i].location` for each `i`, and then copy the transformed x
 and y coordinates, along with the timestamp `samples3D[i].t`, into
 `samples2D[i]`.
@@ -1211,8 +1212,10 @@ view's origin is the top left corner of the screen.
 ::: {style="color:red"}
 **Updates (Mar 11, 2020)**
 
-<!-- Items 1. and 2. should be fixed in the current version of starter code. -->
-<!-- Please check that your starter code is fixed. -->
+Items 1. and 2. should be fixed if you download the updated version of
+starter code (the folder name is `lab3-swift-blank-update`, as opposed
+to the original `lab3-swift-blank`). Please check that your starter
+code is fixed as explained in items 1. and 2. below.
 
 1.  Towards the end of `Gesture3DViewController.swift`, in the
     `appendPoint` function, the z axis should not be flipped. The
@@ -1229,7 +1232,9 @@ view's origin is the top left corner of the screen.
 1.  In line 27 of `Geometry.swift`, change `A[j+3*i]` to `A[i+j*3]`.
 1.  You need to transpose the matrix you get from `nearestRotation`
     before applying it to 3D locations to transform from the reference
-    coordinates to the phone coordinates.
+    (world) coordinates to the phone coordinates. Applying the matrix
+    directly will transform a location from the phone to the world
+    coordinates instead, which is the opposite of what we want.
 1.  When mapping from 3D to 2D locations, the y coordinates have to be
     flipped. The positive y-axis of the device corresponds to "up",
     whereas that of the 2D view (from Section 1) corresponds to "down".
@@ -1239,7 +1244,8 @@ You should be able to draw letters in any orientation, given that the
 drawing corresponds to the device's up-down and left-right movement, as
 described in the beginning of [Task3A]{#task3a}. Sometimes, it is
 helpful to shake your phone and wait for a few seconds for the device to
-calibrate.
+calibrate. The average accuracy for all letters should be at least 12 to
+15 out of 26 characters.
 
 :::
 
