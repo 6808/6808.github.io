@@ -13,7 +13,7 @@ Lab 3: Gesture Recognition and Inertial Sensing {#project_tagline}
 -----------------------------------------------
 
 Assigned: 2020-02-26\
-Due: 2020-03-18\
+Due: <s>2020-03-18</s> 2020-03-30\
 :::
 :::
 
@@ -1259,12 +1259,12 @@ Submission and Checkoff Instructions {#submission}
 Write up your answers to the following items in a single PDF file and
 name it **lab3\_kerberos.pdf** or **lab3\_kerberos1+kerberos2.pdf**
 (e.g. lab3\_korrawat.pdf or lab3\_korrawat+fadel.pdf). Email the PDF
-file to **6808\@mit.edu** by **Mar 18, 11:59 PM** with subject **\"6.808
+file to **6808\@mit.edu** by **Mar 30, 11:59 PM** with subject **\"6.808
 Lab 3 submission\"**. If you work with a partner, you only have to
 submit once. You can get a checkoff during Office Hours within a week
-after the submission deadline, i.e. Apr 1, 11:59 PM (with extra time for
-this lab due to Spring break). You do not need to submit your code, but
-we may ask to look at your code during the checkoff.
+after the submission deadline, i.e. Apr 6, 11:59 PM. You do not need to
+submit your code, but we may ask to look at your code during the
+checkoff.
 
 Note for those who finished the lab early: Please check the end of [Task
 1E](#task1e) for added instructions about character drawing and an
