@@ -1104,14 +1104,15 @@ func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
     // -- TASK 3A --
     // Estimate left-right, up-down axes by averaging orientation over time:
     var M = GLKMatrix3()
-    // For each i, convert samples[i].attitude to a 3x3 matrix and sum it into M.
+    // For each i, convert samples3D[i].attitude to a 3x3 matrix and sum it into M.
     // Then find the rotation matrix most similar to the resulting sum.
 
     // -- TASK 3B --
-    // Project points to 2D:
-    // For each i, form the matrix-vector product of M with samples[i].location
-    // and copy the transformed x and y coordinates, along with the timestamp,
-    // to samples2D[i].
+    // Project points to the average device's orientation and then to 2-D:
+    // For each i, form the matrix-vector product of the transpose of M
+    // with samples3D[i].location and copy the transformed x and y coordinates,
+    // along with the timestamp, to samples2D[i]. The y coordinate should be
+    // flipped to match the 2-D view.
 
     // Apply 2-D solution
     processGesture2D(samples: samples2D, minSize: minSize)
@@ -1137,10 +1138,12 @@ Since the user is free to change posture (and hence the orientation of
 the phone) at any time, but is not likely to do so in the middle of a
 gesture, we can average the orientation of the device during the gesture
 to guess what the user is currently thinking of as the up-down and
-left-right axes.
+left-right axes. The app should work regardless of the orientation.
 
-We also recall the definition of the instantaneous device coordinate
-system:
+In the diagram above, the x, y, z unit vectors show the "standard"
+(reference/world) coordinate system, which is independent of the
+device's orientation. We also recall the definition of the instantaneous
+device coordinate system:
 
 <center>
 ![](images/lab3/acceleration_axes_2x.png){height="400" #accelerationAxes}
@@ -1189,7 +1192,8 @@ rotations can be taken to mean the result of a three-step procedure:
 1.  Find the rotation matrix closest to the average matrix using
     `nearestRotation` (declared in `Geometry.swift`). You can use the
     sum matrix without dividing by the count, because `nearestRotation`
-    will take care of that.
+    will take care of that. Use `try! nearestRotation(...)` to disable
+    error propagation, i.e. ignore errors.
 
 The final result can be converted back into a quaternion, or used
 directly in matrix form.
@@ -1200,14 +1204,17 @@ The final task for this lab is to project the coordinates of the 3-D
 sample points to 2-D coordinates suitable for use by `processGesture2D`.
 In the code, you will need to form the matrix-vector product of the
 transpose of the rotation matrix `M` from Task 3A with
-`samples3D[i].location` for each `i`, and then copy the transformed x
-and y coordinates, along with the timestamp `samples3D[i].t`, into
-`samples2D[i]`.
+`samples3D[i].location` for each `i` to transform from the reference to
+the device coordinate systems.
 
-When mapping from 3D to 2D locations, the y coordinates have to be
-flipped. The positive y-axis of the device corresponds to "up", whereas
-that of the 2D view (from Section 1) corresponds to "down". The 2D
-view's origin is the top left corner of the screen.
+To apply the 2-D solution you developed in Section 1, you will need to
+map the 3-D locations (in the device coordinate system) to 2-D, by
+copying the transformed x and y coordinates, along with the timestamp
+`samples3D[i].t`, into `samples2D[i]`. Note that the y coordinates have
+to be flipped, because the positive y-axis of the device coordinate
+system corresponds to "up", whereas that of the 2-D view (from Section
+1) corresponds to "down". The 2-D view's origin is the top left corner
+of the screen.
 
 ::: {style="color:red"}
 **Updates (Mar 11, 2020)**
@@ -1231,14 +1238,15 @@ code is fixed as explained in items 1. and 2. below.
 
 1.  In line 27 of `Geometry.swift`, change `A[j+3*i]` to `A[i+j*3]`.
 1.  You need to transpose the matrix you get from `nearestRotation`
-    before applying it to 3D locations to transform from the reference
-    (world) coordinates to the phone coordinates. Applying the matrix
-    directly will transform a location from the phone to the world
-    coordinates instead, which is the opposite of what we want.
-1.  When mapping from 3D to 2D locations, the y coordinates have to be
-    flipped. The positive y-axis of the device corresponds to "up",
-    whereas that of the 2D view (from Section 1) corresponds to "down".
-    The 2D view's origin is the top left corner of the screen.
+    before applying it to 3-D locations to transform from the reference
+    to the device coordinate systems. Applying the matrix directly will
+    transform a given location from the device to the reference
+    coordinate systems instead, which is the opposite of what we want.
+1.  When mapping from 3-D to 2-D locations, the y coordinates have to be
+    flipped. This is because the positive y-axis of the device
+    corresponds to "up", whereas that of the 2-D view (from Section 1)
+    corresponds to "down". The 2-D view's origin is the top left corner
+    of the screen.
 
 You should be able to draw letters in any orientation, given that the
 drawing corresponds to the device's up-down and left-right movement, as
@@ -1272,9 +1280,10 @@ after the submission deadline, i.e. Apr 6, 11:59 PM. You do not need to
 submit your code, but we may ask to look at your code during the
 checkoff.
 
-Note for those who finished the lab early: Please check the end of [Task
-1E](#task1e) for added instructions about character drawing and an
-expected accuracy for the 2D mode.
+Update for those who finished the lab early: Please check the end of
+[Task 1E](#task1e) for added instructions about character drawing and an
+expected accuracy for the 2D mode, and the bug fixes at the end of [Task
+3B](#task3b).
 
 1. Names and MIT emails (including your lab partner, if available).
 1. Try writing the letters A to Z in the 2D mode at least 3 times. What
@@ -1289,7 +1298,7 @@ expected accuracy for the 2D mode.
    yz plane)?
 1. Try writing the letters A to Z in the 3D mode at least 3 times. What
    is the average accuracy? What characters are consistently
-   misclassified? (Do not worry if the accuracy is low.)
+   misclassified?
 1. Provide a screenshot of the 3D mode after testing in the previous
    item. There should be some labels at the bottom of the screen, as
    well as traces of ribbons.
