@@ -60,10 +60,9 @@ Lecture notes will be uploaded after each class.
 # - Backscatter [./materials/Lec11-slides-backscatter-2020.pdf \[pdf\]]
 # - Caraoke [./materials/Lec11-slides-smartcities-part2-2020.pdf \[pdf\]]
 
-# == Lec \#12: Map-matching with Cellular Data
-# *Wed, Mar 20, 2020*
-# - CTrack [./materials/lec12-slides-ctrack-2020.pdf \[pdf\]]
-# - Example application [./materials/lec12-(part-2)-slides-2020.pdf \[pdf\]]
+== Lec \#12: Map-matching with Cellular Data
+*Wed, Mar 11, 2020*
+- Slides [./materials/lec12-slides-ctrack.pdf \[pdf\]]
 
 # == Lec \#13: Sensor Fusion: Maps and RF Data
 # *Mon, Apr 1, 2020*
