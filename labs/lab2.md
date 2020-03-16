@@ -1,7 +1,7 @@
 ---
 description: '6.808 : Mobile and Sensor Computing Course'
 title: '6.808 - Lab 2'
-header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
+header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
 ---
 
 <div id="header_wrap" class="outer">
@@ -51,7 +51,7 @@ into a delegate, which implements the `SensorModelDelegate` protocol
 defined in `SensorModel.swift`. The methods of the delegate are as
 follows:
 
-``` {.swift .hljs}
+``` {.swift}
 func sensorModel(_ model: SensorModel, didChangeActiveHill hill: Hill?)
 func sensorModel(_ model: SensorModel, didReceiveReadings readings: [Reading], forHill hill: Hill?)
 ```
@@ -144,17 +144,21 @@ The basic sequence is as follows:
 You will need to add several functions to `SensorModel` in order to
 implement `BLEDelegate`:
 
-    func ble(didUpdateState state: BLEState)
-    func ble(didDiscoverPeripheral peripheral: CBPeripheral)
-    func ble(didConnectToPeripheral peripheral: CBPeripheral)
-    func ble(didDisconnectFromPeripheral peripheral: CBPeripheral)
-    func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?)
+``` {.swift}
+func ble(didUpdateState state: BLEState)
+func ble(didDiscoverPeripheral peripheral: CBPeripheral)
+func ble(didConnectToPeripheral peripheral: CBPeripheral)
+func ble(didDisconnectFromPeripheral peripheral: CBPeripheral)
+func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?)
+```
 
 The SensorModel should inherit from `BLEDelegate`:
 
-    class SensorModel: BLEDelegate {
-        // ...
-    }
+``` {.swift}
+class SensorModel: BLEDelegate {
+    // ...
+}
+```
 
 Once you add the `BLEDelegate` part to indicate that, Xcode will suggest
 you to add protocol stubs. Press "Fix" in the red error box to add the
@@ -171,7 +175,9 @@ probably want to declare it as an instance variable of the class.
 Keep in mind that after initializing the object, you will need to set
 its delegate to the current SensorModel object:
 
-    ble.delegate = self
+``` {.swift}
+ble.delegate = self
+```
 
 Once you have created this object, the BLE will call
 `ble(didUpdateState ...)` to indicate the status of Bluetooth. You
@@ -300,7 +306,7 @@ readings.
 
 You might find these code snippets useful:
 
-```swift
+``` {.swift}
 // convert a non-nil Data optional into a String
 let str = String(data: data!, encoding: String.Encoding.ascii)!
 

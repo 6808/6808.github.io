@@ -13,13 +13,13 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-light.min.css" />
   <link rel="stylesheet" href="stylesheets/stylesheet.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
@@ -83,56 +83,55 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
 <h2 id="sec1">Section 1 — Handwriting</h2>
 <p>For this section, you will work through the details of implementing a handwriting recognition system for letters drawn with a finger on an iPhone screen. Here's how this will work.</p>
 <p>You will be implementing <code>GestureProcessor</code>, a class encapsulating the logic for interpreting sequences of points. In particular, you will fill in all of the interesting parts of this method in <code>GestureProcessor.swift</code>, which you can find under <code>InertialMotion/Gesture Recognition</code> in Xcode's project navigator:</p>
-<pre id="processGesture2D"><code>func processGesture2D(samples: [Sample2D], minSize: Double) {
-        // -- TASK 1A --
-        let count = samples.count
-        var size: Double
-        var clippedSize: Double
-        var rescaledSamples: [Sample2D] = []
-        var minX = Double.infinity
-        var maxX = -Double.infinity
-        var minY = Double.infinity
-        var maxY = -Double.infinity
-        // Compute size, clippedSize
-        // Rescale points to lie in [0,1] x [0,1]
+<pre id="processGesture2D" class="swift"><code>func processGesture2D(samples: [Sample2D], minSize: Double) {
+    // -- TASK 1A --
+    let count = samples.count
+    var size: Double
+    var clippedSize: Double
+    var rescaledSamples: [Sample2D] = []
+    var minX = Double.infinity
+    var maxX = -Double.infinity
+    var minY = Double.infinity
+    var maxY = -Double.infinity
+    // Compute size, clippedSize
+    // Rescale points to lie in [0,1] x [0,1]
 
-        // -- TASK 1B --
-        var features: [Double] = [Double](repeatElement(0.0, count: N_FEATURES))
-        // Classify each point according to which zone of a 3x3 Tic-Tac-Toe board it would fall in
-        // Compute the time spent in each zone and the distance traveled horizontally and vertically
+    // -- TASK 1B --
+    var features: [Double] = [Double](repeatElement(0.0, count: N_FEATURES))
+    // Classify each point according to which zone of a 3x3 Tic-Tac-Toe board it would fall in
+    // Compute the time spent in each zone and the distance traveled horizontally and vertically
 
-        // -- TASK 1C --
-        #if TRAINING
-            // Note Swift doesn&#39;t support #define. To run this section, set a compiler flag (i.e. &quot;-D TRAINING&quot; under Other Swift Flags)
-            // Use this code if you want to do additional training
-            // Log feature vector (with empty string for label) for training
-            // Make sure to fill in the empty label when you copy the output into training.py
+    // -- TASK 1C --
+    #if TRAINING
+        // Note Swift doesn&#39;t support #define. To run this section, set a compiler flag (i.e. &quot;-D TRAINING&quot; under Other Swift Flags)
+        // Use this code if you want to do additional training
+        // Log feature vector (with empty string for label) for training
+        // Make sure to fill in the empty label when you copy the output into training.py
 
-            var s = &quot;(&#39;&#39;, [&quot;
-            for i in 0..&lt;N_FEATURES {
-                s += String(format: &quot;%+.5f, &quot;, features[i])
-            }
-            s.replaceSubrange(s.index(s.endIndex, offsetBy: -2)..&lt;s.endIndex, with: &quot;&quot;)
-            s.append(&quot;, 1.0]),\n&quot;)
+        var s = &quot;(&#39;&#39;, [&quot;
+        for i in 0..&lt;N_FEATURES {
+            s += String(format: &quot;%+.5f, &quot;, features[i])
+        }
+        s.replaceSubrange(s.index(s.endIndex, offsetBy: -2)..&lt;s.endIndex, with: &quot;&quot;)
+        s.append(&quot;, 1.0]),\n&quot;)
 
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.appendTrainingLog(entry: s)
-        #endif
-        // -- TASK 1D --
-        // The output of the training procedure goes at the top of GestureProcessor.swift.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.appendTrainingLog(entry: s)
+    #endif
+    // -- TASK 1D --
+    // The output of the training procedure goes at the top of GestureProcessor.swift.
 
-        // -- TASK 1E --
-        var best_label = N_LABELS
-        var best_score = -Double.infinity
-        // Dot product with gesture templates in weights: [[Double]]
+    // -- TASK 1E --
+    var best_label = N_LABELS
+    var best_score = -Double.infinity
+    // Dot product with gesture templates in weights: [[Double]]
 
-        #if !TRAINING
-            // Report strongest match
-            print(String(format: &quot;Matched &#39;%@&#39; (score %+.5f)&quot;, labels[best_label], best_score))
-        #endif
-        delegate?.gestureProcessor(self, didRecognizeGesture: labels[best_label])
-    }
-</code></pre>
+    #if !TRAINING
+        // Report strongest match
+        print(String(format: &quot;Matched &#39;%@&#39; (score %+.5f)&quot;, labels[best_label], best_score))
+    #endif
+    delegate?.gestureProcessor(self, didRecognizeGesture: labels[best_label])
+}</code></pre>
 <p>This method will be called for you by the view controller when the user has traced a stroke on the screen and then lifted their finger. Each sample will consist of x and y coordinates for a touch event reported by iOS, along with the absolute time in seconds when it occurred. You don't need to know how the UI works for this lab, but you may find it useful later to familiarize yourself with how the <code>Gesture2DViewController</code> captures multi-touch events via the <a href="https://developer.apple.com/documentation/uikit/uiresponder"><code>UIResponder</code></a> <a href="https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/using_responders_and_the_responder_chain_to_handle_events">mechanism</a> and the <code>func updateTouches(_ event: UIEvent?)</code> methods.</p>
 <section id="aside" class="aside">
 <h6>Aside:</h6>
@@ -149,7 +148,7 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
 <img src="images/lab3/declaration.jpg" height="400" />
 </center>
 <p>The number you're trying to compute is the larger of the width or height of the stroke, i.e.</p>
-<pre><code>size = max(maxX - minX, maxY - minY)</code></pre>
+<pre class="swift"><code>size = max(maxX - minX, maxY - minY)</code></pre>
 <p>where you'll have to compute minX, maxX, minY, maxY by looping over the array of samples<a href="#appendix">*</a>. You'll then need to allocate a new array to hold your transformed samples (since the input array is read-only), and copy the sample data into the new array, mapping the coordinates via the transformation <code>x → (x - minX) / size</code> (and similarly for y).</p>
 <p>This procedure will work great for capital letters, but it not for punctuation. For instance, in the case of a dot, the size of the stroke is deliberately small. We shouldn't magnify that dot into a giant circle by dividing its coordinates through by its tiny size. If we did, then we might mistake the dot for a capital letter O, which is also circular. In this lab, we will only be recognizing uppercase letters, not punctuation. However, it's good to plan ahead. Therefore, we've added an additional argument to the method, <code>minSize</code>, to indicate the range of sizes the caller expects a realistic stroke to exhibit.</p>
 <section id="aside-2" class="aside">
@@ -158,7 +157,7 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
 <p>The caller, for now, is <code>Gesture2DViewController</code>, which is taking touch input from the user. Because a human finger is much larger than a pixel, <code>Gesture2DViewController</code> sets <code>minSize</code> to reflect the smallest size letter a human would be likely to draw with a fingertip. We've set this to 100 pixels — about 1.5 cm — but you can change this if you like. Later on, the caller will be <code>Gesture3DViewController</code>, and <code>minSize</code> will be set to 1 cm.</p>
 </section>
 <p>If your estimate of the size of the stroke, based on the equation above, is too small, you should "clip" it to <code>minSize</code>, e.g. via</p>
-<pre><code>clippedSize = max(size, minSize)</code></pre>
+<pre class="swift"><code>clippedSize = max(size, minSize)</code></pre>
 <p>Then you should use <code>x → (x - minX) / clippedSize</code>, and similarly for y, as your coordinate transformation from the input to the rescaled sample array.</p>
 <p>Test your work: print out <code>size</code> and <code>clippedSize</code> after scribbling on the screen, and check that clippedSize stays in the proper range. Your rescaled x and y coordinates should lie in <span class="math inline">\([0, 1] \times [0, 1]\)</span>.</p>
 <h3 id="task1b">Task 1B — Feature Extraction</h3>
@@ -168,7 +167,7 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
 <p>Observation 3: gross horizontal and vertical movements are more important than the exact path followed.</p>
 <p>Observation 4: (normalized) time spent drawing any given part of a letter might be interesting, let's throw that in, too.</p>
 <p>So our representation is based on dividing the gesture into thirds horizontally and vertically, as follows:</p>
-<pre><code>For each vertical 1/3 (top, middle, bottom):
+<pre class="plaintext"><code>For each vertical 1/3 (top, middle, bottom):
     For each horizontal 1/3 (left, center, right):
         One number for the time spent in this zone divided by the time it took to draw the entire stroke
         One number for the net rightward movement observed in this zone
@@ -205,7 +204,7 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
 </table>
 </center>
 <p>Having decided which zone the segment belongs to, you should then compute the time difference between <code>samples[i]</code> and <code>samples[i-1]</code>, the x difference, and the y difference, and add these three values to the appropriate locations in the array <code>features</code> (still in <code>processGesture2D</code>. When you are finished summing, these statements should be true (don't forget to initialize the features array to zero):</p>
-<pre><code>features[0] = sum (over segments in the top left zone) of fraction of total time spent in this zone
+<pre class="plaintext"><code>features[0] = sum (over segments in the top left zone) of fraction of total time spent in this zone
 features[1] = sum (over segments in the top left zone) of net movement in the +x direction while in this zone
 features[2] = sum (over segments in the top left zone) of net movement in the +y direction while in this zone
 features[3] = sum (over segments in the top center zone) of fraction of total time spent in this zone
@@ -226,7 +225,7 @@ features[26] = sum (over segments in the bottom right zone) of net movement in t
 <h3 id="task1d">Task 1D — Training</h3>
 <p>We implemented a multi-class perceptron in <code>training.py</code> to find a classifier that can accurately map feature vectors to class labels (letters of the alphabet). Once we have the perceptron weight vector from Python, we can plug it back into our Swift code.</p>
 <p>Here's what the multi-class perceptron looks like (some details removed for clarity):</p>
-<pre><code>def train(w, inputs, labels):
+<pre class="python"><code>def train(w, inputs, labels):
     while True:
         mislabeled = 0
         for i in range(inputs.shape[0]):
@@ -248,7 +247,7 @@ features[26] = sum (over segments in the bottom right zone) of net movement in t
 <p><strong>You don't need to do anything for this task, because we've provided a set of trained weights already in <code>GestureProcessor.swift.</code></strong> However, if you'd like to retrain the classifier, for instance to recognize your own handwriting better or to add custom gestures not in the Latin alphabet, you can do so by setting a compiler flag (i.e. <code>-D TRAINING</code> under “Other Swift Flags” in “Build Settings”). When you run the app on a phone with this configuration, you can collect feature vectors from the debug log and then manually add these to <code>training.py</code>. Then you can run <code>training.py</code> and copy the resulting weights back into <code>GestureProcessor.swift</code>.</p>
 <h3 id="task1e">Task 1E — Have you noticed that these tasks are letters of the alphabet?</h3>
 <p>Next, you need to compare the feature vectors computed in <code>processGesture2D</code> with the weights array, using the vector dot product (i.e. sum of products of components). In the appropriate place in <code>processGesture2D</code>, you should write some Swift code equivalent to the following Python code:</p>
-<pre><code>for i in range(N_LABELS):
+<pre class="python"><code>for i in range(N_LABELS):
     score = 0
     for j in range(N_FEATURES):
         score += features[j] * weights[i][j]
@@ -276,7 +275,7 @@ features[26] = sum (over segments in the bottom right zone) of net movement in t
 <p>This is not ideal. From the perspective of control theory, what is happening is that the integrator is an unstable linear system: it does not exhibit the bounded-input, bounded-output property, because the integral of a finite constant taken over a suitably long interval will eventually exceed any bound. We need to stabilize the integrator, because users expect that the phone will not "fly off to infinity" in its own imagination and thus suffer loss of gesture recognition capability. We can do this by moving poles on the S-plane. If you're not into control theory, this will be the same as filtering out the DC component of the position and velocity, in order to prevent them from increasing forever. Unfortunately, this technique leads to other funny behaviors, like the phone getting confused if a gesture takes too long.</p>
 <h3 id="motionBackground">Background</h3>
 <p>iOS provides device motion through the <a href="https://developer.apple.com/documentation/coremotion/cmmotionmanager"><code>CMMotionManager</code></a>, which is instantiated for you by the <code>Gesture3DViewController</code> like this:</p>
-<pre><code>var motionManager: CMMotionManager = CMMotionManager()
+<pre class="swift"><code>var motionManager: CMMotionManager = CMMotionManager()
 
 motionManager.deviceMotionUpdateInterval = 1e-2
 
@@ -332,7 +331,7 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <p>Because there is no notion of absolute orientation in the laws of physics, we always measure an object's orientation <em>relative</em> to some "standard" orientation. In our case, we specified the standard orientation when we passed the constant <a href="https://developer.apple.com/documentation/coremotion/cmattitudereferenceframe"><code>.xArbitraryCorrectedZVertical</code></a> to <code>CoreMotion</code>. The orientation of an object, then, can be represented by the rotation which translates vectors from the object's (instantaneous) local coordinate system to the corresponding vectors in the (persistent) coordinate system of a hypothetical copy of the object in standard orientation. This rotation is precisely the value returned by the <code>CMDeviceMotion</code>'s <code>attitude</code> property.</p>
 <h3 id="backtoyou">Responsibilities of <code>accumulateMotion(_:)</code></h3>
 <p><code>accumulateMotion(_:)</code> will need to convert the data from iOS into a consistent set of coordinates, track the user's motion over time, and hand off the data to be stored and eventually transmitted to the <code>GestureProcessor</code>. Here's the outline of <code>accumulateMotion(_:)</code> that you will start with, which you can find in <code>Gesture3DViewController.swift</code> under <code>InertialMotion/User Interface</code> in Xcode's project navigator.</p>
-<pre id="accumulateMotion"><code>func accumulateMotion(_ motion: CMDeviceMotion?) {
+<pre id="accumulateMotion" class="swift"><code>func accumulateMotion(_ motion: CMDeviceMotion?) {
     guard let motion = motion else {
         return
     }
@@ -442,7 +441,7 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <h2 id="sec3">Section 3 — Mapping 3-D Gestures to 2-D</h2>
 <p>For this section, you will reduce the 3-D gesture recognition problem to the 2-D case. With any luck, you'll soon be recognizing letters formed by waving the phone in the air while touching the screen.</p>
 <p>You will be working on <code>processGesture3D</code>, which you can find in <code>GestureProcessor.swift</code>. Here's the initial skeleton.</p>
-<pre id="process3d"><code>func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
+<pre id="process3d" class="swift"><code>func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
     var samples2D = [Sample2D](repeatElement(Sample2D(x: 0.0, y: 0.0, t: 0.0), count: samples3D.count))
 
     // -- TASK 3A --
@@ -483,12 +482,12 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <h3 id="task3b">Task 3B — Project Coordinates</h3>
 <p>The final task for this lab is to project the coordinates of the 3-D sample points to 2-D coordinates suitable for use by <code>processGesture2D</code>. In the code, you will need to form the matrix-vector product of the transpose of the rotation matrix <code>M</code> from Task 3A with <code>samples3D[i].location</code> for each <code>i</code> to transform from the reference to the device coordinate systems.</p>
 <p>To apply the 2-D solution you developed in Section 1, you will need to map the 3-D locations (in the device coordinate system) to 2-D, by copying the transformed x and y coordinates, along with the timestamp <code>samples3D[i].t</code>, into <code>samples2D[i]</code>. Note that the y coordinates have to be flipped, because the positive y-axis of the device coordinate system corresponds to “up”, whereas that of the 2-D view (from Section 1) corresponds to “down”. The 2-D view’s origin is the top left corner of the screen.</p>
-<div style="color:red">
+<div style="color:#a00">
 <p><strong>Updates (Mar 11, 2020)</strong></p>
 <p>Items 1. and 2. should be fixed if you download the updated version of starter code (the folder name is <code>lab3-swift-blank-update</code>, as opposed to the original <code>lab3-swift-blank</code>). Please check that your starter code is fixed as explained in items 1. and 2. below.</p>
 <ol type="1">
 <li><p>Towards the end of <code>Gesture3DViewController.swift</code>, in the <code>appendPoint</code> function, the z axis should not be flipped. The <code>position</code> constant should be removed and the <code>location</code> parameter should be <code>point</code>.</p>
-<pre><code>if draw {
+<pre class="swift"><code>if draw {
     let s = Sample3D(location: point,
                      attitude: attitude,
                      t: Date.timeIntervalSinceReferenceDate)

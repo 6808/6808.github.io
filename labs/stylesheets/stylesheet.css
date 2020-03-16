@@ -11,7 +11,7 @@ MeyerWeb Reset
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,code1,
+a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, tt, var,
 b, u, i, center,
@@ -162,7 +162,6 @@ p img {
 }
 
 pre, code {
-  width: 100%;
   color: #222;
   background-color: #fff;
 
@@ -175,8 +174,7 @@ pre, code {
 }
 
 pre {
-  width: 100%;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
   overflow: auto;
 }
@@ -185,21 +183,11 @@ code {
   padding: 3px;
   margin: 0 3px;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
-}
-
-pre code1 {
-  padding: 3px;
-  margin: 0 3px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
-}
-
-pre, code1 {
-  padding: 3px;
-  margin: 0 3px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  white-space: pre;
 }
 
 pre code {
+  margin: 0px;
   display: block;
   box-shadow: none;
 }

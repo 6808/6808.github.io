@@ -1,7 +1,7 @@
 ---
 description: '6.808 : Mobile and Sensor Computing Course'
 title: '6.808 - Lab 3'
-header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
+header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
 ---
 
 ::: {#header_wrap .outer}
@@ -96,57 +96,56 @@ in all of the interesting parts of this method in
 `GestureProcessor.swift`, which you can find under
 `InertialMotion/Gesture Recognition` in Xcode\'s project navigator:
 
-``` {#processGesture2D}
+``` {#processGesture2D .swift}
 func processGesture2D(samples: [Sample2D], minSize: Double) {
-        // -- TASK 1A --
-        let count = samples.count
-        var size: Double
-        var clippedSize: Double
-        var rescaledSamples: [Sample2D] = []
-        var minX = Double.infinity
-        var maxX = -Double.infinity
-        var minY = Double.infinity
-        var maxY = -Double.infinity
-        // Compute size, clippedSize
-        // Rescale points to lie in [0,1] x [0,1]
+    // -- TASK 1A --
+    let count = samples.count
+    var size: Double
+    var clippedSize: Double
+    var rescaledSamples: [Sample2D] = []
+    var minX = Double.infinity
+    var maxX = -Double.infinity
+    var minY = Double.infinity
+    var maxY = -Double.infinity
+    // Compute size, clippedSize
+    // Rescale points to lie in [0,1] x [0,1]
 
-        // -- TASK 1B --
-        var features: [Double] = [Double](repeatElement(0.0, count: N_FEATURES))
-        // Classify each point according to which zone of a 3x3 Tic-Tac-Toe board it would fall in
-        // Compute the time spent in each zone and the distance traveled horizontally and vertically
+    // -- TASK 1B --
+    var features: [Double] = [Double](repeatElement(0.0, count: N_FEATURES))
+    // Classify each point according to which zone of a 3x3 Tic-Tac-Toe board it would fall in
+    // Compute the time spent in each zone and the distance traveled horizontally and vertically
 
-        // -- TASK 1C --
-        #if TRAINING
-            // Note Swift doesn't support #define. To run this section, set a compiler flag (i.e. "-D TRAINING" under Other Swift Flags)
-            // Use this code if you want to do additional training
-            // Log feature vector (with empty string for label) for training
-            // Make sure to fill in the empty label when you copy the output into training.py
+    // -- TASK 1C --
+    #if TRAINING
+        // Note Swift doesn't support #define. To run this section, set a compiler flag (i.e. "-D TRAINING" under Other Swift Flags)
+        // Use this code if you want to do additional training
+        // Log feature vector (with empty string for label) for training
+        // Make sure to fill in the empty label when you copy the output into training.py
 
-            var s = "('', ["
-            for i in 0..<N_FEATURES {
-                s += String(format: "%+.5f, ", features[i])
-            }
-            s.replaceSubrange(s.index(s.endIndex, offsetBy: -2)..<s.endIndex, with: "")
-            s.append(", 1.0]),\n")
+        var s = "('', ["
+        for i in 0..<N_FEATURES {
+            s += String(format: "%+.5f, ", features[i])
+        }
+        s.replaceSubrange(s.index(s.endIndex, offsetBy: -2)..<s.endIndex, with: "")
+        s.append(", 1.0]),\n")
 
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.appendTrainingLog(entry: s)
-        #endif
-        // -- TASK 1D --
-        // The output of the training procedure goes at the top of GestureProcessor.swift.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.appendTrainingLog(entry: s)
+    #endif
+    // -- TASK 1D --
+    // The output of the training procedure goes at the top of GestureProcessor.swift.
 
-        // -- TASK 1E --
-        var best_label = N_LABELS
-        var best_score = -Double.infinity
-        // Dot product with gesture templates in weights: [[Double]]
+    // -- TASK 1E --
+    var best_label = N_LABELS
+    var best_score = -Double.infinity
+    // Dot product with gesture templates in weights: [[Double]]
 
-        #if !TRAINING
-            // Report strongest match
-            print(String(format: "Matched '%@' (score %+.5f)", labels[best_label], best_score))
-        #endif
-        delegate?.gestureProcessor(self, didRecognizeGesture: labels[best_label])
-    }
-
+    #if !TRAINING
+        // Report strongest match
+        print(String(format: "Matched '%@' (score %+.5f)", labels[best_label], best_score))
+    #endif
+    delegate?.gestureProcessor(self, didRecognizeGesture: labels[best_label])
+}
 ```
 
 This method will be called for you by the view controller when the user
@@ -210,7 +209,9 @@ and y coordinates separately in order to measure the size of the stroke.
 The number you\'re trying to compute is the larger of the width or
 height of the stroke, i.e.
 
-    size = max(maxX - minX, maxY - minY)
+``` {.swift}
+size = max(maxX - minX, maxY - minY)
+```
 
 where you\'ll have to compute minX, maxX, minY, maxY by looping over the
 array of samples[\*](#appendix). You\'ll then need to allocate a new
@@ -255,7 +256,9 @@ will be set to 1 cm.
 If your estimate of the size of the stroke, based on the equation above,
 is too small, you should \"clip\" it to `minSize`, e.g. via
 
-    clippedSize = max(size, minSize)
+``` {.swift}
+clippedSize = max(size, minSize)
+```
 
 Then you should use `x → (x - minX) / clippedSize`, and similarly for y,
 as your coordinate transformation from the input to the rescaled sample
@@ -289,11 +292,13 @@ letter might be interesting, let\'s throw that in, too.
 So our representation is based on dividing the gesture into thirds
 horizontally and vertically, as follows:
 
-    For each vertical 1/3 (top, middle, bottom):
-        For each horizontal 1/3 (left, center, right):
-            One number for the time spent in this zone divided by the time it took to draw the entire stroke
-            One number for the net rightward movement observed in this zone
-            One number for the net downward movement observed in this zone
+``` {.plaintext}
+For each vertical 1/3 (top, middle, bottom):
+    For each horizontal 1/3 (left, center, right):
+        One number for the time spent in this zone divided by the time it took to draw the entire stroke
+        One number for the net rightward movement observed in this zone
+        One number for the net downward movement observed in this zone
+```
 
 The way you will compute these 27 numbers is by looping over segments
 (pairs of samples) in our input. For instance, you could loop from `i=1`
@@ -321,20 +326,22 @@ appropriate locations in the array `features` (still in
 `processGesture2D`. When you are finished summing, these statements
 should be true (don\'t forget to initialize the features array to zero):
 
-    features[0] = sum (over segments in the top left zone) of fraction of total time spent in this zone
-    features[1] = sum (over segments in the top left zone) of net movement in the +x direction while in this zone
-    features[2] = sum (over segments in the top left zone) of net movement in the +y direction while in this zone
-    features[3] = sum (over segments in the top center zone) of fraction of total time spent in this zone
-    features[4] = sum (over segments in the top center zone) of net movement in the +x direction while in this zone
-    features[5] = sum (over segments in the top center zone) of net movement in the +y direction while in this zone
-    ...
-    features[15] = sum (over segments in the middle right zone) of fraction of total time spent in this zone
-    features[16] = sum (over segments in the middle right zone) of net movement in the +x direction while in this zone
-    features[17] = sum (over segments in the middle right zone) of net movement in the +y direction while in this zone
-    ...
-    features[24] = sum (over segments in the bottom right zone) of fraction of total time spent in this zone
-    features[25] = sum (over segments in the bottom right zone) of net movement in the +x direction while in this zone
-    features[26] = sum (over segments in the bottom right zone) of net movement in the +y direction while in this zone
+``` {.plaintext}
+features[0] = sum (over segments in the top left zone) of fraction of total time spent in this zone
+features[1] = sum (over segments in the top left zone) of net movement in the +x direction while in this zone
+features[2] = sum (over segments in the top left zone) of net movement in the +y direction while in this zone
+features[3] = sum (over segments in the top center zone) of fraction of total time spent in this zone
+features[4] = sum (over segments in the top center zone) of net movement in the +x direction while in this zone
+features[5] = sum (over segments in the top center zone) of net movement in the +y direction while in this zone
+...
+features[15] = sum (over segments in the middle right zone) of fraction of total time spent in this zone
+features[16] = sum (over segments in the middle right zone) of net movement in the +x direction while in this zone
+features[17] = sum (over segments in the middle right zone) of net movement in the +y direction while in this zone
+...
+features[24] = sum (over segments in the bottom right zone) of fraction of total time spent in this zone
+features[25] = sum (over segments in the bottom right zone) of net movement in the +x direction while in this zone
+features[26] = sum (over segments in the bottom right zone) of net movement in the +y direction while in this zone
+```
 
 For later convenience, `features[27]` should be set to 1.0.
 
@@ -365,18 +372,20 @@ from Python, we can plug it back into our Swift code.
 Here\'s what the multi-class perceptron looks like (some details removed
 for clarity):
 
-    def train(w, inputs, labels):
-        while True:
-            mislabeled = 0
-            for i in range(inputs.shape[0]):
-                label_estimated = (inputs[i] * w).sum(axis=1).argmax()
-                label_ground_truth = labels[i]
-                if label_estimated != label_ground_truth:
-                    w[label_ground_truth] += inputs[i]
-                    w[label_estimated] -= inputs[i]
-                    mislabeled += 1
-            if mislabeled == 0:
-                return w
+``` {.python}
+def train(w, inputs, labels):
+    while True:
+        mislabeled = 0
+        for i in range(inputs.shape[0]):
+            label_estimated = (inputs[i] * w).sum(axis=1).argmax()
+            label_ground_truth = labels[i]
+            if label_estimated != label_ground_truth:
+                w[label_ground_truth] += inputs[i]
+                w[label_estimated] -= inputs[i]
+                mislabeled += 1
+        if mislabeled == 0:
+            return w
+```
 
 What is going on here? The code loops until it finds a rule,
 parameterized by a weight vector `w`, which correctly classifies each
@@ -442,11 +451,13 @@ Next, you need to compare the feature vectors computed in
 `processGesture2D`, you should write some Swift code equivalent to the
 following Python code:
 
-    for i in range(N_LABELS):
-        score = 0
-        for j in range(N_FEATURES):
-            score += features[j] * weights[i][j]
-        # do something with score
+``` {.python}
+for i in range(N_LABELS):
+    score = 0
+    for j in range(N_FEATURES):
+        score += features[j] * weights[i][j]
+    # do something with score
+```
 
 Ultimately, you need to determine which label `i` corresponds to the
 highest score. Then you can look up that label with `labels[i]` to get
@@ -563,15 +574,17 @@ iOS provides device motion through the
 which is instantiated for you by the `Gesture3DViewController` like
 this:
 
-    var motionManager: CMMotionManager = CMMotionManager()
+``` {.swift}
+var motionManager: CMMotionManager = CMMotionManager()
 
-    motionManager.deviceMotionUpdateInterval = 1e-2
+motionManager.deviceMotionUpdateInterval = 1e-2
 
-    motionManager.startDeviceMotionUpdates(
-        using: .xArbitraryCorrectedZVertical,
-        to: OperationQueue.main) { [weak self] (motion, error) in
-            self?.accumulateMotion(motion)
-            }
+motionManager.startDeviceMotionUpdates(
+    using: .xArbitraryCorrectedZVertical,
+    to: OperationQueue.main) { [weak self] (motion, error) in
+        self?.accumulateMotion(motion)
+        }
+```
 
 This will result in periodic calls to Gesture3DViewController\'s
 `accumulateMotion(_:)` method, which will be the subject of Tasks 2A-2C.
@@ -828,7 +841,7 @@ you will start with, which you can find in
 `Gesture3DViewController.swift` under `InertialMotion/User Interface` in
 Xcode\'s project navigator.
 
-``` {#accumulateMotion}
+``` {#accumulateMotion .swift}
 func accumulateMotion(_ motion: CMDeviceMotion?) {
     guard let motion = motion else {
         return
@@ -1097,7 +1110,7 @@ by waving the phone in the air while touching the screen.
 You will be working on `processGesture3D`, which you can find in
 `GestureProcessor.swift`. Here\'s the initial skeleton.
 
-``` {#process3d}
+``` {#process3d .swift}
 func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
     var samples2D = [Sample2D](repeatElement(Sample2D(x: 0.0, y: 0.0, t: 0.0), count: samples3D.count))
 
@@ -1216,7 +1229,7 @@ system corresponds to "up", whereas that of the 2-D view (from Section
 1) corresponds to "down". The 2-D view's origin is the top left corner
 of the screen.
 
-::: {style="color:red"}
+::: {style="color:#a00"}
 **Updates (Mar 11, 2020)**
 
 Items 1. and 2. should be fixed if you download the updated version of
@@ -1229,12 +1242,14 @@ code is fixed as explained in items 1. and 2. below.
     `position` constant should be removed and the `location` parameter
     should be `point`.
 
-        if draw {
-            let s = Sample3D(location: point,
-                             attitude: attitude,
-                             t: Date.timeIntervalSinceReferenceDate)
-            samples.append(s)
-        } // ...
+    ``` {.swift}
+    if draw {
+        let s = Sample3D(location: point,
+                         attitude: attitude,
+                         t: Date.timeIntervalSinceReferenceDate)
+        samples.append(s)
+    } // ...
+    ```
 
 1.  In line 27 of `Geometry.swift`, change `A[j+3*i]` to `A[i+j*3]`.
 1.  You need to transpose the matrix you get from `nearestRotation`
