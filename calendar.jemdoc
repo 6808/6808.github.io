@@ -238,39 +238,49 @@ table.calendar thead tr {
 
 <tr> <!-- week of mar 30 -->
   <td id="2020-3-30" class="lecture"><span class="date">Mar 30</span><br />
-    <b>LEC 13:</b> Agriculture IoT <br />
-    <span class="reading"><b>Preparation:</b> Read
-      <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf" target="_blank">FarmBeats</a>
-      <!-- (<a href="questions.html?q=q-lec14">Questions</a>) --></span><br />
-    <span class="reading"><b>Assigned:</b> <a href="labs/lab5.html">Lab 4</a></span><br />
-    <span class="deadline"><b>DUE:</b> <a href="labs/lab4.html">Lab 3</a></span></td>
+    Project meetings<br />(No lecture; meet with staff during class time)<br />
+    <!-- <b>LEC 13:</b> Agriculture IoT <br /> -->
+    <!-- <span class="reading"><b>Preparation:</b> Read -->
+    <!--   <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf" target="_blank">FarmBeats</a> -->
+    <!--   <\!-- (<a href="questions.html?q=q-lec14">Questions</a>) -\-></span><br /> -->
+    <span class="reading"><b>Assigned:</b> <a href="labs/lab4.html">Lab 4</a></span><br />
+    <span class="deadline"><b>DUE:</b> <a href="labs/lab3.html">Lab 3</a></span></td>
 
   <td id="2020-3-31"><span class="date">Mar 31</span></td>
 
   <td id="2020-4-1" class="lecture"><span class="date">Apr 1</span><br />
-    <b>LEC 14:</b> Attacks on acoustic sensing (e.g., phones, Alexa-style devices) <br />
-    <span class="reading"><b>Preparation:</b> Read
-      <a href="http://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blank">BackDoor</a>
-      <!-- (<a href="questions.html?q=q-lec15">Questions</a>) --></span></td>
+    Project meetings<br />(No lecture; meet with staff during class time)<br />
+    <!-- <b>LEC 14:</b> Attacks on acoustic sensing (e.g., phones, Alexa-style devices) <br /> -->
+    <!-- <span class="reading"><b>Preparation:</b> Read -->
+    <!--   <a href="http://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blank">BackDoor</a> -->
+      <!--   <\!-- (<a href="questions.html?q=q-lec15">Questions</a>) -\-></span></td> -->
+  </td>
 
   <td id="2020-4-2"><span class="date">Apr 2</span></td>
   <td id="2020-4-3"><span class="date">Apr 3</span></td>
 </tr>
 <tr> <!-- week of apr 6 -->
   <td id="2020-4-6" class="lecture"><span class="date">Apr 6</span><br />
-    <b>LEC 15:</b> Underwater IoT <br />
+        <b>LEC 13:</b> Agriculture IoT
+        (<a href="https://youtu.be/sGDGmAJ94FM">Lecture
+        videos</a>, <a href="https://people.csail.mit.edu/deepak/assets/slides/NSDI2017_FarmBeats.pptx">Lecture
+        Slides</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
-      <a href="http://www.mit.edu/~fadel/papers/PAB-paper.pdf" target="_blank">Underwater Backscatter</a>
+      <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf" target="_blank">FarmBeats</a>
+      (<a href="questions.html?q=q-lec13">Questions</a>)</span><br />
+    <!-- <b>LEC 13:</b> Underwater IoT <br /> -->
+    <!-- <span class="reading"><b>Preparation:</b> Read -->
+    <!--   <a href="http://www.mit.edu/~fadel/papers/PAB-paper.pdf" target="_blank">Underwater Backscatter</a> -->
       <!-- (<a href="questions.html?q=q-lec16">Questions</a>) --></span></td>
 
   <td id="2020-4-7"><span class="date">Apr 7</span></td>
 
   <td id="2020-4-8" class="lecture"><span class="date">Apr 8</span><br />
-    <b>LEC 16:</b> Continuous object recognition <br />
+    <b>LEC 14:</b> Split Processing (<a href="./materials/lec14-slides-vision-edge-2020.pptx">Slides</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://nms.csail.mit.edu/papers/index.php?detail=236" target="_blank">Glimpse</a>
-      <!-- (<a href="questions.html?q=q-lec17">Questions</a>) --></span><br />
-    <span class="deadline"><b>DUE:</b> <a href="labs/lab5.html">Lab 4</a></span></td>
+      (<a href="questions.html?q=q-lec14">Questions</a>)</span><br />
+    <span class="deadline"><b>DUE:</b> <a href="labs/lab4.html">Lab 4</a></span></td>
 
   <td id="2020-4-9"><span class="date">Apr 9</span></td>
   <td id="2020-4-10"><span class="date">Apr 10</span></td>
