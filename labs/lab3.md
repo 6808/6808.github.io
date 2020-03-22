@@ -308,9 +308,8 @@ The way you will compute these 27 numbers is by looping over segments
 (pairs of samples) in our input. For instance, you could loop from `i=1`
 to `n-1`, and then in the body of the loop, consider the line segment
 connecting `samples[i-1]` to `samples[i]`. When you consider a line
-segment, you should decide which of the nine zones it falls into (you
-could consider the midpoint, or one endpoint; the difference is so small
-that it won\'t matter much). For instance, if $0 \leq x < \frac{1}{3}$
+segment, you should decide which of the nine zones it falls into by
+using the segment's midpoint. For instance, if $0 \leq x < \frac{1}{3}$
 and $\frac{1}{3} \leq y \leq \frac{2}{3}$ for `samples[i]`, then the
 segment would be assigned to zone \#3, the left-middle:
 
@@ -1244,24 +1243,31 @@ calibrate. The average accuracy for all letters should be at least 12 to
 
 **Updates (Mar 22, 2020)**
 
-The skeleton code has been slightly updated to help you debug Tasks 2
-and 3. In the 3-D mode, there is now a view of rescaled 2-D samples in
-the upper right corner, exactly how they are input into the 2-D
-algorithm. This feature will show whether your coordinate
-transformations work as expected. In the example screenshot below, the
-input was letters of the word AMAZING. The 2-D view shows the last
-letter, G.
+1.  The skeleton code has been slightly updated to help you debug Tasks
+    2 and 3. In the 3-D mode, there is now a view of rescaled 2-D
+    samples in the upper right corner, exactly how they are input into
+    the 2-D algorithm. This feature will show whether your coordinate
+    transformations work as expected. In the example screenshot below,
+    the input was letters of the word AMAZING. The 2-D view shows the
+    last letter, G.
 
-<center>
-![](images/lab3/screenshot_complete_3d.png){height="400"}
-</center>
+    <center>
+    ![](images/lab3/screenshot_complete_3d.png){height="400"}
+    </center>
 
-Updating the code to use this feature is optional, but helpful. If you
-previously download `lab3-swift-blank-update`, you can download the new
-starter code
-[`lab3-swift-blank-update2`](codes/lab3/lab3-swift-blank-update2.zip),
-and copy parts of your code that you filled for each task to the new
-skeleton.
+    Updating the code to use this feature is optional, but helpful. If
+    you previously download `lab3-swift-blank-update`, you can download
+    the new starter code
+    [`lab3-swift-blank-update2`](codes/lab3/lab3-swift-blank-update2.zip),
+    and copy parts of your code that you filled for each task to the new
+    skeleton.
+1.  In Task 1B, to decide which of the nine zones a line segment falls
+    into, using the midpoint of the segment actually gives a
+    significantly better accuracy than using an endpoint. With the
+    midpoint, the accuracy is about 22 out of 26 characters, compared to
+    about 17 with the first endpoint. If your implementation previously
+    used an endpoint, updating the code to use the midpoint should
+    improve your accuracy.
 
 **Updates (Mar 11, 2020)**
 

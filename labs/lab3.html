@@ -175,7 +175,7 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
         One number for the time spent in this zone divided by the time it took to draw the entire stroke
         One number for the net rightward movement observed in this zone
         One number for the net downward movement observed in this zone</code></pre>
-<p>The way you will compute these 27 numbers is by looping over segments (pairs of samples) in our input. For instance, you could loop from <code>i=1</code> to <code>n-1</code>, and then in the body of the loop, consider the line segment connecting <code>samples[i-1]</code> to <code>samples[i]</code>. When you consider a line segment, you should decide which of the nine zones it falls into (you could consider the midpoint, or one endpoint; the difference is so small that it won't matter much). For instance, if <span class="math inline">\(0 \leq x &lt; \frac{1}{3}\)</span> and <span class="math inline">\(\frac{1}{3} \leq y \leq \frac{2}{3}\)</span> for <code>samples[i]</code>, then the segment would be assigned to zone #3, the left-middle:</p>
+<p>The way you will compute these 27 numbers is by looping over segments (pairs of samples) in our input. For instance, you could loop from <code>i=1</code> to <code>n-1</code>, and then in the body of the loop, consider the line segment connecting <code>samples[i-1]</code> to <code>samples[i]</code>. When you consider a line segment, you should decide which of the nine zones it falls into by using the segment’s midpoint. For instance, if <span class="math inline">\(0 \leq x &lt; \frac{1}{3}\)</span> and <span class="math inline">\(\frac{1}{3} \leq y \leq \frac{2}{3}\)</span> for <code>samples[i]</code>, then the segment would be assigned to zone #3, the left-middle:</p>
 <center>
 <table>
 <tbody>
@@ -488,11 +488,14 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <p>You should be able to draw letters in any orientation, given that the drawing corresponds to the device’s up-down and left-right movement, as described in the beginning of <span id="task3a">Task3A</span>. Sometimes, it is helpful to shake your phone and wait for a few seconds for the device to calibrate. The average accuracy for all letters should be at least 12 to 15 out of 26 characters.</p>
 <div style="color:#a00">
 <p><strong>Updates (Mar 22, 2020)</strong></p>
-<p>The skeleton code has been slightly updated to help you debug Tasks 2 and 3. In the 3-D mode, there is now a view of rescaled 2-D samples in the upper right corner, exactly how they are input into the 2-D algorithm. This feature will show whether your coordinate transformations work as expected. In the example screenshot below, the input was letters of the word AMAZING. The 2-D view shows the last letter, G.</p>
+<ol type="1">
+<li><p>The skeleton code has been slightly updated to help you debug Tasks 2 and 3. In the 3-D mode, there is now a view of rescaled 2-D samples in the upper right corner, exactly how they are input into the 2-D algorithm. This feature will show whether your coordinate transformations work as expected. In the example screenshot below, the input was letters of the word AMAZING. The 2-D view shows the last letter, G.</p>
 <center>
-<img src="images/lab3/screenshot_complete_3d.png" height="400" />
+<p><img src="images/lab3/screenshot_complete_3d.png" height="400" /></p>
 </center>
-<p>Updating the code to use this feature is optional, but helpful. If you previously download <code>lab3-swift-blank-update</code>, you can download the new starter code <a href="codes/lab3/lab3-swift-blank-update2.zip"><code>lab3-swift-blank-update2</code></a>, and copy parts of your code that you filled for each task to the new skeleton.</p>
+<p>Updating the code to use this feature is optional, but helpful. If you previously download <code>lab3-swift-blank-update</code>, you can download the new starter code <a href="codes/lab3/lab3-swift-blank-update2.zip"><code>lab3-swift-blank-update2</code></a>, and copy parts of your code that you filled for each task to the new skeleton.</p></li>
+<li><p>In Task 1B, to decide which of the nine zones a line segment falls into, using the midpoint of the segment actually gives a significantly better accuracy than using an endpoint. With the midpoint, the accuracy is about 22 out of 26 characters, compared to about 17 with the first endpoint. If your implementation previously used an endpoint, updating the code to use the midpoint should improve your accuracy.</p></li>
+</ol>
 <p><strong>Updates (Mar 11, 2020)</strong></p>
 <p>Items 1. and 2. should be fixed if you download the updated version of starter code (the folder name is <code>lab3-swift-blank-update</code>, as opposed to the original <code>lab3-swift-blank</code>). If you downloaded <code>lab3-swift-blank-update</code>, you can simply ignore the updates below.</p>
 <ol type="1">
