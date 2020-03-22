@@ -69,14 +69,15 @@ At each point, you will be welcome to expand the capabilities of the
 basic recognition framework we have put in your hands.
 
 Please go ahead and download the [Xcode
-project](codes/lab3/lab3-swift-blank-update.zip) for this lab. Update
-the team and bundle identifier and build the app on an iPhone (not a
-simulator). You should see two modes: 2D and 3D. In the 2D mode, you
-should be able to write a letter on the screen and the app will show "?"
-for each letter. In the 3D mode, try pressing and holding anywhere on
-the screen while moving your phone around. There should be a "ribbon" at
-the center of the screen and also a "?" sign for each gesture. If the
-starter code does not work as described, please let us know.
+project](codes/lab3/lab3-swift-blank-update2.zip) for this lab. Update
+the team (and bundle identifier, if needed) and build the app on an
+iPhone (not a simulator). You should see two modes: 2D and 3D. In the 2D
+mode, you should be able to write a letter on the screen and the app
+will show "?" for each letter. In the 3D mode, try pressing and holding
+anywhere on the screen while moving your phone around. There should be a
+"ribbon" at the center of the screen and also a "?" sign for each
+gesture. If the starter code does not work as described, please let us
+know.
 
 <center>
 ![](images/lab3/screenshot_starter_2d.png){height="400"}
@@ -97,7 +98,7 @@ in all of the interesting parts of this method in
 `InertialMotion/Gesture Recognition` in Xcode\'s project navigator:
 
 ``` {#processGesture2D .swift}
-func processGesture2D(samples: [Sample2D], minSize: Double) {
+func processGesture2D(samples: [Sample2D], minSize: Double) -> [Sample2D] {
     // -- TASK 1A --
     let count = samples.count
     var size: Double
@@ -145,6 +146,9 @@ func processGesture2D(samples: [Sample2D], minSize: Double) {
         print(String(format: "Matched '%@' (score %+.5f)", labels[best_label], best_score))
     #endif
     delegate?.gestureProcessor(self, didRecognizeGesture: labels[best_label])
+
+    // return rescaled samples
+    return rescaledSamples
 }
 ```
 
@@ -1111,7 +1115,7 @@ You will be working on `processGesture3D`, which you can find in
 `GestureProcessor.swift`. Here\'s the initial skeleton.
 
 ``` {#process3d .swift}
-func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
+func processGesture3D(samples samples3D: [Sample3D], minSize: Double) -> [Sample2D] {
     var samples2D = [Sample2D](repeatElement(Sample2D(x: 0.0, y: 0.0, t: 0.0), count: samples3D.count))
 
     // -- TASK 3A --
@@ -1127,8 +1131,8 @@ func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
     // along with the timestamp, to samples2D[i]. The y coordinate should be
     // flipped to match the 2-D view.
 
-    // Apply 2-D solution
-    processGesture2D(samples: samples2D, minSize: minSize)
+    // Apply 2-D solution and return rescaled 2-D samples for visualization
+    return processGesture2D(samples: samples2D, minSize: minSize)
 }
 ```
 
@@ -1229,13 +1233,42 @@ system corresponds to "up", whereas that of the 2-D view (from Section
 1) corresponds to "down". The 2-D view's origin is the top left corner
 of the screen.
 
+You should be able to draw letters in any orientation, given that the
+drawing corresponds to the device's up-down and left-right movement, as
+described in the beginning of [Task3A]{#task3a}. Sometimes, it is
+helpful to shake your phone and wait for a few seconds for the device to
+calibrate. The average accuracy for all letters should be at least 12 to
+15 out of 26 characters.
+
 ::: {style="color:#a00"}
+
+**Updates (Mar 22, 2020)**
+
+The skeleton code has been slightly updated to help you debug Tasks 2
+and 3. In the 3-D mode, there is now a view of rescaled 2-D samples in
+the upper right corner, exactly how they are input into the 2-D
+algorithm. This feature will show whether your coordinate
+transformations work as expected. In the example screenshot below, the
+input was letters of the word AMAZING. The 2-D view shows the last
+letter, G.
+
+<center>
+![](images/lab3/screenshot_complete_3d.png){height="400"}
+</center>
+
+Updating the code to use this feature is optional, but helpful. If you
+previously download `lab3-swift-blank-update`, you can download the new
+starter code
+[`lab3-swift-blank-update2`](codes/lab3/lab3-swift-blank-update2.zip),
+and copy parts of your code that you filled for each task to the new
+skeleton.
+
 **Updates (Mar 11, 2020)**
 
 Items 1. and 2. should be fixed if you download the updated version of
 starter code (the folder name is `lab3-swift-blank-update`, as opposed
-to the original `lab3-swift-blank`). Please check that your starter
-code is fixed as explained in items 1. and 2. below.
+to the original `lab3-swift-blank`). If you downloaded
+`lab3-swift-blank-update`, you can simply ignore the updates below.
 
 1.  Towards the end of `Gesture3DViewController.swift`, in the
     `appendPoint` function, the z axis should not be flipped. The
@@ -1263,14 +1296,9 @@ code is fixed as explained in items 1. and 2. below.
     corresponds to "down". The 2-D view's origin is the top left corner
     of the screen.
 
-You should be able to draw letters in any orientation, given that the
-drawing corresponds to the device's up-down and left-right movement, as
-described in the beginning of [Task3A]{#task3a}. Sometimes, it is
-helpful to shake your phone and wait for a few seconds for the device to
-calibrate. The average accuracy for all letters should be at least 12 to
-15 out of 26 characters.
 
 :::
+
 
 ### Task 3C --- Optional Improvements {#task3c}
 

@@ -76,14 +76,14 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
 </ul>
 <p>As with most machine learning systems, the classifiers used in this lab are not perfect, and may exhibit frustrating behaviors. Persistence and creative problem solving (a.k.a. hacking up something that generally works) are encouraged. If you would like to brainstorm about any problems you encounter, we'd be happy to talk.</p>
 <p>The lab will consist of three sections. First, you will implement a shape recognition algorithm using two-dimensional handwriting on the touch screen as the data source. Next, you will develop 3-D motion tracking code using the iPhone's sensors, and gain familiarity with the capabilities and limitations of these sensors by playing with the resulting app. Finally, you will feed data from your three-dimensional motion tracker into the gesture recognition system of the first section. At each point, you will be welcome to expand the capabilities of the basic recognition framework we have put in your hands.</p>
-<p>Please go ahead and download the <a href="codes/lab3/lab3-swift-blank-update.zip">Xcode project</a> for this lab. Update the team and bundle identifier and build the app on an iPhone (not a simulator). You should see two modes: 2D and 3D. In the 2D mode, you should be able to write a letter on the screen and the app will show “?” for each letter. In the 3D mode, try pressing and holding anywhere on the screen while moving your phone around. There should be a “ribbon” at the center of the screen and also a “?” sign for each gesture. If the starter code does not work as described, please let us know.</p>
+<p>Please go ahead and download the <a href="codes/lab3/lab3-swift-blank-update2.zip">Xcode project</a> for this lab. Update the team (and bundle identifier, if needed) and build the app on an iPhone (not a simulator). You should see two modes: 2D and 3D. In the 2D mode, you should be able to write a letter on the screen and the app will show “?” for each letter. In the 3D mode, try pressing and holding anywhere on the screen while moving your phone around. There should be a “ribbon” at the center of the screen and also a “?” sign for each gesture. If the starter code does not work as described, please let us know.</p>
 <center>
 <img src="images/lab3/screenshot_starter_2d.png" height="400" /> <img src="images/lab3/screenshot_starter_3d.png" height="400" />
 </center>
 <h2 id="sec1">Section 1 — Handwriting</h2>
 <p>For this section, you will work through the details of implementing a handwriting recognition system for letters drawn with a finger on an iPhone screen. Here's how this will work.</p>
 <p>You will be implementing <code>GestureProcessor</code>, a class encapsulating the logic for interpreting sequences of points. In particular, you will fill in all of the interesting parts of this method in <code>GestureProcessor.swift</code>, which you can find under <code>InertialMotion/Gesture Recognition</code> in Xcode's project navigator:</p>
-<pre id="processGesture2D" class="swift"><code>func processGesture2D(samples: [Sample2D], minSize: Double) {
+<pre id="processGesture2D" class="swift"><code>func processGesture2D(samples: [Sample2D], minSize: Double) -&gt; [Sample2D] {
     // -- TASK 1A --
     let count = samples.count
     var size: Double
@@ -131,6 +131,9 @@ Due: <s>2020-03-18</s> 2020-03-30<br />
         print(String(format: &quot;Matched &#39;%@&#39; (score %+.5f)&quot;, labels[best_label], best_score))
     #endif
     delegate?.gestureProcessor(self, didRecognizeGesture: labels[best_label])
+
+    // return rescaled samples
+    return rescaledSamples
 }</code></pre>
 <p>This method will be called for you by the view controller when the user has traced a stroke on the screen and then lifted their finger. Each sample will consist of x and y coordinates for a touch event reported by iOS, along with the absolute time in seconds when it occurred. You don't need to know how the UI works for this lab, but you may find it useful later to familiarize yourself with how the <code>Gesture2DViewController</code> captures multi-touch events via the <a href="https://developer.apple.com/documentation/uikit/uiresponder"><code>UIResponder</code></a> <a href="https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/using_responders_and_the_responder_chain_to_handle_events">mechanism</a> and the <code>func updateTouches(_ event: UIEvent?)</code> methods.</p>
 <section id="aside" class="aside">
@@ -441,7 +444,7 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <h2 id="sec3">Section 3 — Mapping 3-D Gestures to 2-D</h2>
 <p>For this section, you will reduce the 3-D gesture recognition problem to the 2-D case. With any luck, you'll soon be recognizing letters formed by waving the phone in the air while touching the screen.</p>
 <p>You will be working on <code>processGesture3D</code>, which you can find in <code>GestureProcessor.swift</code>. Here's the initial skeleton.</p>
-<pre id="process3d" class="swift"><code>func processGesture3D(samples samples3D: [Sample3D], minSize: Double) {
+<pre id="process3d" class="swift"><code>func processGesture3D(samples samples3D: [Sample3D], minSize: Double) -&gt; [Sample2D] {
     var samples2D = [Sample2D](repeatElement(Sample2D(x: 0.0, y: 0.0, t: 0.0), count: samples3D.count))
 
     // -- TASK 3A --
@@ -457,8 +460,8 @@ q_z &amp;= n_z \sin(\phi / 2) \\
     // along with the timestamp, to samples2D[i]. The y coordinate should be
     // flipped to match the 2-D view.
 
-    // Apply 2-D solution
-    processGesture2D(samples: samples2D, minSize: minSize)
+    // Apply 2-D solution and return rescaled 2-D samples for visualization
+    return processGesture2D(samples: samples2D, minSize: minSize)
 }</code></pre>
 <h3 id="task3a">Task 3A — Estimate Axes</h3>
 <p>When the user makes a gesture in the air with their phone, they have a mental picture of whether they are moving the phone left or right, up or down. For instance, if the user holds the phone out in front of them, then up-and-down gesturing will correspond to motion in the vertical dimension. If, however, the user is hunched over the phone (and hence is looking downward towards the screen), then the phone's long axis, and the user's notion of up-and-down gesturing relative to the screen, will be horizontal.</p>
@@ -482,9 +485,16 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <h3 id="task3b">Task 3B — Project Coordinates</h3>
 <p>The final task for this lab is to project the coordinates of the 3-D sample points to 2-D coordinates suitable for use by <code>processGesture2D</code>. In the code, you will need to form the matrix-vector product of the transpose of the rotation matrix <code>M</code> from Task 3A with <code>samples3D[i].location</code> for each <code>i</code> to transform from the reference to the device coordinate systems.</p>
 <p>To apply the 2-D solution you developed in Section 1, you will need to map the 3-D locations (in the device coordinate system) to 2-D, by copying the transformed x and y coordinates, along with the timestamp <code>samples3D[i].t</code>, into <code>samples2D[i]</code>. Note that the y coordinates have to be flipped, because the positive y-axis of the device coordinate system corresponds to “up”, whereas that of the 2-D view (from Section 1) corresponds to “down”. The 2-D view’s origin is the top left corner of the screen.</p>
+<p>You should be able to draw letters in any orientation, given that the drawing corresponds to the device’s up-down and left-right movement, as described in the beginning of <span id="task3a">Task3A</span>. Sometimes, it is helpful to shake your phone and wait for a few seconds for the device to calibrate. The average accuracy for all letters should be at least 12 to 15 out of 26 characters.</p>
 <div style="color:#a00">
+<p><strong>Updates (Mar 22, 2020)</strong></p>
+<p>The skeleton code has been slightly updated to help you debug Tasks 2 and 3. In the 3-D mode, there is now a view of rescaled 2-D samples in the upper right corner, exactly how they are input into the 2-D algorithm. This feature will show whether your coordinate transformations work as expected. In the example screenshot below, the input was letters of the word AMAZING. The 2-D view shows the last letter, G.</p>
+<center>
+<img src="images/lab3/screenshot_complete_3d.png" height="400" />
+</center>
+<p>Updating the code to use this feature is optional, but helpful. If you previously download <code>lab3-swift-blank-update</code>, you can download the new starter code <a href="codes/lab3/lab3-swift-blank-update2.zip"><code>lab3-swift-blank-update2</code></a>, and copy parts of your code that you filled for each task to the new skeleton.</p>
 <p><strong>Updates (Mar 11, 2020)</strong></p>
-<p>Items 1. and 2. should be fixed if you download the updated version of starter code (the folder name is <code>lab3-swift-blank-update</code>, as opposed to the original <code>lab3-swift-blank</code>). Please check that your starter code is fixed as explained in items 1. and 2. below.</p>
+<p>Items 1. and 2. should be fixed if you download the updated version of starter code (the folder name is <code>lab3-swift-blank-update</code>, as opposed to the original <code>lab3-swift-blank</code>). If you downloaded <code>lab3-swift-blank-update</code>, you can simply ignore the updates below.</p>
 <ol type="1">
 <li><p>Towards the end of <code>Gesture3DViewController.swift</code>, in the <code>appendPoint</code> function, the z axis should not be flipped. The <code>position</code> constant should be removed and the <code>location</code> parameter should be <code>point</code>.</p>
 <pre class="swift"><code>if draw {
@@ -497,7 +507,6 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <li><p>You need to transpose the matrix you get from <code>nearestRotation</code> before applying it to 3-D locations to transform from the reference to the device coordinate systems. Applying the matrix directly will transform a given location from the device to the reference coordinate systems instead, which is the opposite of what we want.</p></li>
 <li><p>When mapping from 3-D to 2-D locations, the y coordinates have to be flipped. This is because the positive y-axis of the device corresponds to “up”, whereas that of the 2-D view (from Section 1) corresponds to “down”. The 2-D view’s origin is the top left corner of the screen.</p></li>
 </ol>
-<p>You should be able to draw letters in any orientation, given that the drawing corresponds to the device’s up-down and left-right movement, as described in the beginning of <span id="task3a">Task3A</span>. Sometimes, it is helpful to shake your phone and wait for a few seconds for the device to calibrate. The average accuracy for all letters should be at least 12 to 15 out of 26 characters.</p>
 </div>
 <h3 id="task3c">Task 3C — Optional Improvements</h3>
 <p>The gesture recognition results that we have obtained using the procedure we have outlined for you have not been fantastic. One reason for that is the poor fit between the sensor data (acceleration) and the machine learning features (position, motion, and dwell time). We would like to encourage you to think about an alternative set of machine learning features which are a more direct fit to the 3-D motion problem and the accelerometer data. Let us know what you discover!</p>
