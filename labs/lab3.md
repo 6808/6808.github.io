@@ -488,8 +488,9 @@ fingertip until the letter is finished.
 </center>
 :::
 
-Note that in our drawing, F starts from the top right and ends at the
-middle center. G starts from the middle right and ends at the top right.
+Note that in our drawing, F starts from the top left (down, up, right,
+left, half-down, right) and ends at the middle right/center. G starts
+from the middle right and ends at the top right.
 
 If your implementation is correct, around 18 to 24 out of 26 characters
 should be classified correctly. Most scores (as printed in the debugger
