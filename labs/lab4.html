@@ -76,7 +76,7 @@ Due: 2020-04-08<br />
 <h3 id="installation">Installation</h3>
 <p>This code is tested with Python 3.6 and other python libraries, including OpenCV 4.2. (Python 2 is not supported.) Follow the instructions below to use virtualenv and install the required packages.</p>
 <ol type="1">
-<li><p>(Strongly recommended) Install <a href="https://virtualenv.pypa.io/en/latest/installation.html">virtualenv</a> and <a href="https://virtualenvwrapper.readthedocs.io/en/latest/install.html">virtualenvwrapper</a>. (See also: <a href="https://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html">another guide</a>.) Then make virtualenv called <code>6808</code> (or a name of your choosing) with python 3.</p>
+<li><p>(Strongly recommended) Install <a href="https://virtualenv.pypa.io/en/latest/installation.html">virtualenv</a> and <a href="https://virtualenvwrapper.readthedocs.io/en/latest/install.html">virtualenvwrapper</a>. (See also: <a href="https://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html">another guide</a>.) Then make virtualenv called <code>6808</code> (or a name of your choosing) with python 3.6 or newer. (Python 3.7 and 3.8 should also work.)</p>
 <pre class="bash"><code>mkvirtualenv --python=`which python3.6` 6808</code></pre>
 <p>You should automatically be in the newly created virtualenv. To verify, the outputs of <code>which python</code> and <code>python --version</code> should be similar to this:</p>
 <pre class="bash"><code>$ which python
@@ -84,7 +84,7 @@ Due: 2020-04-08<br />
 $ python --version
 Python 3.6.x</code></pre>
 <p>If you start a new terminal, you can work on this virtualenv by running <code>workon 6808</code>. To switch to the default python, run <code>deactivate</code>.</p></li>
-<li><p>Install required packages within the virtualenv.</p>
+<li><p>Once you download the starter code, uncompress it and <code>cd</code> into <code>lab4</code> directory. From that directory, install required packages within the virtualenv.</p>
 <pre class="bash"><code>pip install -r requirements.txt</code></pre></li>
 <li><p>Test your installation.</p>
 <pre class="bash"><code>$ python -c &quot;import cv2; print(cv2.__version__)&quot;

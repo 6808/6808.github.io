@@ -97,7 +97,7 @@ instructions below to use virtualenv and install the required packages.
     (See also: [another
     guide](https://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html).)
     Then make virtualenv called `6808` (or a name of your choosing) with
-    python 3.
+    python 3.6 or newer. (Python 3.7 and 3.8 should also work.)
 
     ```bash
     mkvirtualenv --python=`which python3.6` 6808
@@ -118,7 +118,9 @@ instructions below to use virtualenv and install the required packages.
     running `workon 6808`. To switch to the default python, run
     `deactivate`.
 
-1.  Install required packages within the virtualenv.
+1.  Once you download the starter code, uncompress it and `cd` into
+    `lab4` directory. From that directory, install required packages
+    within the virtualenv.
 
     ```bash
     pip install -r requirements.txt
