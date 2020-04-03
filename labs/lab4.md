@@ -112,8 +112,30 @@ instructions below to use virtualenv and install the required packages.
     [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/install.html).
     (See also: [another
     guide](https://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html).)
-    Then make virtualenv called `6808` (or a name of your choosing) with
-    python 3.6 or newer. (Python 3.7 and 3.8 should also work.)
+    Run the following two lines:
+
+    ```bash
+    python -m pip install virtualenv
+    python -m pip install virtualenvwrapper
+    ```
+
+    Then add the following lines to your shell startup file, e.g.
+    `.bashrc`, `.bash_profile` for bash or `.zshrc` for zsh (run `echo
+    $0` to see which shell you are using).
+
+    ```bash
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Devel
+    source /usr/local/bin/virtualenvwrapper.sh
+    ```
+
+    After editing it, reload the startup file (e.g., run `source
+    ~/.bash_profile`) or open a new terminal.
+
+
+1.  If you succesfully installed virtualenvwrapper, make a virtualenv
+    called `6808` (or a name of your choosing) with python 3.6 or newer.
+    (Python 3.7 and 3.8 should also work.)
 
     ```bash
     mkvirtualenv --python=`which python3.6` 6808
@@ -130,16 +152,25 @@ instructions below to use virtualenv and install the required packages.
     Python 3.6.x
     ```
 
-    If you start a new terminal, you can work on this virtualenv by
+    If you start a new terminal, you can work in this virtualenv by
     running `workon 6808`. To switch to the default python, run
     `deactivate`.
 
-1.  Once you download the starter code, uncompress it and `cd` into
-    `lab4` directory. From that directory, install required packages
-    within the virtualenv.
+1.  Download the starter code, uncompress it and `cd` into `lab4`
+    directory. From that directory, install required packages within the
+    virtualenv.
 
     ```bash
     pip install -r requirements.txt
+    ```
+
+    **Alternatively**, if you do not use virtualenv, you can install
+    packages with the gloabl Python interpreter. If your default
+    `python` is not Python 3.6 or newer, use `python3.6` to install
+    pacakages and run the codes.
+
+    ```bash
+    python -m pip install -r requirements.txt
     ```
 
 1.  Test your installation.
