@@ -27,6 +27,22 @@ Due: 2020-04-08\
 -   [Section 3 --- Topology-Sensitive Evaluation Metric](#sec3)
 -   [Submission and Checkoff](#submission)
 
+::: {style="color:#a00"}
+
+**Updates (Apr 2, 2020)**
+
+If you downloaded the starter code before Thu Apr 2 9:16 PM, I
+unintentionally included files/folders that were redundant or
+unnecessary. To remove them and make the files manageable, you can run
+the following commands from the `lab4` directory:
+
+```bash
+rm -rf boston.graph cache infer_tests.py pylibs pyqtree.py section3_graphs trace_generator_map.xml trace_generator_readme.txt trips_uchicago_meters
+```
+
+:::
+
+
 Overview
 --------
 
