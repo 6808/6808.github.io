@@ -235,6 +235,10 @@ a certain distance threshold and bearing threshold to the selected
 marker will be assigned to the cluster of the selected marker. We repeat
 this process until all markers are assigned to some cluster.
 
+[You should not mutate the `markers` variable in the
+`initialize_clusters` method (e.g. you can copy it into another list
+first).]{style="color:#a00"}
+
 **k-means clustering.** Now, we run k-means clustering to refine our
 clusters. We will take into account both distance and bearing difference
 when we perform k-means clustering; you can think of this as if we have
