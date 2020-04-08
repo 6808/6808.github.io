@@ -132,6 +132,30 @@ instructions below to use virtualenv and install the required packages.
     After editing it, reload the startup file (e.g., run `source
     ~/.bash_profile`) or open a new terminal.
 
+    Note that if you get an error like `
+    /usr/local/bin/virtualenvwrapper.sh: No such file or directory`,
+    that means your `virtualenvwrapper.sh` is installed somewhere else,
+    e.g. with anaconda's python.
+
+    ```bash
+    $ which python # python3 if you use python3
+    /Users/username/anaconda/bin/python
+    $ which virtualenv
+    /Users/username/anaconda/bin/virtualenv
+    $ ls /Users/username/anaconda/bin/virtualenv*
+    # see if there are virtualenvwrapper.sh installed here
+    ```
+
+    You need to match the path by adding the following lines to your
+    shell startup file instead. See this [Piazza
+    post](https://piazza.com/class/k5pjker46hppp?cid=158) for more
+    details.
+
+    ```bash
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Devel
+    source /Users/username/anaconda/bin/virtualenvwrapper.sh
+    ```
 
 1.  If you succesfully installed virtualenvwrapper, make a virtualenv
     called `6808` (or a name of your choosing) with python 3.6 or newer.
@@ -429,17 +453,32 @@ graphs inferred earlier in Task 1, and create corresponding plots
 (include precision/recall plots if your metric uses precision and
 recall).
 
-For shortest path, one metric would be to randomly select a pair of
+For **holes-and-marbles**, you would randomly pick a vertex in the
+ground truth graph, and find the nearest vertex in the other graph.
+Then, do a breadth first search from the vertex selected in each graph,
+and place markers every 10 meters or so along the edges; stop the search
+when you exceed some radius away from the start vertex (e.g., 300
+meters). Lastly, match the markers between the graphs and compute
+precision and recall. (This evaluation metric is proposed in Section 3
+of [this
+paper](https://www.cs.uic.edu/~jakob/papers/biagioni-trb12.pdf).)
+
+For **shortest path**, one metric would be to randomly select a pair of
 vertices in the ground truth graph, find the nearest vertices in the
 other graph, and then compare the distance of the shortest path between
-the vertices. Then, repeat this process several times. For
-holes-and-marbles, you would randomly pick a vertex in the ground truth
-graph, and find the nearest vertex in the other graph. Then, do a
-breadth first search from the vertex selected in each graph, and place
-markers every 10 meters or so along the edges; stop the search when you
-exceed some radius away from the start vertex (e.g., 300 meters).
-Lastly, match the markers between the graphs and compute precision and
-recall.
+the vertices. Then, repeat this process several times. This metric would
+not match the precision/recall framework, but think about how you would
+quantitatively compare how good the shortest path distances between each
+pair of vertices match, then average those scores together. You may
+impose the maximum distance between the source and destination vertices
+in the randomization to increase the probability of finding a path.
+
+This section is open-ended, as long as your metric is reasonable. These
+are some ideas and your exact implementation can vary. Adjusting
+parameters (e.g. marker frequency and match distance for
+holes-and-marbles or the maximum distance between the source and
+destination vertices for shortest path) will largely affect the final
+scores.
 
 We have included two pairs of actual/inferred graphs in the
 `data/section3_graphs/` folder for which `eval_geo.py` gives F1 score of
