@@ -1,17 +1,36 @@
-# 6.808-website
+# 6808.github.io
 
 This is the web page for MIT 6.808, starting from the Spring 2019 offering.
 
-## Editing
-Info pages (index, calendar, notes, answers) are based on [jemdoc](https://jemdoc.jaboc.net/).
-Edit `*.jemdoc` and run `make`, which will auto update the corresponding HTML files.
-If HTML files are edited directly, those changes will be overwritten by the next time `make` is called.
-See this [cheat sheet](https://jemdoc.jaboc.net/cheatsheet.html) for jemdoc's syntax.
+## Info pages
 
-Lab pages only have an HTML version.
-Edit HTML files directly to update those pages.
+Info pages (index, calendar, notes, answers, etc.) are based on
+[jemdoc](https://jemdoc.jaboc.net/). Edit `*.jemdoc` and run `make`, which will auto
+update the corresponding HTML files. **Avoid editting HTML files directly.** If HTML
+files are edited directly, those changes will be overwritten by the next time `make`
+is called. See this [cheat sheet](https://jemdoc.jaboc.net/cheatsheet.html) for
+jemdoc's syntax.
 
-## To-dos
-Some codes will need updating.
-- **Swift**: Xcode has an internal migration tool to automatically update from one version of Swift to another. However, a specific version of Xcode may have to be downloaded, and some further manual debugging may be required. For example, Swift 3.0 can be migrated to Swift 4.2 using Xcode 10.1. Older versions of Xcode can be downloaded from [this page](https://developer.apple.com/download/more/?=xcode).
-- **Lab 4 (python)**: The OpenCV library used in the current code in 2.4 (`import cv`), but should be changed to 3.x or 4.x (`import cv2`), which is much easier to install. However, there are certain functions that cannot be changed directly and require manual edits.
+Edit `MENU` for updating left-column menu.
+
+If a new jemdoc page is added, edit the `DOCS` variable s in `Makefile` accordingly.
+
+To update the calendar page, edit the HTML code within `calendar.jemdoc`.
+Unfortunately, updating the dates a tedious process and there is no automated
+approach, but this only needs to be done once per semester.
+
+## Lab pages
+
+Dependency: [pandoc](https://pandoc.org/). (Requires installation.)
+
+Edit `*.md` and run `./render` from `labs` directory to generate HTML files.
+
+## Other Notes
+
+This repo is based on the [old website repo](https://github.com/6S062/6MOB), from
+Spring 2016 to Spring 2018.
+
+## TODO
+
+- Use Git LFS to store large files (zip files for lab codes)?
+- Make the `labs/render` script nicer?
