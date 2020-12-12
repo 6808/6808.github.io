@@ -3,9 +3,9 @@
 
 *Instructors:* [http://www.mit.edu/~fadel/ Fadel Adib]
 
-*TA:* Mihir Trivedi (mihirt@mit.edu)
+*TA:* Mihir Trivedi ([mailto:mihirt@mit.edu mihirt@mit.edu])
 
-*Lectures:* Mon/Wed 3-4:30pm at 56-154
+*Lectures:* Mon/Wed 3-4:30pm on Zoom
 
 *Office Hours:*
 - Fadel: By appointment
@@ -38,15 +38,15 @@ Topics include the principles, practices, and emerging applications in:
 - iOS APIs for accessing various sensing and wireless networking technologies
 
 = Announcements
-
-- Sign up for the [https://piazza.com/mit/spring2020/6808 6.808 Piazza
-  forum]. We'll be using Piazza for Q&A and other discussions, so
-  please sign up ASAP.
-- Please fill out the
-  [https://docs.google.com/forms/d/e/1FAIpQLSdV101a8fn2ESF72AZiQbQV2WJxpgMcLr92IINhq6flXdntAQ/viewform
-  first day survey] by the end of Wednesday, February 5.
-- The iOS tutorial will be from 4-5pm on Friday, February 7 at
-  56-154 (classroom).
+- Coming Soon!
+# - Sign up for the [https://piazza.com/mit/spring2020/6808 6.808 Piazza
+  # forum]. We'll be using Piazza for Q&A and other discussions, so
+  # please sign up ASAP.
+# - Please fill out the
+  # [https://docs.google.com/forms/d/e/1FAIpQLSdV101a8fn2ESF72AZiQbQV2WJxpgMcLr92IINhq6flXdntAQ/viewform
+  # first day survey] by the end of Wednesday, February 5.
+# - The iOS tutorial will be from 4-5pm on Friday, February 7 at
+  # 56-154 (classroom).
 
 = About the Course
 
@@ -85,7 +85,7 @@ will be accepted by any time before the class starts. Each student may
 grade. This is a part of the participation score.
 
 == Labs and Software Development
-(Updates coming for 2021)
+(Updates coming soon for 2021)
 The class will involving programming for iPhones in XCode, which
 requires a Mac for development. The 56-129 athena cluster has Macs
 with XCode installed (select XCode from Launchpad, and then enter your
