@@ -1,15 +1,15 @@
 # jemdoc: menu{MENU}{index.html}
-= 6.808: Mobile and Sensor Computing, Spring 2020
+= 6.808: Mobile and Sensor Computing, Spring 2021
 
 *Instructors:* [http://www.mit.edu/~fadel/ Fadel Adib]
 
-*TA:* James Pruegsanusak (korrawat@mit.edu)
+*TA:* Mihir Trivedi (mihirt@mit.edu)
 
 *Lectures:* Mon/Wed 3-4:30pm at 56-154
 
 *Office Hours:*
 - Fadel: By appointment
-- TA: Mon 12-1pm, Thu 4-5pm at 56-129 athena cluster
+- TA: TBD
 
 = Course Overview
 
@@ -56,15 +56,16 @@ Topics include the principles, practices, and emerging applications in:
 
 == Prerequisites
 
-6.033 or equivalent (or permission of instructor).
+6.033 or 6.08 or 6.01 or 6.02 or equivalent (or permission of instructor).
 
 == Grading policy
 
-Grading in 6.808 will consist of 5 labs, a midterm, a final project,
+Grading in 6.808 will consist of 5 labs, a midterm, a final project, 2 psets,
 and class participation, broken down as follows:
 
 - *Labs: 25%*
-- *Midterm: 25%*
+- *Midterm: 15%*
+- *Psets: 10\% (2 at 5\% each)*
 - *Final Project: 40%*
 - *Participation: 10%*
 
@@ -84,7 +85,7 @@ will be accepted by any time before the class starts. Each student may
 grade. This is a part of the participation score.
 
 == Labs and Software Development
-
+(Updates coming for 2021)
 The class will involving programming for iPhones in XCode, which
 requires a Mac for development. The 56-129 athena cluster has Macs
 with XCode installed (select XCode from Launchpad, and then enter your
@@ -107,4 +108,4 @@ require a letter from one of the student deans.
 
 == Midterm
 
-There will be one midterm, in-class, on Monday, April 13, 3-4:30pm.
+There will be one midterm, in-class. Date TBD.
