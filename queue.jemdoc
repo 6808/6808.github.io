@@ -7,9 +7,9 @@ Zoom link. You will be in the Waiting Room until we reach your turn.
 The queue is automatically updated every 10 seconds. Refresh the page to update the
 queue manually.
 
-{{<iframe id="sheet" src="<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQW9yYwgmstuKcTsnOcE-_Ct9IhyerDCxVvQo6dqmr7SV4mUse0SLEb2A01QAGTC7obwtEW4364nJQn/pubhtml?gid=1381471667&amp;single=true&amp;widget=true&amp;headers=false"></iframe>}}
+{{<iframe id="sheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQW9yYwgmstuKcTsnOcE-_Ct9IhyerDCxVvQo6dqmr7SV4mUse0SLEb2A01QAGTC7obwtEW4364nJQn/pubhtml?gid=1381471667&amp;single=true&amp;widget=true&amp;headers=false"></iframe>}}
 
-{{<iframe src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPcqzBgyNwvQL_JAi1ty-mTir1QGdCt7N9Ry7esWFbrn1QXA/viewform?embedded=true" width="640" height="1154" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>}}
+{{<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPcqzBgyNwvQL_JAi1ty-mTir1QGdCt7N9Ry7esWFbrn1QXA/viewform?embedded=true" width="640" height="1154" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>}}
 
 # Update script: https://yagisanatode.com/2018/12/20/embedding-a-live-google-sheet-graph-that-updates-every-30-seconds-into-a-wordpress-post-part-2-of-google-forms-in-wordpress-with-live-chart-project/
 {{
