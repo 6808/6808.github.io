@@ -14,7 +14,7 @@ queue manually.
 # Update script: https://yagisanatode.com/2018/12/20/embedding-a-live-google-sheet-graph-that-updates-every-30-seconds-into-a-wordpress-post-part-2-of-google-forms-in-wordpress-with-live-chart-project/
 {{
 <script>
-window.setInterval("reloadIFrame();", 10000);
+window.setInterval("reloadIFrame();", 30000);
 function reloadIFrame() {
  document.getElementById("sheet").src="https://docs.google.com/spreadsheets/d/1PB53Qwcgzi1zqRrgbnQNbgVLEGrDCVE4qzU3PjMYBAE/htmlembed/sheet?gid=1303964728";
 }
