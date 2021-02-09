@@ -127,11 +127,9 @@ to you.
 The videos were recorded a few years ago, so some details about XCode\'s
 user inferface and Swift have changed. Also, the recordings were based
 on Wunderground API, which is no longer available. We suggest using the
-[Dark Sky](https://darksky.net/dev) API to get current weather
-conditions instead. However, the input is the latitude and longitude of
-a location instead of a zip code. You can see an example JSON response
-in [Dark Sky API
-documentation](https://darksky.net/dev/docs#forecast-request). We have
+[OpenWeather](https://openweathermap.org/api) API to get current weather
+conditions instead. You can see an example JSON response
+in OpenWeather documentation](https://openweathermap.org/current). We have
 noted changes for each video, if applicable, at the description before
 the corresponding video.
 
@@ -158,10 +156,6 @@ src="https://www.youtube.com/embed/JtbR3gY6YXY?rel=0" frameborder="0" allowfulls
 
 Here, we define a weather class with some properties and methods.
 
-**Changes:** The function `fetchWeatherForZip` should take two arguments
-(`lat: String, lon: String`) instead of just one (`zip: String`). You
-may change the function name if you\'d like.
-
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/Jvjs8ePFl2Y?rel=0" frameborder="0" allowfullscreen>
 </iframe>
@@ -176,13 +170,11 @@ the next video, we instantiate the weather class, and debug it. This
 video contains an intentional error. We\'ll debug it in the next one.
 
 **Changes:**
-
+-   Make sure to update the URLs and APP IDs with the ones you receive from OpenWeather. More details can be found on the [documentation](https://openweathermap.org/current)
+- The URL string is
 -   The url string is
-    `"https://api.darksky.net/forecast/\(APP_ID)/\(lat),\(lon)"`.
--   An API key you can use is `c2e2b8d1e67810853bd729dc90f5c6ed`. If
-    this key is not available, please sign up for free for a new key on
-    the [Dark Sky API website](https://darksky.net/dev/register). (It
-    should take less than 2 minutes.)
+    `"https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&appid=\(APP_ID)&units=imperial"`.
+-   Create an API key by registering on the website for the free plan. You will receive an API Key in your email.
 
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/YYCasqQWSnU?rel=0" frameborder="0"
@@ -203,7 +195,7 @@ it\'s worth learning.
 **Changes:** Take a look at an example JSON response in [Dark Sky API
 documentation](https://darksky.net/dev/docs#forecast-request).
 
--   The correct key for JSON is `"currently"`, instead of
+-   The correct key for JSON is `"main"`, instead of
     `"current_observation"`.
 
 -   What should be the key for current weather description?
@@ -212,10 +204,10 @@ documentation](https://darksky.net/dev/docs#forecast-request).
     We need to cast it into `Double` before using it in a meaningful
     string, e.g.
 
-        self.windString = "Wind speed: \(currentObservations["windSpeed"] as! Double) mph"
+        self.windString = "Wind speed: \(currentObservations["temp"] as! Double) mph"
 
-    Can you find the correct key for each field (e.g. `"windSpeed"` for
-    wind)?
+    Can you find the correct key for each field (e.g. `"humidity"` for
+    humidity)?
 
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/yIXXW55gwHw?rel=0" frameborder="0" allowfullscreen>
