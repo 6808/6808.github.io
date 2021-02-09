@@ -147,6 +147,9 @@ not compatible with the tutorial videos.
 
 ![](images/lab0/new_project.png){width="640" alt="new project"}
 
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/JtbR3gY6YXY?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -159,6 +162,9 @@ Here, we define a weather class with some properties and methods.
 (`lat: String, lon: String`) instead of just one (`zip: String`). You
 may change the function name if you\'d like.
 
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/Jvjs8ePFl2Y?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -178,6 +184,10 @@ video contains an intentional error. We\'ll debug it in the next one.
     the [Dark Sky API website](https://darksky.net/dev/register). (It
     should take less than 2 minutes.)
 
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/YYCasqQWSnU?rel=0" frameborder="0"
+allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -207,6 +217,10 @@ documentation](https://darksky.net/dev/docs#forecast-request).
     Can you find the correct key for each field (e.g. `"windSpeed"` for
     wind)?
 
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/yIXXW55gwHw?rel=0" frameborder="0" allowfullscreen>
+</iframe>
+
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -223,6 +237,9 @@ like Button and Label) is the plus sign button at the top right corner
 instead. Also, you can show an Assistant editor by clicking Editor \>
 Assistant or by using the following shortcut: ⌃⌥⌘↩︎.
 
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/aT5O_qyeQGk?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -234,6 +251,9 @@ stuff now.
 
 Again remember to press the control key (⌃) while dragging!
 
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/evw_KboMG2Q?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -254,6 +274,9 @@ Constraints on the left).
 **Changes:** Make two text fields for latitude and longtitude instead of
 a single text field for zip code.
 
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/KWdTqycEP-E?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -262,9 +285,9 @@ a single text field for zip code.
 
 We now update the UI Labels when results are fetched from the API.
 
-Here are some examples of the approximate coordinates you can try:
-Boston (42.4, -71.1), San Francisco (37.8, -122.4), Tokyo (35.7, 139.8).
-
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/r55JUaOVh7k?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -280,9 +303,11 @@ Keyboard) to see if the keyboard shows up.
 -   The keyboard type should be \"Numbers and Punctuation\" instead of
     \"Number Pad\" to allow for inputting a potentially negative number
     with a decimal point.
--   Call `resignFirstResponder` for both latitude and longitude text
-    fields.
 
+
+<iframe width="640" height="385"
+src="https://www.youtube.com/embed/kFcwheYqVKQ?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -353,9 +378,7 @@ PLANET!"}
 Check-offs {#checkoff}
 ----------
 
-We will hold checkoffs during Office Hours (Thursday, February 6, 4-5pm
-and Monday, February 10, 12-1pm) in the 56-129 Athena Cluster, and
-during the iOS Tutorial on Friday, February 7, 4-5pm at 56-154 (the
-usual classroom).
+We will hold checkoffs during Office Hours and
+during the iOS Tutorial on Friday, February 19.
 :::
 :::

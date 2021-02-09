@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="6.808 : Mobile and Sensor Computing Course" />
   <title>6.808 - Lab 0</title>
   <style>
     code{white-space: pre-wrap;}
@@ -114,11 +115,15 @@ Due: 2020-02-10<br />
 <p>We create the project and print "Hello World". You'll also notice that we resize the simulator, and click on some of the menu bars. This just so that you see what those buttons do.</p>
 <p>When creating a project, select "Storyboard" for "User Inferface". Another option is "SwiftUI", which is actually a newer method but is not compatible with the tutorial videos.</p>
 <p><img src="images/lab0/new_project.png" alt="new project" width="640" /></p>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/JtbR3gY6YXY?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-2---making-a-weather-class">Video 2 - Making a <code>Weather</code> Class</h4>
 <p>Here, we define a weather class with some properties and methods.</p>
 <p><strong>Changes:</strong> The function <code>fetchWeatherForZip</code> should take two arguments (<code>lat: String, lon: String</code>) instead of just one (<code>zip: String</code>). You may change the function name if you'd like.</p>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/Jvjs8ePFl2Y?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-3---flushing-out-the-weather-methods">Video 3 - Flushing out the <code>Weather</code> Methods</h4>
@@ -128,6 +133,8 @@ Due: 2020-02-10<br />
 <li>The url string is <code>"https://api.darksky.net/forecast/\(APP_ID)/\(lat),\(lon)"</code>.</li>
 <li>An API key you can use is <code>c2e2b8d1e67810853bd729dc90f5c6ed</code>. If this key is not available, please sign up for free for a new key on the <a href="https://darksky.net/dev/register">Dark Sky API website</a>. (It should take less than 2 minutes.)</li>
 </ul>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/YYCasqQWSnU?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-4---instantiating-and-debugging-weather">Video 4 - Instantiating and Debugging <code>Weather</code></h4>
@@ -141,17 +148,23 @@ Due: 2020-02-10<br />
 <pre><code>self.windString = &quot;Wind speed: \(currentObservations[&quot;windSpeed&quot;] as! Double) mph&quot;</code></pre>
 <p>Can you find the correct key for each field (e.g. <code>"windSpeed"</code> for wind)?</p></li>
 </ul>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/yIXXW55gwHw?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-5---adding-a-button-to-the-ux-defining-constraints">Video 5 - Adding a button to the UX, defining constraints</h4>
 <p>We add a new button to the interface and define its constraints.</p>
 <p><strong>We're pressing the control key while dragging from the button to the <code>ViewController.swift</code> file.</strong></p>
 <p>In new versions of XCode, the Library button (where you add UI elements like Button and Label) is the plus sign button at the top right corner instead. Also, you can show an Assistant editor by clicking Editor &gt; Assistant or by using the following shortcut: ⌃⌥⌘↩︎.</p>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/aT5O_qyeQGk?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-6---enabling-the-button">Video 6 - Enabling the button</h4>
 <p>This is pretty straightforward. We're making the button actually do stuff now.</p>
 <p>Again remember to press the control key (⌃) while dragging!</p>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/evw_KboMG2Q?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-7---adding-more-ui-elements">Video 7 - Adding more UI Elements</h4>
@@ -159,11 +172,14 @@ Due: 2020-02-10<br />
 <p>There are at least 5 ways to lay out elements in Xcode. This is probably the fastest.</p>
 <p>Do not worry about the exact alignment of the elements too much, as long as they show up on the simulators. If they don't, some constraints may need to be changed or deleted (check the View Controller &gt; View &gt; Constraints on the left).</p>
 <p><strong>Changes:</strong> Make two text fields for latitude and longtitude instead of a single text field for zip code.</p>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/KWdTqycEP-E?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-8---making-the-ui-labels-update">Video 8 - Making the UI Labels Update</h4>
 <p>We now update the UI Labels when results are fetched from the API.</p>
-<p>Here are some examples of the approximate coordinates you can try: Boston (42.4, -71.1), San Francisco (37.8, -122.4), Tokyo (35.7, 139.8).</p>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/r55JUaOVh7k?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-9---ui-polish">Video 9 - UI Polish</h4>
@@ -171,8 +187,9 @@ Due: 2020-02-10<br />
 <p><strong>Changes:</strong></p>
 <ul>
 <li>The keyboard type should be "Numbers and Punctuation" instead of "Number Pad" to allow for inputting a potentially negative number with a decimal point.</li>
-<li>Call <code>resignFirstResponder</code> for both latitude and longitude text fields.</li>
 </ul>
+<iframe width="640" height="385" src="https://www.youtube.com/embed/kFcwheYqVKQ?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <hr />
 <hr />
 <h4 id="video-10---blocks-and-async">Video 10 - Blocks and Async</h4>
@@ -225,7 +242,7 @@ Due: 2020-02-10<br />
 <p>That's it for now. Have a good one!</p>
 <p><img src="images/lab0/hack_the_planet.gif" title="There are no speed limits on the information highway." alt="HACK THE PLANET!" /></p>
 <h2 id="checkoff">Check-offs</h2>
-<p>We will hold checkoffs during Office Hours (Thursday, February 6, 4-5pm and Monday, February 10, 12-1pm) in the 56-129 Athena Cluster, and during the iOS Tutorial on Friday, February 7, 4-5pm at 56-154 (the usual classroom).</p>
+<p>We will hold checkoffs during Office Hours and during the iOS Tutorial on Friday, February 19.</p>
 </section>
 </div>
 </body>
