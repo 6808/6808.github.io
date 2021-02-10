@@ -80,8 +80,7 @@ accuracy and power drain of the different approaches.
     code](codes/lab1/PositionLogger-swift-blank-4.2.zip).
 2.  Unzip it. This will create a directory called
     \"PositionLogger-swift-blank\", containing an XCode project.
-3.  Open PositionLogger.xcodeproj in XCode on a Mac (recall that the
-    56-129 athena cluster has Macs available for your use). Compile and
+3.  Open PositionLogger.xcodeproj in XCode on a Mac. Compile and
     run the app, either on your device or in the simulator (use any of
     the iPhone simulators.) It should show a screen like what you see
     above. Clicking on the Start button should cause it to enter a
@@ -90,6 +89,7 @@ accuracy and power drain of the different approaches.
     update \"Team\" to your own account (General Tab -\> Signing in
     Xcode 10 or \"Signing and Capabilities\" Tab -\> Signing in Xcode
     11). Update the Bundle Identifier if needed.
+4. **Important:** If you are testing on an iPad, go to PositionLogger > General > check iPad (under "Deployment Info")
 
 ### iOS Location Primer {#ios_loc_primer}
 
@@ -257,6 +257,9 @@ power of the different techniques.
 There are no deliverables for this task.
 
 ### Task 2 -- Compare the Accuracy of the Location Methods {#task2}
+#### Update for 2021:
+
+- If you are in the Boston area, see below for a route that you could test along. If you aren't in the Boston area, pick any route that you can safely walk on outside (e.g. on a proper sidewalk, through a park). Please DO NOT attempt to walk on a road or an environment where you can't safely look at your iPad/iPhone while walking around. If you are not able to find an appropriate location to test this task, please email us! We will work together to figure out a solution.
 
 In this exercise, you will walk from the corner of Vassar and Main to
 the corner of Vassar and Mass Ave three times. For each walk, you\'ll
