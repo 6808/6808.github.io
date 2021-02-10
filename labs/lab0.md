@@ -25,7 +25,7 @@ Due: 2020-02-10\
 In this lab, we cover the basics of the Xcode IDE, the iOS Simulator,
 Xcode\'s Documentation Viewer, and the Swift programming language. By
 the end of lab, we\'ll have built a simple iPhone application that
-displays weather from the [Dark Sky](https://darksky.net/dev) API.
+displays weather from the [OpenWeather](https://openweathermap.org/current) API.
 
 To complete this lab, you\'ll need to download
 [Xcode](macappstores://itunes.apple.com/us/app/xcode/id497799835). If
@@ -139,9 +139,7 @@ We create the project and print \"Hello World\". You\'ll also notice
 that we resize the simulator, and click on some of the menu bars. This
 just so that you see what those buttons do.
 
-When creating a project, select \"Storyboard\" for \"User Inferface\".
-Another option is \"SwiftUI\", which is actually a newer method but is
-not compatible with the tutorial videos.
+When creating a project, first select "App" (you won't see single-view application), then select \"Storyboard\" for \"User Inferface\". Another option is \"SwiftUI\", which is actually a newer method but is not compatible with the tutorial videos.
 
 ![](images/lab0/new_project.png){width="640" alt="new project"}
 
@@ -170,11 +168,15 @@ the next video, we instantiate the weather class, and debug it. This
 video contains an intentional error. We\'ll debug it in the next one.
 
 **Changes:**
+
 -   Make sure to update the URLs and APP IDs with the ones you receive from OpenWeather. More details can be found on the [documentation](https://openweathermap.org/current)
-- The URL string is
+
 -   The url string is
     `"https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&appid=\(APP_ID)&units=imperial"`.
+
 -   Create an API key by registering on the website for the free plan. You will receive an API Key in your email.
+
+- You may need to update some of the response field names if OpenWeather doesn't provide them (e.g. windString). The specifics of which fields you are displaying aren't super important (you need to at least have the current temp) -- just include 4-5 different ones like humidity, wind speed, etc.
 
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/YYCasqQWSnU?rel=0" frameborder="0"
@@ -192,8 +194,8 @@ debugger has.
 Using the debugger will make your life much, much easier, and we think
 it\'s worth learning.
 
-**Changes:** Take a look at an example JSON response in [Dark Sky API
-documentation](https://darksky.net/dev/docs#forecast-request).
+**Changes:** Take a look at an example JSON response in [OpenWeather API
+documentation](https://openweathermap.org/current#parameter).
 
 -   The correct key for JSON is `"main"`, instead of
     `"current_observation"`.
@@ -263,8 +265,6 @@ as they show up on the simulators. If they don\'t, some constraints may
 need to be changed or deleted (check the View Controller \> View \>
 Constraints on the left).
 
-**Changes:** Make two text fields for latitude and longtitude instead of
-a single text field for zip code.
 
 <iframe width="640" height="385"
 src="https://www.youtube.com/embed/KWdTqycEP-E?rel=0" frameborder="0" allowfullscreen>
@@ -293,8 +293,7 @@ Keyboard) to see if the keyboard shows up.
 **Changes:**
 
 -   The keyboard type should be \"Numbers and Punctuation\" instead of
-    \"Number Pad\" to allow for inputting a potentially negative number
-    with a decimal point.
+    \"Number Pad\", but this may not be too different on iPad anyway.
 
 
 <iframe width="640" height="385"
