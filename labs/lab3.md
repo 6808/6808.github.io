@@ -12,8 +12,8 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 Lab 3: Gesture Recognition and Inertial Sensing {#project_tagline}
 -----------------------------------------------
 
-Assigned: 2020-02-26\
-Due: <s>2020-03-18</s> 2020-03-30\
+Assigned: 2021-03-15\
+Due: 2021-03-29\
 :::
 :::
 
@@ -1233,6 +1233,18 @@ system corresponds to "up", whereas that of the 2-D view (from Section
 1) corresponds to "down". The 2-D view's origin is the top left corner
 of the screen.
 
+
+To help with debugging tasks 2 and 3, there is a view of rescaled 2-D
+samples in the upper right corner, exactly how they are input into
+the 2-D algorithm. This feature will show whether your coordinate
+transformations work as expected. In the example screenshot below,
+the input was letters of the word AMAZING. The 2-D view shows the
+last letter, G.
+
+<center>
+![](images/lab3/screenshot_complete_3d.png){height="400"}
+</center>
+
 You should be able to draw letters in any orientation, given that the
 drawing corresponds to the device's up-down and left-right movement, as
 described in the beginning of [Task3A]{#task3a}. Sometimes, it is
@@ -1241,71 +1253,7 @@ calibrate. The average accuracy for all letters should be at least 12 to
 15 out of 26 characters.
 
 ::: {style="color:#a00"}
-
-**Updates (Mar 22, 2020)**
-
-1.  The skeleton code has been slightly updated to help you debug Tasks
-    2 and 3. In the 3-D mode, there is now a view of rescaled 2-D
-    samples in the upper right corner, exactly how they are input into
-    the 2-D algorithm. This feature will show whether your coordinate
-    transformations work as expected. In the example screenshot below,
-    the input was letters of the word AMAZING. The 2-D view shows the
-    last letter, G.
-
-    <center>
-    ![](images/lab3/screenshot_complete_3d.png){height="400"}
-    </center>
-
-    Updating the code to use this feature is optional, but helpful. If
-    you previously download `lab3-swift-blank-update`, you can download
-    the new starter code
-    [`lab3-swift-blank-update2`](codes/lab3/lab3-swift-blank-update2.zip),
-    and copy parts of your code that you filled for each task to the new
-    skeleton.
-1.  In Task 1B, to decide which of the nine zones a line segment falls
-    into, using the midpoint of the segment actually gives a
-    significantly better accuracy than using an endpoint. With the
-    midpoint, the accuracy is about 22 out of 26 characters, compared to
-    about 17 with the first endpoint. If your implementation previously
-    used an endpoint, updating the code to use the midpoint should
-    improve your accuracy.
-
-**Updates (Mar 11, 2020)**
-
-Items 1. and 2. should be fixed if you download the updated version of
-starter code (the folder name is `lab3-swift-blank-update`, as opposed
-to the original `lab3-swift-blank`). If you downloaded
-`lab3-swift-blank-update`, you can simply ignore the updates below.
-
-1.  Towards the end of `Gesture3DViewController.swift`, in the
-    `appendPoint` function, the z axis should not be flipped. The
-    `position` constant should be removed and the `location` parameter
-    should be `point`.
-
-    ``` {.swift}
-    if draw {
-        let s = Sample3D(location: point,
-                         attitude: attitude,
-                         t: Date.timeIntervalSinceReferenceDate)
-        samples.append(s)
-    } // ...
-    ```
-
-1.  In line 27 of `Geometry.swift`, change `A[j+3*i]` to `A[i+j*3]`.
-1.  You need to transpose the matrix you get from `nearestRotation`
-    before applying it to 3-D locations to transform from the reference
-    to the device coordinate systems. Applying the matrix directly will
-    transform a given location from the device to the reference
-    coordinate systems instead, which is the opposite of what we want.
-1.  When mapping from 3-D to 2-D locations, the y coordinates have to be
-    flipped. This is because the positive y-axis of the device
-    corresponds to "up", whereas that of the 2-D view (from Section 1)
-    corresponds to "down". The 2-D view's origin is the top left corner
-    of the screen.
-
-
 :::
-
 
 ### Task 3C --- Optional Improvements {#task3c}
 
@@ -1322,8 +1270,8 @@ Submission and Checkoff Instructions {#submission}
 
 Write up your answers to the following items in a single PDF file and
 name it **lab3\_kerberos.pdf** or **lab3\_kerberos1+kerberos2.pdf**
-(e.g. lab3\_korrawat.pdf or lab3\_korrawat+fadel.pdf). Email the PDF
-file to **6808\@mit.edu** by **Mar 30, 11:59 PM** with subject **\"6.808
+(e.g. lab3\_bnagda.pdf or lab3\_bnagda+fadel.pdf). Email the PDF
+file to **6808\@mit.edu** by **Mar 29, 11:59 PM** with subject **\"6.808
 Lab 3 submission\"**. If you work with a partner, you only have to
 submit once. You can get a checkoff during Office Hours within a week
 after the submission deadline, i.e. Apr 6, 11:59 PM. You do not need to

@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="6.808 : Mobile and Sensor Computing Course" />
   <title>6.808 - Lab 3</title>
   <style>
     code{white-space: pre-wrap;}
@@ -15,7 +16,7 @@
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-light.min.css" />
   <link rel="stylesheet" href="stylesheets/stylesheet.css" />
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -30,8 +31,8 @@
 <section id="main_content" class="inner">
 <h1 id="project_title"><a href="../index.html">6.808</a></h1>
 <h2 id="project_tagline">Lab 3: Gesture Recognition and Inertial Sensing</h2>
-<p>Assigned: 2020-02-26<br />
-Due: <s>2020-03-18</s> 2020-03-30<br />
+<p>Assigned: 2021-03-15<br />
+Due: 2021-03-29<br />
 </p>
 </section>
 </div>
@@ -485,36 +486,18 @@ q_z &amp;= n_z \sin(\phi / 2) \\
 <h3 id="task3b">Task 3B — Project Coordinates</h3>
 <p>The final task for this lab is to project the coordinates of the 3-D sample points to 2-D coordinates suitable for use by <code>processGesture2D</code>. In the code, you will need to form the matrix-vector product of the transpose of the rotation matrix <code>M</code> from Task 3A with <code>samples3D[i].location</code> for each <code>i</code> to transform from the reference to the device coordinate systems.</p>
 <p>To apply the 2-D solution you developed in Section 1, you will need to map the 3-D locations (in the device coordinate system) to 2-D, by copying the transformed x and y coordinates, along with the timestamp <code>samples3D[i].t</code>, into <code>samples2D[i]</code>. Note that the y coordinates have to be flipped, because the positive y-axis of the device coordinate system corresponds to “up”, whereas that of the 2-D view (from Section 1) corresponds to “down”. The 2-D view’s origin is the top left corner of the screen.</p>
+<p>To help with debugging tasks 2 and 3, there is a view of rescaled 2-D samples in the upper right corner, exactly how they are input into the 2-D algorithm. This feature will show whether your coordinate transformations work as expected. In the example screenshot below, the input was letters of the word AMAZING. The 2-D view shows the last letter, G.</p>
+<center>
+<img src="images/lab3/screenshot_complete_3d.png" height="400" />
+</center>
 <p>You should be able to draw letters in any orientation, given that the drawing corresponds to the device’s up-down and left-right movement, as described in the beginning of <span id="task3a">Task3A</span>. Sometimes, it is helpful to shake your phone and wait for a few seconds for the device to calibrate. The average accuracy for all letters should be at least 12 to 15 out of 26 characters.</p>
 <div style="color:#a00">
-<p><strong>Updates (Mar 22, 2020)</strong></p>
-<ol type="1">
-<li><p>The skeleton code has been slightly updated to help you debug Tasks 2 and 3. In the 3-D mode, there is now a view of rescaled 2-D samples in the upper right corner, exactly how they are input into the 2-D algorithm. This feature will show whether your coordinate transformations work as expected. In the example screenshot below, the input was letters of the word AMAZING. The 2-D view shows the last letter, G.</p>
-<center>
-<p><img src="images/lab3/screenshot_complete_3d.png" height="400" /></p>
-</center>
-<p>Updating the code to use this feature is optional, but helpful. If you previously download <code>lab3-swift-blank-update</code>, you can download the new starter code <a href="codes/lab3/lab3-swift-blank-update2.zip"><code>lab3-swift-blank-update2</code></a>, and copy parts of your code that you filled for each task to the new skeleton.</p></li>
-<li><p>In Task 1B, to decide which of the nine zones a line segment falls into, using the midpoint of the segment actually gives a significantly better accuracy than using an endpoint. With the midpoint, the accuracy is about 22 out of 26 characters, compared to about 17 with the first endpoint. If your implementation previously used an endpoint, updating the code to use the midpoint should improve your accuracy.</p></li>
-</ol>
-<p><strong>Updates (Mar 11, 2020)</strong></p>
-<p>Items 1. and 2. should be fixed if you download the updated version of starter code (the folder name is <code>lab3-swift-blank-update</code>, as opposed to the original <code>lab3-swift-blank</code>). If you downloaded <code>lab3-swift-blank-update</code>, you can simply ignore the updates below.</p>
-<ol type="1">
-<li><p>Towards the end of <code>Gesture3DViewController.swift</code>, in the <code>appendPoint</code> function, the z axis should not be flipped. The <code>position</code> constant should be removed and the <code>location</code> parameter should be <code>point</code>.</p>
-<pre class="swift"><code>if draw {
-    let s = Sample3D(location: point,
-                     attitude: attitude,
-                     t: Date.timeIntervalSinceReferenceDate)
-    samples.append(s)
-} // ...</code></pre></li>
-<li><p>In line 27 of <code>Geometry.swift</code>, change <code>A[j+3*i]</code> to <code>A[i+j*3]</code>.</p></li>
-<li><p>You need to transpose the matrix you get from <code>nearestRotation</code> before applying it to 3-D locations to transform from the reference to the device coordinate systems. Applying the matrix directly will transform a given location from the device to the reference coordinate systems instead, which is the opposite of what we want.</p></li>
-<li><p>When mapping from 3-D to 2-D locations, the y coordinates have to be flipped. This is because the positive y-axis of the device corresponds to “up”, whereas that of the 2-D view (from Section 1) corresponds to “down”. The 2-D view’s origin is the top left corner of the screen.</p></li>
-</ol>
+
 </div>
 <h3 id="task3c">Task 3C — Optional Improvements</h3>
 <p>The gesture recognition results that we have obtained using the procedure we have outlined for you have not been fantastic. One reason for that is the poor fit between the sensor data (acceleration) and the machine learning features (position, motion, and dwell time). We would like to encourage you to think about an alternative set of machine learning features which are a more direct fit to the 3-D motion problem and the accelerometer data. Let us know what you discover!</p>
 <h2 id="submission">Submission and Checkoff Instructions</h2>
-<p>Write up your answers to the following items in a single PDF file and name it <strong>lab3_kerberos.pdf</strong> or <strong>lab3_kerberos1+kerberos2.pdf</strong> (e.g. lab3_korrawat.pdf or lab3_korrawat+fadel.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Mar 30, 11:59 PM</strong> with subject <strong>"6.808 Lab 3 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Apr 6, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
+<p>Write up your answers to the following items in a single PDF file and name it <strong>lab3_kerberos.pdf</strong> or <strong>lab3_kerberos1+kerberos2.pdf</strong> (e.g. lab3_bnagda.pdf or lab3_bnagda+fadel.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Mar 29, 11:59 PM</strong> with subject <strong>"6.808 Lab 3 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Apr 6, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
 <p>Update for those who finished the lab early: Please check the end of <a href="#task1e">Task 1E</a> for added instructions about character drawing and an expected accuracy for the 2D mode, and the bug fixes at the end of <a href="#task3b">Task 3B</a>.</p>
 <ol type="1">
 <li>Names and MIT emails (including your lab partner, if available).</li>
