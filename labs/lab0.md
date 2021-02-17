@@ -140,7 +140,7 @@ When creating a project, first select "App" (you won't see single-view applicati
 ![](images/lab0/new_project.png){width="640" alt="new project"}
 
 <iframe width="640" height="385"
-src="https://www.youtube.com/embed/JtbR3gY6YXY?rel=0" frameborder="0" allowfullscreen>
+src="https://www.youtube.com/embed/qYklGQAuZ5Q" frameborder="0" allowfullscreen>
 </iframe>
 ------------------------------------------------------------------------
 
