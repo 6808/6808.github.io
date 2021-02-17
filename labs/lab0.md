@@ -12,8 +12,8 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 Lab 0 {#project_tagline}
 -----
 
-Assigned: 2020-02-03\
-Due: 2020-02-10\
+Assigned: 2021-02-17\
+Due: 2021-02-24\
 :::
 :::
 
@@ -28,11 +28,7 @@ the end of lab, we\'ll have built a simple iPhone application that
 displays weather from the [OpenWeather](https://openweathermap.org/current) API.
 
 To complete this lab, you\'ll need to download
-[Xcode](macappstores://itunes.apple.com/us/app/xcode/id497799835). If
-you don\'t have a Mac of your own, you can use one of the Macs in the
-56-129 athena cluster or pair up with a friend who has. Please make sure
-to save your work in a proper directory, so that it won\'t be removed
-after you log out.
+[Xcode](macappstores://itunes.apple.com/us/app/xcode/id497799835).
 
 ------------------------------------------------------------------------
 
@@ -129,7 +125,7 @@ user inferface and Swift have changed. Also, the recordings were based
 on Wunderground API, which is no longer available. We suggest using the
 [OpenWeather](https://openweathermap.org/api) API to get current weather
 conditions instead. You can see an example JSON response
-in OpenWeather documentation](https://openweathermap.org/current). We have
+in [OpenWeather documentation](https://openweathermap.org/current). We have
 noted changes for each video, if applicable, at the description before
 the corresponding video.
 
