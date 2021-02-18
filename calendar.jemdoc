@@ -79,7 +79,7 @@ table.calendar thead tr {
   <i>First day of classes</i> <br /></td>
 
   <td id="2021-2-17" class="lecture"><span class="date">Feb 17</span><br />
-    <b>LEC 1:</b> Introduction and Key Ideas <a href="./materials/lec1-slides-2021-PDF.pdf" target="_blank" hidden>Slides</a><br />
+    <b>LEC 1:</b> Introduction and Key Ideas (<a href="./materials/lec1-slides-2021.pdf" target="_blank">Slides</a>)<br />
     <span class="reading"><b>Assigned:</b> <a href="labs/lab0.html">Lab 0</a></span></td>
 
   <td id="2021-2-18"><span class="date">Feb 18</span><br /></td>
