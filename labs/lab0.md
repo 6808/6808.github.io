@@ -312,7 +312,7 @@ functions here. You may try them, or write your own.
     func fetchWeatherForZip(lat: String, lon: String, completionHandler: @escaping (Bool) -> Void) -> Void
     {
         NSLog("Getting conditions in %@ %@", lat, lon)
-        let urlString: String = "https://api.darksky.net/forecast/\(APP_ID)/\(lat),\(lon)"
+        let urlString: String = "https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&appid=\(APP_ID)&units=imperial"
 
         let weatherURL = URL(string: urlString)
 
@@ -330,27 +330,23 @@ functions here. You may try them, or write your own.
 
 \"ViewController.swift\" `getWeather` function (Button Handler)
 
+
     @IBAction func getWeather(_ sender: UIButton) {
-
-        NSLog("Get Weather")
+        NSLog("Get weather!!")
         sender.isEnabled = false
-        weather.fetchWeatherForZip(lat: lat.text!, lon: lon.text!, completionHandler: {(ret: Bool)->Void in
-            if (ret)
-            {
-                NSLog("Succeeded")
-                self.temperature.text = self.weather.currentTemp
-                self.desc.text = self.weather.weatherDescription
-                self.humidity.text = self.weather.relativeHumidity
-                self.wind.text = self.weather.windString
-                self.visibility.text = self.weather.visibilityKm
-            } else {
-                NSLog("Failed")
-            }
-            sender.isEnabled = true
-        })
+            weather.fetchWeatherForZip(zip: zip.text!, completionHandler: {(ret: Bool)->Void in
+                if (ret)
+                {
+                    NSLog("Succeeded")
+                    self.temp.text = String(self.weather.currentTemp)
+                    //add your fields here
+                } else {
+                    NSLog("Failed")
+                }
+                sender.isEnabled = true
+            })
 
-        lon.resignFirstResponder()
-        lat.resignFirstResponder()
+        zip.resignFirstResponder()
     }
 
 ------------------------------------------------------------------------

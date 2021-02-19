@@ -199,7 +199,7 @@ Due: 2021-02-24<br />
 <pre><code>func fetchWeatherForZip(lat: String, lon: String, completionHandler: @escaping (Bool) -&gt; Void) -&gt; Void
 {
     NSLog(&quot;Getting conditions in %@ %@&quot;, lat, lon)
-    let urlString: String = &quot;https://api.darksky.net/forecast/\(APP_ID)/\(lat),\(lon)&quot;
+    let urlString: String = &quot;https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&amp;appid=\(APP_ID)&amp;units=imperial&quot;
 
     let weatherURL = URL(string: urlString)
 
@@ -216,26 +216,21 @@ Due: 2021-02-24<br />
 }</code></pre>
 <p>"ViewController.swift" <code>getWeather</code> function (Button Handler)</p>
 <pre><code>@IBAction func getWeather(_ sender: UIButton) {
-
-    NSLog(&quot;Get Weather&quot;)
+    NSLog(&quot;Get weather!!&quot;)
     sender.isEnabled = false
-    weather.fetchWeatherForZip(lat: lat.text!, lon: lon.text!, completionHandler: {(ret: Bool)-&gt;Void in
-        if (ret)
-        {
-            NSLog(&quot;Succeeded&quot;)
-            self.temperature.text = self.weather.currentTemp
-            self.desc.text = self.weather.weatherDescription
-            self.humidity.text = self.weather.relativeHumidity
-            self.wind.text = self.weather.windString
-            self.visibility.text = self.weather.visibilityKm
-        } else {
-            NSLog(&quot;Failed&quot;)
-        }
-        sender.isEnabled = true
-    })
+        weather.fetchWeatherForZip(zip: zip.text!, completionHandler: {(ret: Bool)-&gt;Void in
+            if (ret)
+            {
+                NSLog(&quot;Succeeded&quot;)
+                self.temp.text = String(self.weather.currentTemp)
+                //add your fields here
+            } else {
+                NSLog(&quot;Failed&quot;)
+            }
+            sender.isEnabled = true
+        })
 
-    lon.resignFirstResponder()
-    lat.resignFirstResponder()
+    zip.resignFirstResponder()
 }</code></pre>
 <hr />
 <hr />
