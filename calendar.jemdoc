@@ -85,7 +85,7 @@ table.calendar thead tr {
   <td id="2021-2-18"><span class="date">Feb 18</span><br /></td>
 
   <td id="2021-2-19" class="special"><span class="date">Feb 19</span><br />
-    <i>iOS Tutorial <a href="./materials/iOS_tutorial.pdf" target="_blank" hidden>Slides</a></i></td>
+    <i>iOS Tutorial (<a href="./materials/swift_tutorial_2021.pdf" target="_blank">Slides</a>)</i></td>
 </tr>
 
 <tr> <!-- week of feb 22 -->
