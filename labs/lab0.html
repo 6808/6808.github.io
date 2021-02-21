@@ -200,10 +200,11 @@ Due: 2021-02-24<br />
 <p>We update the app to work asynchronously. Mobile devices often have very flaky connections, so it's important to know how to deal with them.</p>
 <p>We don't have a video here. Instead, we put the code of two important functions here. You may try them, or write your own.</p>
 <p>"Weather.swift": <code>fetchWeatherForZip</code> function</p>
-<pre><code>func fetchWeatherForZip(lat: String, lon: String, completionHandler: @escaping (Bool) -&gt; Void) -&gt; Void
-{
-    NSLog(&quot;Getting conditions in %@ %@&quot;, lat, lon)
-    let urlString: String = &quot;https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&amp;appid=\(APP_ID)&amp;units=imperial&quot;
+<pre><code>func fetchWeatherForZip(zip:String, completionHandler: @escaping (Bool) -&gt; Void) -&gt; Void {
+    NSLog(&quot;Getting for:  \(zip)&quot;)
+    let urlString : String = &quot;https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&amp;appid=\(APP_ID)&amp;units=imperial&quot;
+
+    NSLog(urlString)
 
     let weatherURL = URL(string: urlString)
 

@@ -313,10 +313,11 @@ functions here. You may try them, or write your own.
 
 \"Weather.swift\": `fetchWeatherForZip` function
 
-    func fetchWeatherForZip(lat: String, lon: String, completionHandler: @escaping (Bool) -> Void) -> Void
-    {
-        NSLog("Getting conditions in %@ %@", lat, lon)
-        let urlString: String = "https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&appid=\(APP_ID)&units=imperial"
+    func fetchWeatherForZip(zip:String, completionHandler: @escaping (Bool) -> Void) -> Void {
+        NSLog("Getting for:  \(zip)")
+        let urlString : String = "https://api.openweathermap.org/data/2.5/weather?zip=\(zip)&appid=\(APP_ID)&units=imperial"
+
+        NSLog(urlString)
 
         let weatherURL = URL(string: urlString)
 
