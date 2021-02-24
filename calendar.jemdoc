@@ -102,8 +102,8 @@ table.calendar thead tr {
       <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/infocom2000.pdf" target="_blank">RADAR</a>, and
       <a href="https://en.wikipedia.org/wiki/Global_Positioning_System" target="_blank">Wikipedia: GPS</a>
       (<a href="questions.html?q=q-lec3">Questions</a>)</span><br />
-  <span class="reading"><b>Assigned:</b> <a href="">Lab 1</a></span><br />
-  <span class="reading"><b>Assigned:</b> <a href="">Pset 1</a></span><br />
+  <span class="reading"><b>Assigned:</b> <a href="labs/lab1.html">Lab 1</a></span><br />
+  <span class="reading"><b>Assigned:</b> <a href="./materials/6808-pset1-spring2021.pdf" target="_blank">Pset 1</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="labs/lab0.html">Lab 0</a></span></td>
 
 
@@ -133,7 +133,7 @@ table.calendar thead tr {
 
   <td id="2021-3-4"><span class="date">Mar 4</span><br />
   <span class="reading"><b>Assigned:</b> <a href="">Lab 2</a></span><br />
-  <span class="deadline"><b>DUE:</b> <a href="">Lab 1</a></span></td>
+  <span class="deadline"><b>DUE:</b> <a href="labs/lab1.html">Lab 1</a></span></td>
 
 
   <td id="2021-3-5"><span class="date">Mar 5</span></td>
@@ -182,7 +182,7 @@ table.calendar thead tr {
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://nms.csail.mit.edu/papers/p2-mobisys-2008.pdf" target="_blank">Pothole Patrol</a>
     (<a href="questions.html?q=q-lec10">Questions</a>)</span><br />
-    <span class="deadline"><b>DUE:</b> <a href="">Pset 1</a></span>
+    <span class="deadline"><b>DUE:</b> <a href="./materials/6808-pset1-spring2021.pdf" target="_blank">Pset 1</a></span>
     </td>
 
   <td id="2021-3-18"><span class="date">Mar 18</span></td>
