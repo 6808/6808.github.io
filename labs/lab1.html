@@ -73,8 +73,9 @@ Due: 2021-03-04<br />
 <ol type="1">
 <li>Download the <a href="codes/lab1/PositionLogger-swift-blank-4.2.zip">PositionLogger source code</a>.</li>
 <li>Unzip it. This will create a directory called "PositionLogger-swift-blank", containing an XCode project.</li>
-<li>Open PositionLogger.xcodeproj in XCode on a Mac. Compile and run the app, either on your device or in the simulator (use any of the iPhone simulators.) It should show a screen like what you see above. Clicking on the Start button should cause it to enter a recording state, but it won't actually be writing location data until you add the code to record location. Note that you may have to update "Team" to your own account (General Tab -&gt; Signing in Xcode 10 or "Signing and Capabilities" Tab -&gt; Signing in Xcode 11). Update the Bundle Identifier if needed.</li>
+<li>Open PositionLogger.xcodeproj in XCode on a Mac.</li>
 <li><strong>Important:</strong> If you are testing on an iPad, go to PositionLogger &gt; General &gt; check iPad (under “Deployment Info”)</li>
+<li>Compile and run the app, either on your device or in the simulator (use the appropriate simulator.) It should show a screen like what you see above. Clicking on the Start button should cause it to enter a recording state, but it won't actually be writing location data until you add the code to record location. Note that you may have to update "Team" to your own account (General Tab -&gt; Signing in Xcode 10 or "Signing and Capabilities" Tab -&gt; Signing in Xcode 11). Update the Bundle Identifier if needed.</li>
 </ol>
 <h3 id="ios_loc_primer">iOS Location Primer</h3>
 <p>The primary way that location is accessed on iOS use though the <a href="https://developer.apple.com/documentation/corelocation/cllocationmanager">CoreLocation class CLLocationManager</a>. Using this class you can request location updates at a certain accuracy, and also configure the accuracy with which data is created.</p>
