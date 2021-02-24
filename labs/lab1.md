@@ -100,7 +100,7 @@ CLLocationManager](https://developer.apple.com/documentation/corelocation/clloca
 Using this class you can request location updates at a certain accuracy,
 and also configure the accuracy with which data is created.
 
-In the PostionLogger app, the main screen is an instance of a
+In the PositionLogger app, the main screen is an instance of a
 ViewController object (as specified in ViewController.swift.) iOS
 creates one instance of the ViewController class for us when the
 application is initialized, because the Main.storyboard file, which we

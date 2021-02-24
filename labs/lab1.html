@@ -79,7 +79,7 @@ Due: 2021-03-04<br />
 </ol>
 <h3 id="ios_loc_primer">iOS Location Primer</h3>
 <p>The primary way that location is accessed on iOS use though the <a href="https://developer.apple.com/documentation/corelocation/cllocationmanager">CoreLocation class CLLocationManager</a>. Using this class you can request location updates at a certain accuracy, and also configure the accuracy with which data is created.</p>
-<p>In the PostionLogger app, the main screen is an instance of a ViewController object (as specified in ViewController.swift.) iOS creates one instance of the ViewController class for us when the application is initialized, because the Main.storyboard file, which we chose as the main storyboard for the app in the Info.plist file, specifies that the initial view for the app should be an instance of ViewController.</p>
+<p>In the PositionLogger app, the main screen is an instance of a ViewController object (as specified in ViewController.swift.) iOS creates one instance of the ViewController class for us when the application is initialized, because the Main.storyboard file, which we chose as the main storyboard for the app in the Info.plist file, specifies that the initial view for the app should be an instance of ViewController.</p>
 <p>In the viewDidLoad method of ViewController.swift, we've already created an instance of a CLLocationManager object for you to use and initialized some of the relevant properties of it. These are the lines at the beginning of the viewDidLoad method:</p>
 <pre><code>1 self.locationManager = CLLocationManager()
 2 self.locationManager?.requestAlwaysAuthorization()
