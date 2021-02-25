@@ -96,7 +96,7 @@ table.calendar thead tr {
     (<a href="questions.html?q=q-lec2">Questions</a>)</span></td>
   <td id="2021-2-23"><span class="date">Feb 23</span><br /></td>
   <td id="2021-2-24" class="lecture"><span class="date">Feb 24</span><br />
-    <b>LEC 3:</b> Practical Device-based Localization (indoor & outdoor) (<a href="./materials/lec3-slides-localization-2020.pdf" target="_blank" hidden>Slides</a>)<br />
+    <b>LEC 3:</b> Practical Device-based Localization (indoor & outdoor) (<a href="./materials/lec3-slides-localization-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/7S7T494ByBu_VfJ3e0iFD7KfIK0L04rSi0dif6v-9-R2OYObiWcp3zXnmpMI8SNC.vx3gkRE1RzO6xisS?startTime=1614196743000">Recording</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://nms.lcs.mit.edu/papers/cricket.pdf" target="_blank">Cricket</a>,
       <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/infocom2000.pdf" target="_blank">RADAR</a>, and
