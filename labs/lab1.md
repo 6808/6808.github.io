@@ -12,8 +12,8 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 Lab 1: Location {#project_tagline}
 ---------------
 
-Assigned: 2020-02-10\
-Due: 2020-02-18\
+Assigned: 2021-02-24\
+Due: 2021-03-04\
 :::
 :::
 
@@ -31,11 +31,11 @@ Tradeoff](#sec1)
         -  [1.4 Capture some data](#sec1.4)
     - [Task 2 -- Compare the Accuracy of the Location Methods](#task2)
     - [Task 3 -- Compare the Battery Drain of the Location Methods](#task3)
-- [Section 2 -- Building the Anteater Compass](#sec2)
+<!-- - [Section 2 -- Building the Anteater Compass](#sec2)
     - [Task 4 - Rotate the Compass Needle Image](#task4)
         - [4.1 Compute θ1](#sec4.1)
         - [4.2 Compute θ2](#sec4.2)
-        - [4.3 Rotate the Needle by θ1 - θ2](#sec4.3)
+        - [4.3 Rotate the Needle by θ1 - θ2](#sec4.3) -->
 - [Submission Instructions](#submission)
 
 In this lab, you will start by developing a small standalone application
@@ -80,16 +80,17 @@ accuracy and power drain of the different approaches.
     code](codes/lab1/PositionLogger-swift-blank-4.2.zip).
 2.  Unzip it. This will create a directory called
     \"PositionLogger-swift-blank\", containing an XCode project.
-3.  Open PositionLogger.xcodeproj in XCode on a Mac. Compile and
-    run the app, either on your device or in the simulator (use any of
-    the iPhone simulators.) It should show a screen like what you see
-    above. Clicking on the Start button should cause it to enter a
+3.  Open PositionLogger.xcodeproj in XCode on a Mac.
+4. **Important:** If you are testing on an iPad, go to PositionLogger > General > check iPad (under "Deployment Info")
+5. Compile and run the app, either on your device or in the simulator
+    (use the appropriate simulator.) It should show a screen like what
+    you see above. Clicking on the Start button should cause it to enter a
     recording state, but it won\'t actually be writing location data
     until you add the code to record location. Note that you may have to
     update \"Team\" to your own account (General Tab -\> Signing in
     Xcode 10 or \"Signing and Capabilities\" Tab -\> Signing in Xcode
     11). Update the Bundle Identifier if needed.
-4. **Important:** If you are testing on an iPad, go to PositionLogger > General > check iPad (under "Deployment Info")
+
 
 ### iOS Location Primer {#ios_loc_primer}
 
@@ -99,7 +100,7 @@ CLLocationManager](https://developer.apple.com/documentation/corelocation/clloca
 Using this class you can request location updates at a certain accuracy,
 and also configure the accuracy with which data is created.
 
-In the PostionLogger app, the main screen is an instance of a
+In the PositionLogger app, the main screen is an instance of a
 ViewController object (as specified in ViewController.swift.) iOS
 creates one instance of the ViewController class for us when the
 application is initialized, because the Main.storyboard file, which we
@@ -257,9 +258,9 @@ power of the different techniques.
 There are no deliverables for this task.
 
 ### Task 2 -- Compare the Accuracy of the Location Methods {#task2}
-#### Update for 2021:
+#### STOP! Read the update for 2021:
 
-- If you are in the Boston area, see below for a route that you could test along. If you aren't in the Boston area, pick any route that you can safely walk on outside (e.g. on a proper sidewalk, through a park). Please DO NOT attempt to walk on a road or an environment where you can't safely look at your iPad/iPhone while walking around. If you are not able to find an appropriate location to test this task, please email us! We will work together to figure out a solution.
+- If you are in the Boston area, see below for a route that you could test along. If you aren't in the Boston area (or far from campus), pick any route that you can safely walk on outside (e.g. on a proper sidewalk, through a park, etc.) that is about the same distance ~0.3 mi. Please DO NOT attempt to walk on a road or an environment where you can't safely look at your iPad/iPhone while walking around. If you are not able to find an appropriate location to test this task, please email us! We will work together to figure out a solution.
 
 In this exercise, you will walk from the corner of Vassar and Main to
 the corner of Vassar and Mass Ave three times. For each walk, you\'ll
@@ -299,7 +300,7 @@ a straight line can be quite far from the true distance between these
 points, which follows an arc on the surface of the Earth. The typical
 way to estimate this distance is to assume the Earth is a sphere (it
 isn\'t exactly spherical but pretty close), and to use the haversine
-formula discussed in class to compute the distance between the two
+formula to compute the distance between the two
 points:
 
 $$
@@ -359,7 +360,7 @@ two different location methods. Note that if you don\'t have cellular
 service on the phone, running with cellular accuracy may produce results
 different than you expect!
 
-Section 2 -- Building the Anteater Compass {#sec2}
+<!-- Section 2 -- Building the Anteater Compass {#sec2}
 ------------------------------------------
 
 In this part of the lab, you\'ll work with the Anteater app and add
@@ -510,7 +511,7 @@ In addition, set the text of the distanceLabel label to the distance to
 the current anthill and the text of the headingLabel label to θ1 - θ2.
 
 The deliverable for this task is a working implementation of the
-Anteater compass.
+Anteater compass. -->
 
 Submission Instructions {#submission}
 -----------------------
@@ -518,7 +519,7 @@ Submission Instructions {#submission}
 Write up your answers to the following items in a single PDF file and
 name it **lab1\_\${mit\_username}.pdf** or
 **lab1\_\${mit\_username1}+\${mit\_username2}.pdf** (e.g.
-lab1\_korrawat.pdf or lab1\_korrawat+fadel.pdf). Email the PDF file to
+lab1\_bnagda.pdf or lab1\_mihirt+bnagda.pdf). Email the PDF file to
 **6808\@mit.edu** by **Feb 18, 11:59 PM** with subject **\"6.808 Lab 1
 submission\"**. If you work with a partner, you only have to submit
 once. You can get a checkoff during Office Hours within a week after the
@@ -532,12 +533,11 @@ your code, but we may ask to look at your code during the checkoff.
     (Three answers)
 4.  Maps of the points/trajectories for three methods (screenshot(s))
 5.  Plots of the battery drain for Task 3 (cellular and GPS)
-6.  A screenshot for the compass at a non-zero angle for Task 4
-7.  Estimated number of hours you spent coding for Section 1
-8.  Estimated number of hours you spent collecting/analyzing data for
+6.  Estimated number of hours you spent coding for Section 1
+7.  Estimated number of hours you spent collecting/analyzing data for
     Section 1
-9.  Estimated number of hours you spent on Section 2
-10. Any comments/suggestions for the lab? Any questions you may have for
+<!-- 9.  Estimated number of hours you spent on Section 2 -->
+8. Any comments/suggestions for the lab? Any questions you may have for
     the checkoff? (Optional)
 
 During the checkoff, we may ask you to show a demonstration of an

@@ -31,8 +31,8 @@
 <section id="main_content" class="inner">
 <h1 id="project_title"><a href="../index.html">6.808</a></h1>
 <h2 id="project_tagline">Lab 1: Location</h2>
-<p>Assigned: 2020-02-10<br />
-Due: 2020-02-18<br />
+<p>Assigned: 2021-02-24<br />
+Due: 2021-03-04<br />
 </p>
 </section>
 </div>
@@ -51,16 +51,11 @@ Due: 2020-02-18<br />
 <li><a href="#sec1.4">1.4 Capture some data</a></li>
 </ul></li>
 <li><a href="#task2">Task 2 – Compare the Accuracy of the Location Methods</a></li>
-<li><a href="#task3">Task 3 – Compare the Battery Drain of the Location Methods</a></li>
-</ul></li>
-<li><a href="#sec2">Section 2 – Building the Anteater Compass</a>
-<ul>
-<li><a href="#task4">Task 4 - Rotate the Compass Needle Image</a>
-<ul>
-<li><a href="#sec4.1">4.1 Compute θ1</a></li>
-<li><a href="#sec4.2">4.2 Compute θ2</a></li>
-<li><a href="#sec4.3">4.3 Rotate the Needle by θ1 - θ2</a></li>
-</ul></li>
+<li><a href="#task3">Task 3 – Compare the Battery Drain of the Location Methods</a> <!-- - [Section 2 -- Building the Anteater Compass](#sec2)
+  - [Task 4 - Rotate the Compass Needle Image](#task4)
+      - [4.1 Compute θ1](#sec4.1)
+      - [4.2 Compute θ2](#sec4.2)
+      - [4.3 Rotate the Needle by θ1 - θ2](#sec4.3) --></li>
 </ul></li>
 <li><a href="#submission">Submission Instructions</a></li>
 </ul>
@@ -78,12 +73,13 @@ Due: 2020-02-18<br />
 <ol type="1">
 <li>Download the <a href="codes/lab1/PositionLogger-swift-blank-4.2.zip">PositionLogger source code</a>.</li>
 <li>Unzip it. This will create a directory called "PositionLogger-swift-blank", containing an XCode project.</li>
-<li>Open PositionLogger.xcodeproj in XCode on a Mac. Compile and run the app, either on your device or in the simulator (use any of the iPhone simulators.) It should show a screen like what you see above. Clicking on the Start button should cause it to enter a recording state, but it won't actually be writing location data until you add the code to record location. Note that you may have to update "Team" to your own account (General Tab -&gt; Signing in Xcode 10 or "Signing and Capabilities" Tab -&gt; Signing in Xcode 11). Update the Bundle Identifier if needed.</li>
+<li>Open PositionLogger.xcodeproj in XCode on a Mac.</li>
 <li><strong>Important:</strong> If you are testing on an iPad, go to PositionLogger &gt; General &gt; check iPad (under “Deployment Info”)</li>
+<li>Compile and run the app, either on your device or in the simulator (use the appropriate simulator.) It should show a screen like what you see above. Clicking on the Start button should cause it to enter a recording state, but it won't actually be writing location data until you add the code to record location. Note that you may have to update "Team" to your own account (General Tab -&gt; Signing in Xcode 10 or "Signing and Capabilities" Tab -&gt; Signing in Xcode 11). Update the Bundle Identifier if needed.</li>
 </ol>
 <h3 id="ios_loc_primer">iOS Location Primer</h3>
 <p>The primary way that location is accessed on iOS use though the <a href="https://developer.apple.com/documentation/corelocation/cllocationmanager">CoreLocation class CLLocationManager</a>. Using this class you can request location updates at a certain accuracy, and also configure the accuracy with which data is created.</p>
-<p>In the PostionLogger app, the main screen is an instance of a ViewController object (as specified in ViewController.swift.) iOS creates one instance of the ViewController class for us when the application is initialized, because the Main.storyboard file, which we chose as the main storyboard for the app in the Info.plist file, specifies that the initial view for the app should be an instance of ViewController.</p>
+<p>In the PositionLogger app, the main screen is an instance of a ViewController object (as specified in ViewController.swift.) iOS creates one instance of the ViewController class for us when the application is initialized, because the Main.storyboard file, which we chose as the main storyboard for the app in the Info.plist file, specifies that the initial view for the app should be an instance of ViewController.</p>
 <p>In the viewDidLoad method of ViewController.swift, we've already created an instance of a CLLocationManager object for you to use and initialized some of the relevant properties of it. These are the lines at the beginning of the viewDidLoad method:</p>
 <pre><code>1 self.locationManager = CLLocationManager()
 2 self.locationManager?.requestAlwaysAuthorization()
@@ -150,9 +146,9 @@ extern const CLLocationAccuracy kCLLocationAccuracyThreeKilometers;</code></pre>
 <p>In the rest of this part of the lab you'll collect some data outdoors and compare the different location methods, looking at accuracy and power of the different techniques.</p>
 <p>There are no deliverables for this task.</p>
 <h3 id="task2">Task 2 – Compare the Accuracy of the Location Methods</h3>
-<h4 id="update-for-2021">Update for 2021:</h4>
+<h4 id="stop-read-the-update-for-2021">STOP! Read the update for 2021:</h4>
 <ul>
-<li>If you are in the Boston area, see below for a route that you could test along. If you aren’t in the Boston area, pick any route that you can safely walk on outside (e.g. on a proper sidewalk, through a park). Please DO NOT attempt to walk on a road or an environment where you can’t safely look at your iPad/iPhone while walking around. If you are not able to find an appropriate location to test this task, please email us! We will work together to figure out a solution.</li>
+<li>If you are in the Boston area, see below for a route that you could test along. If you aren’t in the Boston area (or far from campus), pick any route that you can safely walk on outside (e.g. on a proper sidewalk, through a park, etc.) that is about the same distance ~0.3 mi. Please DO NOT attempt to walk on a road or an environment where you can’t safely look at your iPad/iPhone while walking around. If you are not able to find an appropriate location to test this task, please email us! We will work together to figure out a solution.</li>
 </ul>
 <p>In this exercise, you will walk from the corner of Vassar and Main to the corner of Vassar and Mass Ave three times. For each walk, you'll run the app at a different location accuracy, and compare the difference in the overall estimated distance and plot the points on a map.</p>
 <p>See this map for the route you will walk: <a href="https://www.google.com/maps/d/edit?mid=zcVI9zKum-vM.kVzhADJu9RDg&amp;usp=sharing" class="uri">https://www.google.com/maps/d/edit?mid=zcVI9zKum-vM.kVzhADJu9RDg&amp;usp=sharing</a></p>
@@ -167,7 +163,7 @@ extern const CLLocationAccuracy kCLLocationAccuracyThreeKilometers;</code></pre>
 <li>Clear the log</li>
 </ol>
 <p>Once you have the three log files, your task is to compute the "connect the dots" distance for each path, and to plot each path on a map.</p>
-<p>The "connect the dots" distance of a path is just the sum of the distances between every consecutive point. Each point is a latitude/longitude pair, which represents a point on the surface of the earth. For points that are close together, Euclidian distance is a close approximation of the actual distance, but for points that are far apart, a straight line can be quite far from the true distance between these points, which follows an arc on the surface of the Earth. The typical way to estimate this distance is to assume the Earth is a sphere (it isn't exactly spherical but pretty close), and to use the haversine formula discussed in class to compute the distance between the two points:</p>
+<p>The "connect the dots" distance of a path is just the sum of the distances between every consecutive point. Each point is a latitude/longitude pair, which represents a point on the surface of the earth. For points that are close together, Euclidian distance is a close approximation of the actual distance, but for points that are far apart, a straight line can be quite far from the true distance between these points, which follows an arc on the surface of the Earth. The typical way to estimate this distance is to assume the Earth is a sphere (it isn't exactly spherical but pretty close), and to use the haversine formula to compute the distance between the two points:</p>
 <p><span class="math display">\[
 2r \arcsin\left(\sqrt{\sin^2\left(\frac{\text{lat}_2 - \text{lat}_1}{2}\right) + \cos(\text{lat}_1) \cos(\text{lat}_2)\sin^2\left(\frac{\text{lon}_2 - \text{lon}_1}{2}\right)}\right)
 \]</span></p>
@@ -188,56 +184,168 @@ extern const CLLocationAccuracy kCLLocationAccuracyThreeKilometers;</code></pre>
 </ol>
 <p>Once you have the two log files, make a plot of the battery level of each over time, by using the time and battery level fields in the file. You can make your plot which whichever tool you like: Google Charts, Excel, pyplot, etc.</p>
 <p>The deliverable for this task is the graph of the battery drain of the two different location methods. Note that if you don't have cellular service on the phone, running with cellular accuracy may produce results different than you expect!</p>
-<h2 id="sec2">Section 2 – Building the Anteater Compass</h2>
-<p>In this part of the lab, you'll work with the Anteater app and add location-based features.</p>
-<p>Recall that the Anteater App is a crowdsourced sensor data collection app, where users earn points for collecting sensor data from nearby sensors. In the Anteater app, mobile devices are the anteaters, and the sensors are the anthills.</p>
-<p>Start by downloading the <a href="codes/lab1/anteater-swift-4.2-xcode11.zip">Anteater App Skeleton for Xcode 11/iOS 13</a>. (For Xcode 10/iOS 12, use <a href="codes/lab1/anteater-swift-4.2.zip">this app skeleton</a> instead.)</p>
-<p>Uncompress this file to create a directory called "anteater-swift-blank". Open the anteater.xcodeproj file in this directory in XCode. You should be able to build and run the project in the simulator or your phone. This app is not able to connect to Bluetooth-based Anthills (you'll do that in the next lab), and the compass won't rotate (that's the goal of this lab).</p>
-<p>Known issue for Xcode 11/iOS 13: when you build and run the app in your iPhone for the first time and try to log in with any username, the app may crash. Simply build and run again. The app should skip the log-in screen without any error.</p>
-<p>In later labs you'll work on the code to connect to the anthills, but for the second part of this lab, your job is to implement the compass UI in Anteater, as shown in the screenshot below.</p>
-<p><img src="images/lab1/interface.png" /></p>
-<p>In this interface, the orange arrow points the user what direction they should turn/walk to move towards the selected Anthill.</p>
-<p>To compute the direction this arrow should point, you need to measure the angle between the user's current position (represented by a lat/lon point), and the destination anthill. The conventional way to do this is to model the earth as a sphere, and measure the angle of vector from the origin to the destination along the shortest path (the "great circle path"). The trigonometry to do this is fairly hairy, but thanks to the Internet the formula is easy to look up. Here's the code to do this:</p>
-<p><code>atan2(sin(lon2-lon1)*cos(lat2), cos(lat1)*sin(lat2)-sin(lat1)*cos(lat2)*cos(lon2-lon1))</code></p>
-<p>Here (lat1, lon1) is the starting point, and (lat2, lon2) is the ending point. In this formula, lat and lon need to be converted to radians, and the result is in radians.</p>
-<p>If you are curious about the derivation of this, there's a good explanation half way down this post: <a href="http://mathforum.org/library/drmath/view/55417.html" class="uri">http://mathforum.org/library/drmath/view/55417.html</a></p>
-<p>From the article: <em>"Let's define three unit vectors, each in the direction of the line from the center of the earth to a point on the surface: N in the direction of the north pole, A in the direction of the initial point, and B in the direction of the final point on the course. Then the bearing we seek is the angle between the plane containing N and A, and the plane containing A and B. Thus it equals the angle between vectors perpendicular to these planes, namely, NxA and BxA."</em></p>
-<p>Computing this is straightforward trigonometry, although the explanation for the use of the atan2 function is non-obvious.</p>
-<p>Once you've figured out the angle between the user's current location and the destination anthill, you need to figure out the orientation of the phone relative to North, and subtract that angle from the bearing to the destination, as shown in this diagram:</p>
-<p><img src="images/lab1/diagram.png" /></p>
-<p>Putting it all together, once you compute the two angles, subtract θ2 from θ1, and set the rotation of the compass graphic to that value. (To see why we subtract θ2, imagine that the phone is already pointed in the direction of the destination. In that case, θ1≈θ2.) The next task will walk you through implementing the steps.</p>
-<h3 id="task4">Task 4 - Rotate the Compass Needle Image</h3>
-<p>There are three subtasks: first, get the user's location and compute θ1 (based on the currently selected anthill); second, compute the orientation of the phone and compute θ2; third, set the orientation of the needle image.</p>
-<p>We've created CompassViewController.swift for you, but you will need to write most of the code. We've configured the UI to have a reference to the needle image.</p>
-<h4 id="sec4.1">4.1 Compute θ1</h4>
-<p>You can compute θ1 using the above formula once you have both the user's location and the location of a target anthill. In the code we've given you, there is an anthills array that is loaded when the view appears. When the user changes the currently selected anthill, the following method will be called:</p>
-<pre><code>func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+<!-- Section 2 -- Building the Anteater Compass {#sec2}
+------------------------------------------
 
-}</code></pre>
-<p>You should fill in the body of this with code to recompute the angle to the current anthill. You may want to define a helper function to do this, because you will also want to recompute when the user's location changes. (You won't be able to test this until you implement the following paragraph.)</p>
-<p>We've also initialized a CLLocationManager object and request that it start providing location updates to CompassViewController. You'll need to fill in the body of the didUpdateLocations method to get the user's current location, and update the current estimated angle to the selected anthill (using the same function you defined when the anthill changed.)</p>
-<p>Note: to extract the latitude and longitude of the anthill, use this:</p>
-<pre><code>let anthill = self.anthills?[row] as! [String: Any]?
-let lat = anthill?[&quot;lat&quot;] as? Double
-let lon = anthill?[&quot;lon&quot;] as? Double</code></pre>
-<h4 id="sec4.2">4.2 Compute θ2</h4>
-<p>Modern iPhones have a magnetometer that can measure the orientation of the phone with respect to the Earth's magnetic field (its heading). An app can be requested to be notified of the phone's heading as it changes by calling the startUpdatingHeading method on the CLLocationManager object. We have already done this for you in CompassViewController.swift's viewDidLoad method. You should fill in the body of the locationManager:didUpdateHeading method with code to compute θ1 - θ2. You can access the current heading of the device (in degrees) by accessing the trueHeading property of the provided newHeading object.</p>
-<h4 id="sec4.3">4.3 Rotate the Needle by θ1 - θ2</h4>
-<p>Whenever you get an update to the device's location or orientation, or a new anthill is selected, you should update the rotation of the needle. The needle is a UIView that is available as a property of CompassViewController. In iOS you can rotate (and scale/transform) any view simply by setting the value of the <code>transform</code> field of the view. This field is an instance of a CGAffineTransform struct. You can create a transform that specifies a particular rotation by calling <a href="https://developer.apple.com/documentation/coregraphics/cgaffinetransform/1455666-init">CGAffineTransform.init with rotationAngle</a> in Swift. Create a transform and assign it to the needle property of your CompassViewController. The UI will automatically rotate the view to the correct orientation.</p>
-<p>In addition, set the text of the distanceLabel label to the distance to the current anthill and the text of the headingLabel label to θ1 - θ2.</p>
-<p>The deliverable for this task is a working implementation of the Anteater compass.</p>
+In this part of the lab, you\'ll work with the Anteater app and add
+location-based features.
+
+Recall that the Anteater App is a crowdsourced sensor data collection
+app, where users earn points for collecting sensor data from nearby
+sensors. In the Anteater app, mobile devices are the anteaters, and the
+sensors are the anthills.
+
+Start by downloading the [Anteater App Skeleton for Xcode 11/iOS
+13](codes/lab1/anteater-swift-4.2-xcode11.zip). (For Xcode 10/iOS 12,
+use [this app skeleton](codes/lab1/anteater-swift-4.2.zip) instead.)
+
+Uncompress this file to create a directory called
+\"anteater-swift-blank\". Open the anteater.xcodeproj file in this
+directory in XCode. You should be able to build and run the project in
+the simulator or your phone. This app is not able to connect to
+Bluetooth-based Anthills (you\'ll do that in the next lab), and the
+compass won\'t rotate (that\'s the goal of this lab).
+
+Known issue for Xcode 11/iOS 13: when you build and run the app in your
+iPhone for the first time and try to log in with any username, the app
+may crash. Simply build and run again. The app should skip the log-in
+screen without any error.
+
+In later labs you\'ll work on the code to connect to the anthills, but
+for the second part of this lab, your job is to implement the compass UI
+in Anteater, as shown in the screenshot below.
+
+![](images/lab1/interface.png)
+
+In this interface, the orange arrow points the user what direction they
+should turn/walk to move towards the selected Anthill.
+
+To compute the direction this arrow should point, you need to measure
+the angle between the user\'s current position (represented by a lat/lon
+point), and the destination anthill. The conventional way to do this is
+to model the earth as a sphere, and measure the angle of vector from the
+origin to the destination along the shortest path (the \"great circle
+path\"). The trigonometry to do this is fairly hairy, but thanks to the
+Internet the formula is easy to look up. Here\'s the code to do this:
+
+`atan2(sin(lon2-lon1)*cos(lat2), cos(lat1)*sin(lat2)-sin(lat1)*cos(lat2)*cos(lon2-lon1))`
+
+Here (lat1, lon1) is the starting point, and (lat2, lon2) is the ending
+point. In this formula, lat and lon need to be converted to radians, and
+the result is in radians.
+
+If you are curious about the derivation of this, there\'s a good
+explanation half way down this post:
+<http://mathforum.org/library/drmath/view/55417.html>
+
+From the article: *\"Let\'s define three unit vectors, each in the
+direction of the line from the center of the earth to a point on the
+surface: N in the direction of the north pole, A in the direction of the
+initial point, and B in the direction of the final point on the course.
+Then the bearing we seek is the angle between the plane containing N and
+A, and the plane containing A and B. Thus it equals the angle between
+vectors perpendicular to these planes, namely, NxA and BxA.\"*
+
+Computing this is straightforward trigonometry, although the explanation
+for the use of the atan2 function is non-obvious.
+
+Once you\'ve figured out the angle between the user\'s current location
+and the destination anthill, you need to figure out the orientation of
+the phone relative to North, and subtract that angle from the bearing to
+the destination, as shown in this diagram:
+
+![](images/lab1/diagram.png)
+
+Putting it all together, once you compute the two angles, subtract θ2
+from θ1, and set the rotation of the compass graphic to that value. (To
+see why we subtract θ2, imagine that the phone is already pointed in the
+direction of the destination. In that case, θ1≈θ2.) The next task will
+walk you through implementing the steps.
+
+### Task 4 - Rotate the Compass Needle Image {#task4}
+
+There are three subtasks: first, get the user\'s location and compute θ1
+(based on the currently selected anthill); second, compute the
+orientation of the phone and compute θ2; third, set the orientation of
+the needle image.
+
+We\'ve created CompassViewController.swift for you, but you will need to
+write most of the code. We\'ve configured the UI to have a reference to
+the needle image.
+
+#### 4.1 Compute θ1 {#sec4.1}
+
+You can compute θ1 using the above formula once you have both the
+user\'s location and the location of a target anthill. In the code
+we\'ve given you, there is an anthills array that is loaded when the
+view appears. When the user changes the currently selected anthill, the
+following method will be called:
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+    }
+
+You should fill in the body of this with code to recompute the angle to
+the current anthill. You may want to define a helper function to do
+this, because you will also want to recompute when the user\'s location
+changes. (You won\'t be able to test this until you implement the
+following paragraph.)
+
+We\'ve also initialized a CLLocationManager object and request that it
+start providing location updates to CompassViewController. You\'ll need
+to fill in the body of the didUpdateLocations method to get the user\'s
+current location, and update the current estimated angle to the selected
+anthill (using the same function you defined when the anthill changed.)
+
+Note: to extract the latitude and longitude of the anthill, use this:
+
+    let anthill = self.anthills?[row] as! [String: Any]?
+    let lat = anthill?["lat"] as? Double
+    let lon = anthill?["lon"] as? Double
+
+#### 4.2 Compute θ2 {#sec4.2}
+
+Modern iPhones have a magnetometer that can measure the orientation of
+the phone with respect to the Earth\'s magnetic field (its heading). An
+app can be requested to be notified of the phone\'s heading as it
+changes by calling the startUpdatingHeading method on the
+CLLocationManager object. We have already done this for you in
+CompassViewController.swift\'s viewDidLoad method. You should fill in
+the body of the locationManager:didUpdateHeading method with code to
+compute θ1 - θ2. You can access the current heading of the device (in
+degrees) by accessing the trueHeading property of the provided
+newHeading object.
+
+#### 4.3 Rotate the Needle by θ1 - θ2 {#sec4.3}
+
+Whenever you get an update to the device\'s location or orientation, or
+a new anthill is selected, you should update the rotation of the needle.
+The needle is a UIView that is available as a property of
+CompassViewController. In iOS you can rotate (and scale/transform) any
+view simply by setting the value of the `transform` field of the view.
+This field is an instance of a CGAffineTransform struct. You can create
+a transform that specifies a particular rotation by calling
+[CGAffineTransform.init with
+rotationAngle](https://developer.apple.com/documentation/coregraphics/cgaffinetransform/1455666-init)
+in Swift. Create a transform and assign it to the needle property of
+your CompassViewController. The UI will automatically rotate the view to
+the correct orientation.
+
+In addition, set the text of the distanceLabel label to the distance to
+the current anthill and the text of the headingLabel label to θ1 - θ2.
+
+The deliverable for this task is a working implementation of the
+Anteater compass. -->
 <h2 id="submission">Submission Instructions</h2>
-<p>Write up your answers to the following items in a single PDF file and name it <strong>lab1_${mit_username}.pdf</strong> or <strong>lab1_${mit_username1}+${mit_username2}.pdf</strong> (e.g. lab1_korrawat.pdf or lab1_korrawat+fadel.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Feb 18, 11:59 PM</strong> with subject <strong>"6.808 Lab 1 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Feb 25, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
+<p>Write up your answers to the following items in a single PDF file and name it <strong>lab1_${mit_username}.pdf</strong> or <strong>lab1_${mit_username1}+${mit_username2}.pdf</strong> (e.g. lab1_bnagda.pdf or lab1_mihirt+bnagda.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Feb 18, 11:59 PM</strong> with subject <strong>"6.808 Lab 1 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Feb 25, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
 <ol type="1">
 <li>Names and MIT emails (including your lab partner, if available)</li>
 <li>Accuracy levels for GPS, WiFi, and Cellular (e.g. <code>kCLLocationAccuracyBest</code>) (Three answers)</li>
 <li>Estimated distances in meters for the three methods from Task 2 (Three answers)</li>
 <li>Maps of the points/trajectories for three methods (screenshot(s))</li>
 <li>Plots of the battery drain for Task 3 (cellular and GPS)</li>
-<li>A screenshot for the compass at a non-zero angle for Task 4</li>
 <li>Estimated number of hours you spent coding for Section 1</li>
-<li>Estimated number of hours you spent collecting/analyzing data for Section 1</li>
-<li>Estimated number of hours you spent on Section 2</li>
+<li>Estimated number of hours you spent collecting/analyzing data for Section 1 <!-- 9.  Estimated number of hours you spent on Section 2 --></li>
 <li>Any comments/suggestions for the lab? Any questions you may have for the checkoff? (Optional)</li>
 </ol>
 <p>During the checkoff, we may ask you to show a demonstration of an Application, show the experiments' results, or explain if and why the results are as expected (or unexpected).</p>
