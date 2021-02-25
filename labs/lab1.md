@@ -91,6 +91,9 @@ accuracy and power drain of the different approaches.
     Xcode 10 or \"Signing and Capabilities\" Tab -\> Signing in Xcode
     11). Update the Bundle Identifier if needed.
 
+![](images/lab1/ipad.png)
+
+Make sure "iPad" is checked if you are simulating and uploading to an iPad.
 
 ### iOS Location Primer {#ios_loc_primer}
 
