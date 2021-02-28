@@ -526,7 +526,7 @@ lab1\_bnagda.pdf or lab1\_mihirt+bnagda.pdf). Email the PDF file to
 **6808\@mit.edu** by **Feb 18, 11:59 PM** with subject **\"6.808 Lab 1
 submission\"**. If you work with a partner, you only have to submit
 once. You can get a checkoff during Office Hours within a week after the
-submission deadline, i.e. Feb 25, 11:59 PM. You do not need to submit
+submission deadline, i.e. March 11, 11:59 PM. You do not need to submit
 your code, but we may ask to look at your code during the checkoff.
 
 1.  Names and MIT emails (including your lab partner, if available)
