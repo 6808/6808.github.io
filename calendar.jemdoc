@@ -116,7 +116,7 @@ table.calendar thead tr {
 <tr> <!-- week of march 1 -->
 
     <td id="2021-3-1" class="lecture"><span class="date">Mar 1</span><br />
-      <b>LEC 4:</b> Seeing through Walls & Device-Free Localization (<a href="./materials/lec4-slides-DfP-2020.pdf" target="_blank" hidden>Slides</a>)<br />
+      <b>LEC 4:</b> Seeing through Walls & Device-Free Localization (<a href="./materials/lec4-slides-DfP-2021.pdf" target="_blank">Slides</a>)<br />
       <span class="reading"><b>Preparation:</b> Read
         <a href="http://witrack.csail.mit.edu/witrack-paper.pdf" target="_blank">WiTrack</a>
       (<a href="questions.html?q=q-lec4">Questions</a>)</span></td>
@@ -284,7 +284,8 @@ table.calendar thead tr {
 <!-- <b>LEC 13:</b> Underwater IoT <br /> -->
 <!-- <span class="reading"><b>Preparation:</b> Read -->
 <!--   <a href="http://www.mit.edu/~fadel/papers/PAB-paper.pdf" target="_blank">Underwater Backscatter</a> -->
-<!-- (<a href="questions.html?q=q-lec16">Questions</a>) --></span></td>
+<!-- (<a href="questions.html?q=q-lec16">Questions</a>) --></span>
+<span class="deadline"><b>DUE:</b> <a href="">Pset 2</a></span></td>
 
     <!-- <b>LEC 13:</b> Underwater IoT <br /> -->
     <!-- <span class="reading"><b>Preparation:</b> Read -->
@@ -292,7 +293,7 @@ table.calendar thead tr {
       <!-- (<a href="questions.html?q=q-lec16">Questions</a>) --></span>
 
 
-      <span class="deadline"><b>DUE:</b> <a href="">Pset 2</a></span></td>
+
 
   <td id="2021-4-22"><span class="date">Apr 22</span></td>
   <td id="2021-4-23"><span class="date">Apr 23</span></td>
