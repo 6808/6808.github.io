@@ -125,7 +125,7 @@ table.calendar thead tr {
 
   <td id="2021-3-3" class="lecture"><span class="date">Mar 3</span><br />
 
-    <b>LEC 5:</b> Connectivity Overview and BLE (<a href="./materials/lec5-IOTx-WirelessNetworkConnectivity.pdf" target="_blank" hidden>Slides</a>)<br />
+    <b>LEC 5:</b> Connectivity Overview and BLE (<a href="./materials/lec5-slides-connectivity-2021.pdf" target="_blank" hidden>Slides</a>, <a href="https://mit.zoom.us/rec/share/lYMe9Y-1X0EEMjSA9bPTbDgpjxdjFUZRC_orFWTRey_JG3o2rjLPjPHCrQLYckhZ.ec2MgbSWpPviEqob" target="_blank" hidden>Recording</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://iot.stanford.edu/pubs/zachariah-gateway-hotmobile15.pdf" target="_blank">IoT Gateway problem</a>
       (<a href="questions.html?q=q-lec5">Questions</a>)</span><br />
