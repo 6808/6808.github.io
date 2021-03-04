@@ -523,7 +523,7 @@ Write up your answers to the following items in a single PDF file and
 name it **lab1\_\${mit\_username}.pdf** or
 **lab1\_\${mit\_username1}+\${mit\_username2}.pdf** (e.g.
 lab1\_bnagda.pdf or lab1\_mihirt+bnagda.pdf). Email the PDF file to
-**6808\@mit.edu** by **Feb 18, 11:59 PM** with subject **\"6.808 Lab 1
+**6808\@mit.edu** by **March 4, 11:59 PM** with subject **\"6.808 Lab 1
 submission\"**. If you work with a partner, you only have to submit
 once. You can get a checkoff during Office Hours within a week after the
 submission deadline, i.e. March 11, 11:59 PM. You do not need to submit
