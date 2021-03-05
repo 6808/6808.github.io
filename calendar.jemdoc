@@ -132,7 +132,7 @@ table.calendar thead tr {
 
 
   <td id="2021-3-4"><span class="date">Mar 4</span><br />
-  <span class="reading"><b>Assigned:</b> <a href="">Lab 2</a></span><br />
+  <span class="reading"><b>Assigned:</b> <a href="labs/lab2.html">Lab 2</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="labs/lab1.html">Lab 1</a></span></td>
 
 
@@ -172,7 +172,7 @@ table.calendar thead tr {
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch3">Principles of Inertial Sensing (Section 3.1 and 3.2 only)</a>
   (<a href="questions.html?q=q-lec8">Questions</a>)</span><br />
 <span class="reading"><b>Assigned:</b> <a href="">Lab 3</a></span><br />
-<span class="deadline"><b>DUE:</b> <a href="">Lab 2</a></span></td>
+<span class="deadline"><b>DUE:</b> <a href="labs/lab2.html">Lab 2</a></span></td>
 
 <td id="2021-3-16"><span class="date">Mar 16</span></td>
 

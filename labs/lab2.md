@@ -13,8 +13,8 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 Lab 2: Getting Data From Anthills {#project_tagline}
 ---------------------------------
 
-Assigned: 2020-02-19\
-Due: 2020-02-26\
+Assigned: 2021-03-04\
+Due: 2020-03-15\
 
 </header>
 </div>
