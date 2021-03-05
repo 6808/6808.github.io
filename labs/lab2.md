@@ -41,13 +41,13 @@ the code to extract sensor readings from packets sent by the Anthill.
 
 Getting Started {#gettingstarted}
 ---------------
-Start by downloading the [Anteater App Skeleton for Xcode 11/iOS
-13](codes/lab1/anteater-swift-4.2-xcode11.zip). Uncompress this file to create a directory called
+Start by downloading the [Anteater App Skeleton for Xcode 11+/iOS
+13+](codes/lab1/anteater-swift-4.2-xcode11.zip). Uncompress this file to create a directory called
 \"anteater-swift-blank\". Open the anteater.xcodeproj file in this
 directory in XCode. You should be able to build and run the project in
 the simulator or your phone.
 
-**Known issue for Xcode 11/iOS 13:** when you build and run the app in your
+**Known issue for Xcode 11+/iOS 13+:** when you build and run the app in your
 iPhone for the first time and try to log in with any username, the app
 may crash. Simply build and run again. The app should skip the log-in
 screen without any error.
@@ -74,7 +74,7 @@ implementation of the class `HillsTableViewController`, which creates an
 instance of `SensorModel` and sets itself as the delegate of that
 instance.
 
-For **iOS 13**, please make the following changes:
+For **iOS 13+**, please make the following changes:
 
 - Select your project from the navigator panel and then highlight the
   Build Settings tab. Filter the settings or locate "Other Linker Flags"
