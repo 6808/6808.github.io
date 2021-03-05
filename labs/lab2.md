@@ -41,8 +41,18 @@ the code to extract sensor readings from packets sent by the Anthill.
 
 Getting Started {#gettingstarted}
 ---------------
+Start by downloading the [Anteater App Skeleton for Xcode 11/iOS
+13](codes/lab1/anteater-swift-4.2-xcode11.zip). Uncompress this file to create a directory called
+\"anteater-swift-blank\". Open the anteater.xcodeproj file in this
+directory in XCode. You should be able to build and run the project in
+the simulator or your phone.
 
-The Anteater code we provided for [lab 1](lab1.html) included a skeleton
+**Known issue for Xcode 11/iOS 13:** when you build and run the app in your
+iPhone for the first time and try to log in with any username, the app
+may crash. Simply build and run again. The app should skip the log-in
+screen without any error.
+
+The Anteater code includes a skeleton
 class, `SensorModel.swift` that you will need to implement. The
 `SensorModel` class will implement `BLEDelegate` and initialize an
 instance of `BLE` to handle interaction with the device. In addition, to
@@ -59,7 +69,7 @@ func sensorModel(_ model: SensorModel, didReceiveReadings readings: [Reading], f
 These methods let the application know when a new sensor connects, or
 when some data is received.
 
-The code you downloaded for [lab 1](lab1.html) also includes a complete
+The code also includes a complete
 implementation of the class `HillsTableViewController`, which creates an
 instance of `SensorModel` and sets itself as the delegate of that
 instance.
