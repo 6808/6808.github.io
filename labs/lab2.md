@@ -402,7 +402,6 @@ anthill (by powering it down and powering it back up.) The app should no
 longer display the readings if the anthill is powered off, and should
 automatically reconnect to the anthill once it is powered on again.**
 
-You will return the device at the checkoff.
 
 </div>
 </div>
