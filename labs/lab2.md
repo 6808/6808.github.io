@@ -13,8 +13,8 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 Lab 2: Getting Data From Anthills {#project_tagline}
 ---------------------------------
 
-Assigned: 2020-02-19\
-Due: 2020-02-26\
+Assigned: 2021-03-04\
+Due: 2020-03-15\
 
 </header>
 </div>
@@ -41,8 +41,18 @@ the code to extract sensor readings from packets sent by the Anthill.
 
 Getting Started {#gettingstarted}
 ---------------
+Start by downloading the [Anteater App Skeleton for Xcode 11+/iOS
+13+](codes/lab1/anteater-swift-4.2-xcode11.zip). Uncompress this file to create a directory called
+\"anteater-swift-blank\". Open the anteater.xcodeproj file in this
+directory in XCode. You should be able to build and run the project in
+the simulator or your phone.
 
-The Anteater code we provided for [lab 1](lab1.html) included a skeleton
+**Known issue for Xcode 11+/iOS 13+:** when you build and run the app in your
+iPhone for the first time and try to log in with any username, the app
+may crash. Simply build and run again. The app should skip the log-in
+screen without any error.
+
+The Anteater code includes a skeleton
 class, `SensorModel.swift` that you will need to implement. The
 `SensorModel` class will implement `BLEDelegate` and initialize an
 instance of `BLE` to handle interaction with the device. In addition, to
@@ -59,12 +69,12 @@ func sensorModel(_ model: SensorModel, didReceiveReadings readings: [Reading], f
 These methods let the application know when a new sensor connects, or
 when some data is received.
 
-The code you downloaded for [lab 1](lab1.html) also includes a complete
+The code also includes a complete
 implementation of the class `HillsTableViewController`, which creates an
 instance of `SensorModel` and sets itself as the delegate of that
 instance.
 
-For **iOS 13**, please make the following changes:
+For **iOS 13+**, please make the following changes:
 
 - Select your project from the navigator panel and then highlight the
   Build Settings tab. Filter the settings or locate "Other Linker Flags"
@@ -364,11 +374,11 @@ Submission and Checkoff Instructions {#submission}
 Write up your answers to the following items in a single PDF file and
 name it **lab2\_\${mit\_username}.pdf** or
 **lab2\_\${mit\_username1}+\${mit\_username2}.pdf** (e.g.
-lab2\_korrawat.pdf or lab2\_korrawat+fadel.pdf). Email the PDF file to
-**6808\@mit.edu** by **Feb 26, 11:59 PM** with subject **\"6.808 Lab 2
+lab2\_mihirt.pdf or lab2\_mihirt+bnagda.pdf). Email the PDF file to
+**6808\@mit.edu** by **Mar 15, 11:59 PM** with subject **\"6.808 Lab 2
 submission\"**. If you work with a partner, you only have to submit
 once. You can get a checkoff during Office Hours within a week after the
-submission deadline, i.e. Mar 4, 11:59 PM. You do not need to submit
+submission deadline, i.e. Mar 24, 11:59 PM (because of the student holiday). You do not need to submit
 your code, but we may ask to look at your code during the checkoff.
 
 1. Names and MIT emails (including your lab partner, if available)
@@ -392,7 +402,6 @@ anthill (by powering it down and powering it back up.) The app should no
 longer display the readings if the anthill is powered off, and should
 automatically reconnect to the anthill once it is powered on again.**
 
-You will return the device at the checkoff.
 
 </div>
 </div>
