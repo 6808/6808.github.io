@@ -58,10 +58,10 @@ creative problem solving (a.k.a. hacking up something that generally
 works) are encouraged. If you would like to brainstorm about any
 problems you encounter, we\'d be happy to talk.
 
-The lab will consist of three sections. First, you will implement a
+The lab can be completed with either an iPhone or an iPad. The lab will consist of three sections. First, you will implement a
 shape recognition algorithm using two-dimensional handwriting on the
 touch screen as the data source. Next, you will develop 3-D motion
-tracking code using the iPhone\'s sensors, and gain familiarity with the
+tracking code using the iPad (iPhone) sensors, and gain familiarity with the
 capabilities and limitations of these sensors by playing with the
 resulting app. Finally, you will feed data from your three-dimensional
 motion tracker into the gesture recognition system of the first section.
@@ -71,8 +71,7 @@ basic recognition framework we have put in your hands.
 Please go ahead and download the [Xcode
 project](codes/lab3/lab3-swift-blank-update2.zip) for this lab. Update
 the team (and bundle identifier, if needed) and build the app on an
-iPhone (not a simulator). You should see two modes: 2D and 3D. In the 2D
-mode, you should be able to write a letter on the screen and the app
+iPad (or iPhone, not a simulator). You should see two modes: 2D and 3D. In the 2D mode, you should be able to write a letter on the screen and the app
 will show "?" for each letter. In the 3D mode, try pressing and holding
 anywhere on the screen while moving your phone around. There should be a
 "ribbon" at the center of the screen and also a "?" sign for each
@@ -89,7 +88,7 @@ Section 1 --- Handwriting {#sec1}
 
 For this section, you will work through the details of implementing a
 handwriting recognition system for letters drawn with a finger on an
-iPhone screen. Here\'s how this will work.
+iPad (iPhone) screen. Here\'s how this will work.
 
 You will be implementing `GestureProcessor`, a class encapsulating the
 logic for interpreting sequences of points. In particular, you will fill
@@ -152,7 +151,7 @@ func processGesture2D(samples: [Sample2D], minSize: Double) -> [Sample2D] {
 }
 ```
 
-This method will be called for you by the view controller when the user
+This method will be called by the view controller when the user
 has traced a stroke on the screen and then lifted their finger. Each
 sample will consist of x and y coordinates for a touch event reported by
 iOS, along with the absolute time in seconds when it occurred. You
