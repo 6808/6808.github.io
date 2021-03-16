@@ -1272,15 +1272,9 @@ name it **lab3\_kerberos.pdf** or **lab3\_kerberos1+kerberos2.pdf**
 (e.g. lab3\_bnagda.pdf or lab3\_bnagda+fadel.pdf). Email the PDF
 file to **6808\@mit.edu** by **Mar 29, 11:59 PM** with subject **\"6.808
 Lab 3 submission\"**. If you work with a partner, you only have to
-submit once. You can get a checkoff during Office Hours within a week
-after the submission deadline, i.e. Apr 6, 11:59 PM. You do not need to
+submit once. You do not need to
 submit your code, but we may ask to look at your code during the
 checkoff.
-
-Update for those who finished the lab early: Please check the end of
-[Task 1E](#task1e) for added instructions about character drawing and an
-expected accuracy for the 2D mode, and the bug fixes at the end of [Task
-3B](#task3b).
 
 1. Names and MIT emails (including your lab partner, if available).
 1. Try writing the letters A to Z in the 2D mode at least 3 times. What
