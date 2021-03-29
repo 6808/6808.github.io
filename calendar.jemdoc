@@ -209,7 +209,7 @@ table.calendar thead tr {
 
 <tr> <!-- week of mar 29 -->
 <td id="2021-3-29" class="lecture"><span class="date">Mar 29</span><br />
-<b>LEC 11:</b> Health & Vitals sensing (<a href="./materials/lec11-slides-vitals-2020.pdf" target="_blank" hidden>Slides</a>)<br />
+<b>LEC 11:</b> Health & Vitals sensing (<a href="./materials/lec11-slides-vitals-2021.pdf" target="_blank">Slides</a>)<br />
 <span class="reading"><b>Preparation:</b> Read
   <a href="http://witrack.csail.mit.edu/vitalradio/content/vitalradio-paper.pdf">Vital-Radio</a> and
   <a href="http://ubicomplab.cs.washington.edu/pdfs/hemaapp_v2.pdf">Smartphone-based Hemoglobin sensing</a>
