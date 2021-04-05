@@ -31,8 +31,8 @@
 <section id="main_content" class="inner">
 <h1 id="project_title"><a href="../index.html">6.808</a></h1>
 <h2 id="project_tagline">Lab 4: Map Inference from GPS Traces</h2>
-<p>Assigned: 2020-03-30<br />
-Due: 2020-04-08<br />
+<p>Assigned: 2021-03-29<br />
+Due: 2021-04-12<br />
 </p>
 </section>
 </div>
@@ -47,9 +47,7 @@ Due: 2020-04-08<br />
 <li><a href="#submission">Submission and Checkoff</a></li>
 </ul>
 <div style="color:#a00">
-<p><strong>Updates (Apr 2, 2020)</strong></p>
-<p>If you downloaded the starter code before Thu Apr 2 9:16 PM, I unintentionally included files/folders that would make the actual code fail. Please run the following commands from the <code>lab4</code> directory:</p>
-<pre class="bash"><code>rm -rf boston.graph cache infer_tests.py pylibs pyqtree.py section3_graphs trace_generator_map.xml trace_generator_readme.txt trips_uchicago_meters</code></pre>
+
 </div>
 <h2 id="overview">Overview</h2>
 <p>Map inference is a process of automatically producing maps from collected GPS traces. In this lab, each trace contains multiple observations, each of which is a 2D location. While a single trace corresponds to a short drive and each data point is noisy, we can use multiple traces from the same area to collectively infer the underlying road network, reducing noise in individual observations. You will explore two map inference algorithms, k-means clustering and kernel density estimation, as well as evaluation metrics for map inference.</p>
@@ -97,7 +95,7 @@ $ which virtualenv
 /Users/username/anaconda/bin/virtualenv
 $ ls /Users/username/anaconda/bin/virtualenv*
 # see if there are virtualenvwrapper.sh installed here</code></pre>
-<p>You need to match the path by adding the following lines to your shell startup file instead. See this <a href="https://piazza.com/class/k5pjker46hppp?cid=158">Piazza post</a> for more details.</p>
+<p>You need to match the path by adding the following lines to your shell startup file instead.</p>
 <pre class="bash"><code>export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /Users/username/anaconda/bin/virtualenvwrapper.sh</code></pre></li>
@@ -203,7 +201,7 @@ python eval_geo.py data/cambridge.graph output/kde-inferred.graph</code></pre>
 <p>This section is open-ended, as long as your metric is reasonable. These are some ideas and your exact implementation can vary. Adjusting parameters (e.g. marker frequency and match distance for holes-and-marbles or the maximum distance between the source and destination vertices for shortest path) will largely affect the final scores.</p>
 <p>We have included two pairs of actual/inferred graphs in the <code>data/section3_graphs/</code> folder for which <code>eval_geo.py</code> gives F1 score of 1.0. Your metric should give a non-perfect score for these two pairs. Visualize these graphs using functions in <code>visualize.py</code> to understand these test graphs.</p>
 <h2 id="submission">Submission and Checkoff Instructions</h2>
-<p>Write up your answers to the following items in a single PDF file and name it <strong>lab4_kerberos.pdf</strong> or <strong>lab4_kerberos1+kerberos2.pdf</strong> (e.g. lab4_korrawat.pdf or lab4_korrawat+fadel.pdf). Email the PDF file to <strong>6808@mit.edu</strong> by <strong>Apr 8, 11:59 PM</strong> with subject <strong>"6.808 Lab 4 submission"</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Apr 15, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
+<p>Write up your answers to the following items in a single PDF file and name it <strong>lab4_kerberos.pdf</strong> or <strong>lab4_kerberos1+kerberos2.pdf</strong> (e.g. lab4_bnagda.pdf or lab4_bnagda+fadel.pdf). Upload the file to your private channel in Slack by <strong>Apr 12, 11:59 PM</strong>. If you work with a partner, you only have to submit once. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
 <ol type="1">
 <li>Names and MIT emails (including your lab partner, if available).</li>
 <li>Provide a plot for precision, recall, and F1 scores as a function of sparsity based on the geometric evaluation in Section 2.</li>

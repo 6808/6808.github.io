@@ -12,8 +12,8 @@ header-includes: <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.j
 Lab 4: Map Inference from GPS Traces {#project_tagline}
 ------------------------------------
 
-Assigned: 2020-03-30\
-Due: 2020-04-08\
+Assigned: 2021-03-29\
+Due: 2021-04-12\
 :::
 :::
 
@@ -28,20 +28,7 @@ Due: 2020-04-08\
 -   [Submission and Checkoff](#submission)
 
 ::: {style="color:#a00"}
-
-**Updates (Apr 2, 2020)**
-
-
-If you downloaded the starter code before Thu Apr 2 9:16 PM, I
-unintentionally included files/folders that would make the actual code
-fail. Please run the following commands from the `lab4` directory:
-
-```bash
-rm -rf boston.graph cache infer_tests.py pylibs pyqtree.py section3_graphs trace_generator_map.xml trace_generator_readme.txt trips_uchicago_meters
-```
-
 :::
-
 
 Overview
 --------
@@ -147,9 +134,7 @@ instructions below to use virtualenv and install the required packages.
     ```
 
     You need to match the path by adding the following lines to your
-    shell startup file instead. See this [Piazza
-    post](https://piazza.com/class/k5pjker46hppp?cid=158) for more
-    details.
+    shell startup file instead. 
 
     ```bash
     export WORKON_HOME=$HOME/.virtualenvs
@@ -491,13 +476,7 @@ Submission and Checkoff Instructions {#submission}
 
 Write up your answers to the following items in a single PDF file and
 name it **lab4\_kerberos.pdf** or **lab4\_kerberos1+kerberos2.pdf**
-(e.g. lab4\_korrawat.pdf or lab4\_korrawat+fadel.pdf). Email the PDF
-file to **6808\@mit.edu** by **Apr 8, 11:59 PM** with subject **\"6.808
-Lab 4 submission\"**. If you work with a partner, you only have to
-submit once. You can get a checkoff during Office Hours within a week
-after the submission deadline, i.e. Apr 15, 11:59 PM. You do not need to
-submit your code, but we may ask to look at your code during the
-checkoff.
+(e.g. lab4\_bnagda.pdf or lab4\_bnagda+fadel.pdf). Upload the file to your private channel in Slack by **Apr 12, 11:59 PM**. If you work with a partner, you only have to submit once. You do not need to submit your code, but we may ask to look at your code during the checkoff.
 
 1. Names and MIT emails (including your lab partner, if available).
 1. Provide a plot for precision, recall, and F1 scores as a function of
