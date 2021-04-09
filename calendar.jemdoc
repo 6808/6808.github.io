@@ -249,7 +249,7 @@ table.calendar thead tr {
    <b>LEC 13:</b> Attacks on Acoustic Sensing <br />
   <span class="reading"><b>Preparation:</b> Read
   <a href="https://synrg.csl.illinois.edu/papers/backdoor_mobisys17.pdf" target="_blank">BackDoor</a> <br />
-  <!--   <\!-- (<a href="questions.html?q=q-lec14">Questions</a>) -\-></span><br /> -->
+  (<a href="questions.html?q=q-lec13">Questions</a>)
   <span class="deadline"><b>DUE:</b> <a href="">Lab 4</a></span>
 
   <td id="2021-4-13"><span class="date">Apr 13</span></td>
