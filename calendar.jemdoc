@@ -216,7 +216,7 @@ table.calendar thead tr {
   (plus Optional Reading on <a href="https://modernmobile.cs.washington.edu/docs/hemaapp.pdf">HemaApp</a>)
   (<a href="questions.html?q=q-lec11">Questions</a>)</span><br />
   <span class="reading"><b>Assigned:</b> <a href="labs/lab4.html">Lab 4</a></span><br />
-  <span class="reading"><b>Assigned:</b> <a href="./materials/6808-pset1-spring2021.pdf">Pset 2</a></span><br />
+  <span class="reading"><b>Assigned:</b> <a href="./materials/6808-pset2-spring2021.pdf">Pset 2</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="">Lab 3</a></span></td>
   </td>
 
@@ -285,7 +285,7 @@ table.calendar thead tr {
 <!-- <span class="reading"><b>Preparation:</b> Read -->
 <!--   <a href="http://www.mit.edu/~fadel/papers/PAB-paper.pdf" target="_blank">Underwater Backscatter</a> -->
 <!-- (<a href="questions.html?q=q-lec15">Questions</a>) --></span>
-<span class="deadline"><b>DUE:</b> <a href="./materials/6808-pset1-spring2021.pdf">Pset 2</a></span></td>
+<span class="deadline"><b>DUE:</b> <a href="./materials/6808-pset2-spring2021.pdf">Pset 2</a></span></td>
 
     <!-- <b>LEC 15:</b> Underwater IoT <br /> -->
     <!-- <span class="reading"><b>Preparation:</b> Read -->
