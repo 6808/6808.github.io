@@ -352,9 +352,11 @@ table.calendar thead tr {
   <td id="2021-5-11"><span class="date">May 11</span></td>
   <td id="2021-5-12" class="special"><span class="date">May 12</span><br />
     <i> <a>Project meetings</a></i> <br />
-    <span class="deadline"><b>DUE:</b> <a>Project Titles and Abstracts</a></span></td>
+    </td>
   <td id="2021-5-13"><span class="date">May 13</span></td>
-  <td id="2021-5-14"><span class="date">May 14</span></td>
+  <td id="2021-5-14"><span class="date">May 14</span> <br>
+  <span class="deadline"><b>DUE:</b> <a>Project Titles and Abstracts</a></span>
+  </td>
 </tr>
 
 <tr> <!-- week of may 17 -->
