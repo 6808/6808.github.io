@@ -221,8 +221,8 @@ table.calendar thead tr {
 
   <td id="2021-3-23" class="holiday"><span class="date">Mar 23</span><br />  <i> <a>Spring Break</i> </a></td>
 
-  <td id="2021-3-24"><span class="holiday">Mar 24</span><br />  <i> <a>Spring Break</i> </a></td>
-  <td id="2021-3-25"><span class="holiday">Mar 25</span><br />  <i> <a>Spring Break</i> </a></td>
+  <td id="2021-3-24"><span class="holiday"><span class="date">Mar 24</span><br />  <i> <a>Spring Break</i> </a></td>
+  <td id="2021-3-25"><span class="holiday"><span class="date">Mar 25</span><br />  <i> <a>Spring Break</i> </a></td>
 </tr>
 
 
@@ -356,7 +356,7 @@ table.calendar thead tr {
     <b>Presentation</b><br />
     <span class="deadline"><b>DUE:</b> <a>Presentations and Demos</a></span><br /></td>
 
-  <td id="2021-5-10"><span class="special">May 10</span><br /><i>Last day of classes</i></td>
+  <td id="2021-5-10"><span class="special"><span class="date">May 10</span><br /><i>Last day of classes</i></td>
 
   <td id="2021-5-11" class="class"><span class="date">May 11</span><br /></td>
 
