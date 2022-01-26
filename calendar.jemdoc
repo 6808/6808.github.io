@@ -101,49 +101,35 @@ table.calendar thead tr {
   <span class="reading"><b>Assigned:</b> <a href="labs/lab1.html">Lab 1</a></span><br />
   <span class="reading"><b>Assigned:</b> <a href="./materials/6808-pset1-spring2021.pdf" target="_blank">Pset 1</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="labs/lab0.html">Lab 0</a></span></td>
-  <td id="2021-2-8"><span class="date">Feb 8</span><br /></td>
-  <td id="2021-2-9" class="lecture"><span class="date">Feb 9</span><br />
-    <b>LEC 3:</b> Practical Device-based Localization (indoor & outdoor) (<a href="./materials/lec3-slides-localization-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/7S7T494ByBu_VfJ3e0iFD7KfIK0L04rSi0dif6v-9-R2OYObiWcp3zXnmpMI8SNC.vx3gkRE1RzO6xisS?startTime=1614196743000">Recording</a>)<br />
-    <span class="reading"><b>Preparation:</b> Read
-      <a href="http://nms.lcs.mit.edu/papers/cricket.pdf" target="_blank">Cricket</a>,
-      <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/infocom2000.pdf" target="_blank">RADAR</a>, and
-      <a href="https://en.wikipedia.org/wiki/Global_Positioning_System" target="_blank">Wikipedia: GPS</a>
-      (<a href="questions.html?q=q-lec3">Questions</a>)</span><br />
-  <span class="reading"><b>Assigned:</b> <a href="labs/lab1.html">Lab 1</a></span><br />
-  <span class="reading"><b>Assigned:</b> <a href="./materials/6808-pset1-spring2021.pdf" target="_blank">Pset 1</a></span><br />
-  <span class="deadline"><b>DUE:</b> <a href="labs/lab0.html">Lab 0</a></span></td>
-
-
+<td id="2021-2-8"><span class="date">Feb 8</span><br /></td>
+<td id="2021-2-9" class="lecture"><span class="date">Feb 9</span><br />
+    <b>LEC 4:</b> Seeing through Walls & Device-Free Localization (<a href="./materials/lec4-slides-DfP-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/FRc1eBYfFNdr_5J43Z2nbFe2q1pyci3ITzSW4K4DV_f_KiY6h5C0Tsw7S7zLHEe2.KYqBDcCF_KpDdkT-" target="_blank">Recording</a>)<br />
+      <span class="reading"><b>Preparation:</b> Read
+        <a href="http://witrack.csail.mit.edu/witrack-paper.pdf" target="_blank">WiTrack</a>
+      (<a href="questions.html?q=q-lec4">Questions</a>)</span></td>
 <td id="2021-2-10"><span class="date">Feb 10</span><br /></td>
-
-
-  <td id="2021-2-11"><span class="date">Feb 11</span><br /></td>
+<td id="2021-2-11"><span class="date">Feb 11</span><br /></td>
 </tr>
 
 <tr> <!-- week of feb 14 -->
 
-    <td id="2021-2-14" class="lecture"><span class="date">Feb 14</span><br />
-      <b>LEC 4:</b> Seeing through Walls & Device-Free Localization (<a href="./materials/lec4-slides-DfP-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/FRc1eBYfFNdr_5J43Z2nbFe2q1pyci3ITzSW4K4DV_f_KiY6h5C0Tsw7S7zLHEe2.KYqBDcCF_KpDdkT-" target="_blank">Recording</a>)<br />
-      <span class="reading"><b>Preparation:</b> Read
-        <a href="http://witrack.csail.mit.edu/witrack-paper.pdf" target="_blank">WiTrack</a>
-      (<a href="questions.html?q=q-lec4">Questions</a>)</span></td>
-
-    <td id="2021-2-15"><span class="date">Feb 15</span><br />
-
-  <td id="2021-2-16" class="lecture"><span class="date">Feb 16</span><br />
-
+<td id="2021-2-14" class="lecture"><span class="date">Feb 14</span><br />
     <b>LEC 5:</b> Connectivity Overview and BLE (<a href="./materials/lec5-slides-connectivity-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/lYMe9Y-1X0EEMjSA9bPTbDgpjxdjFUZRC_orFWTRey_JG3o2rjLPjPHCrQLYckhZ.ec2MgbSWpPviEqob" target="_blank">Recording</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://iot.stanford.edu/pubs/zachariah-gateway-hotmobile15.pdf" target="_blank">IoT Gateway problem</a>
       (<a href="questions.html?q=q-lec5">Questions</a>)</span><br />
+</td>
 
+<td id="2021-2-15"><span class="date">Feb 15</span><br /></td>
 
-  <td id="2021-3-17"><span class="date">Feb 17</span><br />
+<td id="2021-2-16" class="lecture"><span class="date">Feb 16</span><br /><b>LEC 6:</b> Mesh and Multi-Hop Wireless Networks (<a href="./materials/lec6-slides-ETXMesh-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/ei2gds0WN6lXEO0rd28WYp_b698VBuhKQ9Xid4whsnmZcqqrls8HTbWj_rxviKI.y_bcOcr9FPYqfmsy" target="_blank">Recording</a>)<br />
+  <span class="reading"><b>Preparation:</b> Read
+    <a href="https://pdos.csail.mit.edu/papers/grid:mobicom03/paper.pdf" target="_blank">ETX</a>
+    (<a href="questions.html?q=q-lec6">Questions</a>)</span><br /></td>
+<td id="2021-2-17"><span class="date">Feb 17</span><br />
   <span class="reading"><b>Assigned:</b> <a href="labs/lab2.html">Lab 2</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="labs/lab1.html">Lab 1</a></span></td>
-
-
-  <td id="2021-3-18"><span class="date">Feb 18</span></td>
+<td id="2021-2-18"><span class="date">Feb 18</span></td>
 </tr>
 
 <tr> <!-- week of feb 21 -->
@@ -151,11 +137,7 @@ table.calendar thead tr {
   Student Holiday</td>
 
 <td id="2021-2-22" class="lecture"><span class="date">Feb 22</span><br />
-<i>Monday schedule</i><br />
-  <b>LEC 6:</b> Mesh and Multi-Hop Wireless Networks (<a href="./materials/lec6-slides-ETXMesh-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/ei2gds0WN6lXEO0rd28WYp_b698VBuhKQ9Xid4whsnmZcqqrls8HTbWj_rxviKI.y_bcOcr9FPYqfmsy" target="_blank">Recording</a>)<br />
-  <span class="reading"><b>Preparation:</b> Read
-    <a href="https://pdos.csail.mit.edu/papers/grid:mobicom03/paper.pdf" target="_blank">ETX</a>
-    (<a href="questions.html?q=q-lec6">Questions</a>)</span><br /></td>
+<i>Monday schedule</i><br /></td>
 
   <td id="2021-3-10" class="lecture"><span class="date">Mar 10</span><br />
   <b>LEC 7:</b> Batteryless Connectivity & Smart Cities (<a href="./materials/lec7-slides-backscatter-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/HyDnn-k0E-PG7M3vqVDN0tnCFCs860pnb9IxycJdTFYg9Ra80bzxkc6mXroqvU06.eAylk9URZp_V_Hys" target="_blank">Recording</a>)<br />
