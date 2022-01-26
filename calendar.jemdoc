@@ -137,66 +137,58 @@ table.calendar thead tr {
   Student Holiday</td>
 
 <td id="2021-2-22" class="lecture"><span class="date">Feb 22</span><br />
-<i>Monday schedule</i><br /></td>
-
-  <td id="2021-3-10" class="lecture"><span class="date">Mar 10</span><br />
-  <b>LEC 7:</b> Batteryless Connectivity & Smart Cities (<a href="./materials/lec7-slides-backscatter-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/HyDnn-k0E-PG7M3vqVDN0tnCFCs860pnb9IxycJdTFYg9Ra80bzxkc6mXroqvU06.eAylk9URZp_V_Hys" target="_blank">Recording</a>)<br />
+<i>Monday schedule</i><br />
+    <b>LEC 7:</b> Batteryless Connectivity & Smart Cities (<a href="./materials/lec7-slides-backscatter-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/HyDnn-k0E-PG7M3vqVDN0tnCFCs860pnb9IxycJdTFYg9Ra80bzxkc6mXroqvU06.eAylk9URZp_V_Hys" target="_blank">Recording</a>)<br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="http://cseweb.ucsd.edu/~schulman/class/cse291_w17/docs/want_rfid.pdf" target="_blank">RFID-based sensing</a> and
     <a href="https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p297.pdf" target="_blank">Caraoke (without section 8)</a>
-    (<a href="questions.html?q=q-lec7">Questions</a>)</span></td>
+    (<a href="questions.html?q=q-lec7">Questions</a>)</span><</td>
 
-
-
-
-  <td id="2021-3-11"><span class="date">Mar 11</span></td>
-  <td id="2021-3-12"><span class="date">Mar 12</span></td>
-</tr>
-
-<tr> <!-- week of feb 28 -->
-<td id="2021-3-15" class="lecture"><span class="date">Mar 15</span><br />
-<b>LEC 8:</b> Intro to Inertial Sensing; Activity Recognition (<a href="./materials/lec8-slides-inertial-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/cxflImgvLbi7XVgewSFPYgHMUB7Gt-fg4Q5Y91qJx_J11q2nW5frIJIuTxNqj7LO.fpwUa4xmjHs9iFBj" target="_blank">Recording</a>)<br />
+<td id="2021-2-23" class="lecture"><span class="date">Feb 23</span><br />
+    <b>LEC 8:</b> Intro to Inertial Sensing; Activity Recognition (<a href="./materials/lec8-slides-inertial-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/cxflImgvLbi7XVgewSFPYgHMUB7Gt-fg4Q5Y91qJx_J11q2nW5frIJIuTxNqj7LO.fpwUa4xmjHs9iFBj" target="_blank">Recording</a>)<br />
 <span class="reading"><b>Preparation:</b> Read
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch2">Developments of Inertial Sensing</a> and
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch3">Principles of Inertial Sensing (Section 3.1 and 3.2 only)</a>
   (<a href="questions.html?q=q-lec8">Questions</a>)</span><br />
 <span class="reading"><b>Assigned:</b> <a href="labs/lab3.html">Lab 3</a></span><br />
-<span class="deadline"><b>DUE:</b> <a href="labs/lab2.html">Lab 2</a></span></td>
+<span class="deadline"><b>DUE:</b> <a href="labs/lab2.html">Lab 2</a></span>/td>
 
-<td id="2021-3-16"><span class="date">Mar 16</span></td>
+<td id="2021-2-24"><span class="date">Feb 24</span></td>
+<td id="2021-2-25"><span class="date">Feb 25</span></td>
+</tr>
 
-
-  <td id="2021-3-17" class="lecture"><span class="date">Mar 17</span><br />
+<tr> <!-- week of feb 28 -->
+<td id="2021-2-28" class="lecture"><span class="date">Feb 28</span><br />
     <b>LEC 9:</b> Pothole detection (<a href="./materials/lec9-slides-Pothole-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/694FpoOyonjLKimT58XN9w2oRIOfYGsqIO56pzx_j9rLAIpf31KowybxRD7SCjNJ.ko7VsqCF2oXKXf6N" target="_blank">Recording</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://nms.csail.mit.edu/papers/p2-mobisys-2008.pdf" target="_blank">Pothole Patrol</a>
     (<a href="questions.html?q=q-lec9">Questions</a>)</span><br />
-    <span class="deadline"><b>DUE:</b> <a href="./materials/6808-pset1-spring2021.pdf" target="_blank">Pset 1</a></span>
-    </td>
+    <span class="deadline"><b>DUE:</b> <a href="./materials/6808-pset1-spring2021.pdf" target="_blank">Pset 1</a></span></td>
 
-  <td id="2021-3-18"><span class="date">Mar 18</span></td>
-  <td id="2021-3-19"><span class="date">Mar 19</span></td>
-</tr>
-
-<tr> <!-- week of mar 22 -->
-<td id="2021-3-22" class="holiday"><span class="date">Mar 22</span><br />
-  Student Holiday</td>
-
-
-  <td id="2021-3-23" class="holiday"><span class="date">Mar 23</span><br />
-    Student Holiday</td>
-
-  <td id="2021-3-24" class="lecture"><span class="date">Mar 24</span><br />
-  <b>LEC 10:</b> COVID-19 Contact Tracing & Prevention (<a href="./materials/lec10-slides-covid19.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/1IYnTjsXbMyJKcUFtAy7wl0YXFqyG4poy32DsQtiiEnhwkK4rbOa2PUS68NZxI3N.ggnihRtxWU2ZC7_v" target="_blank">Recording</a>)<br />
+<td id="2021-3-1"><span class="date">Mar 1</span></td>
+<td id="2021-3-2" class="lecture"><span class="date">Mar 2</span><br />
+    <b>LEC 10:</b> COVID-19 Contact Tracing & Prevention (<a href="./materials/lec10-slides-covid19.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/1IYnTjsXbMyJKcUFtAy7wl0YXFqyG4poy32DsQtiiEnhwkK4rbOa2PUS68NZxI3N.ggnihRtxWU2ZC7_v" target="_blank">Recording</a>)<br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="https://arxiv.org/pdf/2012.04770.pdf" target="_blank">COVID-19 Contact Tracing</a>
     (<a href="questions.html?q=q-lec10">Questions</a>)</span></td>
 
-  <td id="2021-3-25"><span class="date">Mar 25</span></td>
-  <td id="2021-3-26"><span class="date">Mar 26</span></td>
+<td id="2021-3-3"><span class="date">Mar 3</span></td>
+<td id="2021-3-4"><span class="date">Mar 4</span></td>
 </tr>
 
-<tr> <!-- week of mar 7 -->
+<tr> <!-- week of mar 21 -->
+<td id="2021-3-22" class="holiday"><span class="date">Mar 22</span><br />
+  Spring Break</td>
+<td id="2021-3-23" class="holiday"><span class="date">Mar 23</span><br />
+    Spring Break</td>
+
+  <td id="2021-3-24" class="holiday"><span class="date">Mar 24</span><br /> Spring Break</td>
+
+  <td id="2021-3-25"><span class="date">Mar 25</span><br /> Spring Break</td>
+  <td id="2021-3-26"><span class="date">Mar 26</span><br /> Spring Break</td>
+</tr>
+
+<tr> <!-- week of April 7 -->
 <td id="2021-3-29" class="lecture"><span class="date">Mar 29</span><br />
 <b>LEC 11:</b> Health & Vitals sensing (<a href="./materials/lec11-slides-vitals-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/504xGjoWOB6UmiO-fGbmn1I3p2O7SLUMIEUbLJ3jfcufLgfD0iLQemqD3bwK-tsl.JlLco5oqoiRJOXTX" target="_blank">Recording</a>)<br />
 <span class="reading"><b>Preparation:</b> Read
@@ -393,20 +385,7 @@ table.calendar thead tr {
   <td id="2021-5-21"><span class="date">May 21</span></td>
 </tr>
 
-<tr> <!-- week of may 16 -->
-  <td id="2021-5-17" class="special"><span class="date">May 17</span><br />
-    <i> <a>Project meetings</a></i><br /></td>
 
-  <td id="2021-5-18"><span class="date">May 18</span></td>
-
-  <td id="2021-5-19" class="special"><span class="date">May 19</span><br />
-    <b>Presentation</b><br />
-    <span class="deadline"><b>DUE:</b> <a>Presentations and Demos</a></span><br /></td>
-
-  <td id="2021-5-20"><span class="date">May 20</span><br />
-    <i>Last day of classes</i></td>
-  <td id="2021-5-21"><span class="date">May 21</span></td>
-</tr>
 
 </table>
 <script type="text/javascript">
