@@ -76,8 +76,10 @@ table.calendar thead tr {
 <tr> <!-- week of jan 31 -->
   <td id="2021-1-31" class="lecture"><span class="date">Jan 31</span><br />
     <i>First day of classes</i> <br />
-    <b>LEC 1:</b> Introduction and Key Ideas (<a href="./materials/lec1-slides-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/xdW5qCf-eE2zEXBe0dBNtkaiJcv3hJClhtFUXpjyUfmUMOnRpmJUqTvUuOfPmdri.3hH2H7Rp4f2FIykh?startTime=1613591937000" target="_blank">Recording</a>)<br />
-    <span class="reading"><b>Assigned:</b> <a href="labs/lab0.html">Lab 0</a></span></td>
+    <b>LEC 1:</b> Introduction and Key Ideas
+    <!--(<a href="./materials/lec1-slides-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/xdW5qCf-eE2zEXBe0dBNtkaiJcv3hJClhtFUXpjyUfmUMOnRpmJUqTvUuOfPmdri.3hH2H7Rp4f2FIykh?startTime=1613591937000" target="_blank">Recording</a>)<br />
+    <span class="reading"><b>Assigned:</b> <a href="labs/lab0.html">Lab 0</a></span> -->
+    </td>
 
   <td id="2021-2-1"><span class="date">Feb 1</span><br /></td>
 
