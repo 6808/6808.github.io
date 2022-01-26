@@ -134,7 +134,7 @@ table.calendar thead tr {
 
 <tr> <!-- week of feb 21 -->
 <td id="2021-2-21" class="holiday"><span class="date">Feb 21</span><br />
-  Student Holiday</td>
+      <i> <a> Presidents' Day</i> </a></td>
 
 <td id="2021-2-22" class="lecture"><span class="date">Feb 22</span><br />
 <i>Monday schedule</i><br />
@@ -215,14 +215,14 @@ table.calendar thead tr {
 
 <tr> <!-- week of mar 21 -->
 <td id="2021-3-21" class="holiday"><span class="date">Mar 21</span><br />
-  Spring Break</td>
+    <i> <a>Spring Break</i> </a></td>
 <td id="2021-3-22" class="holiday"><span class="date">Mar 22</span><br />
-    Spring Break</td>
+        <i> <a>Spring Break</i> </a></td>
 
-  <td id="2021-3-23" class="holiday"><span class="date">Mar 23</span><br /> Spring Break</td>
+  <td id="2021-3-23" class="holiday"><span class="date">Mar 23</span><br />  <i> <a>Spring Break</i> </a></td>
 
-  <td id="2021-3-24"><span class="date">Mar 24</span><br /> Spring Break</td>
-  <td id="2021-3-25"><span class="date">Mar 25</span><br /> Spring Break</td>
+  <td id="2021-3-24"><span class="holiday">Mar 24</span><br />  <i> <a>Spring Break</i> </a></td>
+  <td id="2021-3-25"><span class="holiday">Mar 25</span><br />  <i> <a>Spring Break</i> </a></td>
 </tr>
 
 
@@ -337,15 +337,14 @@ table.calendar thead tr {
   </td>
 </tr>
 
-<tr> <!-- week of May 2 -->
+<tr> <!-- week of may 2 -->
   <td id="2021-3-30" class="special"><span class="date">May 2</span><br />
     <i> <a>Project meetings</a></i><br /></td>
 
   <td id="2021-5-3"><span class="date">May 3</span></td>
 
   <td id="2021-5-4" class="special"><span class="date">May 4</span><br />
-    <b>Presentation</b><br />
-    <span class="deadline"><b>DUE:</b> <a>Presentations and Demos</a></span><br /></td>
+    <i> <a>Project meetings</a></i><br /></td>
 
   <td id="2021-5-5"><span class="date">May 5</span><br />
     <i>Last day of classes</i></td>
@@ -362,7 +361,7 @@ table.calendar thead tr {
   <td id="2021-5-11" class="class"><span class="date">May 11</span><br /></td>
 
   <td id="2021-5-12"><span class="date">May 12</span><br /></td>
-  <td id="2021-5-13"><span class="date">May 13</span></td>
+  <td id="2021-5-13"><span class="date">May 13</span><br /><i>Finals begin</i></td>
 </tr>
 
 
