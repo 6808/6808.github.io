@@ -124,21 +124,23 @@ table.calendar thead tr {
 <tr> <!-- week of feb 14 -->
 
 <td id="2021-2-14" class="lecture"><span class="date">Feb 14</span><br />
-    <b>LEC 5:</b> Connectivity Overview and BLE (<a href="./materials/lec5-slides-connectivity-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/lYMe9Y-1X0EEMjSA9bPTbDgpjxdjFUZRC_orFWTRey_JG3o2rjLPjPHCrQLYckhZ.ec2MgbSWpPviEqob" target="_blank">Recording</a>)<br />
+    <!--<b>LEC 5:</b> Connectivity Overview and BLE (<a href="./materials/lec5-slides-connectivity-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/lYMe9Y-1X0EEMjSA9bPTbDgpjxdjFUZRC_orFWTRey_JG3o2rjLPjPHCrQLYckhZ.ec2MgbSWpPviEqob" target="_blank">Recording</a>)<br />
     <span class="reading"><b>Preparation:</b> Read
       <a href="http://iot.stanford.edu/pubs/zachariah-gateway-hotmobile15.pdf" target="_blank">IoT Gateway problem</a>
-      (<a href="questions.html?q=q-lec5">Questions</a>)</span><br />
+      (<a href="questions.html?q=q-lec5">Questions</a>)</span><br /> -->
 </td>
 
 <td id="2021-2-15"><span class="date">Feb 15</span><br /></td>
 
-<td id="2021-2-16" class="lecture"><span class="date">Feb 16</span><br /><b>LEC 6:</b> Mesh and Multi-Hop Wireless Networks (<a href="./materials/lec6-slides-ETXMesh-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/ei2gds0WN6lXEO0rd28WYp_b698VBuhKQ9Xid4whsnmZcqqrls8HTbWj_rxviKI.y_bcOcr9FPYqfmsy" target="_blank">Recording</a>)<br />
+<td id="2021-2-16" class="lecture"><span class="date">Feb 16</span><br /><b>LEC 6:</b> Mesh and Multi-Hop Wireless Networks
+    <!-- (<a href="./materials/lec6-slides-ETXMesh-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/ei2gds0WN6lXEO0rd28WYp_b698VBuhKQ9Xid4whsnmZcqqrls8HTbWj_rxviKI.y_bcOcr9FPYqfmsy" target="_blank">Recording</a>)<br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="https://pdos.csail.mit.edu/papers/grid:mobicom03/paper.pdf" target="_blank">ETX</a>
-    (<a href="questions.html?q=q-lec6">Questions</a>)</span><br /></td>
+    (<a href="questions.html?q=q-lec6">Questions</a>)</span><br /> -->
+    </td>
 <td id="2021-2-17"><span class="date">Feb 17</span><br />
-  <span class="reading"><b>Assigned:</b> <a href="labs/lab2.html">Lab 2</a></span><br />
-  <span class="deadline"><b>DUE:</b> <a href="labs/lab1.html">Lab 1</a></span></td>
+  <span class="reading"><b>Assigned:</b> <a <!-- href="labs/lab2.html" -->>Lab 2</a></span><br />
+  <span class="deadline"><b>DUE:</b> <a <!-- href="labs/lab1.html" -->>Lab 1</a></span></td>
 <td id="2021-2-18"><span class="date">Feb 18</span></td>
 </tr>
 
@@ -148,20 +150,21 @@ table.calendar thead tr {
 
 <td id="2021-2-22" class="lecture"><span class="date">Feb 22</span><br />
 <i>Monday schedule</i><br />
-    <b>LEC 7:</b> Batteryless Connectivity & Smart Cities (<a href="./materials/lec7-slides-backscatter-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/HyDnn-k0E-PG7M3vqVDN0tnCFCs860pnb9IxycJdTFYg9Ra80bzxkc6mXroqvU06.eAylk9URZp_V_Hys" target="_blank">Recording</a>)<br />
+    <b>LEC 7:</b> Batteryless Connectivity & Smart Cities <!-- (<a href="./materials/lec7-slides-backscatter-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/HyDnn-k0E-PG7M3vqVDN0tnCFCs860pnb9IxycJdTFYg9Ra80bzxkc6mXroqvU06.eAylk9URZp_V_Hys" target="_blank">Recording</a>) <br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="http://cseweb.ucsd.edu/~schulman/class/cse291_w17/docs/want_rfid.pdf" target="_blank">RFID-based sensing</a> and
     <a href="https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p297.pdf" target="_blank">Caraoke (without section 8)</a>
-    (<a href="questions.html?q=q-lec7">Questions</a>)</span><</td>
+    (<a href="questions.html?q=q-lec7">Questions</a>)</span> --> </td>
 
 <td id="2021-2-23" class="lecture"><span class="date">Feb 23</span><br />
-    <b>LEC 8:</b> Intro to Inertial Sensing; Activity Recognition (<a href="./materials/lec8-slides-inertial-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/cxflImgvLbi7XVgewSFPYgHMUB7Gt-fg4Q5Y91qJx_J11q2nW5frIJIuTxNqj7LO.fpwUa4xmjHs9iFBj" target="_blank">Recording</a>)<br />
+    <b>LEC 8:</b> Intro to Inertial Sensing; Activity Recognition
+    <!-- (<a href="./materials/lec8-slides-inertial-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/cxflImgvLbi7XVgewSFPYgHMUB7Gt-fg4Q5Y91qJx_J11q2nW5frIJIuTxNqj7LO.fpwUa4xmjHs9iFBj" target="_blank">Recording</a>)<br />
 <span class="reading"><b>Preparation:</b> Read
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch2">Developments of Inertial Sensing</a> and
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch3">Principles of Inertial Sensing (Section 3.1 and 3.2 only)</a>
-  (<a href="questions.html?q=q-lec8">Questions</a>)</span><br />
-<span class="reading"><b>Assigned:</b> <a href="labs/lab3.html">Lab 3</a></span><br />
-<span class="deadline"><b>DUE:</b> <a href="labs/lab2.html">Lab 2</a></span>/td>
+  (<a href="questions.html?q=q-lec8">Questions</a>)</span><br /> -->
+<span class="reading"><b>Assigned:</b> <a <!-- href="labs/lab3.html" --> >Lab 3</a></span><br />
+<span class="deadline"><b>DUE:</b> <a <!-- href="labs/lab2.html" -->>Lab 2</a></span>/td>
 
 <td id="2021-2-24"><span class="date">Feb 24</span></td>
 <td id="2021-2-25"><span class="date">Feb 25</span></td>
