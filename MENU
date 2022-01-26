@@ -1,17 +1,17 @@
   Information [index.html]
   Calendar [calendar.html]
-  Answer Submission [answers.html]
-  Help Queue [queue.html]
+  #Answer Submission [answers.html]
+  #Help Queue [queue.html]
 Lectures
-  Notes [notes.html]
+  #Notes [notes.html]
 Labs
-  Lab 0 [labs/lab0.html]
+  #Lab 0 [labs/lab0.html]
 Problem Sets
   #Gradescope Submission [https://www.gradescope.com/courses/237780]
   #Pset 1 [materials/6808-pset1-spring2021.pdf]
   #Pset 2 [materials/6808-pset2-spring2021.pdf]
 Project
-  Project Info [projects.html]
+  #Project Info [projects.html]
 #	Presentation [presentation.html]
 #	2017 Projects [https://6s062.github.io/6MOB/2017/poster_demo_session.html]
 #	2016 Projects [https://6s062.github.io/6MOB/2016/poster_demo_session.html]
@@ -31,4 +31,4 @@ Exam
 
 #Midterm
 Misc
-  #Slack Workspace [https://mit-6808.slack.com/]
+  Slack Workspace #[https://mit-6808.slack.com/]
