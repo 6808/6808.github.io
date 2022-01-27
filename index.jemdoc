@@ -41,7 +41,7 @@ Topics include the principles, practices, and emerging applications in:
 - iOS APIs for accessing various sensing and wireless networking technologies
 
 = Announcements
-- Make sure to fill out the
+#- Make sure to fill out the
 #[https://forms.gle/xmJAKdA1RdVBnAQ36 pre-class survey] and the #[https://forms.gle/TCv5F4ryitDyjZYi8 first day survey]
 - The lab sections input by the registrar (for Tuesday/Thursday) in WebSis are not relevant for now — we have reserved space in E14 to host optional, in-person office hours later in the semester.
 #You do not need to be available during those lab hours. Office hours will be available online throughout the semester.
@@ -87,7 +87,8 @@ them) are not excused.
 == Readings
 
 Most classes have reading questions. Please send your response to the
-questions to Google forms <!-- [./answers.html here] --> before class. Answers
+questions to Google forms  #[./answers.html here]
+before class. Answers
 will be accepted by any time before the class starts. Each student may
 *skip one question* during the semester without affecting their
 grade. This is a part of the participation score.
