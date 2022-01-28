@@ -322,11 +322,11 @@ table.calendar thead tr {
   <i> <a>Patriots' Day</a></i></td>
 
   <td id="2021-4-19"><span class="date">Apr 19</span><br />
-  <i>DROP DATE</i><br />
+  <i>Drop date</i><br />
   </td>
 
   <td id="2021-4-20" class="special"><span class="date">Apr 20</span><br />
-    <i> <a>Project meetings</a></i></td>
+       Project meetings<br />(No lecture; meet with staff during class time)</td>
 
   <td id="2021-4-21"><span class="date">May 21</span></td>
 
@@ -335,10 +335,10 @@ table.calendar thead tr {
 
 <tr> <!-- week of apr 25 -->
   <td id="2021-4-25" class="special"><span class="date">Apr 25</span><br />
-    <i> <a>Project meetings</a></i></td>
+        Project meetings<br />(No lecture; meet with staff during class time)</td>
   <td id="2021-4-26"><span class="date">Apr 26</span></td>
   <td id="2021-4-27" class="special"><span class="date">Apr 27</span><br />
-    <i> <a>Project meetings</a></i> <br />
+        Project meetings<br />(No lecture; meet with staff during class time) <br />
     <span class="deadline"><b>DUE:</b> <a>Project Titles and Abstracts</a></span>
     </td>
   <td id="2021-4-28"><span class="date">Apr 28</span></td>
@@ -349,15 +349,14 @@ table.calendar thead tr {
 
 <tr> <!-- week of may 2 -->
   <td id="2021-3-30" class="special"><span class="date">May 2</span><br />
-    <i> <a>Project meetings</a></i><br /></td>
+        Project meetings<br />(No lecture; meet with staff during class time)</td>
 
   <td id="2021-5-3"><span class="date">May 3</span></td>
 
   <td id="2021-5-4" class="special"><span class="date">May 4</span><br />
-    <i> <a>Project meetings</a></i><br /></td>
+        Project meetings<br />(No lecture; meet with staff during class time)<br /></td>
 
-  <td id="2021-5-5"><span class="date">May 5</span><br />
-    <i>Last day of classes</i></td>
+  <td id="2021-5-5"><span class="date">May 5</span><br />/td>
   <td id="2021-5-6"><span class="date">May 6</span></td>
 </tr>
 
