@@ -203,6 +203,7 @@ table.calendar thead tr {
   <br />
   <span class="reading"><b>Assigned:</b> <a  href="" >Lab 4</a></span><br />
   <span class="reading"><b>Assigned:</b> <a href="">Pset 2</a></span><br />
+<span class="reading"><b>Assigned:</b> <a href="">Project Proposal Instructions</a></span><br />
   <span class="deadline"><b>DUE:</b> <a href="">Lab 3</a></span></td>
   </td>
 
@@ -248,6 +249,8 @@ table.calendar thead tr {
   <span class="reading"><b>Preparation:</b> Read
     <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf" target="_blank">FarmBeats</a>
     (<a href="questions.html?q=q-lec16">Questions</a>)</span>  <br />
+  <span class="deadline"><b>DUE:</b> <a href="">Project Proposals</a></span></td>
+
 
 
   <td id="2021-3-17"><span class="date">Mar 17</span></td>
@@ -356,7 +359,7 @@ table.calendar thead tr {
   <td id="2021-5-4" class="special"><span class="date">May 4</span><br />
         Project meetings<br />(No lecture; meet with staff during class time)<br /></td>
 
-  <td id="2021-5-5"><span class="date">May 5</span><br />/td>
+  <td id="2021-5-5"><span class="date">May 5</span><br /></td>
   <td id="2021-5-6"><span class="date">May 6</span></td>
 </tr>
 
