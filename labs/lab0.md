@@ -198,9 +198,10 @@ it\'s worth learning.
 documentation](https://openweathermap.org/current#parameter).
 
 -   The correct key for JSON is `"main"`, instead of
-    `"current_observation"`.
+    `"current_observation"`. 
 
--   What should be the key for current weather description?
+-   What should be the key for current weather description? wind? visibility?
+
 
 -   For other values, the JSON response returns a number, not a string.
     We need to cast it into `Double` before using it in a meaningful
@@ -303,7 +304,7 @@ src="https://www.youtube.com/embed/kFcwheYqVKQ?rel=0" frameborder="0" allowfulls
 
 ------------------------------------------------------------------------
 
-#### Video 10 - Blocks and Async
+#### Video 10 - Blocks and Async [Optional!]
 
 We update the app to work asynchronously. Mobile devices often have very
 flaky connections, so it\'s important to know how to deal with them.
