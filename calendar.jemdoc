@@ -86,7 +86,7 @@ table.calendar thead tr {
 
   <td id="2021-2-2" class="lecture"><span class="date">Feb 2</span><br />
     <b>LEC 2:</b> Fundamentals of IoT Localization
-    <!--(<a href="./materials/lec2-slides-localization-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/KkdHfi7dtrmarLoGLXDLU7_pG4wc2Li9lwo-PaAk51vdhl0ojAO2OwAVdySyUeeM.PaqGrbr4Pl-bMhbK">Recording</a>)--><br />
+    (<a href="./materials_2022/lec2-slides-2022.pdf" target="_blank">Slides</a>)<br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="http://onlinelibrary.wiley.com.libproxy.mit.edu/doi/10.1002/0470092335.ch6/pdf" target="_blank">Location-based Services</a>,
     <a href="https://en.wikipedia.org/wiki/Global_Positioning_System" target="_blank">Wikipedia: GPS</a>
