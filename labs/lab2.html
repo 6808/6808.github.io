@@ -30,8 +30,8 @@
 <header class="inner">
 <h1 id="project_title"><a href="../index.html">6.808</a></h1>
 <h2 id="project_tagline">Lab 2: Getting Data From Anthills</h2>
-<p>Assigned: 2022-02-16<br />
-Due: 2022-02-23<br />
+<p>Assigned: 2022-02-22<br />
+Due: 2022-03-02<br />
 </p>
 </header>
 </div>
@@ -64,11 +64,11 @@ func sensorModel(_ model: SensorModel, didReceiveReadings readings: [Reading], f
 <p>For <strong>iOS 13+</strong>, please make the following changes:</p>
 <ul>
 <li>Select your project from the navigator panel and then highlight the Build Settings tab. Filter the settings or locate “Other Linker Flags” from this list and then add “-ObjC -all_load” to these settings. (See <a href="images/lab2/build_settings_linker_flags.png">this screenshot</a> for reference.)</li>
-<li>Select “Info.plist” from the navigator panel and add a property “Privacy - Bluetooth Always Usage Description” with value “Bluetooth required”.</li>
+<li>Select “Info.plist” from the navigator panel and add a property “Privacy - Bluetooth Always Usage Description” with value “Bluetooth required”. (See <a href="images/lab2/bluetooth_required.png">this screenshot</a> for reference.)</li>
 </ul>
 <p>This lab is divided into two sections. In the first section, you will implement the code to scan for and connect to an anthill, and then in the second section you will implement the code to extract readings from packets sent by the anthill and deliver them to the app.</p>
 <p>To test this lab, you will need to obtain an anthill node. Note that the bluetooth functions you will implement do not work properly on the iPhone simulator, so you will need to test on a real device. If you are working with a partner, please check out only one anthill as we have a limited number of them. Please do not throw the box away.</p>
-<p>The anthill you receive will have a sensor and a USB Micro port. To power the anthill, it will need to be powered over USB to your laptop, or to any other USB charger, as shown below:</p>
+<p>The anthill you receive will have a sensor and a USB Micro port. Code has already been pushed to each Arduino. To power the anthill, it will need to be powered over USB to your laptop, or to any other USB charger, as shown below:</p>
 <center>
 <img src="images/lab2/circuit.jpg" width="450" />
 </center>
@@ -78,7 +78,7 @@ func sensorModel(_ model: SensorModel, didReceiveReadings readings: [Reading], f
 <li><strong>(-)</strong> on sensor to <strong>GND</strong> on BLE node</li>
 <li><strong>S</strong> or <strong>out</strong> on sensor to <strong>D8</strong> on BLE node</li>
 </ul>
-<p>There are two <strong>GND</strong> pins in total. If one does not work, try using other pins.</p>
+
 <center>
 <a href="https://store.arduino.cc/usa/nano-33-iot"><img src="images/lab2/arduino_diagram.png" width="600" /></a>
 </center>
@@ -157,7 +157,7 @@ let substring = str[str.index(after: str.startIndex)..&lt;str.index(before: str.
 let value = Double(substring)!</code></pre>
 <p>This task is complete when you can see sensor readings streaming into sensor reading display on the Anteater Readings screen, as shown below:</p>
 
-<p><strong>Note that plotting feature will cause the app to crash, so ignore that part</strong></p>
+<p><strong>Known issue for Xcode 11+/iOS 13+: Tap to plot feature will cause the app to crash, so ignore that part</strong></p>
 <center>
 <img src="images/lab2/readings.png" width="300" />
 </center>
@@ -175,7 +175,7 @@ let value = Double(substring)!</code></pre>
 </ul>
 <p>You should see a window that prints “HELLO WORLD” every two seconds and the temperature and humidity value pairs every time the packets are sent (<a href="images/lab2/serial_monitor.png">reference</a>). If your iPhone app fails to detect any packet after implementing it in Xcode and the Serial Monitor does not show the messages as described, please contact us to get a new board and sensor.</p>
 <h2 id="submission">Submission and Checkoff Instructions</h2>
-<p>Write up your answers to the following items in a single PDF file and name it <strong>lab2_${mit_username}.pdf</strong> or <strong>lab2_${mit_username1}+${mit_username2}.pdf</strong> (e.g. lab2_mihirt.pdf or lab2_mihirt+bnagda.pdf). Send the PDF file to your private channel by <strong>Feb 23, 11:59 PM</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Mar 2, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
+<p>Write up your answers to the following items in a single PDF file and name it <strong>lab2_${mit_username}.pdf</strong> or <strong>lab2_${mit_username1}+${mit_username2}.pdf</strong> (e.g. lab2_mihirt.pdf or lab2_mihirt+bnagda.pdf). Send the PDF file to your private channel by <strong>Mar 2, 11:59 PM</strong>. If you work with a partner, you only have to submit once. You can get a checkoff during Office Hours within a week after the submission deadline, i.e. Mar 9, 11:59 PM. You do not need to submit your code, but we may ask to look at your code during the checkoff.</p>
 <ol type="1">
 <li>Names and MIT emails (including your lab partner, if available)</li>
 <li>How does a central (your phone) discover a peripheral (an anthill)?</li>
