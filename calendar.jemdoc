@@ -153,7 +153,7 @@ table.calendar thead tr {
 
 <td id="2021-2-22" class="lecture"><span class="date">Feb 22</span><br />
 <i>Monday schedule</i><br />
-    <b>LEC 7:</b> Batteryless Connectivity & Smart Cities (<a href="./materials_2022/lec7-slides-backscatter-2022.pdf" target="_blank">Slides)</a><br />
+    <b>LEC 7:</b> Batteryless Connectivity & Smart Cities (<a href="./materials_2022/Lec7-slides-backscatter-2022.pdf" target="_blank">Slides)</a><br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="https://cs.uwaterloo.ca/~oabari/Papers/Mobicom18a.pdf" target="_blank">Hacking RFIDs</a> and
     <a href="https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p297.pdf" target="_blank">Caraoke (without section 8)</a>
@@ -163,7 +163,7 @@ table.calendar thead tr {
 
 <td id="2021-2-23" class="lecture"><span class="date">Feb 23</span><br />
     <b>LEC 8:</b> Intro to Inertial Sensing; Activity Recognition
-    (<a href="./materials/lec8-slides-inertial-2022.pdf" target="_blank">Slides)</a><br />
+    (<a href="./materials/Lec8-slides-inertial-2022.pdf" target="_blank">Slides)</a><br />
 <span class="reading"><b>Preparation:</b> Read
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch2">Developments of Inertial Sensing</a> and
   <a href="http://digital-library.theiet.org.libproxy.mit.edu/content/books/10.1049/pbra017e_ch3">Principles of Inertial Sensing (Section 3.1 and 3.2 only)</a>
