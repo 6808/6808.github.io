@@ -188,7 +188,7 @@ table.calendar thead tr {
 <td id="2021-3-1"><span class="date">Mar 1</span></td>
 <td id="2021-3-2" class="lecture"><span class="date">Mar 2</span><br />
     <b>LEC 10:</b> Crash Mapping
-    <!-- (<a href="./materials/lec10-slides-covid19.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/1IYnTjsXbMyJKcUFtAy7wl0YXFqyG4poy32DsQtiiEnhwkK4rbOa2PUS68NZxI3N.ggnihRtxWU2ZC7_v" target="_blank">Recording</a>) --><br />
+    (<a href="./materials_2022/lec10-crash-slides-2022.pdf" target="_blank">Slides</a>) <br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/He_Inferring_High-Resolution_Traffic_Accident_Risk_Maps_Based_on_Satellite_Imagery_ICCV_2021_paper.pdf" target="_blank">Crash Rate Maps for Roads</a>
     (<a href="questions.html?q=q-lec10">Questions</a>)</span> <br />
