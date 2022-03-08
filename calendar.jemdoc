@@ -204,10 +204,7 @@ table.calendar thead tr {
 <td id="2021-3-7" class="lecture"><span class="date">Mar 7</span><br />
 
   <b>LEC 11:</b> Mobile & Augmented/Mixed Reality (real-time object recognition)
-  <!-- (<a href="./materials/lec14-slides-vision-edge-2021.pdf"
-          target="_blank">Slides</a>, <a
-          href="https://mit.zoom.us/rec/share/3JiVt_5-Ehny-pKw5CUJ6SlcBCC4D-vrv28MG4LASEI2j7vIEnqdU3ap4IIdrbeq.KnY_bb0WnPmYw4Xc"
-          target="_blank">Recording</a>) --><br>
+  (<a href="./materials_2022/lec11-slides-vision-edge.pdf")<br>
   <span class="reading"><b>Preparation:</b> Read
     <a href="https://dspace.mit.edu/bitstream/handle/1721.1/110758/Glimpse.pdf?sequence=1&isAllowed=y" target="_blank">Glimpse</a>
     (<a href="questions.html?q=q-lec14">Questions</a>)</span> <br />
