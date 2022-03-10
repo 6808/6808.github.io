@@ -218,7 +218,7 @@ table.calendar thead tr {
 
 <td id="2021-3-9" class="lecture"><span class="date">Mar 9</span><br />
 
-<b>LEC 12:</b> Health & Vitals sensing <!-- (<a href="./materials/lec11-slides-vitals-2021.pdf" target="_blank">Slides</a>, <a href="https://mit.zoom.us/rec/share/504xGjoWOB6UmiO-fGbmn1I3p2O7SLUMIEUbLJ3jfcufLgfD0iLQemqD3bwK-tsl.JlLco5oqoiRJOXTX" target="_blank">Recording</a>) --><br />
+<b>LEC 12:</b> Health & Vitals sensing (<a href="./materials_2022/lec12-slides-vitals-2022.pdf" target="_blank">Slides</a>)<br />
 <span class="reading"><b>Preparation:</b> Read
   <a href="http://witrack.csail.mit.edu/vitalradio/content/vitalradio-paper.pdf">Vital-Radio</a> and
   <a href="http://ubicomplab.cs.washington.edu/pdfs/hemaapp_v2.pdf">Smartphone-based Hemoglobin sensing</a>
