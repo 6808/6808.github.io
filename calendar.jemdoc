@@ -247,13 +247,8 @@ table.calendar thead tr {
 
 <td id="2021-3-16" class="lecture"><span class="date">Mar 16</span><br />
     <b>LEC 14:</b> Agriculture IoT
-      <!--
-      (<a href="https://youtu.be/sGDGmAJ94FM">Video lecture</a>,
-      <a href="https://mit.zoom.us/rec/share/29JsHp7R0mdLQ5XPxXucRrcNF4XYeaa8hikcrKUOnUhuzwxjXIUUa1tKF11QfhPu">Zoom recording</a>, Lecture Slides
-      (<a href="https://people.csail.mit.edu/deepak/assets/slides/NSDI2017_FarmBeats.pptx">pptx</a>,
-      <a href="./materials/lec13-slides-NSDI2017_FarmBeats.pdf">pdf<a>),
-      <a href="./materials/lec13-slides-farmbeats-complementary-2020.pdf">Zoom slides</a>)<br />-->
-       <br>
+    
+         (<a href="./materials_2022/lec14-slides-Farmbeats-2022.pdf" target="_blank">Slides</a>)<br />
   <span class="reading"><b>Preparation:</b> Read
     <a href="https://www.usenix.org/system/files/conference/nsdi17/nsdi17-vasisht.pdf" target="_blank">FarmBeats</a>
     (<a href="questions.html?q=q-lec16">Questions</a>)</span>  <br />
