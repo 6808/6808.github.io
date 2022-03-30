@@ -306,11 +306,11 @@ table.calendar thead tr {
 <td id="2021-4-5"><span class="date">Apr 5</span></td>
 
 <td id="2021-4-6" class="lecture"><span class="date">Apr 6</span><br />
-    TBD<br />
+    Quiz Review Session<br />
       <span class="deadline"><b>DUE:</b> <a>Final project components due</a></span></td>
 
 <td id="2021-4-7"><span class="date">Apr 7</span></td>
-<td id="2021-4-8" class="special"><span class="date">Apr 8</span><br /><i>Quiz Review Session</td>
+<td id="2021-4-8"><span class="date">Apr 8</span></td>
 
 </tr>
 <tr> <!-- week of apr 11 -->
